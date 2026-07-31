@@ -4,11 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "30469fc0e7209a36",
+        "id": "9f9b136f90b54b0a",
         "type": "tabs",
         "children": [
           {
-            "id": "8fd3cf558fd6f96f",
+            "id": "8f85fb6509018e66",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -37,7 +37,9 @@
               "type": "file-explorer",
               "state": {
                 "sortOrder": "alphabetical",
-                "autoReveal": false
+                "autoReveal": false,
+                "showSearch": false,
+                "searchQuery": ""
               },
               "icon": "lucide-folder-closed",
               "title": "Files"
@@ -157,8 +159,19 @@
               "icon": "lucide-list",
               "title": "Outline"
             }
+          },
+          {
+            "id": "4952a17aef8a2258",
+            "type": "leaf",
+            "state": {
+              "type": "review-queue-list-view",
+              "state": {},
+              "icon": "lucide-ghost",
+              "title": "review-queue-list-view"
+            }
           }
-        ]
+        ],
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -173,11 +186,40 @@
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
       "command-palette:Open command palette": false,
-      "bases:Create new base": false
+      "bases:Create new base": false,
+      "obsidian-git:Open Git source control": false,
+      "templater-obsidian:Templater": false,
+      "obsidian-spaced-repetition:Review flashcards": false
     }
   },
-  "active": "8fd3cf558fd6f96f",
+  "active": "03c746a4f2bc65e4",
   "lastOpenFiles": [
+    "90 - Vorlagen/sedtIdVWO",
+    "90 - Vorlagen/sedWRI5Ea",
+    "90 - Vorlagen/sedeXD5fR",
+    "50 - Ressourcen/GPT-Anweisungen.md",
+    "50 - Ressourcen/GPT-Anweisungen.md.tmp.11856.99edcc0e56c8",
+    "50 - Ressourcen/Themenliste.md",
+    "50 - Ressourcen/Themenliste.md.tmp.11856.5cd7f56e6e76",
+    "50 - Ressourcen/Verarbeitung.md",
+    "50 - Ressourcen/Verarbeitung.md.tmp.11856.9a2eb349125d",
+    "50 - Ressourcen/E-Mail-Format.md",
+    "50 - Ressourcen/E-Mail-Format.md.tmp.11856.9f75a549f4d2",
+    "40 - Ansichten/Ansichten - Referenz.md",
+    "40 - Ansichten/Ansichten - Referenz.md.tmp.11856.024115f312bd",
+    "40 - Ansichten/Ohne Beispiel.base",
+    "40 - Ansichten/Ohne Beispiel.base.tmp.11856.19a842b5a0f5",
+    "40 - Ansichten/Nicht in Anki.base",
+    "00 - Start/Dashboard.md",
+    "00 - Start/Lernprofil.md",
+    "90 - Vorlagen/V - Sitzung.md",
+    "90 - Vorlagen/V - Grammatik.md",
+    "90 - Vorlagen/V - Wortschatz.md",
+    "Vorlagen/Vorlage - Gramatik.md",
+    "Vorlagen/patata.md",
+    "Vorlagen/Vorlage - Verb.md",
+    "Vorlagen/Vorlage - Wortschatz.md",
+    "00 - Start/Dashboard Deutsch.md",
     "Welcome.md"
   ]
 }

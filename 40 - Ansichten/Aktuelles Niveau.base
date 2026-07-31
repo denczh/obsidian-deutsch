@@ -1,0 +1,20 @@
+filters:
+  and:
+    - 'note.level == "A12"'
+    - or:
+        - 'note.type == "vocab"'
+        - 'note.type == "grammar"'
+views:
+  - type: table
+    name: Aktuelles Niveau
+    order:
+      - file.name
+      - note.type
+      - note.pos
+      - note.article
+      - note.translation
+      - note.status
+      - note.created
+    sort:
+      - property: note.created
+        direction: DESC

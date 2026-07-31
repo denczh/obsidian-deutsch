@@ -1,0 +1,19 @@
+filters:
+  and:
+    - 'note.type == "vocab"'
+    - 'note.anki == false'
+    - 'note.status != "new"'
+views:
+  - type: table
+    name: Nicht in Anki
+    order:
+      - file.name
+      - note.article
+      - note.translation
+      - note.level
+      - note.status
+    sort:
+      - property: note.level
+        direction: ASC
+      - property: file.name
+        direction: ASC

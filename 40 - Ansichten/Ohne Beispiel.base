@@ -1,0 +1,17 @@
+filters:
+  and:
+    - 'note.type == "vocab"'
+    - or:
+        - 'note.example == ""'
+        - 'note.example == null'
+views:
+  - type: table
+    name: Ohne Beispiel
+    order:
+      - file.name
+      - note.level
+      - note.translation
+      - note.created
+    sort:
+      - property: note.created
+        direction: ASC

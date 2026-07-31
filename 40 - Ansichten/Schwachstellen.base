@@ -1,0 +1,22 @@
+filters:
+  and:
+    - 'note.error_count > 0'
+    - or:
+        - 'note.type == "vocab"'
+        - 'note.type == "grammar"'
+views:
+  - type: table
+    name: Schwachstellen
+    order:
+      - file.name
+      - note.type
+      - note.level
+      - note.last_error
+      - note.error_count
+      - note.status
+      - note.translation
+    sort:
+      - property: note.last_error
+        direction: DESC
+      - property: note.error_count
+        direction: DESC
