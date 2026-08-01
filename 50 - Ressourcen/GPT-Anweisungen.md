@@ -301,6 +301,32 @@ paste it.
 
 ---
 
+## El corte a media frase no se arregla desde aquí
+
+Hay que separar dos cosas que parecen una:
+
+**Que te dé la razón con un "Genau!" a media frase** es comportamiento del
+modelo, y eso sí lo controla el prompt. Está cubierto arriba, en *No empty
+validation*, en la cuarta regla inviolable y en *Never*.
+
+**Que te corte** no. Quién decide que has terminado de hablar es la detección de
+turno de la app, no las Instructions. Ninguna frase que escribas aquí alarga esa
+ventana de silencio. Lo que sí puedes hacer:
+
+- **Rellenar las pausas con sonido.** Un "ähm" mantiene el micro abierto; el
+  silencio lo cierra. Es el truco más eficaz y no depende de nada.
+- **Decir "warte"**, que ahora está en el prompt: corta al tutor en seco.
+- **Activar el modo de turno explícito** diciendo "protokoll fertig" al empezar.
+  A partir de ahí solo contesta cuando dices "fertig". Es lo más parecido a un
+  push-to-talk que se puede conseguir por prompt, y merece la pena probarlo la
+  primera vez en una sesión corta: si el modelo lo respeta, resuelve el problema
+  entero.
+- **Comprobar el modelo de voz en la app.** En julio de 2026 OpenAI sacó
+  GPT-Live, con arquitectura full-duplex y detección de turno pensada justo para
+  no cortar a quien se para a media frase. Si tu app te deja elegirlo dentro del
+  GPT, es la solución de verdad. El *hold-to-talk* existió unas semanas y
+  desapareció, así que no cuentes con él.
+
 ## Mantenimiento
 
 Cada 4-6 sesiones, en la web, abrir el GPT y actualizar el bloque *Learner
