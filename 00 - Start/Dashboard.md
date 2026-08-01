@@ -6,6 +6,10 @@ type: dashboard
 
 **Nivel activo:** L1 → [[Lernprofil]] · [[Niveaus]]
 
+> **[[Workflow]]** — el proceso completo de principio a fin: qué hace el tutor,
+> qué hago yo, cómo se cierra el ciclo y cuándo subo de nivel. Si solo voy a leer
+> una nota, es esa.
+
 ## Vistas
 
 | Vista | Para qué |
@@ -24,16 +28,20 @@ type: dashboard
       |             el tutor produce; no lee la bóveda
       v
 [2] LISTA           bloque plano y delimitado, sin explicaciones
-      |             → 50 - Ressourcen/E-Mail-Format
+      |             → E-Mail-Format
       v
 [3] OBSIDIAN        una nota por palabra o por punto gramatical
-                    → 50 - Ressourcen/Verarbeitung
+      |             → Verarbeitung
+      v
+[4] LERNPROFIL      y de ahí, a mano, al prompt del tutor
+                    → es el único punto donde el ciclo se cierra
 ```
 
-La bóveda es la memoria. El tutor es solo un interlocutor.
+La bóveda es la memoria. El tutor es solo un interlocutor. Detalle en [[Workflow]].
 
 ## Operativa
 
+- [[Workflow]] — **el proceso completo**, de la calle a la bóveda y de vuelta
 - [[E-Mail-Format]] — el formato exacto de la lista de cierre
 - [[Verarbeitung]] — los 6 pasos de lista → notas, el mismo día
 - [[Niveaus]] — mi escala de niveles y el criterio de promoción
@@ -58,5 +66,7 @@ las carpetas se crean cuando promociono. Ver [[Niveaus]].
 ## Mantenimiento
 
 - Cada 4-6 sesiones: actualizar el bloque *Learner values* en el GPT desde
-  [[Lernprofil]]. Ocho líneas, dos minutos. Es el coste recurrente del sistema.
+  [[Lernprofil]]. Seis líneas, dos minutos. Es el coste recurrente del sistema.
 - Cada domingo: releer el log de errores. Ese es el currículo de la semana.
+
+Los cinco fallos que no dan error están listados al final de [[Workflow]].
