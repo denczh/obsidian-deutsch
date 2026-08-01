@@ -35,6 +35,7 @@ La bóveda es la memoria. El tutor es solo un interlocutor.
 
 - [[E-Mail-Format]] — el formato exacto de la lista de cierre
 - [[Verarbeitung]] — los 6 pasos de lista → notas, el mismo día
+- [[Niveaus]] — mi escala de niveles y el criterio de promoción
 - [[GPT-Anweisungen]] — las Instructions listas para pegar
 - [[Themenliste]] — los temas disponibles, como etiquetas
 

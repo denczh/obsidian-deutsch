@@ -28,4 +28,4 @@ aquí primero. Un token inventado sobre la marcha es una etiqueta huérfana.
 
 El GPT ofrece tres temas al empezar cada sesión y salta los que estén en *temas
 recientes* del [[Lernprofil]]. La columna alemana es lo que dice en voz alta; la
-española es lo que añade entre paréntesis mientras el nivel activo sea A1x-A2x.
+española es lo que añade entre paréntesis mientras se lo sigas pidiendo.
