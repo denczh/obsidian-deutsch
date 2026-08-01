@@ -1,0 +1,19 @@
+filters:
+  and:
+    - 'note.type == "vocab"'
+    - 'note.source == "tutor-extra"'
+    - 'note.status == "new"'
+views:
+  - type: table
+    name: Nicht gesprochen
+    order:
+      - file.name
+      - note.pos
+      - note.article
+      - note.inflection
+      - note.translation
+      - note.example
+      - note.created
+    sort:
+      - property: note.created
+        direction: ASC

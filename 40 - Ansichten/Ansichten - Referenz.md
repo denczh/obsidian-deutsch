@@ -16,6 +16,7 @@ el prefijo `note.` en el archivo.
 | **Nach Thema** | tipo vocab o grammar | `theme`, luego nombre |
 | **Nicht in Anki** | `anki == false` y `status != "new"` | nivel, luego nombre |
 | **Ohne Beispiel** | `type == "vocab"` y `example` vacío | `created` asc |
+| **Nicht gesprochen** | `source == "tutor-extra"` y `status == "new"` | `created` asc |
 
 ## Notas
 
@@ -28,6 +29,12 @@ formato). El orden sigue siendo por `last_error`.
 de `L1` a `L2`, edita `40 - Ansichten/Aktuelles Niveau.base` y cambia esa línea.
 Es uno de los tres sitios que hay que tocar a mano al subir de nivel; los otros
 dos están listados en [[Niveaus]].
+
+**Nicht gesprochen es el contrapeso del bloque EXTRA.** El tutor puede añadir
+palabras que nunca dijiste, sin límite de cantidad. El riesgo obvio es que se
+acumulen como deberes que nunca haces. Esta vista las lista mientras siguen en
+`status: new`; en cuanto uses una en una sesión, ponla en `learning` y desaparece.
+Si crece sin parar, el problema no es la vista.
 
 **Nach Thema sustituye a una carpeta por tema.** El tema vive en frontmatter como
 lista; las carpetas por tema son justo la jerarquía en competencia que hay que

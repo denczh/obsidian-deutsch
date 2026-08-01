@@ -15,6 +15,7 @@ type: dashboard
 | [[Nach Thema.base\|Nach Thema]] | Sustituye por completo a una carpeta por tema. |
 | [[Nicht in Anki.base\|Nicht in Anki]] | Cola de exportación a repetición espaciada. |
 | [[Ohne Beispiel.base\|Ohne Beispiel]] | Notas creadas con prisa y nunca terminadas. |
+| [[Nicht gesprochen.base\|Nicht gesprochen]] | Palabras que el tutor añadió y que aún no he usado nunca. |
 
 ## Flujo
 

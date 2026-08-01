@@ -17,6 +17,11 @@ está bien; una semana de atraso significa que las notas no se escriben nunca.
    la lista no trae: **una frase de ejemplo en alemán, escrita por ti**. Ese acto
    de producción vale más que la nota.
 
+2b. **Por cada línea EXTRA**, lo mismo, pero con `source: tutor-extra`. Son
+   palabras que no dijiste: el ejemplo aquí no es un recuerdo, es un ejercicio.
+   Escribir la frase es la primera vez que usas la palabra. Aparecen en
+   [[Nicht gesprochen.base|Nicht gesprochen]] hasta que les cambies el `status`.
+
 3. **Por cada línea GRAMMAR**, crear *o actualizar* una nota en
    `30 - Grammatik/<nivel>/`. Las reglas se repiten entre sesiones: busca primero
    si ya existe. Escribir la explicación de 2-3 frases en español y dos ejemplos

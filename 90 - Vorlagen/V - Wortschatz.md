@@ -27,8 +27,14 @@ anki: false
 
 <!--
 article:     der | die | das | "-" (bei Nicht-Substantiven)
-inflection:  Plural bei Substantiven; Stammformen bei Verben
-pos:         noun | verb | adj | adv | phrase
+inflection:  noun -> Plural            (-e, -en, Häuser, "-")
+             verb -> Stammformen + Hilfsverb   (fährt, fuhr, ist gefahren)
+                     trennbar getrennt         (räumt auf, ..., hat aufgeräumt)
+             adj  -> nur wenn unregelmässig    (besser, am besten)
+             sonst "-"
+pos:         noun | verb | adj | adv | prep | conj | pron | num | phrase
+source:      voice-session -> im Gespraech gesagt (Block VOCAB)
+             tutor-extra   -> vom Tutor ergaenzt, nie gesagt (Block EXTRA)
 theme:       [alltag, reisen, ...]  -> siehe "50 - Ressourcen/Themenliste"
 status:      new | learning | known
 Drei Zeilen sind eine gesunde Wortschatznotiz. Wenn sie zehn ueberschreitet,
