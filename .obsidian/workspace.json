@@ -4,17 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "9f9b136f90b54b0a",
+        "id": "2ac71555334896eb",
         "type": "tabs",
         "children": [
           {
-            "id": "8f85fb6509018e66",
+            "id": "5656f473a7909421",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "50 - Ressourcen/GPT-Anweisungen.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "GPT-Anweisungen"
             }
           }
         ]
@@ -192,8 +196,12 @@
       "obsidian-spaced-repetition:Review flashcards": false
     }
   },
-  "active": "03c746a4f2bc65e4",
+  "active": "5656f473a7909421",
   "lastOpenFiles": [
+    "00 - Start/Lernprofil.md",
+    "50 - Ressourcen/Verarbeitung.md",
+    "00 - Start/Dashboard.md",
+    "50 - Ressourcen/E-Mail-Format.md",
     "90 - Vorlagen/sedtIdVWO",
     "90 - Vorlagen/sedWRI5Ea",
     "90 - Vorlagen/sedeXD5fR",
@@ -201,17 +209,12 @@
     "50 - Ressourcen/GPT-Anweisungen.md.tmp.11856.99edcc0e56c8",
     "50 - Ressourcen/Themenliste.md",
     "50 - Ressourcen/Themenliste.md.tmp.11856.5cd7f56e6e76",
-    "50 - Ressourcen/Verarbeitung.md",
     "50 - Ressourcen/Verarbeitung.md.tmp.11856.9a2eb349125d",
-    "50 - Ressourcen/E-Mail-Format.md",
     "50 - Ressourcen/E-Mail-Format.md.tmp.11856.9f75a549f4d2",
     "40 - Ansichten/Ansichten - Referenz.md",
     "40 - Ansichten/Ansichten - Referenz.md.tmp.11856.024115f312bd",
     "40 - Ansichten/Ohne Beispiel.base",
     "40 - Ansichten/Ohne Beispiel.base.tmp.11856.19a842b5a0f5",
-    "40 - Ansichten/Nicht in Anki.base",
-    "00 - Start/Dashboard.md",
-    "00 - Start/Lernprofil.md",
     "90 - Vorlagen/V - Sitzung.md",
     "90 - Vorlagen/V - Grammatik.md",
     "90 - Vorlagen/V - Wortschatz.md",
