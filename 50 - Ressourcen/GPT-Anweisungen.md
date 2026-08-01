@@ -48,11 +48,15 @@ y añadirlo a la pantalla de inicio: una sesión arranca en dos toques.
 ## BEGIN INSTRUCTIONS
 
 > **Límite duro: las Instructions del GPT no admiten más de 8000 caracteres.**
-> El bloque de abajo ocupa **7833**, con 167 de margen.
+> El bloque de abajo ocupa **7742**, con 258 de margen.
+>
+> **No repliegues las líneas.** El bloque va con líneas largas a propósito: el
+> plegado a 80 columnas costaba 132 caracteres en saltos de línea que al modelo le
+> dan igual.
 >
 > Lo único que crece con el uso son las seis líneas de *Learner values*
-> (consolidado, visto, errores a vigilar, temas recientes): hoy ocupan 278
-> caracteres y **el presupuesto total para ellas es 445**. Cuando lo desborden, la
+> (consolidado, visto, errores a vigilar, temas recientes): hoy ocupan 276
+> caracteres y **el presupuesto total para ellas es 534**. Cuando lo desborden, la
 > regla es recortar ahí, nunca en las reglas: deja los **3 errores** más
 > persistentes y los **2 temas** más recientes, y tira el resto. El Lernprofil
 > guarda la lista completa; el prompt solo necesita lo que va a usar hoy.
@@ -69,6 +73,7 @@ Production: A12. Comprehension: A22.
 Consolidated: none yet.
 Seen, not consolidated: Possessivartikel meine (mein/meine, nom.); Dativ mit in.
 Mistakes to watch: possessive must agree with the noun's gender ("Mein Tür").
+Recent themes to avoid: Haus und Wohnung
 
 "L1" is his own scale, not CEFR: never interpret it, copy it verbatim into the closing block. Calibrate with the levels above; never say a CEFR code aloud or write one in the block. Never mention a file or claim to have consulted one: these values are all you have. In a TEXT chat, a real profile file wins.
 
@@ -118,8 +123,7 @@ German is the default, Spanish the rescue tool: only if he asks, if a second att
 
 ## Spoken commands
 
-"wiederhole" -> repeat slower. "langsamer" -> slower from now on. "auf Spanisch" -> translate, then back to German. "was bedeutet ..." -> one sentence, continue. "anderes Thema" -> three new themes. "einfacher"/"schwieriger" -> adjust now and
-note it.
+"wiederhole" -> repeat slower. "langsamer" -> slower from now on. "auf Spanisch" -> translate, then back to German. "was bedeutet ..." -> one sentence, continue. "anderes Thema" -> three new themes. "einfacher"/"schwieriger" -> adjust now and note it.
 
 ## Closing
 
@@ -251,8 +255,53 @@ El bloque de arriba ya lleva incorporado lo aprendido en la sesión del
 Este es el coste recurrente del sistema y conviene nombrarlo sin adornos: el GPT
 no tiene memoria, así que su memoria eres tú. Nada de esto es automático.
 
-Si ese coste empieza a molestar, la alternativa es un Project en lugar de un GPT.
-Los Projects sí usan memoria e instrucciones, así que la continuidad se vuelve
-automática; pierdes los botones de arranque y el enlace compartible. Es un
-intercambio real, no una mejora. Decídelo hacia la décima sesión, cuando sepas
-qué fricción te molesta de verdad.
+## ¿Un Project en lugar de un GPT?
+
+La tentación es obvia: los Projects tienen memoria, así que la continuidad sería
+automática y este mantenimiento desaparecería. Comparación real, según la
+documentación de OpenAI a 2026-08-01:
+
+| | GPT | Project |
+|---|---|---|
+| Memoria | Ninguna. Cada sesión empieza amnésica. | Recuerda todos los chats y archivos del proyecto. |
+| Instrucciones | 8000 caracteres. | Propias, y **anulan** tus custom instructions globales. |
+| Archivos | Hasta 20, pero **ilegibles en voz**. | 25 en Plus, y sí se usan en chats de texto. |
+| Actions | Sí. La de correo funciona. | **No existen.** Usan apps y conectores, no Actions. |
+| Voz | Sí, con la voz Shimmer. | Sí, listada como herramienta del proyecto. |
+| Arranque en dos toques | Enlace propio y conversation starters. | No hay starters. |
+
+**Decisión: el GPT se queda para las sesiones de voz.** Tres razones, en orden de
+peso.
+
+**La Action solo existe en el GPT.** En un Project habría que sustituirla por un
+conector de correo, que es otro mecanismo y puede no existir para el mío. Cambiar
+de plataforma es tirar lo único automático que tiene el sistema.
+
+**La amnesia es una decisión de diseño, no un defecto.** Todo el montaje descansa
+en que el tutor no lee la bóveda y la bóveda es la memoria. Con memoria de
+proyecto el tutor acumula su propia idea de mi nivel — y la documentación dice que
+**no se puede ver la lista de memorias de un proyecto**. Habría dos fuentes de
+verdad sobre mi nivel y una sería invisible e ineditable. Es el mismo fallo del
+que advierte la caja de arriba —el modelo sosteniendo un historial que yo no puedo
+auditar— en una forma más difícil de detectar.
+
+**Lo que se ahorra es menos de lo que parece.** Sí, desaparecerían la
+actualización de *Learner values* y la presión de los 8000 caracteres. A cambio se
+pierde el control explícito de lo que el tutor cree sobre mí, que es justo lo que
+hace el sistema auditable.
+
+### Lo que sí merece la pena: un Project aparte, para texto
+
+Ahí la memoria y los archivos funcionan de verdad. Subir el [[Lernprofil]] y las
+notas de gramática, y usarlo sentado: repasar errores, generar ejercicios sobre mi
+propio vocabulario, preparar un tema antes de salir a andar. **El GPT habla; el
+Project estudia.**
+
+Dos detalles si lo monto:
+
+- La memoria **project-only** solo se puede elegir al crear el proyecto y no se
+  puede cambiar después. Con la opción por defecto, mis memorias generales de
+  ChatGPT se cuelan dentro.
+- Los **chats creados con un GPT no se pueden mover a un Project**, así que las
+  sesiones de voz se quedan fuera y eso está bien: su registro es
+  `10 - Sitzungen`, no un chat.
