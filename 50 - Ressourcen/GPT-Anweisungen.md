@@ -11,14 +11,14 @@ resueltos: alemán / español / Pedro / A12-A22.
 
 ## Configuración del GPT
 
-| Campo | Qué hacer |
-|---|---|
-| Name, Description | Cortos. Solo sirven para encontrarlo. |
-| Instructions | Todo. Pegar el bloque de abajo. |
-| Conversation starters | Dos: *Neues Thema* y *Wiederhole meine Fehler*. |
-| Knowledge | **Vacío.** El modo voz no puede leerlo. |
-| Capabilities | Apagar generación de imágenes y análisis de datos. |
-| Actions | Opcional, y nunca funcionan en voz. |
+| Campo                 | Qué hacer                                          |
+| --------------------- | -------------------------------------------------- |
+| Name, Description     | Cortos. Solo sirven para encontrarlo.              |
+| Instructions          | Todo. Pegar el bloque de abajo.                    |
+| Conversation starters | Dos: *Neues Thema* y *Wiederhole meine Fehler*.    |
+| Knowledge             | **Vacío.** El modo voz no puede leerlo.            |
+| Capabilities          | Apagar generación de imágenes y análisis de datos. |
+| Actions               | Opcional, y nunca funcionan en voz.                |
 
 Guardar con visibilidad *Only me*, copiar el enlace, abrirlo una vez en el móvil
 y añadirlo a la pantalla de inicio: una sesión arranca en dos toques.
