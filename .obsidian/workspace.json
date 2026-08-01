@@ -170,8 +170,8 @@
             "state": {
               "type": "review-queue-list-view",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "review-queue-list-view"
+              "icon": "SpacedRepIcon",
+              "title": "Notes Review Queue"
             }
           },
           {
@@ -185,7 +185,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -201,14 +201,13 @@
       "command-palette:Open command palette": false,
       "bases:Create new base": false,
       "obsidian-git:Open Git source control": false,
-      "templater-obsidian:Templater": false,
       "obsidian-spaced-repetition:Review flashcards": false
     }
   },
-  "active": "5656f473a7909421",
+  "active": "4952a17aef8a2258",
   "lastOpenFiles": [
-    "50 - Ressourcen/E-Mail-Format.md",
     "50 - Ressourcen/GPT-Anweisungen.md",
+    "50 - Ressourcen/E-Mail-Format.md",
     "00 - Start/Lernprofil.md",
     "50 - Ressourcen/Verarbeitung.md",
     "00 - Start/Dashboard.md",

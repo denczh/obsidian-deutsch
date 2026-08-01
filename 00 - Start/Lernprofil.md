@@ -3,12 +3,13 @@ type: profile
 active_level: A12
 production_level: A12
 comprehension_level: A22
-updated: 2026-07-31
+updated: 2026-08-01
+sessions: 1
 ---
 
 # Lernprofil - Pedro
 
-**Actualizado:** 2026-07-31
+**Actualizado:** 2026-08-01 · **Sesiones:** 1
 **Nivel activo:** A12
 
 > Este archivo es la única fuente autorizada sobre mi nivel. El tutor de voz no
@@ -41,25 +42,27 @@ Pedir al tutor que proponga promociones en su resumen de cierre.
 
 ## Visto, no consolidado
 
-- 
+- [[Possessivartikel meine]] — posesivo en nominativo, `mein` / `meine` (1/3)
+- [[Dativ mit in]] — `in` + dativo para ubicación (1/3)
 
 ## Pendiente, en orden sugerido
 
-1. 
-2. 
-3. 
+1. Género de los sustantivos de la casa: los femeninos son los que fallan.
+2. `in` + acusativo (movimiento), como contraste con el dativo ya visto.
+3. Plural de dativo con `-n` (`in den Regalen`).
 
 ## Errores recurrentes a vigilar
 
 (se rellena desde el bloque ERRORS de cada sesión)
 
-- 
+- **Concordancia del posesivo con el género** — *Mein Tür* → *Meine Tür*
+  (2026-08-01). Ver [[Possessivartikel meine]].
 
 ## Temas recientes (últimas 5 sesiones)
 
 (se rellena desde el bloque SESSION; evitar repetirlos)
 
-- 
+- `wohnen` — Haus und Wohnung (2026-08-01)
 
 ## Preferencias
 
