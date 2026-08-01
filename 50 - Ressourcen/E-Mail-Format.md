@@ -12,7 +12,7 @@ por un cliente de correo.
 ```
 === SESSION ===
 date: YYYY-MM-DD
-level: A12
+level: L1
 themes: reisen, gesundheit
 
 === VOCAB ===

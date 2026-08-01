@@ -1,6 +1,6 @@
 filters:
   and:
-    - 'note.level == "A12"'
+    - 'note.level == "L1"'
     - or:
         - 'note.type == "vocab"'
         - 'note.type == "grammar"'

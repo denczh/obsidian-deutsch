@@ -2,7 +2,7 @@
 type: grammar
 rule: "{{title}}"
 category: verbs
-level: A12
+level: L1
 theme: []
 source: voice-session
 created: "{{date:YYYY-MM-DD}}"

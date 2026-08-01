@@ -1,7 +1,7 @@
 ---
 type: session
 date: "{{date:YYYY-MM-DD}}"
-level: A12
+level: L1
 themes: []
 minutes: 
 vocab_count: 0

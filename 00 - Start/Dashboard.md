@@ -4,7 +4,7 @@ type: dashboard
 
 # Dashboard - Deutsch
 
-**Nivel activo:** A12 (producción) / A22 (comprensión) → [[Lernprofil]]
+**Nivel activo:** L1 → [[Lernprofil]] · [[Niveaus]]
 
 ## Vistas
 
@@ -49,6 +49,9 @@ La bóveda es la memoria. El tutor es solo un interlocutor.
 
 **La regla única:** cada nota tiene exactamente un hogar. El tipo decide la
 carpeta, el nivel es subcarpeta del tipo, el tema es etiqueta y nunca carpeta.
+
+Los niveles son **mi escala** (`L1`, `L2`, …), no la CEFR: crecen conmigo y
+las carpetas se crean cuando promociono. Ver [[Niveaus]].
 
 ## Mantenimiento
 

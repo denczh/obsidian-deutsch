@@ -5,7 +5,7 @@ article: "-"
 inflection: ""
 pos: noun
 translation: ""
-level: A12
+level: L1
 theme: []
 example: ""
 source: voice-session
