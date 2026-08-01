@@ -5,6 +5,7 @@ level: L1
 themes: []
 minutes: 
 vocab_count: 0
+extra_count: 0
 grammar_count: 0
 error_count: 0
 processed: false
@@ -15,7 +16,8 @@ processed: false
 ## Verarbeitung
 
 - [ ] 1. Rohblock unten eingefuegt
-- [ ] 2. Wortschatznotizen erstellt (+ eigener Beispielsatz)
+- [ ] 2. VOCAB: Notizen erstellt, `source: voice-session` (+ eigener Beispielsatz)
+- [ ] 2b. EXTRA: Notizen erstellt, `source: tutor-extra`
 - [ ] 3. Grammatiknotizen erstellt oder aktualisiert
 - [ ] 4. Fehler zugeordnet: `last_error`, `error_count`, `status: learning`
 - [ ] 5. Lernprofil aktualisiert (Fehler, Themen, Promotion)
@@ -38,6 +40,9 @@ level:
 themes: 
 
 === VOCAB ===
+term | article | inflection | pos | translation
+
+=== EXTRA ===
 term | article | inflection | pos | translation
 
 === GRAMMAR ===
