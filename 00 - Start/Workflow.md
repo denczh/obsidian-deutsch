@@ -101,7 +101,8 @@ notas no se escriben nunca. Detalle completo en [[Verarbeitung]].
    bloque crudo pegado bajo *Roh*. Es la procedencia: si una nota luego parece
    mal, el original está ahí.
 2. **VOCAB** → una nota por palabra en `20 - Wortschatz/L1`, `source:
-   voice-session`.
+   voice-session`. Los verbos van con `V - Verb` (conjugación y régimen); el resto
+   con `V - Wortschatz`. Las dos escriben `type: vocab`.
 3. **EXTRA** → igual, pero `source: tutor-extra`. Son las palabras que el tutor
    añadió y que no dije.
 4. **GRAMMAR** → crear **o actualizar** en `30 - Grammatik/L1`. Las reglas

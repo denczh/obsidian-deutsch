@@ -11,11 +11,18 @@ está bien; una semana de atraso significa que las notas no se escriben nunca.
    crudo abajo, bajo el encabezado *Roh*. Esa es tu procedencia: si una nota
    luego parece mal, el original está ahí.
 
-2. **Por cada línea VOCAB**, una nota en `20 - Wortschatz/<nivel>/` desde
-   `V - Wortschatz`. Rellenar `term`, `article`, `inflection`, `pos`,
-   `translation`, `level` y `theme` desde la línea. Después añadir lo único que
-   la lista no trae: **una frase de ejemplo en alemán, escrita por ti**. Ese acto
-   de producción vale más que la nota.
+2. **Por cada línea VOCAB**, una nota en `20 - Wortschatz/<nivel>/`. La plantilla
+   depende de `pos`:
+   - `pos: verb` → **`V - Verb`**, con conjugación y régimen de preposiciones.
+   - todo lo demás → **`V - Wortschatz`**.
+
+   Rellenar `term`, `article`, `inflection`, `pos`, `translation`, `level` y
+   `theme` desde la línea. Después añadir lo único que la lista no trae: **una
+   frase de ejemplo en alemán, escrita por ti**. Ese acto de producción vale más
+   que la nota.
+
+   Las dos plantillas escriben `type: vocab`. Un verbo no es otro tipo de nota,
+   es la misma nota con más campos rellenos.
 
 2b. **Por cada línea EXTRA**, lo mismo, pero con `source: tutor-extra`. Son
    palabras que no dijiste: el ejemplo aquí no es un recuerdo, es un ejercicio.

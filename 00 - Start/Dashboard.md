@@ -55,7 +55,7 @@ La bóveda es la memoria. El tutor es solo un interlocutor. Detalle en [[Workflo
 - `30 - Grammatik/<nivel>/` una nota por regla, etiqueta corta como título
 - `40 - Ansichten/` las vistas (Bases)
 - `50 - Ressourcen/` todo lo que no es atómico
-- `90 - Vorlagen/` las tres plantillas
+- `90 - Vorlagen/` las cuatro plantillas: sesión, gramática, vocabulario y verbos
 
 **La regla única:** cada nota tiene exactamente un hogar. El tipo decide la
 carpeta, el nivel es subcarpeta del tipo, el tema es etiqueta y nunca carpeta.
