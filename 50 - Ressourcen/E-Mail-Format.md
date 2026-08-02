@@ -79,6 +79,32 @@ lo que no sabes.
 un día `Schwachstellen` se llena de cosas que solo fallo por escrito, eso es
 información, no ruido.
 
+## Los tipos de error
+
+El campo `type` de `ERRORS` era texto libre, y eso significa que a la décima
+sesión habrá `word-order`, `wordorder` y `orden de palabras` conviviendo. Es un
+campo que quiero poder filtrar, así que lleva vocabulario cerrado:
+
+| `type` | Qué es |
+|---|---|
+| `article` | artículo equivocado o ausente |
+| `gender` | género del sustantivo |
+| `case` | caso equivocado tras preposición o verbo |
+| `agreement` | concordancia: posesivo, adjetivo, plural |
+| `word-order` | posición del verbo, orden de la subordinada |
+| `verb-form` | conjugación, auxiliar, participio |
+| `preposition` | preposición equivocada |
+| `vocabulary` | palabra equivocada o inventada |
+| `pronunciation` | pronunciación |
+| `comprehension` | **no lo entendí.** Solo lo produce [[Modus - Hören\|Hören]] |
+
+`comprehension` es de otra naturaleza que los demás y por eso merece la pena
+separarlo: *no entendí* y *lo dije mal* son problemas distintos y se arreglan de
+forma distinta. Si `Schwachstellen` se llena de `comprehension`, el diagnóstico es
+que el input va demasiado rápido, no que falte vocabulario.
+
+Amplía la lista cuando aparezca algo que no encaje, pero añádelo aquí primero.
+
 ## Los dos bloques de vocabulario
 
 **`VOCAB` es lo que pasó en la conversación.** Palabras que el tutor introdujo en

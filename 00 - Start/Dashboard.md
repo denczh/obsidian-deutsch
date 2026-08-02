@@ -43,12 +43,18 @@ La bóveda es la memoria. El tutor es solo un interlocutor. Detalle en [[Workflo
 
 - [[Workflow]] — **el proceso completo**, de la calle a la bóveda y de vuelta
 - [[Modi]] — los cinco modos: hablar, escuchar, repasar, ejercicios, dictado
-- [[Modus - Wiederholung]] — el Project de repaso, listo para montar
-- [[E-Mail-Format]] — el formato exacto de la lista de cierre
+- [[E-Mail-Format]] — el formato exacto de la lista de cierre, y los tipos de error
 - [[Verarbeitung]] — los 6 pasos de lista → notas, el mismo día
 - [[Niveaus]] — mi escala de niveles y el criterio de promoción
-- [[GPT-Anweisungen]] — las Instructions listas para pegar
 - [[Themenliste]] — los temas disponibles, como etiquetas
+
+## Modos
+
+| Modo | Prompt | Dónde |
+|---|---|---|
+| [[Modus - Sprechen\|Sprechen]] | hablar caminando | GPT |
+| [[Modus - Hören\|Hören]] | comprensión oral | GPT |
+| [[Modus - Wiederholung\|Wiederholung]] | repaso escrito | Project |
 
 ## Estructura
 

@@ -80,7 +80,7 @@ llevando dos referencias:
 | Nivel al que me pide producir | `A12` |
 | Nivel al que me habla | `A22` |
 
-**Viven solo en [[Lernprofil]] y en [[GPT-Anweisungen]].** No entran en ninguna
+**Viven solo en [[Lernprofil]] y en [[Modus - Sprechen]].** No entran en ninguna
 nota, ni en ningún nombre de carpeta, ni en el bloque de cierre. Ese bloque
 escribe `level: L1` y nada más.
 

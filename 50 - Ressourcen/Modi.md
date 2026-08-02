@@ -33,9 +33,9 @@ que yo mantengo a mano. Esa es la razón de repartirlos entre dos plataformas.
 
 | Modo | Canal | Dónde vive | Qué necesita | Estado |
 |---|---|---|---|---|
-| **Sprechen** | voz | GPT | el prompt entero, 7742 car. | funcionando |
-| **Hören** | voz | GPT | prompt **inverso**: monólogo permitido | pendiente |
-| **Wiederholung** | texto | Project | fichero de export de la bóveda | [[Modus - Wiederholung\|listo]] |
+| **Sprechen** | voz | GPT | el prompt entero, 7765 car. | [[Modus - Sprechen\|funcionando]] |
+| **Hören** | voz | GPT | prompt **inverso**, 7782 car. | [[Modus - Hören\|escrito]] |
+| **Wiederholung** | texto | Project | fichero de export de la bóveda | [[Modus - Wiederholung\|escrito]] |
 | **Übungen** | texto | Project | mi vocabulario de L1 | pendiente |
 | **Diktat** | voz + texto | Project | casi nada | pendiente |
 
@@ -43,11 +43,16 @@ que yo mantengo a mano. Esa es la razón de repartirlos entre dos plataformas.
 otros tres **viven en un Project** con los ficheros de la bóveda subidos: una sola
 cosa que mantener y datos de verdad en vez de un bloque copiado.
 
-**Hören es el que más me falta y el más interesante de escribir.** Su prompt es el
-opuesto del de hablar: allí se prohíbe monologar y se limita a 2-3 frases, aquí se
-necesita justo lo contrario, que cuente algo de treinta segundos y luego pregunte.
-Mismas reglas de corrección, política de turno invertida. Y mi perfil dice
-comprensión por delante de producción, así que es el hueco real.
+**Hören era el que más me faltaba** —mi perfil dice comprensión por delante de
+producción y todo el sistema entrenaba producción— y escribirlo destapó su propia
+pregunta de diseño: si solo escucho y contesto, no se genera ningún error y el modo
+no alimenta nada. La solución es que cada ciclo acaba en **Nacherzählen**: recuento
+el texto con mis palabras, y de ahí sale el log. Detalle en
+[[Modus - Hören|Modus - Hören]].
+
+De paso introdujo un tipo de error nuevo, `comprehension`, que obligó a cerrar el
+vocabulario del campo `type` en [[E-Mail-Format]]: era texto libre y habría
+derivado a la décima sesión.
 
 ## Lo que hace que esto sea una academia y no cuatro juguetes
 
@@ -91,13 +96,16 @@ que 2*— era literalmente inalcanzable.
 
 ## Orden de construcción
 
-1. **Wiederholung** primero, porque es el que rinde hoy: hay un error registrado y
-   50 palabras sin estrenar. Y es texto, así que no pelea ni con los 8000
-   caracteres ni con los cortes de voz.
-2. **Übungen** después, reutilizando el mismo Project y el mismo export.
-3. **Hören** cuando los dos de texto estén rodados, porque es un GPT nuevo y un
-   prompt nuevo.
+1. ~~**Wiederholung**~~ escrito. El que rinde hoy: hay un error registrado y 50
+   palabras sin estrenar.
+2. ~~**Hören**~~ escrito. Se adelantó a `Übungen` porque es el hueco real del
+   perfil.
+3. **Übungen**, reutilizando el Project y el export de `Wiederholung`.
 4. **Diktat** al final, si hace falta. Puede que `Übungen` ya lo cubra.
+
+Pendiente de montar en ChatGPT: el GPT de `Hören` y el Project de `Wiederholung`.
+Los prompts están escritos; los tres modos comparten el mismo bloque de cierre y
+el mismo log.
 
 ## Y el tema como unidad
 

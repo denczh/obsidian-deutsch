@@ -14,7 +14,7 @@ cefr_comprehension: A22
 
 > Este archivo es la única fuente autorizada sobre mi nivel. El tutor de voz no
 > puede leerlo: lo que hago es copiar el bloque "Learner values" a las
-> Instructions del GPT cada 4-6 sesiones. Ver [[GPT-Anweisungen]].
+> Instructions del GPT cada 4-6 sesiones. Ver [[Modus - Sprechen]].
 
 ## Mi escala
 

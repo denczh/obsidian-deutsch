@@ -183,7 +183,7 @@ fallo silencioso del diseño.
 **Presupuesto:** las Instructions no admiten más de 8000 caracteres. El bloque va
 por 7742, y las seis líneas volátiles tienen 534 de margen. Cuando desborden, se
 recorta ahí —tres errores, dos temas— **nunca en las reglas**. Detalle en
-[[GPT-Anweisungen]].
+[[Modus - Sprechen]].
 
 ## 8. Subir de nivel
 
