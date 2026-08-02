@@ -5,6 +5,10 @@ updated: 2026-08-01
 
 # Workflow completo
 
+> Esta nota describe el modo **Sprechen**, que es el original y el único que
+> funciona hoy. Los otros cuatro modos —escuchar, repasar, ejercicios, dictado—
+> siguen el mismo ciclo y alimentan el mismo log de errores. Ver [[Modi]].
+
 Tres etapas y una dirección: hablo, se escribe, lo proceso. Nada fluye hacia
 atrás por sí solo. **El único punto donde el ciclo se cierra es a mano**, cuando
 copio seis líneas del [[Lernprofil]] a las Instructions del GPT. Ese es el diseño,
@@ -139,7 +143,7 @@ Cada vista contesta una pregunta distinta. No hay que mirarlas todas:
 
 | Cuándo | Vista | Qué hago |
 |---|---|---|
-| Siempre que estudie | [[Schwachstellen.base\|Schwachstellen]] | lo que fallo. **Es mi cola de repaso.** |
+| Siempre que estudie | [[Schwachstellen.base\|Schwachstellen]] | lo que fallo. **Es mi cola de repaso.** Se vacía solo con el bloque `OK` de [[Modus - Wiederholung\|Wiederholung]]. |
 | Al procesar | [[Ohne Beispiel.base\|Ohne Beispiel]] | escribir las frases que dejé pendientes |
 | Antes de una sesión | [[Nicht gesprochen.base\|Nicht gesprochen]] | palabras que el tutor me dio y nunca he usado. Meterlas hoy. |
 | Al empezar un tema | [[Aktuelles Niveau.base\|Aktuelles Niveau]] | qué llevo en L1 |

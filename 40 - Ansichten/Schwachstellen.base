@@ -1,6 +1,7 @@
 filters:
   and:
     - 'note.error_count > 0'
+    - 'note.status != "known"'
     - or:
         - 'note.type == "vocab"'
         - 'note.type == "grammar"'

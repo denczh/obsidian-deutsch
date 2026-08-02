@@ -2,14 +2,19 @@
 type: session
 date: "{{date:YYYY-MM-DD}}"
 level: L1
+mode: sprechen
 themes: []
 minutes: 
 vocab_count: 0
 extra_count: 0
 grammar_count: 0
 error_count: 0
+ok_count: 0
 processed: false
 ---
+
+<!-- mode: sprechen | hoeren | wiederholung | uebungen | diktat  -> siehe "50 - Ressourcen/Modi" -->
+
 
 # Sitzung {{date:YYYY-MM-DD}}
 
@@ -20,6 +25,7 @@ processed: false
 - [ ] 2b. EXTRA: Notizen erstellt, `source: tutor-extra`
 - [ ] 3. Grammatiknotizen erstellt oder aktualisiert
 - [ ] 4. Fehler zugeordnet: `last_error`, `error_count`, `status: learning`
+- [ ] 4b. OK-Block (nur Wiederholung): `learning` -> `known`, `new` -> `learning`
 - [ ] 5. Lernprofil aktualisiert (Fehler, Themen, Promotion)
 - [ ] 6. Commit und Push
 

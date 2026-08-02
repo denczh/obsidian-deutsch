@@ -39,6 +39,11 @@ está bien; una semana de atraso significa que las notas no se escriben nunca.
    `last_error` a hoy, incrementar `error_count`, poner `status: learning`. Si no
    existe la nota, crearla: un error es evidencia de que el elemento importa.
 
+4b. **Por cada línea OK** (solo la produce el modo
+   [[Modus - Wiederholung|Wiederholung]]): si estaba en `learning` → `known`; si
+   estaba en `new` → `learning`. **`error_count` no se toca nunca.** Es el único
+   paso que saca elementos de [[Schwachstellen.base|Schwachstellen]]. Ver [[Modi]].
+
 5. **Actualizar [[Lernprofil]]**: añadir a errores recurrentes, refrescar temas
    recientes, aplicar cualquier promoción que el tutor haya propuesto.
 

@@ -11,7 +11,7 @@ el prefijo `note.` en el archivo.
 
 | Vista | Filtro | Orden |
 |---|---|---|
-| **Schwachstellen** | `error_count > 0` y tipo vocab o grammar | `last_error` desc |
+| **Schwachstellen** | `error_count > 0`, `status != "known"`, tipo vocab o grammar | `last_error` desc |
 | **Aktuelles Niveau** | `level == "L1"` | `created` desc |
 | **Nach Thema** | tipo vocab o grammar | `theme`, luego nombre |
 | **Nicht in Anki** | `anki == false` y `status != "new"` | nivel, luego nombre |
@@ -24,6 +24,14 @@ el prefijo `note.` en el archivo.
 como "`last_error` no vacío"; aquí uso `error_count > 0`, que es equivalente y
 más robusto (un campo numérico no se rompe si escribes la fecha en otro
 formato). El orden sigue siendo por `last_error`.
+
+**El segundo filtro, `status != "known"`, es la puerta de salida** (añadido
+2026-08-02). Sin él nada abandonaba nunca esta vista: `error_count` solo sube,
+así que un error de hace tres meses ya dominado seguía apareciendo para siempre y
+la cola crecía sin límite. `error_count` se queda como registro histórico —es un
+hecho, y sirve para ordenar por cuánto te costó algo—; lo que retira un elemento
+es marcarlo `known`. Y lo que justifica marcarlo `known` es el bloque `OK` del
+modo [[Modus - Wiederholung|Wiederholung]]. Ver [[Modi]].
 
 **Aktuelles Niveau lleva el nivel escrito dentro del archivo.** Cuando promociones
 de `L1` a `L2`, edita `40 - Ansichten/Aktuelles Niveau.base` y cambia esa línea.
