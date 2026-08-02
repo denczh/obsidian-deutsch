@@ -1,13 +1,14 @@
 filters:
   and:
     - 'note.type == "vocab"'
-    - 'note.source == "tutor-extra"'
+    - 'note.source != "voice-session"'
     - 'note.status == "new"'
 views:
   - type: table
     name: Nicht gesprochen
     order:
       - file.name
+      - note.source
       - note.pos
       - note.article
       - note.inflection

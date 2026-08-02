@@ -35,6 +35,7 @@ inflection:  noun -> Plural            (-e, -en, Häuser, "-")
 pos:         noun | verb | adj | adv | prep | conj | pron | num | phrase
 source:      voice-session -> im Gespraech gesagt (Block VOCAB)
              tutor-extra   -> vom Tutor ergaenzt, nie gesagt (Block EXTRA)
+             manual        -> von mir haendisch hinzugefuegt, nie gesagt
 theme:       [alltag, reisen, ...]  -> siehe "50 - Ressourcen/Themenliste"
 status:      new | learning | known
 Drei Zeilen sind eine gesunde Wortschatznotiz. Wenn sie zehn ueberschreitet,

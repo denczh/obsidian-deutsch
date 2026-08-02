@@ -16,7 +16,7 @@ el prefijo `note.` en el archivo.
 | **Nach Thema** | tipo vocab o grammar | `theme`, luego nombre |
 | **Nicht in Anki** | `anki == false` y `status != "new"` | nivel, luego nombre |
 | **Ohne Beispiel** | `type == "vocab"` y `example` vacío | `created` asc |
-| **Nicht gesprochen** | `source == "tutor-extra"` y `status == "new"` | `created` asc |
+| **Nicht gesprochen** | `source != "voice-session"` y `status == "new"` | `created` asc |
 
 ## Notas
 
@@ -35,6 +35,10 @@ palabras que nunca dijiste, sin límite de cantidad. El riesgo obvio es que se
 acumulen como deberes que nunca haces. Esta vista las lista mientras siguen en
 `status: new`; en cuanto uses una en una sesión, ponla en `learning` y desaparece.
 Si crece sin parar, el problema no es la vista.
+
+Filtra por `source != "voice-session"`, no por `tutor-extra`, para que también
+recoja lo que añado a mano (`source: manual`). Cualquier palabra que no haya
+salido de mi boca en una sesión es una palabra sin estrenar, venga de donde venga.
 
 **Nach Thema sustituye a una carpeta por tema.** El tema vive en frontmatter como
 lista; las carpetas por tema son justo la jerarquía en competencia que hay que
