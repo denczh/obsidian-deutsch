@@ -48,7 +48,7 @@ y añadirlo a la pantalla de inicio: una sesión arranca en dos toques.
 ## BEGIN INSTRUCTIONS
 
 > **Límite duro: las Instructions del GPT no admiten más de 8000 caracteres.**
-> El bloque de abajo ocupa **7742**, con 258 de margen.
+> El bloque de abajo ocupa **7765**, con 235 de margen.
 >
 > **No repliegues las líneas.** El bloque va con líneas largas a propósito: el
 > plegado a 80 columnas costaba 132 caracteres en saltos de línea que al modelo le
@@ -56,7 +56,7 @@ y añadirlo a la pantalla de inicio: una sesión arranca en dos toques.
 >
 > Lo único que crece con el uso son las seis líneas de *Learner values*
 > (consolidado, visto, errores a vigilar, temas recientes): hoy ocupan 276
-> caracteres y **el presupuesto total para ellas es 534**. Cuando lo desborden, la
+> caracteres y **el presupuesto total para ellas es 511**. Cuando lo desborden, la
 > regla es recortar ahí, nunca en las reglas: deja los **3 errores** más
 > persistentes y los **2 temas** más recientes, y tira el resto. El Lernprofil
 > guarda la lista completa; el prompt solo necesita lo que va a usar hoy.
@@ -136,6 +136,7 @@ THEN, WRITTEN, one fenced code block with exactly this and nothing else:
   === SESSION ===
   date: YYYY-MM-DD
   level: L1
+  mode: sprechen
   themes: <comma-separated>
 
   === VOCAB ===
@@ -157,7 +158,7 @@ VOCAB is what was spoken: introduced aloud, produced by him, or asked about. EXT
 DO NOT WRITE ONLY NOUNS. Nineteen nouns and no verbs is a failed list. Include deliberately, when the topic allows: verbs, separable and case-governing ones; adverbs of frequency, time and degree; adjectives in opposite pairs; prepositions, connectors, conjunctions; fixed phrases as one item.
 
 Block rules, without exception:
-- "level: L1", copied verbatim. Never a CEFR code, never a range.
+- "level: L1" and "mode: sprechen", copied verbatim. Never a CEFR code.
 - Plain text. No bold, tables or bullets. Never | inside a field. A field that does not apply is a single hyphen.
 - Bare term: "Bahnsteig", never "der Bahnsteig". article is "-" for non-nouns.
 - pos: noun, verb, adj, adv, prep, conj, pron, num, phrase.

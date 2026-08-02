@@ -9,10 +9,13 @@ apalancamiento de todo el sistema. Plano, delimitado, sin prosa, sin markdown:
 diseñado para que un script lo pueda parsear y para que nada se rompa si pasa
 por un cliente de correo.
 
+## El bloque del modo Sprechen
+
 ```
 === SESSION ===
 date: YYYY-MM-DD
 level: L1
+mode: sprechen
 themes: reisen, gesundheit
 
 === VOCAB ===
@@ -36,6 +39,45 @@ ich bin gegangen zum Bahnhof | ich bin zum Bahnhof gegangen | word-order
 
 === END ===
 ```
+
+## El bloque del modo Wiederholung
+
+Cada modo emite el mismo formato, pero solo los bloques que le corresponden. El
+repaso no introduce vocabulario, así que no lleva `VOCAB` ni `EXTRA`; en cambio
+lleva `OK`, que ningún otro modo produce. Ver [[Modi]].
+
+```
+=== SESSION ===
+date: YYYY-MM-DD
+level: L1
+mode: wiederholung
+themes: -
+
+=== OK ===
+item | type
+Possessivartikel meine | grammar
+warten | vocab
+
+=== ERRORS ===
+what he wrote | correction | type
+ich helfe dich | ich helfe dir | case
+
+=== END ===
+```
+
+**`OK` es la única puerta de salida de la cola de repaso.** Un elemento en
+`learning` que aparece aquí pasa a `known` y desaparece de
+[[Schwachstellen.base|Schwachstellen]]; uno en `new` pasa a `learning` y
+desaparece de [[Nicht gesprochen.base|Nicht gesprochen]]. `error_count` no se
+toca nunca: es el registro histórico de cuánto costó algo.
+
+Por eso el prompt del repaso insiste tres veces en que **si hubo pista, no cuenta**.
+Ese bloque escribe ascensos en la bóveda; un modelo generoso te daría por sabido
+lo que no sabes.
+
+**La línea `mode:`** es lo que permite saber después de dónde vino cada error. Si
+un día `Schwachstellen` se llena de cosas que solo fallo por escrito, eso es
+información, no ruido.
 
 ## Los dos bloques de vocabulario
 
@@ -83,7 +125,9 @@ desnudo: `Bahnsteig`, nunca `der Bahnsteig`.
 - El carácter `|` nunca aparece dentro de un campo.
 - Un campo que no aplica se escribe como un solo guion.
 - Una línea por elemento. Sin líneas en blanco dentro de un bloque.
-- Los cinco encabezados de bloque siempre presentes, aunque el bloque esté vacío.
+- Todos los encabezados del modo, siempre presentes, aunque el bloque esté vacío.
+  Cinco en `sprechen`, tres en `wiederholung`.
+- La línea `mode:` siempre, y con el token exacto del modo.
 - Nombres de campo sin acentos ni caracteres especiales, aunque el contenido sí
   los lleve. Así las claves de parseo sobreviven a cualquier codificación.
 

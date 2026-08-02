@@ -44,6 +44,13 @@ sesiones; con ella, promocionar significa que lo viejo ya no sangra.
 Una estructura entra en *Consolidado* cuando la produzco correctamente, sin que
 me la pidan, en tres sesiones distintas. Si la vuelvo a fallar, retrocede.
 
+> **Cómo se vacía `Schwachstellen`, porque sin esto el criterio era imposible.**
+> `error_count` solo sube: nada lo baja nunca. Lo que retira un elemento de la
+> vista es marcarlo `status: known`, y lo que justifica marcarlo es el bloque `OK`
+> del modo [[Modus - Wiederholung|Wiederholung]]. Sin ese modo, *nada con
+> `error_count` mayor que 2* era literalmente inalcanzable y L1 no tenía salida.
+> Ver [[Modi]].
+
 ## Procedimiento al promocionar
 
 Tres sitios a mano, en este orden:
