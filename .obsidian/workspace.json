@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "2ac71555334896eb",
+        "id": "7e4a26857dcd11b2",
         "type": "tabs",
         "children": [
           {
-            "id": "5656f473a7909421",
+            "id": "31a95bf5bf85bd3c",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "20 - Wortschatz/L1/arbeiten.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "arbeiten"
+              "title": "New tab"
             }
           }
         ]
@@ -206,6 +202,7 @@
   },
   "active": "4952a17aef8a2258",
   "lastOpenFiles": [
+    "10 - Sitzungen/2026-08-01.md",
     "20 - Wortschatz/L1/arbeiten.md",
     "20 - Wortschatz/L1/legen.md",
     "20 - Wortschatz/L1/sitzen.md",
@@ -231,7 +228,6 @@
     "20 - Wortschatz/L1/öffnen.md",
     "20 - Wortschatz/L1/geben.md",
     "20 - Wortschatz/L1/sein.md",
-    "20 - Wortschatz/L1/zeigen.md",
     "00 - Start/Workflow.md.tmp.3180.8279628f1367",
     "00 - Start/Dashboard.md.tmp.3180.d37614ce079a",
     "50 - Ressourcen/Verarbeitung.md.tmp.3180.df5ecee41b8c",
