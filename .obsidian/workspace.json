@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "10 - Lektionen/L001.md",
+                "file": "50 - Ressourcen/Kommando - Commit.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "L001"
+              "title": "Kommando - Commit"
             }
           }
         ]
@@ -170,8 +170,8 @@
             "state": {
               "type": "review-queue-list-view",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "review-queue-list-view"
+              "icon": "SpacedRepIcon",
+              "title": "Notes Review Queue"
             }
           },
           {
@@ -204,8 +204,12 @@
       "obsidian-spaced-repetition:Review flashcards": false
     }
   },
-  "active": "4952a17aef8a2258",
+  "active": "31a95bf5bf85bd3c",
   "lastOpenFiles": [
+    "50 - Ressourcen/Lektionen.md.tmp.20588.f25ab98b68fd",
+    "50 - Ressourcen/Kommando - Lektüre.md.tmp.20588.327a7570af19",
+    "50 - Ressourcen/Configuration.md",
+    "50 - Ressourcen/Configuration.md.tmp.20588.33fcce3bca73",
     "10 - Lektionen/L001.md",
     "50 - Ressourcen/Kommando - Vorlesen.md",
     "50 - Ressourcen/Kommando - Studium.md",
@@ -232,15 +236,11 @@
     "20 - Wortschatz/L1/gehen.md",
     "20 - Wortschatz/L1/schauen.md",
     "20 - Wortschatz/L1/schreiben.md",
-    "20 - Wortschatz/L1/benutzen.md",
-    "20 - Wortschatz/L1/aufbewahren.md",
     "00 - Start/Workflow.md.tmp.3180.8279628f1367",
     "00 - Start/Dashboard.md.tmp.3180.d37614ce079a",
     "50 - Ressourcen/Verarbeitung.md.tmp.3180.df5ecee41b8c",
     "20 - Wortschatz/L1/arbeiten.md.tmp.3180.598f4395b10d",
     "90 - Vorlagen/V - Verb.md.tmp.3180.d604104bb310",
-    "00 - Start/Dashboard.md.tmp.16816.60daefa6a05e",
-    "40 - Ansichten/Ansichten - Referenz.md.tmp.16816.47e05ac619cb",
-    "40 - Ansichten/Ansichten - Referenz.md.tmp.16816.30c610774224"
+    "00 - Start/Dashboard.md.tmp.16816.60daefa6a05e"
   ]
 }

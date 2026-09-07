@@ -5,132 +5,130 @@ command: /de vorlesen
 updated: 2026-09-07
 ---
 
-# `/de vorlesen` — fase 3 de 5
+# `/de vorlesen` — phase 3 of 5
 
-Especificación de la fase. **Claude la lee al ejecutar el comando**; la skill `de`
-es solo el enrutador. Ver [[Lektionen]].
+> `{TARGET}` = German · `{KNOWN}` = Spanish · `{LEARNER}` = Pedro → [[Configuration]]
 
-La parte 1 la leí en pantalla. **Esta es de oído**, y es la única fase donde el
-material es el mismo pero el canal cambia. Eso es deliberado: escuchar lo que ya
-has leído es la forma más barata de convertir reconocimiento en comprensión.
+Specification of the phase. **Claude reads this when the command runs**; the `de`
+skill is only the router. See [[Lektionen]].
 
-## Puerta
+Part 1 was read on a screen. **This one is by ear**, and it is the only phase where
+the material is the same but the channel changes. That is deliberate: listening to
+what you have already read is the cheapest way to turn recognition into
+comprehension.
 
-`phase_1_lektuere: true` **y** `phase_2_studium: true`.
+## Gate
 
-Y la comprobación fina: **la fase 2 tiene que haberse superado con una sesión de
-Frage**, no solo de Sequenz. Si el único bloque de Studium está vacío porque fue
-exposición, la fase 2 no demuestra recuperación y esta no se abre. Decirlo, no
-dejarlo pasar.
+`phase_1_lektuere: true` **and** `phase_2_studium: true`.
 
-## 1. Leer la lección
+Plus the fine check: **phase 2 has to have been passed with a Frage session**, not
+only a Sequenz one. If the only Studium block is empty because it was exposure,
+phase 2 proves no retrieval and this phase does not open. Say so; do not let it
+through.
 
-De la nota de `10 - Lektionen/`:
+## 1. Read the lesson
 
-- **la historia parte 1**, completa. Hay que continuarla, no empezar otra.
-- **el vocabulario y la gramática de la lección**, que es lo único que se puede
-  usar.
-- los bloques de Studium: **lo que falló en la fase 2 tiene que aparecer en la
-  parte 2**. Si `Schrank` se falló ayer, hoy sale en la historia.
+From the note in `10 - Lektionen/`:
 
-Y del resto de la bóveda, todo el vocabulario con `status != "new"`: es el fondo
-de armario del que puede tirar el texto.
+- **story part 1**, complete. It has to be continued, not replaced.
+- **the lesson's vocabulary and grammar**, which is the only thing that may be used.
+- the Studium blocks: **what failed in phase 2 has to appear in part 2**. If
+  `Schrank` was missed yesterday, it shows up in today's story.
 
-## 2. Escribir la parte 2
+And from the rest of the vault, all vocabulary with `status != "new"`: that is the
+background stock the text may draw on.
 
-**Mismos personajes**, continuando donde quedó la parte 1. Se pueden introducir
-personajes nuevos si la historia lo pide, pero no palabras nuevas.
+## 2. Write part 2
 
-- **150 a 200 palabras.** Más corto que la parte 1 a propósito: esto se escucha, y
-  escuchando cansa antes. Además tiene que compartir los 8000 caracteres con las
-  preguntas y las reglas.
-- **Sin vocabulario nuevo.** Cada palabra de contenido tiene que estar ya en la
-  bóveda: la de esta lección o la de lecciones anteriores. Comprobarlo palabra por
-  palabra, no de memoria.
-- **Recicla lo que falló en la fase 2**, sin señalarlo.
-- Cierra la historia. La lección acaba aquí; no dejar cabos.
+**Same characters**, continuing where part 1 stopped. New characters are allowed
+if the story needs them; new words are not.
 
-**Si una palabra nueva es inevitable** —a veces la sintaxis pide un conector que
-no está—: máximo dos, y hay que crear su nota en la bóveda antes de generar el
-prompt, con `source: lektuere` y la `lektion` en curso. **La palabra nueva la
-registro yo aquí; el GPT no introduce nada.**
+- **150 to 200 words.** Shorter than part 1 on purpose: this is heard, and
+  listening tires sooner. It also has to share 8000 characters with the questions
+  and the rules.
+- **No new vocabulary.** Every content word has to be in the vault already: this
+  lesson's or an earlier one's. Check word by word, not from memory.
+- **Recycles what failed in phase 2**, without pointing at it.
+- Close the story. The lesson ends here; leave no loose ends.
 
-## 3. El Rückblick
+**If a new word is unavoidable** — sometimes the syntax demands a connector that
+is not there — at most two, and their notes have to be created in the vault before
+generating the prompt, with `source: lektuere` and the current `lektion`. **The
+new word is registered here; the GPT introduces nothing.**
 
-Un párrafo de **tres o cuatro frases en alemán** resumiendo la parte 1, para
-situar la escena antes de leer la parte 2. Máximo 250 caracteres.
+## 3. The Rückblick
 
-Nunca oí la parte 1: la leí. Meter la parte 1 completa en el prompt costaría 1300
-caracteres que no hay, así que el resumen da la continuidad por una décima parte
-del precio.
+One paragraph of **three or four sentences in `{TARGET}`** summarising part 1, to
+set the scene before part 2 is read. Maximum 250 characters.
 
-## 4. Las preguntas
+Part 1 was never heard, only read. Putting all of part 1 into the prompt would cost
+1300 characters that are not available, so the summary buys the continuity for a
+tenth of the price.
 
-**Cinco o seis, numeradas, escritas aquí y fijas en el prompt.**
+## 4. The questions
 
-Igual que la lista barajada de Studium: si el GPT las improvisa, `nächste` y
-`vorherige` no significan nada porque cada turno inventa una pregunta distinta.
-Fijas y numeradas, la navegación funciona.
+**Five or six, numbered, written here and fixed in the prompt.**
 
-Formato de cada línea:
+Same reason as the shuffled list in Studium: if the GPT improvises them, `nächste`
+and `vorherige` mean nothing, because every turn invents a different question.
+Fixed and numbered, the navigation works.
+
+Line format:
 
 ```
-N. Pregunta en alemán? -> muss enthalten: el contenido que la respuesta debe llevar
+N. Question in {TARGET}? -> muss enthalten: the content the answer has to carry
 ```
 
-El contenido esperado es **para que el GPT corrija**, no para leerlo. Está escrito
-en el prompt que no se lee nunca en voz alta, y que cualquier alemán
-gramaticalmente correcto que lleve ese contenido cuenta como acierto.
+The expected content is **for the GPT to mark with**, not to read out. The prompt
+says it is never spoken, and that any grammatically correct `{TARGET}` carrying
+that content counts as right.
 
-Qué preguntar, en este orden: primero una global —de qué iba—, luego detalle.
-**Números, negaciones y quién hizo qué**: eso es lo que se escapa escuchando.
+What to ask, in this order: one global question first — what it was about — then
+detail. **Numbers, negations and who did what**: that is what gets missed by ear.
 
-## 5. Generar el prompt
+## 5. Generate the prompt
 
-Sustituir `{{RUECKBLICK}}`, `{{TEXT}}`, `{{FRAGEN}}` y `{{LEKTION}}` — este último
-**aparece dos veces**.
+Substitute `{{RUECKBLICK}}`, `{{TEXT}}`, `{{FRAGEN}}` and `{{LEKTION}}` — the last
+one **appears twice**.
 
-**Contar los caracteres y decir el número.** La plantilla fija ocupa **5666**. Con
-un texto de 200 palabras, un Rückblick de 250 caracteres y seis preguntas, sale
-alrededor de **7600**. Es la fase más apretada de las tres: **si pasa de 8000,
-acortar el texto**, nunca las reglas.
+**Count the characters and say the number.** The fixed template is **5666**. With a
+200-word text, a 250-character Rückblick and six questions it comes to around
+**7600**. This is the tightest of the three phases: **if it goes over 8000, shorten
+the text**, never the rules.
 
-No plegar las líneas.
+Do not re-wrap the lines.
 
-## 6. Entregarlo
+## 6. Hand it over
 
-Para **sobrescribir** las Instructions del GPT permanente `Deutsch - Vorlesen`.
+For **overwriting** the Instructions of the permanent GPT `Deutsch - Vorlesen`.
 
-Y decir en el chat cuántas palabras tiene el texto y cuántas preguntas hay, pero
-**no el texto**. Si lo escribo aquí, lo lee, y entonces la fase 3 se convierte en
-otra fase 1.
-**Y guardar el prompt entregado** en la nota de lección, bajo `## Prompt - Vorlesen`,
-dentro de un bloque cercado. **No es reproducible**: la historia se genera y no se puede volver a
-escribir igual. Si un GPT se
-comporta raro, lo único que permite averiguar por qué es el prompt exacto que se
-pegó.
+Say in the chat how many words the text has and how many questions there are, but
+**not the text**. Writing it here means it gets read, and then phase 3 becomes
+another phase 1.
 
-Guardarlo en la nota **no** contradice la regla del transcript: la nota es la
-procedencia y se lee en casa, no durante la sesión de escucha.
+**And save the delivered prompt** in the lesson note, under `## Prompt - Vorlesen`.
+**It is not reproducible**: the story is generated and cannot be written the same
+way twice. Saving it does not contradict the transcript rule — the note is
+provenance and gets read at home, not during the listening session.
 
-## 7. Procesar el bloque
+## 7. Process the block
 
-1. Pegar el bloque crudo en `## Roh - Vorlesen` de la nota de lección, con fecha.
-2. **`ERRORS` de tipo producción** → en la nota que corresponda: `last_error` a
-   hoy, `error_count` +1, `status: learning`.
-3. **`ERRORS` de tipo `comprehension`** → aquí está la diferencia. Si el fallo fue
-   una palabra concreta, va a su nota. Si fue *perdí el hilo de la frase*, no hay
-   nota a la que apuntar: eso va a **errores recurrentes del [[Lernprofil]]**, que
-   es donde viven los patrones sin objeto.
-4. Sumar `error_count` en el frontmatter de la lección.
-5. `phase_3_vorlesen: true`.
+1. Raw block into `## Roh - Vorlesen` of the lesson note, with the date.
+2. **`ERRORS` of production type** → in the note concerned: `last_error` to today,
+   `error_count` +1, `status: learning`.
+3. **`ERRORS` of type `comprehension`** → here is the difference. If the failure
+   was one specific word, it goes to that note. If it was *I lost the thread of the
+   sentence*, there is no note to point at: that goes to **recurring mistakes in
+   [[Lernprofil]]**, which is where patterns without an object live.
+4. Add up `error_count` in the lesson frontmatter.
+5. Set `phase_3_vorlesen: true`.
 
-**Esta fase no emite `OK`, y es a propósito.** Las respuestas son sobre la
-historia, no sobre elementos concretos: un acierto no se puede imputar a ninguna
-nota. Un `OK` sin destinatario no promociona nada y solo daría la ilusión de
-progreso. Los ascensos los dan Studium y Gramatik, donde cada ítem *es* una nota.
+**This phase emits no `OK`, and that is deliberate.** The answers are about the
+story, not about individual items: a correct answer cannot be attributed to any
+note. An `OK` with no addressee promotes nothing and would only create the illusion
+of progress. Promotions come from Studium and Gramatik, where each item *is* a note.
 
-## La plantilla del prompt
+## The prompt template
 
 ```
 You are Pedro's German reading partner. He is listening on his phone, probably walking. You read him a story and then make him talk about it in German.
@@ -242,23 +240,24 @@ FINALLY, if a mail Action is available, call it with that block as the body and 
 4. Nothing new: no word, no question, no story beyond the text.
 ```
 
-## Por qué el prompt está así
+## Why the prompt is written that way
 
-**La regla del transcript, escrita cuatro veces.** Un modelo servicial ofrece la
-transcripción en cuanto fallas una pregunta, y con eso se pierde la fase entera:
-leyendo, esto es la fase 1 otra vez. Está en la sección del texto, en su propio
-encabezado en mayúsculas, en las reglas del bloque y en las cuatro reglas finales.
+**The transcript rule, written four times.** A helpful model offers the transcript
+the moment a question is missed, and that loses the whole phase: read, this is
+phase 1 again. It appears in the text section, in its own heading in capitals, in
+the block rules and in the four final rules.
 
-**El texto no cambia entre lecturas.** Es la ventaja de tenerlo fijo en las
-Instructions en vez de improvisado: `noch einmal` repite *las mismas palabras*, y
-así la segunda escucha sirve de algo. Cuando el texto se improvisaba, "repítelo"
-dependía de que el modelo recordara lo que había dicho.
+**The text does not change between readings.** That is the advantage of having it
+fixed in the Instructions instead of improvised: `noch einmal` repeats *the same
+words*, so the second listening is worth something. When the text was improvised,
+"say it again" depended on the model remembering what it had said.
 
-**Comprensión y producción se marcan distinto y se registran distinto.** *No lo
-entendí* y *lo dije mal* son problemas diferentes con arreglos diferentes. Si
-[[Schwachstellen.base|Schwachstellen]] se llena de `comprehension`, el diagnóstico
-es que el input va demasiado rápido, no que falte vocabulario.
+**Comprehension and production are marked differently and logged differently.**
+*I did not understand it* and *I said it wrong* are different problems with
+different fixes. If [[Schwachstellen.base|Schwachstellen]] fills up with
+`comprehension`, the diagnosis is that the input is too fast, not that vocabulary
+is missing.
 
-**Nada de "hast du verstanden?".** A una pregunta de sí o no se contesta sí sin
-haber entendido. Solo valen preguntas que únicamente puede responder quien
-entendió.
+**No "hast du verstanden?".** A yes-or-no question gets answered yes without
+understanding. Only questions that can be answered exclusively by someone who
+understood are worth asking.

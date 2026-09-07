@@ -3,209 +3,204 @@ type: reference
 updated: 2026-09-07
 ---
 
-# El ciclo de lecciones
+# The lesson cycle
 
-Una lección es una unidad de cinco fases con puerta: `L001`, `L002`… Cada fase se
-lanza con un comando, y cada comando comprueba que la anterior está superada. Eso
-es lo que convierte cinco herramientas en una lección.
+> `{TARGET}` = German · `{KNOWN}` = Spanish · `{LEARNER}` = Pedro → [[Configuration]]
+
+A lesson is a unit of five gated phases: `L001`, `L002`… Each phase is launched
+with a command, and each command checks that the previous one has been passed.
+That is what turns five tools into a lesson.
 
 ```mermaid
 flowchart TD
-    A["/de lektüre<br/>Claude, en casa"] -->|historia parte 1<br/>+ notas en la boveda| B["/de studium<br/>GPT en el movil"]
-    B -->|bloque OK y ERRORS| C["/de vorlesen<br/>GPT en el movil"]
-    C -->|bloque ERRORS| D["/de gramatik<br/>GPT en el movil"]
-    D -->|bloque OK y ERRORS| E["/de commit<br/>Claude, en casa"]
-    E -->|leccion archivada| F["L002"]
+    A["/de lektüre<br/>Claude, at the desk"] -->|story part 1<br/>+ notes in the vault| B["/de studium<br/>GPT on the phone"]
+    B -->|OK and ERRORS block| C["/de vorlesen<br/>GPT on the phone"]
+    C -->|ERRORS block| D["/de gramatik<br/>GPT on the phone"]
+    D -->|OK and ERRORS block| E["/de commit<br/>Claude, at the desk"]
+    E -->|lesson archived| F["L002"]
 ```
 
-## Quién hace qué, ahora
+## Who does what now
 
-| | Antes | Ahora |
+| | Before | Now |
 |---|---|---|
-| Fuente de verdad | la bóveda, copiada a mano al prompt | **la bóveda, leída en vivo por Claude** |
-| Genera los prompts | yo, a mano, cada 4-6 sesiones | **Claude, cada lección** |
-| ChatGPT | tutor con memoria copiada | **solo la voz en el móvil** |
-| *Learner values* | seis líneas que envejecían en silencio | **no existe** |
+| Source of truth | the vault, hand-copied into the prompt | **the vault, read live by Claude** |
+| Generates the prompts | the learner, by hand, every 4-6 sessions | **Claude, every lesson** |
+| ChatGPT | a tutor with hand-copied memory | **only the voice on the phone** |
+| *Learner values* | six lines that went stale silently | **does not exist** |
 
-**Ese último punto es el que más gana.** El coste recurrente del sistema era
-mantener sincronizado un bloque de seis líneas dentro del prompt; si se me
-olvidaba, el tutor seguía funcionando en el nivel del mes pasado sin avisar. Al
-generarse el prompt desde la bóveda en cada lección, no hay copia que envejecer.
+**That last row is the biggest win.** The recurring cost of the system used to be
+keeping a six-line block inside the prompt in sync; forget it and the tutor kept
+working at last month's level without saying so. With the prompt generated from
+the vault every lesson, there is no copy left to go stale.
 
-## Las cinco fases
+## The five phases
 
-### 1. `/de lektüre` — Claude, en casa
+### 1. `/de lektüre` — Claude, at the desk
 
-**Especificación: [[Kommando - Lektüre]].** Escrita.
+**Spec: [[Kommando - Lektüre]].**
 
+Read the vault: which words are already there, what gets failed, which themes have
+been used. Ask for a theme. Write a **story with characters** in two parts and
+hand over the first, which is where the new nouns, verbs, adjectives, expressions
+and grammar come in. Create the notes with their `lektion` and `cefr`, and store
+the story in the lesson note.
 
-Leo la bóveda: qué palabras ya tengo, qué fallo, qué temas he hecho. Pregunto el
-tema. Escribo una **historia con personajes** en dos partes y te doy la primera,
-que es donde entran los sustantivos, verbos, adjetivos, expresiones y gramática
-nuevos. Creo las notas con `lektion: L001` y su `cefr`, y guardo la historia en la
-nota de lección.
+If the theme has been used before, that is taken into account so the lesson brings
+something new instead of repeating.
 
-Si el tema ya lo hiciste, lo tengo en cuenta para meter cosas nuevas en vez de
-repetir.
+### 2. `/de studium` — GPT on the phone
 
-### 2. `/de studium` — GPT en el móvil
+**Spec: [[Kommando - Studium]].** Prompt template: 5319 fixed characters, ~1050
+for a list of 17 items, **6349 in total**.
 
-**Especificación: [[Kommando - Studium]].** Escrita. Plantilla del prompt: 5319
-caracteres fijos, ~1050 la lista de 17 elementos, **6349 en total**.
+Check phase 1 is done. Generate the **Studium** GPT prompt with the lesson's
+vocabulary, already shuffled and numbered, to be pasted over the existing GPT's
+Instructions. Three modes: `Sequenz`, `Frage auf Deutsch`, `Frage auf Spanisch`.
 
+**The 70/30.** The vocabulary in the prompt is not only the lesson's: **70% from
+the current lesson, 30% from `Schwachstellen` and never-produced words of earlier
+lessons.** Without that, every lesson is a closed bucket and the system learns
+well and retains badly — the classic failure of unit-based methods. It costs the
+learner nothing, because the prompt is generated here.
 
-Compruebo que la fase 1 está hecha. Genero el prompt del GPT **Studium** con el
-vocabulario de la lección, ya barajado y numerado, y tú lo pegas sobre las
-Instructions del GPT existente. Tres modos: `Sequenz`, `Frage auf Deutsch`,
-`Frage auf Spanisch`. Comandos: `noch einmal`, `wiederhole`, `vorherige`,
-`nächste`, y en Sequenz también `Spanisch`.
+**And the random order is shuffled here**, once, and numbered inside the prompt. A
+model cannot hold a shuffled list across turns: it loses it and repeats. With the
+list fixed, `vorherige` actually works.
 
-**El 70/30.** El vocabulario que va al prompt no es solo el de la lección: **70%
-de la lección actual y 30% de `Schwachstellen` y palabras sin estrenar de
-lecciones anteriores.** Sin eso, cada lección es un cubo cerrado y el sistema
-aprende bien y retiene mal, que es el fallo clásico de los métodos por unidades.
-No te cuesta nada porque el prompt lo genero yo.
+### 3. `/de vorlesen` — GPT on the phone
 
-**Y el orden aleatorio lo barajo yo**, una vez, y va numerado dentro del prompt.
-Un modelo no puede mantener una lista barajada entre turnos: la pierde y repite.
-Con la lista fija, `vorherige` funciona de verdad.
+**Spec: [[Kommando - Vorlesen]].** 5666 fixed plus the text and the questions,
+**~7575 in total**. The tightest of the three.
 
-### 3. `/de vorlesen` — GPT en el móvil
+Check phases 1 and 2. Write **part 2 of the story** — same characters, **no new
+vocabulary** — and put it literally inside the prompt. The GPT starts by reading
+it aloud.
 
-**Especificación: [[Kommando - Vorlesen]].** Escrita. Plantilla: 5666 fijos más
-el texto y las preguntas, **~7575 en total**. Es la fase más apretada de las tres.
+Having the text fixed in the Instructions has an advantage an improvised text did
+not: **`noch einmal` repeats exactly the same words**, instead of depending on the
+model remembering what it made up.
 
+Then `frag` asks questions about the story, **answered in `{TARGET}`**, with strict
+correction of vocabulary, grammar and pronunciation. `nächste` moves on.
 
-Compruebo las fases 1 y 2. Escribo la **parte 2 de la historia** —mismos
-personajes, **sin vocabulario nuevo**— y la meto literalmente dentro del prompt.
-El GPT empieza leyéndotela.
+> **The text is never written in the chat.** If it is written it gets read, and
+> reading is not this phase. Part 1 was already read on a screen; this one is by ear.
 
-Que el texto esté fijo en las Instructions tiene una ventaja que no tenía el modo
-Hören: **`noch einmal` repite exactamente lo mismo**, en vez de depender de que el
-modelo recuerde lo que improvisó.
+### 4. `/de gramatik` — GPT on the phone
 
-Después, `frag` te hace preguntas sobre la historia y **contestas en alemán**, con
-corrección estricta de vocabulario, gramática y pronunciación. `nächste` pasa a la
-siguiente.
+**Spec: [[Kommando - Gramatik]].** 5532 fixed plus the rule and the sentences,
+**~6800 in total**. The roomiest of the three.
 
-> **El texto no se escribe nunca en el chat.** Si está escrito, lo lees, y leer no
-> es esta fase. La parte 1 ya la leíste en pantalla; esta es de oído.
+Check phases 1, 2 and 3. Generate a GPT with sentences in `{KNOWN}` containing the
+lesson's grammar. They get translated aloud; it corrects; repeat; it corrects
+again. `nächste` moves to another.
 
-### 4. `/de gramatik` — GPT en el móvil
+**With an exit after three attempts.** *"Until the sentence comes out right"* can
+fail to terminate, and a stuck sentence makes you abandon the session: on the third
+attempt it gives the sentence, logs the error and moves on.
 
-**Especificación: [[Kommando - Gramatik]].** Escrita. Plantilla: 5532 fijos más
-la regla y las frases, **~6800 en total**. La más holgada de las tres.
+### 5. `/de commit` — Claude, at the desk
 
+**Spec: [[Kommando - Commit]].** **All five phases are specified.**
 
-Compruebo las fases 1, 2 y 3. Genero un GPT con frases en español que contienen la
-gramática de la lección. Las traduces hablando; corrige; repites; corrige. Con
-`nächste` pasas a otra.
+Check all four. Process any outstanding blocks, run the vault health check, commit,
+mark the lesson `closed` and **archive it, do not delete it**: it is what will tell
+you, six months from now, which story taught you `Bahnsteig`.
 
-**Con una salida a los tres intentos.** "Hasta que la diga correctamente" puede no
-terminar nunca, y una frase atascada te hace abandonar la sesión: al tercer
-intento te da la frase, la registra como error y pasa a la siguiente.
+## Gates are proven with evidence
 
-### 5. `/de commit` — Claude, en casa
+A passed phase is not a box that gets ticked: it is **its closing block**.
 
-**Especificación: [[Kommando - Commit]].** Escrita. **Las cinco fases están
-especificadas.**
+Phases 2, 3 and 4 end by emitting the block in the chat, and the GPT mails it with
+the Make Action. It gets pasted back when the next command is launched. No block,
+no passed phase.
 
+That solves two things at once: the gate checks something real, and **spoken errors
+enter the vault**. Without the block there would be three practice phases that
+record nothing, `Schwachstellen` empty forever, and four gates guarding a progress
+nobody measures.
 
-Compruebo las cuatro. Proceso los bloques que falten, hago commit, marco la
-lección `closed` y **la archivo, no la borro**: es lo que dentro de seis meses te
-dirá qué historia te enseñó `Bahnsteig`.
-
-## Las puertas se demuestran con evidencia
-
-Una fase superada no es una casilla que marcas: es **su bloque de cierre**.
-
-Las fases 2, 3 y 4 acaban emitiendo el bloque en el chat, y el GPT lo manda por
-correo con la Action de Make. Tú me lo pegas al lanzar el comando siguiente. Si no
-hay bloque, no hay fase superada.
-
-Eso resuelve dos cosas a la vez: la puerta comprueba algo real, y **tus errores
-hablados entran en la bóveda**. Sin bloque, tendrías tres fases de práctica que no
-registran nada, `Schwachstellen` vacía para siempre y cuatro puertas vigilando un
-progreso que nadie mide.
-
-| Fase | Emite | Por qué |
+| Phase | Emits | Why |
 |---|---|---|
-| 1. Lektüre | nada, escribo yo las notas | estás conmigo |
-| 2. Studium | `OK` + `ERRORS` | es recuperación: hay acierto y hay fallo |
-| 3. Vorlesen | `ERRORS`, con `comprehension` | sin `VOCAB`: no entra nada nuevo |
-| 4. Gramatik | `OK` + `ERRORS` | igual que Studium |
+| 1. Lektüre | nothing, the notes are written directly | Claude is in the room |
+| 2. Studium | `OK` + `ERRORS` | it is retrieval: there are hits and misses |
+| 3. Vorlesen | `ERRORS`, including `comprehension` | no `VOCAB`: nothing new enters |
+| 4. Gramatik | `OK` + `ERRORS` | same as Studium |
 
-Formato en [[E-Mail-Format]]. El bloque `OK` sigue siendo la única puerta de
-salida de [[Schwachstellen.base|Schwachstellen]].
+Format in [[E-Mail-Format]]. The `OK` block is still the only exit from
+[[Schwachstellen.base|Schwachstellen]].
 
-## `cefr` y `lektion` son cosas distintas
+## `cefr` and `lektion` are different things
 
-Esto es lo que hay que no confundir nunca:
+This is the one thing never to confuse:
 
-- **`cefr: A12`** es **la dificultad de la palabra** en la escala internacional.
-  Es una propiedad del vocabulario, no mía, y **decide la carpeta**. Doce tokens
-  cerrados: `A11 A12 A21 A22 B11 B12 B21 B22 C11 C12 C21 C22`.
-- **`lektion: L001`** es **cuándo entró en mi bóveda**. Es un campo, nunca una
-  carpeta: la secuencia no tiene techo y una carpeta por lección serían cincuenta
-  directorios de doce palabras al año.
+- **`cefr: A12`** is **the difficulty of the word** on the international scale. It
+  is a property of the vocabulary, not of the learner, and it **decides the
+  folder**. Twelve closed tokens: `A11 A12 A21 A22 B11 B12 B21 B22 C11 C12 C21 C22`.
+- **`lektion: L001`** is **when it entered the vault**. A field, never a folder:
+  the sequence has no ceiling, and one folder per lesson would be fifty
+  directories of a dozen words a year.
 
-Ya no existe un campo `level`. Tenerlo significaba dos cosas llamadas nivel, y eso
-fue lo que rompió las vistas en agosto. Ver [[Niveaus]].
+There is no `level` field any more. Having one meant two things called level, and
+that is what broke the views in August. See [[Niveaus]].
 
-**Lo que se perdió al quitarlo, dicho sin adornos:** el criterio de promoción. Con
-lecciones, "progreso" pasa a significar cuántas he hecho, que es actividad y no
-capacidad. El `status: known` por elemento y `Schwachstellen` siguen midiendo
-dominio, así que no me quedo ciego. Pero si dentro de tres meses echo de menos una
-definición de *he mejorado*, es esto lo que falta.
+**What was lost by removing it, plainly:** the promotion criterion. With lessons,
+"progress" comes to mean how many have been done, which is activity and not
+ability. `status: known` per item and `Schwachstellen` still measure mastery, so
+nothing goes blind. But if a definition of *I have improved* is missed three months
+from now, this is what is missing.
 
-## Lo que este ciclo jubila
+## What this cycle retired
 
-- [[Modi]], [[Modus - Wiederholung]] y `Export - Wiederholung`: `Studium` hace su
-  trabajo, con datos frescos y sin fichero que regenerar.
-- [[Modus - Hören]]: `Vorlesen` lo sustituye y lo mejora, porque el texto es fijo.
-- El bloque *Learner values* y su mantenimiento.
+The whole earlier "modes" architecture — `Modi`, `Modus - Hören`,
+`Modus - Wiederholung` and `Export - Wiederholung` — was deleted on 2026-09-07,
+once all five phases were specified. `Studium` does the drilling with fresh data
+and no file to regenerate; `Vorlesen` replaces the listening mode and improves on
+it, because the text is fixed.
 
-**[[Modus - Sprechen]] sobrevive**, fuera del ciclo. La conversación libre
-caminando no es ninguna de las cinco fases y es lo único que es de verdad
-conversación. Sigue siendo un GPT permanente con su prompt de 7765 caracteres y su
-propio bloque `mode: sprechen`, y sus sesiones siguen viviendo en `10 - Sitzungen`.
+**[[Modus - Sprechen]] survives**, outside the cycle. Free conversation while
+walking is none of the five phases and is the only thing that is genuinely
+conversation. It stays a permanent GPT with its own prompt and its own
+`mode: sprechen` block, and its sessions still live in `10 - Sitzungen`.
 
-## El chequeo de salud vive en la fase 5
+## The health check lives in phase 5
 
-`/de commit` es el único momento del ciclo que mira la bóveda entera **después de
-que todo haya pasado**, así que es donde se cazan los fallos que no dan error:
-tokens `cefr` inválidos, carpetas que no coinciden con su campo, enlaces rotos,
-`.base` que no parsean, y los dos números que importan —`Schwachstellen` creciendo
-sin que nada llegue a `known`, y `Nicht gesprochen` creciendo lección tras
-lección—. Detalle en [[Kommando - Commit]].
+`/de commit` is the only moment in the cycle that looks at the whole vault **after
+everything has happened**, so it is where the failures that raise no error get
+caught: invalid `cefr` tokens, folders that do not match their field, broken links,
+`.base` files that do not parse — and the two numbers that matter,
+`Schwachstellen` growing with nothing reaching `known`, and `Nicht gesprochen`
+growing lesson after lesson. Detail in [[Kommando - Commit]].
 
-## Los prompts se guardan
+## The prompts are saved
 
-Los tres prompts generados van dentro de la nota de lección, en sus secciones
-`## Prompt - *`. **No son reproducibles**: el barajado de Studium es aleatorio, y
-la historia y las frases se generan cada vez. Si un GPT se comporta raro, lo único
-que permite averiguar por qué es el prompt exacto que se pegó.
+All three generated prompts go inside the lesson note, in their `## Prompt - *`
+sections. **They are not reproducible**: the Studium shuffle is random, and the
+story and the sentences are generated fresh each time. If a GPT behaves oddly, the
+exact pasted prompt is the only thing that makes it possible to find out why.
 
-Guardar el de Vorlesen no contradice la regla del transcript: la nota es
-procedencia y se lee en casa, no durante la sesión de escucha.
+Saving the Vorlesen one does not contradict the transcript rule: the note is
+provenance and gets read at the desk, not during the listening session.
 
-## Cómo está implementado
+## How it is implemented
 
-Los comandos son una **skill** llamada `de`, que es solo un **enrutador**: valida
-la fase, lee el estado en `10 - Lektionen/`, comprueba la puerta y después lee la
-especificación de la fase en `50 - Ressourcen/Kommando - *.md` y la sigue.
+The commands are a **skill** called `de`, which is only a **router**: it validates
+the phase, reads the state in `10 - Lektionen/`, checks the gate, and then reads the
+phase's specification in `50 - Ressourcen/Kommando - *.md` and follows it.
 
-**La lógica vive en la bóveda, no en la skill.** Si quiero cambiar cómo escribe la
-historia o cuántas palabras introduce, edito [[Kommando - Lektüre]] en Obsidian.
-Es coherente con que la bóveda sea la fuente de verdad: también lo es de cómo
-funciona el sistema, no solo de qué he aprendido.
+**The logic lives in the vault, not in the skill.** To change how the story gets
+written or how many words come in, edit [[Kommando - Lektüre]] in Obsidian. That is
+consistent with the vault being the source of truth: it is the source of truth for
+how the system works, not only for what has been learned.
 
-Si una especificación no existe, la skill lo dice y para. No improvisa una versión.
+If a specification does not exist, the skill says so and stops. It does not
+improvise a version.
 
-## Estado
+## Status
 
-| Lección | Tema | Fases | Notas |
+| Lesson | Theme | Phases | Notes |
 |---|---|---|---|
-| [[L001]] | `wohnen` | 1 de 5 | reconstruida retroactivamente, no siguió el flujo |
+| [[L001]] | `wohnen` | 1 of 5 | reconstructed retroactively, did not follow the flow |
 
-**L002 será la primera lección de verdad.**
+**L002 will be the first real lesson.**

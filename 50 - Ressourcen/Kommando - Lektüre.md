@@ -5,146 +5,147 @@ command: /de lektüre
 updated: 2026-09-07
 ---
 
-# `/de lektüre` — fase 1 de 5
+# `/de lektüre` — phase 1 of 5
 
-Especificación de la fase. **Claude la lee al ejecutar el comando**; la skill `de`
-es solo el enrutador. Si quiero cambiar cómo funciona la fase, edito esta nota, no
-la skill. Ver [[Lektionen]].
+> `{TARGET}` = German · `{KNOWN}` = Spanish · `{LEARNER}` = Pedro → [[Configuration]]
 
-## Puerta
+Specification of the phase. **Claude reads this when the command runs**; the `de`
+skill is only the router. To change how the phase behaves, edit this note, not the
+skill. See [[Lektionen]].
 
-Ninguna. Es la primera fase. Pero **no se puede abrir una lección nueva si la
-anterior está sin cerrar**: si la última nota de `10 - Lektionen/` tiene
-`closed:` vacío, hay que decírmelo y ofrecer dos salidas —continuar esa lección o
-abandonarla explícitamente— antes de crear otra.
+## Gate
 
-## 1. Leer la bóveda
+None — it is the first phase. But **a new lesson cannot open while the previous
+one is unclosed**: if the latest note in `10 - Lektionen/` has an empty `closed`
+field, say so and offer two ways out — continue that lesson, or abandon it
+explicitly — before creating another.
 
-Antes de preguntar nada:
+## 1. Read the vault
 
-- `10 - Lektionen/` → la última lección, su número y su estado. La nueva es
-  `L{XXX}` con `XXX` = último + 1, tres dígitos siempre.
-- `00 - Start/Lernprofil.md` → el par de calibración CEFR: **producción** y
-  **comprensión**. Es lo único que dice a qué dificultad escribir.
-- `20 - Wortschatz/*/` y `30 - Grammatik/*/` → todo lo que ya tengo. Necesito la
-  lista de `term` para no volver a introducir nada, y el reparto por `cefr` para
-  saber dónde estoy.
-- Las debilidades: `error_count > 0` y `status != "known"`. La historia debe
-  **reciclarlas** a propósito.
-- Los temas ya usados: el campo `thema` de las lecciones anteriores y el `theme`
-  del vocabulario.
+Before asking anything:
 
-## 2. Preguntar el tema
+- `10 - Lektionen/` → the latest lesson, its number and its state. The new one is
+  `L{XXX}` where `XXX` = last + 1, always three digits.
+- [[Lernprofil]] → the **production** and **comprehension** CEFR pair. It is the
+  only thing that says how hard to write.
+- `20 - Wortschatz/*/` and `30 - Grammatik/*/` → everything already there. The
+  list of `term` values, so nothing gets introduced twice, and the spread by `cefr`.
+- The weak items: `error_count > 0` and `status != "known"`. The story must
+  **recycle** them on purpose.
+- Themes already used: the `thema` field of previous lessons and the `theme` field
+  of the vocabulary.
 
-Ofrecer **tres temas** de [[Themenliste]], **saltando los de las dos últimas
-lecciones**. Si pido un tema repetido a propósito, aceptarlo: entonces la historia
-tiene que ir a un rincón distinto del tema y las palabras nuevas tienen que ser de
-verdad nuevas, no sinónimos de las que ya tengo.
+## 2. Ask for the theme
 
-Aceptar también un tema libre que no esté en la lista. Si es recurrente, añadirlo
-a [[Themenliste]] antes de seguir; un token inventado sobre la marcha es una
-etiqueta huérfana.
+Offer **three themes** from [[Themenliste]], **skipping those of the last two
+lessons**. If a repeated theme is requested deliberately, accept it: the story
+then has to go to a different corner of the theme, and the new words have to be
+genuinely new rather than synonyms of what is already there.
 
-## 3. Escribir la historia
+A free theme outside the list is also fine. If it looks recurrent, add it to
+[[Themenliste]] first — a token invented on the fly is an orphan tag.
 
-**Una narración con personajes que interactúan**, en dos partes. La parte 1 es
-esta fase; la parte 2 la escribe `/de vorlesen` y tiene que poder continuarla.
+## 3. Write the story
 
-Reglas de la historia:
+**A narrative with characters who interact**, in two parts. Part 1 is this phase;
+part 2 is written by `/de vorlesen` and has to be able to continue it.
 
-- **Entre 150 y 250 palabras.** Suficiente para que el vocabulario aparezca en
-  contexto, corto para leerlo dos veces sin esfuerzo.
-- **Calibrada al nivel de comprensión del [[Lernprofil]]**, no al de producción.
-  El punto es entender más de lo que sé decir.
-- **Personajes con nombre**, dos o tres, que hablen entre ellos. El diálogo es lo
-  que hace que las expresiones suenen a lengua y no a lista.
-- **Termina abierta.** La parte 2 continúa: que quede algo por resolver.
-- **Recicla al menos tres debilidades** de la bóveda, sin señalarlas.
-- Nada de glosarios ni negritas dentro del texto. Es una historia, no una lección.
+Rules for the story:
 
-Después de la historia en alemán, **la traducción al español debajo**, separada.
-El orden importa: leer el alemán dos veces antes de mirar el español. Si la
-traducción va al lado, se lee solo la traducción.
+- **150 to 250 words.** Long enough for the vocabulary to appear in context, short
+  enough to read twice without effort.
+- **Calibrated to the comprehension level** in [[Lernprofil]], not the production
+  level. Understanding more than you can say is the point.
+- **Named characters**, two or three, who talk to each other. Dialogue is what
+  makes expressions sound like a language instead of a list.
+- **Ends open.** Part 2 continues it: leave something unresolved.
+- **Recycles at least three weak items**, without pointing at them.
+- No glossary, no bold inside the text. It is a story, not a lesson.
 
-## 4. El vocabulario nuevo
+After the `{TARGET}` story, **the `{KNOWN}` translation below it**, separated. The
+order matters: read the `{TARGET}` twice before looking. A translation placed
+alongside gets read instead.
 
-**Entre 10 y 15 elementos**, más **1 o 2 puntos de gramática**. Se van a drillar
-en `/de studium`, así que caben más que en una sesión hablada.
+## 4. The new vocabulary
 
-**Nada de listas de solo sustantivos.** El reparto que hay que buscar:
+**Between 10 and 15 items**, plus **1 or 2 grammar points**. They get drilled in
+`/de studium`, so more fits than in a spoken session.
 
-- **verbos**, incluidos separables y los que rigen caso o preposición
-- **adverbios**, sobre todo de frecuencia, tiempo y grado
-- **adjetivos**, en pares de contrarios cuando salga natural
-- **expresiones y frases hechas**, como un solo elemento (`pos: phrase`)
-- **conectores y preposiciones**
-- sustantivos, sí, pero no la mitad de la lista
+**No noun-only lists.** The spread to aim for:
 
-**Nunca inventar** una palabra, un género o una forma para rellenar una categoría.
-Si no estoy seguro de un género, usar otra palabra.
+- **verbs**, including separable ones and those that govern a case or preposition
+- **adverbs**, above all of frequency, time and degree
+- **adjectives**, in opposite pairs where that comes naturally
+- **expressions and fixed phrases**, as a single item (`pos: phrase`)
+- **connectors and prepositions**
+- nouns, yes, but not half the list
 
-## 5. Crear las notas
+**Never invent** a word, a gender or a form to fill a category. Unsure of a
+gender: use a different word.
 
-Una nota por elemento, desde la plantilla que corresponda:
+## 5. Create the notes
 
-| `pos` | Plantilla | Carpeta |
+One note per item, from the matching template:
+
+| `pos` | Template | Folder |
 |---|---|---|
 | `verb` | `V - Verb` | `20 - Wortschatz/<cefr>/` |
-| cualquier otro | `V - Wortschatz` | `20 - Wortschatz/<cefr>/` |
-| gramática | `V - Grammatik` | `30 - Grammatik/<cefr>/` |
+| anything else | `V - Wortschatz` | `20 - Wortschatz/<cefr>/` |
+| grammar | `V - Grammatik` | `30 - Grammatik/<cefr>/` |
 
-Campos que hay que rellenar sin excepción:
+Fields to fill without exception:
 
-- `cefr` — la **dificultad de la palabra**, uno de los doce tokens. Decide la
-  carpeta. Ver [[Niveaus]].
-- `lektion` — `L{XXX}`, la lección que se está creando.
-- `source: lektuere` — provenance nueva: la palabra viene de una historia, no de
-  una conversación ni de una lista.
-- `example` — **la frase de la historia donde aparece la palabra**, literal.
-- `theme` — el token del tema.
-- `translation` — en español.
-- `article` e `inflection` según [[E-Mail-Format]]. Verbos con auxiliar; separables
-  partidos.
+- `cefr` — **the difficulty of the word**, one of the twelve tokens. Decides the
+  folder. See [[Niveaus]].
+- `lektion` — `L{XXX}`, the lesson being created.
+- `source: lektuere` — this provenance means the word came from a story, not from
+  a conversation or a list.
+- `example` — **the sentence from the story where the word appears**, verbatim.
+- `theme` — the theme token.
+- `translation` — in `{KNOWN}`.
+- `article` and `inflection` per [[E-Mail-Format]]. Verbs with their auxiliary;
+  separables split.
 
-**Sobre `example`:** antes se dejaba vacío para que la frase la escribiera Pedro.
-Ahora la escribe la historia, y es mejor: es una frase real, en contexto, con los
-personajes. La producción se ha movido a `/de vorlesen` y `/de gramatik`, que son
-habladas, y hablar vale más que escribir una frase en una nota.
-[[Ohne Beispiel.base|Ohne Beispiel]] deja de ser una lista de deberes y pasa a ser
-lo que su nombre dice: un detector de notas hechas con prisa.
+**On `example`:** it used to be left empty so the learner would write the
+sentence. Now the story writes it, and that is better: a real sentence, in
+context, with the characters. Production has moved to `/de vorlesen` and
+`/de gramatik`, which are spoken, and speaking beats typing a sentence into a
+note. [[Ohne Beispiel.base|Ohne Beispiel]] stops being a backlog of homework and
+becomes what its name says: a detector of notes made in a hurry.
 
-En el cuerpo de cada nota de gramática, la explicación en español de 2-3 frases y
-dos ejemplos, **uno de ellos de la historia**.
+In the body of each grammar note: the explanation in `{KNOWN}`, two or three
+sentences, and two examples, **one of them from the story**.
 
-## 6. Crear la nota de lección
+## 6. Create the lesson note
 
-`10 - Lektionen/L{XXX}.md` desde `V - Lektion`, con:
+`10 - Lektionen/L{XXX}.md` from `V - Lektion`, with:
 
-- `thema`, `started` con la fecha de hoy, `phase_1_lektuere: true`
-- la **historia parte 1** completa, en alemán, bajo su encabezado
-- la lista de vocabulario y gramática introducidos, con enlaces
-- `vocab_count` y `grammar_count`
+- `thema`, `started` with today's date, `phase_1_lektuere: true`
+- **story part 1** complete, in `{TARGET}`, under its heading
+- the list of vocabulary and grammar introduced, with links
+- `vocab_count` and `grammar_count`
 
-La parte 2 queda vacía: la escribe la fase 3.
+Part 2 stays empty: phase 3 writes it.
 
-## 7. Actualizar la vista
+## 7. Update the view
 
-En `40 - Ansichten/Aktuelle Lektion.base`, cambiar el filtro a la lección nueva.
-Es lo único que hay que tocar a mano al pasar de lección.
+In `40 - Ansichten/Aktuelle Lektion.base`, change the filter to the new lesson. It
+is the only thing that has to be edited by hand when a lesson changes.
 
-## 8. Cerrar el turno
+## 8. Close the turn
 
-Mostrar en el chat: la historia en alemán, la traducción debajo, y la tabla del
-vocabulario nuevo con `cefr` y traducción. Decir cuántas notas se han creado y en
-qué carpetas.
+Show in the chat: the story in `{TARGET}`, the translation below it, and a table
+of the new vocabulary with `cefr` and translation. Say how many notes were created
+and in which folders.
 
-**No hacer commit.** Eso es `/de commit`, y solo cuando las cuatro fases estén
-hechas. `obsidian-git` va commiteando por su cuenta de todas formas; el commit de
-la fase 5 es el que marca la lección cerrada.
+**Do not commit.** That is `/de commit`, and only once all four phases are done.
+`obsidian-git` commits on its own anyway; the phase 5 commit is the marker that
+the lesson closed.
 
-## Lo que no hace esta fase
+## What this phase does not do
 
-- No pide que hable ni que produzca nada. Es input puro y en silencio.
-- No genera ningún GPT. El primero lo genera `/de studium`.
-- No emite bloque de cierre: yo escribo las notas directamente, no hay nada que
-  parsear.
+- It does not ask the learner to speak or produce anything. It is pure input, in
+  silence.
+- It generates no GPT. The first one is generated by `/de studium`.
+- It emits no closing block: the notes are written directly, so there is nothing
+  to parse.

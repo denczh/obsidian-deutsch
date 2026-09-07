@@ -5,105 +5,106 @@ command: /de studium
 updated: 2026-09-07
 ---
 
-# `/de studium` — fase 2 de 5
+# `/de studium` — phase 2 of 5
 
-Especificación de la fase. **Claude la lee al ejecutar el comando**; la skill `de`
-es solo el enrutador. Ver [[Lektionen]].
+> `{TARGET}` = German · `{KNOWN}` = Spanish · `{LEARNER}` = Pedro → [[Configuration]]
 
-Esta fase no enseña: **hace recuperar**. Es la única del ciclo cuyo material es
-exactamente el de la fase 1, sin novedad ninguna.
+Specification of the phase. **Claude reads this when the command runs**; the `de`
+skill is only the router. See [[Lektionen]].
 
-## Puerta
+This phase does not teach: **it makes the learner retrieve.** It is the only phase
+whose material is exactly what phase 1 introduced, with nothing new added.
 
-`phase_1_lektuere: true` en la nota de la lección en curso. Si no, rechazar:
-decir que hay que hacer `/de lektüre` primero y parar.
+## Gate
 
-Se puede ejecutar **cuantas veces se quiera**. Cada ejecución regenera el prompt
-con el orden barajado de nuevo, así que dos sesiones no salen iguales.
+`phase_1_lektuere: true` in the current lesson note. Otherwise refuse: say that
+`/de lektüre` has to run first, and stop.
 
-## 1. Elegir el material: el 70/30
+It can run **as many times as wanted**. Every run regenerates the prompt with a
+fresh shuffle, so two sessions are never identical.
 
-**Todo el vocabulario de la lección en curso**, más un tercio largo de material
-viejo. La proporción objetivo es **70% lección actual, 30% anterior**: con 12
-elementos nuevos, unos 5 viejos, 17 en total.
+## 1. Choose the material: the 70/30
 
-Sin ese 30%, cada lección es un cubo cerrado: el sistema aprende bien y retiene
-mal, que es el fallo clásico de los métodos por unidades. Y no cuesta nada, porque
-el prompt lo genero yo.
+**All of the current lesson's vocabulary**, plus a generous third of old material.
+The target ratio is **70% current lesson, 30% earlier**: with 12 new items, about
+5 old ones, 17 in total.
 
-**Prioridad para elegir los viejos**, en este orden:
+Without that 30%, every lesson is a closed bucket: the system learns well and
+retains badly, which is the classic failure of unit-based methods. And it costs
+nothing, because the prompt is generated here.
 
-1. **Debilidades**: `error_count > 0` y `status != "known"`. Todas las que caben.
-2. **Sin estrenar**: `status: new` de lecciones anteriores, empezando por las de
-   `lektion` más antigua. Llevan más tiempo esperando.
-3. **En aprendizaje**: `status: learning`, las de `last_error` más lejano.
+**Priority for choosing the old ones**, in this order:
 
-Nunca meter nada con `status: known`. Eso ya está.
+1. **Weak items**: `error_count > 0` and `status != "known"`. As many as fit.
+2. **Never produced**: `status: new` from earlier lessons, oldest `lektion` first.
+   They have been waiting longest.
+3. **In progress**: `status: learning`, oldest `last_error` first.
 
-## 2. Barajar y numerar
+Never include anything with `status: known`. That one is done.
 
-**Barajar la lista una vez, aquí, y numerarla dentro del prompt.**
+## 2. Shuffle and number
 
-Un modelo no puede mantener un orden aleatorio entre turnos: lo pierde, repite
-palabras y `vorherige` deja de significar nada. Con la lista fija y numerada, "el
-7" es siempre el 7 y los comandos de navegación funcionan de verdad.
+**Shuffle the list once, here, and number it inside the prompt.**
 
-Formato de cada línea, una por elemento:
+A model cannot hold a random order across turns: it loses it, repeats words, and
+`vorherige` stops meaning anything. With a fixed numbered list, "number 7" is
+always 7 and the navigation commands actually work.
+
+Line format, one per item:
 
 ```
 nr | term | article | inflection | pos | translation
 ```
 
-Con la cabecera incluida. Los verbos con sus formas y su auxiliar; los no
-sustantivos con `-` en `article`.
+Header included. Verbs with their principal parts and auxiliary; non-nouns with
+`-` in `article`.
 
-## 3. Generar el prompt
+## 3. Generate the prompt
 
-Sustituir en la plantilla de abajo:
+Substitute in the template below:
 
-- `{{LISTA}}` → la cabecera más las líneas numeradas.
-- `{{LEKTION}}` → el token de la lección, `L002` etc. **Aparece dos veces.**
+- `{{LISTA}}` → the header plus the numbered lines.
+- `{{LEKTION}}` → the lesson token, `L002` etc. **It appears twice.**
 
-**Contar los caracteres y decir el número.** La plantilla fija ocupa **5296**, así
-que quedan unos 2700 para la lista: espacio de sobra para 17 elementos, que ocupan
-alrededor de 1000. Si algún día la lista no cupiera, recortar el 30% viejo, nunca
-las reglas.
+**Count the characters and say the number.** The fixed template is **5319**, which
+leaves about 2700 for the list: ample for 17 items, which take around 1000. If the
+list ever does not fit, cut the old 30%, never the rules.
 
-**No plegar las líneas.**
+**Do not re-wrap the lines.**
 
-## 4. Entregarlo
+## 4. Hand it over
 
-Es para **sobrescribir las Instructions** del GPT permanente `Deutsch - Studium`,
-no para crear uno nuevo. Recrearlo perdería el acceso directo del móvil y el
-historial de chats.
+It is for **overwriting the Instructions** of the permanent GPT
+`Deutsch - Studium`, not for creating a new one. Recreating it would lose the phone
+shortcut and the chat history.
 
-Decir también cuántos elementos van y cuántos son viejos, para que sepa qué
-esperar.
-**Y guardar el prompt entregado** en la nota de lección, bajo `## Prompt - Studium`,
-dentro de un bloque cercado. **No es reproducible**: el barajado es aleatorio y no se repite. Si un GPT se
-comporta raro, lo único que permite averiguar por qué es el prompt exacto que se
-pegó.
+Say how many items there are and how many are old, so the learner knows what to
+expect.
 
+**And save the delivered prompt** in the lesson note, under `## Prompt - Studium`,
+inside a fenced block. **It is not reproducible**: the shuffle is random and does
+not repeat. If a GPT behaves oddly, the exact pasted prompt is the only thing that
+makes it possible to find out why.
 
-## 5. Procesar el bloque cuando vuelva
+## 5. Process the block when it comes back
 
-Se pega al lanzar la fase siguiente, o antes si quiere. Por cada ejecución:
+It gets pasted when the next phase is launched, or earlier. For every run:
 
-1. Pegar el bloque crudo en `## Roh - Studium` de la nota de lección, con la fecha
-   delante. Varias ejecuciones se **acumulan**, no se sustituyen.
-2. **`ERRORS`** → en cada nota: `last_error` a hoy, `error_count` +1,
+1. Paste the raw block into `## Roh - Studium` of the lesson note, with the date in
+   front. Multiple runs **accumulate**, they do not replace each other.
+2. **`ERRORS`** → in each note: `last_error` to today, `error_count` +1,
    `status: learning`.
-3. **`OK`** → si estaba en `learning` pasa a `known`; si estaba en `new` pasa a
-   `learning`. **`error_count` no se toca nunca.**
-4. Sumar `ok_count` y `error_count` en el frontmatter de la lección.
-5. Poner `phase_2_studium: true`.
+3. **`OK`** → `learning` becomes `known`; `new` becomes `learning`.
+   **`error_count` is never touched.**
+4. Add up `ok_count` and `error_count` in the lesson frontmatter.
+5. Set `phase_2_studium: true`.
 
-> **La puerta la abre una sesión de Frage, no una de Sequenz.** Sequenz es
-> exposición: no se prueba nada, así que su bloque va vacío y no demuestra
-> recuperación. Si el único bloque de la fase 2 viene de Sequenz, la fase **no**
-> está superada — y hay que decírselo en vez de dejarlo pasar.
+> **The gate is opened by a Frage session, not by a Sequenz one.** Sequenz is
+> exposure: nothing is tested, so its block comes back empty and proves no
+> retrieval. If the only phase 2 block came from Sequenz, the phase is **not**
+> passed — say so instead of letting it through.
 
-## La plantilla del prompt
+## The prompt template
 
 ```
 You are Pedro's German vocabulary drill partner, running by voice on his phone. You drill a fixed list. You never add to it.
@@ -227,21 +228,23 @@ FINALLY, if a mail Action is available, call it with that block as the body and 
 3. OK means right on the first attempt, without help.
 ```
 
-## Por qué el prompt está así
+## Why the prompt is written that way
 
-**Sequenz con silencio, no con pausa de tres segundos.** Un modelo no tiene reloj
-y no puede esperar: en voz, el TTS habla seguido. Lo único que puede pautar el
-ritmo es el turno, y de ahí los comandos `Spanisch` y `nächste`. La regla *"el
-silencio es el ejercicio"* está escrita porque un modelo servicial rellenará esa
-pausa con la traducción si no se lo prohíbes tres veces.
+**Sequenz paced by silence, not by a three-second pause.** A model has no clock
+and cannot wait: in voice, the TTS speaks straight through. The only thing that
+can set the rhythm is the turn, hence the `Spanisch` and `nächste` commands. The
+rule *"the silence is the exercise"* is written because a helpful model will fill
+that pause with the translation unless you forbid it three times.
 
-**El artículo cuenta como parte de la respuesta** en `Frage auf Spanisch`. Sin esa
-regla, el drill de sustantivos no prueba lo único que de verdad cuesta del alemán.
+**The article counts as part of the answer** in `Frage auf Spanisch`. Without that
+rule, drilling nouns does not test the one thing that is actually hard about
+`{TARGET}`.
 
-**`OK` solo al primer intento.** Es la puerta de salida de
-[[Schwachstellen.base|Schwachstellen]], y un modelo generoso te daría por sabido
-lo que has acertado a la segunda. Está dicho tres veces en el prompt por eso.
+**`OK` only on the first attempt.** It is the exit door from
+[[Schwachstellen.base|Schwachstellen]], and a generous model would mark as known
+what was got right on the second try. That is why the prompt says it three times.
 
-**Nada fuera de la lista.** El riesgo con un modelo que sabe alemán es que amplíe
-el drill con palabras que no tienes en la bóveda; entonces practicas vocabulario
-que nadie ha registrado y los errores no se pueden imputar a ninguna nota.
+**Nothing outside the list.** The risk with a model that knows `{TARGET}` is that
+it extends the drill with words that are not in the vault; then the learner
+practises vocabulary nobody recorded, and the errors cannot be attributed to any
+note.

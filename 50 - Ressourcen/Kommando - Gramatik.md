@@ -5,103 +5,104 @@ command: /de gramatik
 updated: 2026-09-07
 ---
 
-# `/de gramatik` — fase 4 de 5
+# `/de gramatik` — phase 4 of 5
 
-Especificación de la fase. **Claude la lee al ejecutar el comando**; la skill `de`
-es solo el enrutador. Ver [[Lektionen]].
+> `{TARGET}` = German · `{KNOWN}` = Spanish · `{LEARNER}` = Pedro → [[Configuration]]
 
-La única fase de **producción dirigida**: no hay contexto que ayude ni historia de
-la que tirar, solo la estructura y yo. Es también la más incómoda, y por eso es la
-última.
+Specification of the phase. **Claude reads this when the command runs**; the `de`
+skill is only the router. See [[Lektionen]].
 
-## Puerta
+The only phase of **directed production**: no context to lean on and no story to
+draw from, just the structure and the learner. It is also the most uncomfortable,
+which is why it is last.
 
-`phase_1_lektuere`, `phase_2_studium` y `phase_3_vorlesen`, las tres en `true`.
+## Gate
 
-## 1. Leer la lección
+`phase_1_lektuere`, `phase_2_studium` and `phase_3_vorlesen`, all three `true`.
 
-- **La gramática de la lección**: las notas de `30 - Grammatik/` con la `lektion`
-  en curso. Son el objeto del drill.
-- **Los bloques de Studium y Vorlesen** de la nota de lección. Lo que falló ahí
-  tiene que volver aquí.
-- **El vocabulario de la lección**, porque las frases se construyen con él. No con
-  palabras que no tengo.
+## 1. Read the lesson
 
-## 2. Escribir las frases
+- **The lesson's grammar**: the notes in `30 - Grammatik/` with the current
+  `lektion`. They are the object of the drill.
+- **The Studium and Vorlesen blocks** from the lesson note. What failed there has
+  to come back here.
+- **The lesson's vocabulary**, because the sentences are built from it. Not from
+  words that are not there.
 
-**Diez o doce, numeradas, fijas en el prompt**, cada una con su traducción alemana
-esperada. Formato:
+## 2. Write the sentences
+
+**Ten or twelve, numbered, fixed in the prompt**, each with its expected `{TARGET}`
+translation. Format:
 
 ```
-N. Frase en español. -> Traducción alemana esperada.
+N. Sentence in {KNOWN}. -> Expected translation in {TARGET}.
 ```
 
-Igual que en las otras dos fases: si el GPT improvisa las frases, `vorherige` y
-`nächste` dejan de significar nada, y además cada sesión practicaría una gramática
-distinta de la que toca.
+Same as in the other two phases: if the GPT improvises the sentences, `vorherige`
+and `nächste` stop meaning anything, and each session would drill a different piece
+of grammar from the one that is due.
 
-Cómo elegirlas:
+How to choose them:
 
-- **Todas contienen la estructura de la lección.** Es un drill, no una conversación.
-- **Graduadas**: las primeras con el patrón desnudo, las últimas con subordinada,
-  negación o dos elementos a la vez.
-- **Construidas con el vocabulario de la lección**, no con palabras nuevas.
-- **Dos o tres apuntan a lo que falló** en las fases 2 y 3. Si `helfen` salió con
-  acusativo el martes, el jueves hay una frase con `helfen`.
-- Nada de frases de libro. Cosas que diría de verdad.
+- **All of them contain the lesson's structure.** It is a drill, not a conversation.
+- **Graded**: the first ones with the bare pattern, the last ones with a
+  subordinate clause, a negation, or two elements at once.
+- **Built from the lesson's vocabulary**, not from new words.
+- **Two or three target what failed** in phases 2 and 3. If `helfen` came out with
+  the accusative on Tuesday, Thursday has a sentence with `helfen`.
+- No textbook sentences. Things the learner would actually say.
 
-La traducción esperada es **para que el GPT corrija**. Está escrito en el prompt
-que otra traducción vale si lleva el mismo significado **y** usa la estructura que
-se está practicando — sin esa segunda condición, el drill se escapa por cualquier
-paráfrasis que evite la gramática.
+The expected translation is **for the GPT to mark with**. The prompt says another
+translation counts if it carries the same meaning **and** uses the structure being
+drilled — without that second condition the drill escapes through any paraphrase
+that avoids the grammar.
 
-## 3. El enunciado de la regla
+## 3. The statement of the rule
 
-Dos o tres frases: qué es, cuándo se aplica, un ejemplo. **Máximo 300 caracteres.**
+Two or three sentences: what it is, when it applies, one example. **Maximum 300
+characters.**
 
-No es para que el GPT me dé una clase —está prohibido explicar salvo que lo pida—
-sino para que sepa qué está corrigiendo. Sin eso marca errores de gramática
-genérica en vez de la que toca.
+Not so the GPT can give a lecture — explaining is forbidden unless asked — but so
+it knows what it is correcting. Without that it marks generic grammar errors
+instead of the one that is due.
 
-## 4. Generar el prompt
+## 4. Generate the prompt
 
-Sustituir `{{REGEL}}`, `{{SAETZE}}` y `{{LEKTION}}`, que **aparece dos veces**.
+Substitute `{{REGEL}}`, `{{SAETZE}}` and `{{LEKTION}}`, which **appears twice**.
 
-**Contar los caracteres y decir el número.** La plantilla fija ocupa **5532**; con
-doce frases y el enunciado sale alrededor de **6800**, con más de mil de margen.
-Es la fase más holgada de las tres.
+**Count the characters and say the number.** The fixed template is **5532**; with
+twelve sentences and the rule statement it comes to around **6800**, with more than
+a thousand to spare. This is the roomiest of the three.
 
-No plegar las líneas.
+Do not re-wrap the lines.
 
-## 5. Entregarlo
+## 5. Hand it over
 
-Para **sobrescribir** las Instructions del GPT permanente `Deutsch - Gramatik`.
+For **overwriting** the Instructions of the permanent GPT `Deutsch - Gramatik`.
 
-Decir cuántas frases van y qué estructura se practica. **Las frases sí se pueden
-decir en el chat**: aquí no hay nada que arruinar por leerlo, porque el ejercicio
-es producir alemán, no entender español.
-**Y guardar el prompt entregado** en la nota de lección, bajo `## Prompt - Gramatik`,
-dentro de un bloque cercado. **No es reproducible**: las frases se generan cada vez. Si un GPT se
-comporta raro, lo único que permite averiguar por qué es el prompt exacto que se
-pegó.
+Say how many sentences there are and which structure is being drilled. **The
+sentences can be shown in the chat**: there is nothing to spoil by reading them,
+because the exercise is producing `{TARGET}`, not understanding `{KNOWN}`.
 
+**And save the delivered prompt** in the lesson note, under `## Prompt - Gramatik`.
+**It is not reproducible**: the sentences are generated fresh each time.
 
-## 6. Procesar el bloque
+## 6. Process the block
 
-1. Bloque crudo en `## Roh - Gramatik` de la nota de lección, con fecha.
-2. **`ERRORS`** → `last_error` a hoy, `error_count` +1, `status: learning` en la
-   nota de la regla o de la palabra que corresponda.
-3. **`OK`** → `learning` pasa a `known`, `new` pasa a `learning`. `error_count` no
-   se toca.
-4. Sumar `ok_count` y `error_count` en la lección.
-5. `phase_4_gramatik: true`.
+1. Raw block into `## Roh - Gramatik` of the lesson note, with the date.
+2. **`ERRORS`** → `last_error` to today, `error_count` +1, `status: learning` in
+   the note of the rule or the word concerned.
+3. **`OK`** → `learning` becomes `known`, `new` becomes `learning`. `error_count`
+   is not touched.
+4. Add up `ok_count` and `error_count` in the lesson.
+5. Set `phase_4_gramatik: true`.
 
-Aquí **una regla de gramática puede llegar a `known` en una sola sesión**, y es el
-único sitio donde eso pasa: son diez o doce frases sobre la misma estructura, así
-que acertarlas todas a la primera es evidencia suficiente. En Studium un acierto
-es una palabra; aquí un acierto es un patrón repetido diez veces.
+Here **a grammar rule can reach `known` in a single session**, and this is the only
+place where that happens: ten or twelve sentences on the same structure, so getting
+them all right first time is evidence enough. In Studium a correct answer is one
+word; here it is a pattern repeated a dozen times.
 
-## La plantilla del prompt
+## The prompt template
 
 ```
 You are Pedro's German grammar drill partner. He is speaking on his phone. You give him a sentence in Spanish, he says it in German, you correct him until it is right.
@@ -219,27 +220,28 @@ FINALLY, if a mail Action is available, call it with that block as the body and 
 4. OK means right on the first attempt, with no help at all.
 ```
 
-## Por qué el prompt está así
+## Why the prompt is written that way
 
-**El bucle de tres intentos, con el techo escrito.** Tu documento decía *"hasta
-que yo diga la frase correctamente"*, y eso puede no terminar nunca: una frase que
-no sale bloquea la sesión y lo que se abandona es la sesión, no la frase. Tres
-intentos, después la respuesta, se registra el error y sigue.
+**The three-attempt loop, with the ceiling written down.** The original design said
+*"until the sentence comes out right"*, and that can fail to terminate: a sentence
+that will not come blocks the session, and what gets abandoned is the session, not
+the sentence. Three tries, then the answer, then it goes in the log as an error and
+the drill moves on.
 
-**Nada de la respuesta completa antes del tercer intento.** Es la regla que hace
-que el ejercicio exista. Un modelo servicial da la frase correcta al primer fallo,
-y entonces no traduces: repites.
+**No full answer before the third attempt.** That is the rule that makes the
+exercise exist. A helpful model gives the correct sentence on the first miss, and
+then the learner is not translating — just repeating.
 
-**Que te deje terminar.** Está escrito dos veces y en las cuatro reglas finales,
-porque es tu queja de agosto: el modelo reacciona a la primera mitad de la frase.
-Aquí es peor que en conversación, porque estás construyendo una frase entera en la
-cabeza y una interrupción la destruye.
+**Let the learner finish.** Written twice and in the four final rules, because it
+was the original complaint about the voice tutor: the model reacts to the first half
+of the sentence. Here it is worse than in conversation, because a whole sentence is
+being assembled mentally and an interruption destroys it.
 
-**`OK` solo si *todas* las frases de esa estructura salieron a la primera.** Una
-pista, una repetición o un segundo intento en cualquiera de las diez y la regla no
-promociona. Es la puerta de salida de
-[[Schwachstellen.base|Schwachstellen]] y tiene que ser cara.
+**`OK` only if *every* sentence testing that structure came out right first time.**
+One hint, one repeat or one second attempt in any of the ten and the rule does not
+promote. It is the exit door from [[Schwachstellen.base|Schwachstellen]] and it has
+to be expensive.
 
-**Prohibido "casi".** Con una estructura gramatical, "casi" es exactamente el
-tipo de validación que te hizo desconfiar del tutor de voz: o está bien, o se dice
-qué está mal.
+**"Almost" is banned.** With a grammatical structure, "almost" is exactly the kind
+of validation that made the learner stop trusting the voice tutor: either it is
+right, or what is wrong gets named.

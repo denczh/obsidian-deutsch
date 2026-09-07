@@ -5,123 +5,123 @@ command: /de commit
 updated: 2026-09-07
 ---
 
-# `/de commit` — fase 5 de 5
+# `/de commit` — phase 5 of 5
 
-Especificación de la fase. **Claude la lee al ejecutar el comando**; la skill `de`
-es solo el enrutador. Ver [[Lektionen]].
+> `{TARGET}` = German · `{KNOWN}` = Spanish · `{LEARNER}` = Pedro → [[Configuration]]
 
-Cierra la lección. Es la única fase que **escribe en git a propósito** y la única
-que mira la bóveda entera en vez de solo la lección.
+Specification of the phase. **Claude reads this when the command runs**; the `de`
+skill is only the router. See [[Lektionen]].
 
-## Puerta
+Closes the lesson. It is the only phase that **writes to git on purpose** and the
+only one that looks at the whole vault instead of just the lesson.
 
-Las cuatro: `phase_1_lektuere`, `phase_2_studium`, `phase_3_vorlesen`,
-`phase_4_gramatik`, todas en `true`.
+## Gate
 
-Si falta alguna, decir cuál y con qué comando se hace. **No ofrecer cerrar a
-medias**: una lección incompleta cerrada es una lección que nunca vas a volver a
-abrir, y su material se queda sin practicar para siempre.
+All four: `phase_1_lektuere`, `phase_2_studium`, `phase_3_vorlesen`,
+`phase_4_gramatik`, every one `true`.
 
-## 1. Procesar lo que quede pendiente
+If any is missing, say which and which command does it. **Do not offer to close
+half-way**: an incomplete lesson that gets closed is a lesson nobody reopens, and
+its material stays unpractised for good.
 
-Puede que haya bloques sin procesar: los de una sesión repetida de Studium, o uno
-que se pegó tarde. Antes de cerrar:
+## 1. Process whatever is outstanding
 
-- Pedir los bloques que falten. Si un `## Roh - *` de la nota de lección está
-  vacío pero su fase está en `true`, algo se marcó sin evidencia: decirlo.
-- Procesar cada bloque como manda su especificación: `ERRORS` sube `error_count`
-  y pone `status: learning`; `OK` sube `learning → known` y `new → learning`.
+There may be unprocessed blocks: from a repeated Studium session, or one pasted
+late. Before closing:
 
-## 2. Chequeo de salud de la bóveda
+- Ask for any missing blocks. If a `## Roh - *` section in the lesson note is empty
+  but its phase is `true`, something was marked without evidence: say so.
+- Process each block as its specification requires: `ERRORS` raises `error_count`
+  and sets `status: learning`; `OK` moves `learning → known` and `new → learning`.
 
-**Esta es la parte que justifica que la fase exista.** Es el único momento del
-ciclo en que se mira todo después de que todo haya pasado, así que es donde se
-cazan los fallos silenciosos. Ninguno de estos da error por sí solo.
+## 2. Vault health check
 
-| Comprobación | Qué se rompe si falla |
+**This is the part that justifies the phase existing.** It is the only moment in
+the cycle when everything is inspected after everything has happened, so it is
+where the silent failures get caught. None of these raises an error on its own.
+
+| Check | What breaks if it fails |
 |---|---|
-| YAML válido en todas las notas | la nota desaparece de todas las vistas |
-| `cefr` es uno de los doce tokens | [[Nach Niveau.base\|Nach Niveau]] se parte |
-| la carpeta coincide con el `cefr` | la nota vive donde no dice que vive |
-| `lektion` con formato `L\\d{3}` | [[Aktuelle Lektion.base\|Aktuelle Lektion]] no la ve |
-| ningún campo `level` residual | resto de la migración de septiembre de 2026 |
-| los seis `.base` parsean | la vista aparece vacía y parece que no hay datos |
-| cero enlaces wiki rotos | notas huérfanas que creías conectadas |
-| `example` no vacío en el vocabulario nuevo | la palabra no tiene contexto |
-| `Aktuelle Lektion` filtra la lección que se cierra | mirabas la lección anterior |
+| valid YAML in every note | the note disappears from every view |
+| `cefr` is one of the twelve tokens | [[Nach Niveau.base\|Nach Niveau]] splits in two |
+| the folder matches the `cefr` | the note lives somewhere it does not claim to |
+| `lektion` matches `L\d{3}` | [[Aktuelle Lektion.base\|Aktuelle Lektion]] cannot see it |
+| no residual `level` field | leftover from the September 2026 migration |
+| the six `.base` files parse | the view looks empty and it seems there is no data |
+| zero broken wiki links | orphan notes you thought were connected |
+| `example` not empty in new vocabulary | the word has no context |
+| `Aktuelle Lektion` filters the lesson being closed | you were looking at the previous one |
 
-Y dos números que hay que mirar aunque no sean errores:
+And two numbers worth watching even though they are not errors:
 
-- **`Schwachstellen` creciendo lección tras lección** sin que nada llegue a
-  `known`: significa que las fases 2 y 4 no están dando `OK`, y entonces la cola
-  de repaso solo sube. Es el fallo que tapamos en agosto; puede volver por otra
-  puerta.
-- **`Nicht gesprochen` creciendo**: palabras que entran y nunca se usan. Si sube
-  cada lección, el 70/30 de Studium no está haciendo su trabajo.
+- **`Schwachstellen` growing lesson after lesson** with nothing reaching `known`:
+  it means phases 2 and 4 are not producing `OK`, and the revision queue only ever
+  grows. That is the leak plugged in August; it can come back through another door.
+- **`Nicht gesprochen` growing**: words that arrive and never get used. If it rises
+  every lesson, the 70/30 in Studium is not doing its job.
 
-Reportar lo que salga. **No arreglar en silencio**: si algo está mal, decirlo y
-proponer el arreglo.
+Report whatever comes out. **Do not fix things silently**: if something is wrong,
+say so and propose the fix.
 
-## 3. Cerrar la lección
+## 3. Close the lesson
 
-En la nota de `10 - Lektionen/`:
+In the note in `10 - Lektionen/`:
 
-- `closed` con la fecha de hoy.
+- `closed` with today's date.
 - `phase_5_commit: true`.
-- Los contadores finales: `vocab_count`, `grammar_count`, `error_count`,
-  `ok_count`.
-- Comprobar que están los tres bloques crudos y los **tres prompts** guardados.
-  Si falta un prompt, decirlo: no es recuperable, porque ni el barajado ni la
-  historia ni las frases se pueden regenerar igual.
+- The final counters: `vocab_count`, `grammar_count`, `error_count`, `ok_count`.
+- Check that all three raw blocks and all **three prompts** are stored. If a prompt
+  is missing, say so: it is not recoverable, because neither the shuffle nor the
+  story nor the sentences can be regenerated identically.
 
-**No se borra nada.** La limpieza que pedía el diseño original no tiene objeto:
-los prompts y los bloques *son* la procedencia, y no hay andamiaje transitorio en
-la bóveda porque los prompts nunca se guardaron en ficheros aparte. La nota de
-lección se queda donde está, marcada como cerrada.
+**Nothing is deleted.** The cleanup the original design asked for has no object:
+the prompts and the blocks *are* the provenance, and there is no transient
+scaffolding in the vault because the prompts were never written to separate files.
+The lesson note stays where it is, marked closed.
 
-Dentro de seis meses, lo que te dirá qué historia te enseñó `Bahnsteig` es
-exactamente esa nota.
+Six months from now, the thing that will tell you which story taught you
+`Bahnsteig` is exactly that note.
 
-## 4. Actualizar el Lernprofil
+## 4. Update the Lernprofil
 
-- **Errores recurrentes**: los patrones que aparecieron en dos o más fases. No la
-  lista completa de errores —eso ya está en las notas— sino lo que se repite.
-  Especialmente los `comprehension` sin nota a la que apuntar.
-- **Temas recientes**: añadir el tema de esta lección, dejar los cinco últimos.
-- **La calibración CEFR**: revisarla, no tocarla por rutina. Si en tres lecciones
-  seguidas casi todo sale a la primera, el nivel de producción va por detrás de la
-  realidad y el material sale fácil. Si casi nada sale, va por delante. **Proponer
-  el cambio, no aplicarlo**: es el único número del sistema que decide cómo de
-  difícil es todo lo demás.
+- **Recurring mistakes**: the patterns that showed up in two or more phases. Not the
+  full error list — that is already in the notes — but what repeats. Especially the
+  `comprehension` ones with no note to point at.
+- **Recent themes**: add this lesson's theme, keep the last five.
+- **The CEFR calibration**: review it, do not change it out of habit. If almost
+  everything comes out right first time for three lessons running, the production
+  level is behind reality and the material is coming out easy. If almost nothing
+  does, it is ahead. **Propose the change, do not apply it**: it is the one number
+  in the system that decides how hard everything else is.
 
 ## 5. Commit
 
-Mensaje con forma, no `update`:
+A message with shape, not `update`:
 
 ```
-Lektion L002 abgeschlossen: <tema>, <N> Woerter, <M> Regeln, <E> Fehler
+Lektion L002 abgeschlossen: <theme>, <N> words, <M> rules, <E> errors
 ```
 
-`obsidian-git` ya ha ido commiteando estados intermedios cada diez minutos, así
-que este commit no salva nada que no estuviera salvado. **Su valor es el
-marcador**: en el historial se ve dónde acaba cada lección y qué produjo.
+`obsidian-git` has already been committing intermediate states every ten minutes,
+so this commit saves nothing that was not saved. **Its value is as a marker**: the
+history shows where each lesson ends and what it produced.
 
-Push, y comprobar que no queda nada sin subir.
+Push, and check nothing is left unpushed.
 
-## 6. Cerrar el turno
+## 6. Close the turn
 
-Un resumen corto:
+A short summary:
 
-- qué produjo la lección: palabras, reglas, errores, aciertos
-- qué salió del chequeo de salud
-- qué queda pendiente, si algo
-- **que `/de lektüre` está listo para la lección siguiente**
+- what the lesson produced: words, rules, errors, correct answers
+- what came out of the health check
+- what is outstanding, if anything
+- **that `/de lektüre` is ready for the next lesson**
 
-Nada de felicitaciones largas. Una lección cerrada es una lección cerrada.
+No long congratulations. A closed lesson is a closed lesson.
 
-## Lo que esta fase no hace
+## What this phase does not do
 
-- **No abre la siguiente.** Eso es `/de lektüre`, y es una decisión tuya, no una
-  consecuencia automática de cerrar.
-- **No borra nada.**
-- **No toca la calibración CEFR por su cuenta.** Solo la propone.
+- **It does not open the next one.** That is `/de lektüre`, and it is a decision,
+  not an automatic consequence of closing.
+- **It deletes nothing.**
+- **It does not touch the CEFR calibration by itself.** It only proposes.
