@@ -93,7 +93,8 @@ siguiente.
 
 ### 4. `/de gramatik` — GPT en el móvil
 
-*Especificación pendiente: `Kommando - Gramatik`.*
+**Especificación: [[Kommando - Gramatik]].** Escrita. Plantilla: 5532 fijos más
+la regla y las frases, **~6800 en total**. La más holgada de las tres.
 
 
 Compruebo las fases 1, 2 y 3. Genero un GPT con frases en español que contienen la
