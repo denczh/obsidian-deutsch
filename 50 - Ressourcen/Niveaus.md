@@ -1,91 +1,96 @@
 ---
 type: reference
-active_level: L1
-updated: 2026-08-01
+updated: 2026-09-07
 ---
 
-# Niveles: mi escala
+# Niveles: la dificultad de las palabras
 
-La bóveda no usa CEFR. Usa una escala propia y abierta: **`L1`, `L2`, `L3`…**,
-tantos niveles como hagan falta, definidos por lo que yo he consolidado y no por
-una tabla externa.
+> **Reescrita el 2026-09-07.** Esta nota describía una escala propia `L1, L2…` que
+> medía *mi* posición y decidía las carpetas. Ya no existe. Historial al final.
 
-**Nivel activo: `L1`.**
+El campo **`cefr`** clasifica **la dificultad de la palabra** en la escala
+internacional, y decide en qué carpeta vive:
 
-## Por qué
+```
+20 - Wortschatz/A11/  30 - Grammatik/A11/
+```
 
-La escala CEFR describe a un estudiante genérico y reparte doce casillas entre
-"no sé nada" y "casi nativo". Mi caso no es ese: vengo con comprensión por
-delante de producción y con huecos que no siguen el orden de ningún libro.
-Colgar mis carpetas de una escala ajena obliga a decidir si una palabra es "A21
-o A22", una pregunta que no tiene respuesta y que no cambia nada de lo que hago
-después.
+No mide dónde estoy yo. Mide lo avanzado que es el vocabulario. `sein` es `A11`
+aunque yo lleve tres años; `aufbewahren` es `B11` aunque lo aprendiera el primer
+día.
 
-`L1` no significa principiante. Significa *donde estoy hoy*.
+## Por qué así, y no como antes
 
-## Reglas del token
+Tuve una escala propia (`L1`, `L2`…) precisamente para no depender de una tabla
+externa. El problema no era la escala: era que **decía dos cosas a la vez** —
+cuándo aprendí algo y lo difícil que era— y luego colisionó con la secuencia de
+lecciones, que dice la primera. Dos campos con el mismo nombre es lo que rompe
+vistas en silencio.
 
-- Una sola grafía: `L`, mayúscula, y un número sin ceros delante.
-- Nunca `l1`, `L-1`, `L 1`, `Nivel 1`, `L1.5`.
-- El token aparece en exactamente tres sitios: el nombre de la carpeta, el campo
-  `level` del frontmatter, y la línea `level:` del bloque de cierre del tutor.
-- Las carpetas se crean **cuando promociono**, no antes. No hay carpetas vacías
-  esperando.
+Al separarlos, cada uno hace una cosa bien:
 
-## Criterio de promoción
+| Campo | Qué significa | Dónde vive |
+|---|---|---|
+| **`cefr`** | dificultad de la palabra | **decide la carpeta** |
+| **`lektion`** | en qué lección entró | campo, **nunca carpeta** |
 
-> Paso de `Ln` a `Ln+1` cuando tengo **cinco estructuras en *Consolidado*** del
-> [[Lernprofil]] y **`Schwachstellen` no contiene nada con `error_count` mayor
-> que 2**.
+Y la CEFR resulta ser buena para esto aunque fuera mala para lo otro: es un
+**conjunto cerrado de doce**, es estable, y describe la palabra, no al estudiante.
+La pregunta "¿esto es A21 o A22?" ahora sí tiene respuesta, porque es una pregunta
+sobre alemán y no sobre mí.
 
-La segunda mitad es la que importa. Sin ella, promocionar es solo acumular
-sesiones; con ella, promocionar significa que lo viejo ya no sangra.
+## Los doce tokens
 
-Una estructura entra en *Consolidado* cuando la produzco correctamente, sin que
-me la pidan, en tres sesiones distintas. Si la vuelvo a fallar, retrocede.
+`A11 A12 A21 A22 B11 B12 B21 B22 C11 C12 C21 C22`
 
-> **Cómo se vacía `Schwachstellen`, porque sin esto el criterio era imposible.**
-> `error_count` solo sube: nada lo baja nunca. Lo que retira un elemento de la
-> vista es marcarlo `status: known`, y lo que justifica marcarlo es el bloque `OK`
-> del modo [[Modus - Wiederholung|Wiederholung]]. Sin ese modo, *nada con
-> `error_count` mayor que 2* era literalmente inalcanzable y L1 no tenía salida.
-> Ver [[Modi]].
+Una sola grafía, siempre. Nunca `A2.1`, nunca `a11`, nunca `A2`. El momento en que
+una carpeta dice `A21` y una nota dice `A2.1` es el momento en que
+[[Nach Niveau.base|Nach Niveau]] se parte en dos sin avisar.
 
-## Procedimiento al promocionar
+**Las carpetas se crean cuando una palabra cae ahí**, no antes. Hoy hay cinco
+pobladas: `A11`, `A12`, `A21`, `A22`, `B11`.
 
-Tres sitios a mano, en este orden:
+## Quién asigna el `cefr`
 
-1. **Crear las carpetas** `20 - Wortschatz/L2` y `30 - Grammatik/L2`.
-2. **Editar `40 - Ansichten/Aktuelles Niveau.base`**: cambiar
-   `note.level == "L1"` por `"L2"`.
-3. **Editar [[Lernprofil]]**: `active_level`, el nivel activo del cuerpo, y
-   sobre todo el par de calibración CEFR — es lo que hace que el tutor te
-   empiece a exigir más.
+Yo, al crear la nota en `/de lektüre`. Y hay que decirlo: **es un juicio
+aproximado.** No hay una lista oficial palabra por palabra, así que dos personas
+razonables discreparían en los bordes.
 
-Y después, en las Instructions del GPT: la línea `level: L2` del bloque de
-cierre, y los dos valores de producción y comprensión.
+Eso está bien para lo que sirve —agrupar, navegar, decidir qué es pronto y qué es
+tarde— y no está bien para nada que dependa de precisión. Ninguna vista crítica
+filtra por `cefr`: [[Schwachstellen.base|Schwachstellen]] no lo mira, y el drill
+de `/de studium` tampoco. Si un día una palabra te parece mal clasificada,
+arrástrala de carpeta y cambia el campo; no rompes nada.
 
-**Las notas viejas no se mueven.** `L1` es un registro histórico de lo que
-aprendí ahí, no una etiqueta de dificultad que haya que mantener al día. Si
-reclasificas algo, es porque te equivocaste al archivarlo, no porque hayas
-mejorado.
+## Lo que se perdió al quitar la escala propia
 
-## La única CEFR que queda
+**El criterio de promoción.** Antes había una definición checkable de *he
+mejorado*: cinco estructuras consolidadas y nada con `error_count` mayor que 2. Ya
+no hay nada equivalente, porque las lecciones miden actividad, no capacidad.
 
-Un modelo no sabe qué es `L1`. Por eso las Instructions del tutor siguen
-llevando dos referencias:
+Lo que sigue midiendo dominio, elemento por elemento:
 
-| Para qué | Valor hoy |
-|---|---|
-| Nivel al que me pide producir | `A12` |
-| Nivel al que me habla | `A22` |
+- `status: new → learning → known`, movido por los bloques `ERRORS` y `OK`.
+- [[Schwachstellen.base|Schwachstellen]], que se vacía solo cuando algo llega a
+  `known`.
 
-**Viven solo en [[Lernprofil]] y en [[Modus - Sprechen]].** No entran en ninguna
-nota, ni en ningún nombre de carpeta, ni en el bloque de cierre. Ese bloque
-escribe `level: L1` y nada más.
+Es suficiente para saber qué estudiar. No es suficiente para saber si estoy
+mejorando. Si dentro de tres meses lo echo de menos, la reparación natural es un
+criterio sobre `known` — *el 80% de A11 y A12 en `known`* — no resucitar el campo.
+
+## Y la calibración del tutor
+
+Un modelo no sabe qué es `L001` ni le sirve el `cefr` de una palabra suelta para
+decidir a qué dificultad hablarme. Eso sigue siendo el par CEFR del
+[[Lernprofil]]: **producción A12, comprensión A22.**
+
+Vive solo ahí, es mi entrada cuando genero cada prompt, y no entra en ninguna nota
+de vocabulario. Ver [[Lektionen]].
 
 ## Historial
 
-| Nivel | Desde | Hasta | Calibración CEFR |
-|---|---|---|---|
-| `L1` | 2026-08-01 | — | A12 / A22 |
+| Fecha | Qué |
+|---|---|
+| 2026-07-31 | doce carpetas CEFR, `level` = mi nivel |
+| 2026-08-01 | escala propia `L1`, una carpeta, `level` = mi posición |
+| 2026-09-07 | `cefr` = dificultad de la palabra, `lektion` = cuándo entró |

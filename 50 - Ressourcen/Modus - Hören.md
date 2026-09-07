@@ -4,6 +4,12 @@ modus: hoeren
 updated: 2026-08-02
 ---
 
+> **SUSTITUIDA el 2026-09-07.** La arquitectura de modos se ha
+> reorganizado en el ciclo de cinco fases de [[Lektionen]]. Esta nota se
+> conserva como referencia —hay ideas aquí que sobreviven dentro del ciclo—
+> pero no describe el sistema actual. No la sigas.
+
+
 # Modo Hören: comprensión oral
 
 El modo que más me falta, porque mi perfil dice comprensión (A22) por delante de

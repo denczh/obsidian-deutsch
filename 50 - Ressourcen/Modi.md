@@ -3,6 +3,12 @@ type: reference
 updated: 2026-08-02
 ---
 
+> **SUSTITUIDA el 2026-09-07.** La arquitectura de modos se ha
+> reorganizado en el ciclo de cinco fases de [[Lektionen]]. Esta nota se
+> conserva como referencia —hay ideas aquí que sobreviven dentro del ciclo—
+> pero no describe el sistema actual. No la sigas.
+
+
 # Modos: la academia
 
 Hasta ahora el sistema tenía un solo modo, hablar. Una academia real tiene

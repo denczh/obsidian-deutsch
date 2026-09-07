@@ -4,6 +4,12 @@ modus: wiederholung
 updated: 2026-08-02
 ---
 
+> **SUSTITUIDA el 2026-09-07.** La arquitectura de modos se ha
+> reorganizado en el ciclo de cinco fases de [[Lektionen]]. Esta nota se
+> conserva como referencia —hay ideas aquí que sobreviven dentro del ciclo—
+> pero no describe el sistema actual. No la sigas.
+
+
 # Modo Wiederholung: repaso
 
 Repaso escrito de lo que ya he fallado y de lo que tengo apuntado y nunca he

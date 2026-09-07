@@ -1,7 +1,7 @@
 ---
 type: session
 date: "{{date:YYYY-MM-DD}}"
-level: L1
+lektion: "-"
 mode: sprechen
 themes: []
 minutes: 
@@ -42,7 +42,8 @@ processed: false
 ```
 === SESSION ===
 date: 
-level: 
+lektion: 
+mode: 
 themes: 
 
 === VOCAB ===

@@ -7,7 +7,8 @@ pos: verb
 verbtyp: regelmäßig
 trennbar: false
 translation: ""
-level: L1
+cefr: A11
+lektion: L001
 theme: []
 example: ""
 source: voice-session

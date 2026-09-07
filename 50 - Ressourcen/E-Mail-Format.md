@@ -14,7 +14,7 @@ por un cliente de correo.
 ```
 === SESSION ===
 date: YYYY-MM-DD
-level: L1
+lektion: "-"
 mode: sprechen
 themes: reisen, gesundheit
 
@@ -40,17 +40,17 @@ ich bin gegangen zum Bahnhof | ich bin zum Bahnhof gegangen | word-order
 === END ===
 ```
 
-## El bloque del modo Wiederholung
+## El bloque con `OK`: Studium y Gramatik
 
-Cada modo emite el mismo formato, pero solo los bloques que le corresponden. El
+Cada fase emite el mismo formato, pero solo los bloques que le corresponden. El
 repaso no introduce vocabulario, así que no lleva `VOCAB` ni `EXTRA`; en cambio
-lleva `OK`, que ningún otro modo produce. Ver [[Modi]].
+lleva `OK`, que solo producen `studium` y `gramatik`. Ver [[Lektionen]].
 
 ```
 === SESSION ===
 date: YYYY-MM-DD
-level: L1
-mode: wiederholung
+lektion: L001
+mode: studium
 themes: -
 
 === OK ===
@@ -77,7 +77,11 @@ lo que no sabes.
 
 **La línea `mode:`** es lo que permite saber después de dónde vino cada error. Si
 un día `Schwachstellen` se llena de cosas que solo fallo por escrito, eso es
-información, no ruido.
+información, no ruido. Valores: `sprechen`, `studium`, `vorlesen`, `gramatik`.
+
+**Y la línea `lektion:`** dice a qué lección pertenece la sesión, o `-` si es
+conversación libre fuera del ciclo. Sustituye a la vieja línea `level:`. Ver
+[[Lektionen]].
 
 ## Los tipos de error
 
@@ -96,7 +100,7 @@ campo que quiero poder filtrar, así que lleva vocabulario cerrado:
 | `preposition` | preposición equivocada |
 | `vocabulary` | palabra equivocada o inventada |
 | `pronunciation` | pronunciación |
-| `comprehension` | **no lo entendí.** Solo lo produce [[Modus - Hören\|Hören]] |
+| `comprehension` | **no lo entendí.** Solo lo produce `vorlesen` |
 
 `comprehension` es de otra naturaleza que los demás y por eso merece la pena
 separarlo: *no entendí* y *lo dije mal* son problemas distintos y se arreglan de
@@ -152,7 +156,7 @@ desnudo: `Bahnsteig`, nunca `der Bahnsteig`.
 - Un campo que no aplica se escribe como un solo guion.
 - Una línea por elemento. Sin líneas en blanco dentro de un bloque.
 - Todos los encabezados del modo, siempre presentes, aunque el bloque esté vacío.
-  Cinco en `sprechen`, tres en `wiederholung`.
+  Cinco en `sprechen`, cuatro en `vorlesen`, tres en `studium` y `gramatik`.
 - La línea `mode:` siempre, y con el token exacto del modo.
 - Nombres de campo sin acentos ni caracteres especiales, aunque el contenido sí
   los lleve. Así las claves de parseo sobreviven a cualquier codificación.

@@ -5,9 +5,10 @@ updated: 2026-08-01
 
 # Workflow completo
 
-> Esta nota describe el modo **Sprechen**, que es el original y el único que
-> funciona hoy. Los otros cuatro modos —escuchar, repasar, ejercicios, dictado—
-> siguen el mismo ciclo y alimentan el mismo log de errores. Ver [[Modi]].
+> **Esta nota describe solo la conversación libre caminando**, que sigue viva pero
+> ya no es el sistema principal. El sistema es el ciclo de cinco fases con los
+> comandos `/de` → **[[Lektionen]]**. Lo que sigue vigente aquí: el formato del
+> bloque, el procesado, las vistas y los cinco fallos silenciosos del final.
 
 Tres etapas y una dirección: hablo, se escribe, lo proceso. Nada fluye hacia
 atrás por sí solo. **El único punto donde el ciclo se cierra es a mano**, cuando
@@ -104,12 +105,12 @@ notas no se escriben nunca. Detalle completo en [[Verarbeitung]].
 1. **Nota de sesión** `10 - Sitzungen/YYYY-MM-DD` desde `V - Sitzung`, con el
    bloque crudo pegado bajo *Roh*. Es la procedencia: si una nota luego parece
    mal, el original está ahí.
-2. **VOCAB** → una nota por palabra en `20 - Wortschatz/L1`, `source:
-   voice-session`. Los verbos van con `V - Verb` (conjugación y régimen); el resto
-   con `V - Wortschatz`. Las dos escriben `type: vocab`.
+2. **VOCAB** → una nota por palabra en `20 - Wortschatz/<cefr>/`, `source:
+   voice-session`, `lektion: "-"`. Los verbos van con `V - Verb` (conjugación y
+   régimen); el resto con `V - Wortschatz`. Las dos escriben `type: vocab`.
 3. **EXTRA** → igual, pero `source: tutor-extra`. Son las palabras que el tutor
    añadió y que no dije.
-4. **GRAMMAR** → crear **o actualizar** en `30 - Grammatik/L1`. Las reglas
+4. **GRAMMAR** → crear **o actualizar** en `30 - Grammatik/<cefr>/`. Las reglas
    reaparecen entre sesiones: buscar antes de crear.
 5. **ERRORS** → localizar la nota a la que pertenece cada error, poner
    `last_error` a hoy, subir `error_count`, `status: learning`. Si no existe la
@@ -143,10 +144,10 @@ Cada vista contesta una pregunta distinta. No hay que mirarlas todas:
 
 | Cuándo | Vista | Qué hago |
 |---|---|---|
-| Siempre que estudie | [[Schwachstellen.base\|Schwachstellen]] | lo que fallo. **Es mi cola de repaso.** Se vacía solo con el bloque `OK` de [[Modus - Wiederholung\|Wiederholung]]. |
+| Siempre que estudie | [[Schwachstellen.base\|Schwachstellen]] | lo que fallo. **Es mi cola de repaso.** Se vacía solo con el bloque `OK` de `/de studium` o `/de gramatik`. |
 | Al procesar | [[Ohne Beispiel.base\|Ohne Beispiel]] | escribir las frases que dejé pendientes |
 | Antes de una sesión | [[Nicht gesprochen.base\|Nicht gesprochen]] | palabras que el tutor me dio y nunca he usado. Meterlas hoy. |
-| Al empezar un tema | [[Aktuelles Niveau.base\|Aktuelles Niveau]] | qué llevo en L1 |
+| Al empezar un tema | [[Nach Niveau.base\|Nach Niveau]] | qué tengo, por dificultad |
 | Cuando me apetezca | [[Nicht in Anki.base\|Nicht in Anki]] | exportar a repetición espaciada |
 
 `Nicht gesprochen` es la que cierra el círculo del bloque EXTRA: palabras
@@ -199,7 +200,7 @@ cierre, porque él ha estado escuchando y yo no he tomado notas.
 Cuando toque, cuatro sitios a mano:
 
 1. Crear `20 - Wortschatz/L2` y `30 - Grammatik/L2`.
-2. En `Aktuelles Niveau.base`, cambiar `note.level == "L1"` por `"L2"`.
+2. En `Aktuelle Lektion.base`, cambiar `note.lektion == "L001"` por la nueva.
 3. En el [[Lernprofil]]: `active_level`, y sobre todo **el par de calibración
    CEFR** — es lo que hace que el tutor empiece a exigirme más.
 4. En el GPT: `Level token`, los dos niveles, y la línea `level: L2` del bloque.

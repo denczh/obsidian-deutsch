@@ -9,6 +9,12 @@ spoken_count: 19
 grammar_count: 2
 ---
 
+> **SUSTITUIDA el 2026-09-07.** Este export alimentaba el Project de repaso.
+> Ahora el vocabulario del drill va dentro del prompt de `/de studium`, generado
+> desde la bóveda en cada lección. Ver [[Lektionen]]. Los datos de aquí son de
+> 2026-08-02 y ya no son válidos.
+
+
 # Export para el modo Wiederholung
 
 Fichero para subir al Project. **Generado desde la bóveda, no escrito a mano.**

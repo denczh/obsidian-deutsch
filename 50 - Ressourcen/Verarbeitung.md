@@ -4,6 +4,10 @@ type: reference
 
 # Procesamiento: lista → bóveda
 
+> Esto describe el procesado de una sesión de [[Modus - Sprechen|conversación
+> libre]]. Dentro del ciclo de lecciones lo hago yo en `/de commit`, con los mismos
+> pasos. Ver [[Lektionen]].
+
 El mismo día, mientras aún recuerdas la conversación. Veinte minutos de atraso
 está bien; una semana de atraso significa que las notas no se escriben nunca.
 
@@ -11,13 +15,15 @@ está bien; una semana de atraso significa que las notas no se escriben nunca.
    crudo abajo, bajo el encabezado *Roh*. Esa es tu procedencia: si una nota
    luego parece mal, el original está ahí.
 
-2. **Por cada línea VOCAB**, una nota en `20 - Wortschatz/<nivel>/`. La plantilla
+2. **Por cada línea VOCAB**, una nota en `20 - Wortschatz/<cefr>/`, donde `cefr`
+   es la dificultad de la palabra → [[Niveaus]]. Y `lektion` con la lección en
+   curso, o `-` si viene de conversación libre. La plantilla
    depende de `pos`:
    - `pos: verb` → **`V - Verb`**, con conjugación y régimen de preposiciones.
    - todo lo demás → **`V - Wortschatz`**.
 
-   Rellenar `term`, `article`, `inflection`, `pos`, `translation`, `level` y
-   `theme` desde la línea. Después añadir lo único que la lista no trae: **una
+   Rellenar `term`, `article`, `inflection`, `pos`, `translation`, `cefr`,
+   `lektion` y `theme`. Después añadir lo único que la lista no trae: **una
    frase de ejemplo en alemán, escrita por ti**. Ese acto de producción vale más
    que la nota.
 
@@ -30,7 +36,7 @@ está bien; una semana de atraso significa que las notas no se escriben nunca.
    [[Nicht gesprochen.base|Nicht gesprochen]] hasta que les cambies el `status`.
 
 3. **Por cada línea GRAMMAR**, crear *o actualizar* una nota en
-   `30 - Grammatik/<nivel>/`. Las reglas se repiten entre sesiones: busca primero
+   `30 - Grammatik/<cefr>/`. Las reglas se repiten entre sesiones: busca primero
    si ya existe. Escribir la explicación de 2-3 frases en español y dos ejemplos
    mientras la sesión está fresca; una etiqueta desnuda no te dirá nada en tres
    semanas.
