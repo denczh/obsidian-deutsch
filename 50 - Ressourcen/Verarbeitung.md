@@ -1,75 +1,75 @@
 ---
 type: reference
+updated: 2026-09-07
 ---
 
-# Procesamiento: lista → bóveda
+# Processing: block to vault
 
-> Esto describe el procesado de una sesión de [[Modus - Sprechen|conversación
-> libre]]. Dentro del ciclo de lecciones lo hago yo en `/de commit`, con los mismos
-> pasos. Ver [[Lektionen]].
+> `{TARGET}` = German · `{KNOWN}` = Spanish → [[Configuration]]
 
-El mismo día, mientras aún recuerdas la conversación. Veinte minutos de atraso
-está bien; una semana de atraso significa que las notas no se escriben nunca.
+> This describes processing a [[Modus - Sprechen|free conversation]] session, which
+> lives outside the lesson cycle. Inside the cycle the same steps are done by
+> `/de commit`. See [[Lektionen]].
 
-1. **Crear `10 - Sitzungen/YYYY-MM-DD.md`** desde `V - Sitzung`. Pegar el bloque
-   crudo abajo, bajo el encabezado *Roh*. Esa es tu procedencia: si una nota
-   luego parece mal, el original está ahí.
+Same day, while the conversation is still fresh. Twenty minutes of backlog is fine;
+a week of backlog means the notes never get written.
 
-2. **Por cada línea VOCAB**, una nota en `20 - Wortschatz/<cefr>/`, donde `cefr`
-   es la dificultad de la palabra → [[Niveaus]]. Y `lektion` con la lección en
-   curso, o `-` si viene de conversación libre. La plantilla
-   depende de `pos`:
-   - `pos: verb` → **`V - Verb`**, con conjugación y régimen de preposiciones.
-   - todo lo demás → **`V - Wortschatz`**.
+1. **Create `10 - Sitzungen/YYYY-MM-DD.md`** from `V - Sitzung`. Paste the raw
+   block at the bottom under the *Roh* heading. That is the provenance: if a note
+   later looks wrong, the original is there.
 
-   Rellenar `term`, `article`, `inflection`, `pos`, `translation`, `cefr`,
-   `lektion` y `theme`. Después añadir lo único que la lista no trae: **una
-   frase de ejemplo en alemán, escrita por ti**. Ese acto de producción vale más
-   que la nota.
+2. **For each VOCAB line**, a note in `20 - Wortschatz/<cefr>/`, where `cefr` is the
+   difficulty of the word → [[Niveaus]]. And `lektion` with the current lesson, or
+   `-` when it comes from free conversation. The template depends on `pos`:
+   - `pos: verb` → **`V - Verb`**, with conjugation and preposition government.
+   - anything else → **`V - Wortschatz`**.
 
-   Las dos plantillas escriben `type: vocab`. Un verbo no es otro tipo de nota,
-   es la misma nota con más campos rellenos.
+   Fill `term`, `article`, `inflection`, `pos`, `translation`, `cefr`, `lektion`
+   and `theme`. Then add the one thing the list does not carry: **an example
+   sentence in `{TARGET}`, written by the learner**. That act of production is
+   worth more than the note.
 
-2b. **Por cada línea EXTRA**, lo mismo, pero con `source: tutor-extra`. Son
-   palabras que no dijiste: el ejemplo aquí no es un recuerdo, es un ejercicio.
-   Escribir la frase es la primera vez que usas la palabra. Aparecen en
-   [[Nicht gesprochen.base|Nicht gesprochen]] hasta que les cambies el `status`.
+   Both templates write `type: vocab`. A verb is not a different type of note, it
+   is the same note with more fields filled.
 
-3. **Por cada línea GRAMMAR**, crear *o actualizar* una nota en
-   `30 - Grammatik/<cefr>/`. Las reglas se repiten entre sesiones: busca primero
-   si ya existe. Escribir la explicación de 2-3 frases en español y dos ejemplos
-   mientras la sesión está fresca; una etiqueta desnuda no te dirá nada en tres
-   semanas.
+2b. **For each EXTRA line**, the same, but with `source: tutor-extra`. These are
+   words that were never said: the example here is not a memory, it is an exercise.
+   Writing the sentence is the first time the word gets used. They show up in
+   [[Nicht gesprochen.base|Nicht gesprochen]] until their `status` changes.
 
-4. **Por cada línea ERRORS**, localizar la nota a la que pertenece y poner
-   `last_error` a hoy, incrementar `error_count`, poner `status: learning`. Si no
-   existe la nota, crearla: un error es evidencia de que el elemento importa.
+3. **For each GRAMMAR line**, create *or update* a note in `30 - Grammatik/<cefr>/`.
+   Rules recur across sessions: look for an existing note first. Write the two or
+   three sentence explanation in `{KNOWN}` and two examples while the session is
+   fresh; a bare label will mean nothing three weeks later.
 
-4b. **Por cada línea OK** (solo la produce el modo
-   [[Modus - Wiederholung|Wiederholung]]): si estaba en `learning` → `known`; si
-   estaba en `new` → `learning`. **`error_count` no se toca nunca.** Es el único
-   paso que saca elementos de [[Schwachstellen.base|Schwachstellen]]. Ver [[Modi]].
+4. **For each ERRORS line**, find the note it belongs to and set `last_error` to
+   today, increment `error_count`, set `status: learning`. If no note exists, create
+   one: a mistake is evidence that the item matters.
 
-5. **Actualizar [[Lernprofil]]**: añadir a errores recurrentes, refrescar temas
-   recientes, aplicar cualquier promoción que el tutor haya propuesto.
+4b. **For each OK line** (only `/de studium` and `/de gramatik` produce these): if
+   it was `learning` it becomes `known`; if it was `new` it becomes `learning`.
+   **`error_count` is never touched.** This is the only step that removes anything
+   from [[Schwachstellen.base|Schwachstellen]].
 
-6. **Commit y push.**
+5. **Update [[Lernprofil]]**: append to recurring mistakes, refresh recent themes.
 
-> El paso 4 es el que paga el esfuerzo. Todo lo demás registra lo que pasó; el
-> paso 4 es lo que convierte la bóveda en un sistema de repaso.
+6. **Commit and push.**
 
-## Aceleradores, cuando la rutina manual ya sea familiar
+> Step 4 is the one that repays the effort. Everything else records what happened;
+> step 4 is what turns the vault into a revision system. And step 4b is what stops
+> it growing forever.
 
-- El plugin **Templates** está activado y apunta a `90 - Vorlagen`. Los pasos 2 y
-  3 son un comando más escribir.
-- Un **script parser** puede convertir el bloque pegado en notas stub con el
-  frontmatter ya rellenado, dejándote solo las frases de ejemplo y las
-  explicaciones. Merece la pena hacerlo hacia la décima sesión, cuando tu propio
-  formato ya se haya estabilizado.
+## Accelerators
 
-## Exportar a repetición espaciada
+- The **Templates** core plugin points at `90 - Vorlagen`. Steps 2 and 3 are one
+  command plus typing.
+- A **parser script** could turn a pasted block into stub notes with the
+  frontmatter already filled, leaving only the example sentences and the
+  explanations. Worth writing once the format has settled.
 
-Cuando te apetezca: filtra por `anki = false` en
-[[Nicht in Anki.base|Nicht in Anki]], exporta `term` y `translation` a CSV, y
-voltea el flag. Un chat es una mala herramienta de drill y un buen interlocutor.
-Que cada uno haga su trabajo.
+## Export to spaced repetition
+
+Filter `anki = false` in [[Nicht in Anki.base|Nicht in Anki]], export `term` and
+`translation` to CSV, flip the flag. Or use the spaced-repetition plugin and stay
+in the vault. A chat is a poor drilling tool and a good conversation partner; let
+each do its own job.

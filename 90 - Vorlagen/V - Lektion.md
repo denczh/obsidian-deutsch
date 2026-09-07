@@ -17,41 +17,42 @@ ok_count: 0
 
 # {{title}}
 
-**Tema:** · **Empezada:** {{date:YYYY-MM-DD}}
+**Theme:** · **Started:** {{date:YYYY-MM-DD}}
 
-> Esta nota es el estado de la lección y su procedencia. Es lo que leo al
-> ejecutar cualquier comando `/de`: sin ella no sé qué fase está superada. No se
-> borra al cerrar la lección — se archiva. Ver [[Lektionen]].
+> This note is the lesson's state and its provenance. It is what Claude reads when
+> any `/de` command runs: without it there is no way to know which phase has been
+> passed. It is not deleted when the lesson closes — it is archived. See
+> [[Lektionen]].
 
-## Fases
+## Phases
 
-| Fase | Comando | Hecha | Evidencia |
+| Phase | Command | Done | Evidence |
 |---|---|---|---|
-| 1. Lektüre | `/de lektüre` | ☐ | notas creadas + parte 1 abajo |
-| 2. Studium | `/de studium` | ☐ | bloque de cierre abajo |
-| 3. Vorlesen | `/de vorlesen` | ☐ | bloque de cierre abajo |
-| 4. Gramatik | `/de gramatik` | ☐ | bloque de cierre abajo |
-| 5. Commit | `/de commit` | ☐ | commit en git |
+| 1. Lektüre | `/de lektüre` | ☐ | notes created + part 1 below |
+| 2. Studium | `/de studium` | ☐ | closing block below |
+| 3. Vorlesen | `/de vorlesen` | ☐ | closing block below |
+| 4. Gramatik | `/de gramatik` | ☐ | closing block below |
+| 5. Commit | `/de commit` | ☐ | commit in git |
 
-## Historia, parte 1
+## Story, part 1
 
-(la narración de la fase 1, en alemán)
+(the phase 1 narrative, in the target language)
 
-## Historia, parte 2
+## Story, part 2
 
-(la continuación de la fase 3, en alemán)
+(the phase 3 continuation, in the target language)
 
-## Vocabulario introducido
-
-- 
-
-## Gramática introducida
+## Vocabulary introduced
 
 - 
 
-## Notas
+## Grammar introduced
 
-(qué falló, de qué instrucción se desvió cada GPT, qué ajustar la próxima vez)
+- 
+
+## Notes
+
+(what failed, which instruction each GPT drifted from, what to tighten next time)
 
 ## Roh - Studium
 

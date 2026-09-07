@@ -1,69 +1,71 @@
 ---
 type: reference
+updated: 2026-09-07
 ---
 
-# Vistas: qué filtra cada una
+# Views: what each one filters
 
-Las siete vistas son archivos `.base` (plugin Bases, ya activado). Si tu versión
-de Obsidian no reconoce el prefijo `note.` en los filtros, la vista aparecerá
-vacía: en ese caso recréala desde la interfaz con estos mismos filtros, o borra
-el prefijo `note.` en el archivo.
+> `{TARGET}` = German · `{KNOWN}` = Spanish → [[Configuration]]
 
-| Vista | Filtro | Orden |
+The seven views are `.base` files (Bases core plugin). If a version of Obsidian
+does not recognise the `note.` prefix in filters, the view will come up empty:
+rebuild it from the UI with the same filter, or drop the prefix in the file.
+
+| View | Filter | Order |
 |---|---|---|
-| **Schwachstellen** | `error_count > 0`, `status != "known"`, tipo vocab o grammar | `last_error` desc |
+| **Schwachstellen** | `error_count > 0`, `status != "known"`, type vocab or grammar | `last_error` desc |
 | **Aktuelle Lektion** | `lektion == "L001"` | `created` desc |
-| **Nach Niveau** | tipo vocab o grammar | `cefr`, luego nombre |
-| **Nach Thema** | tipo vocab o grammar | `theme`, luego nombre |
-| **Nicht in Anki** | `anki == false` y `status != "new"` | `cefr`, luego nombre |
-| **Ohne Beispiel** | `type == "vocab"` y `example` vacío | `created` asc |
-| **Nicht gesprochen** | `source != "voice-session"` y `status == "new"` | `created` asc |
+| **Nach Niveau** | type vocab or grammar | `cefr`, then name |
+| **Nach Thema** | type vocab or grammar | `theme`, then name |
+| **Nicht in Anki** | `anki == false` and `status != "new"` | `cefr`, then name |
+| **Ohne Beispiel** | `type == "vocab"` and `example` empty | `created` asc |
+| **Nicht gesprochen** | `source != "voice-session"` and `status == "new"` | `created` asc |
 
-## Notas
+## Notes
 
-**Schwachstellen es la vista que de verdad estudias.** El documento la define
-como "`last_error` no vacío"; aquí uso `error_count > 0`, que es equivalente y
-más robusto (un campo numérico no se rompe si escribes la fecha en otro
-formato). El orden sigue siendo por `last_error`.
+**Schwachstellen is the view that actually gets studied.** The original spec
+defined it as "`last_error` is not empty"; `error_count > 0` is equivalent and does
+not break if a date gets written in a different format one day. The sort is still
+by `last_error`.
 
-**El segundo filtro, `status != "known"`, es la puerta de salida** (añadido
-2026-08-02). Sin él nada abandonaba nunca esta vista: `error_count` solo sube,
-así que un error de hace tres meses ya dominado seguía apareciendo para siempre y
-la cola crecía sin límite. `error_count` se queda como registro histórico —es un
-hecho, y sirve para ordenar por cuánto te costó algo—; lo que retira un elemento
-es marcarlo `known`. Y lo que justifica marcarlo `known` es el bloque `OK` de
-`/de studium` y `/de gramatik`. Ver [[Lektionen]].
+**The second filter, `status != "known"`, is the exit door** (added 2026-08-02).
+Without it nothing ever left this view: `error_count` only goes up, so a mistake
+mastered three months ago kept showing up forever and the queue grew without limit.
+`error_count` stays as the historical record — it is a fact, and it is what to sort
+by for how much trouble something gave. What retires an item is marking it `known`,
+and what justifies that is the `OK` block of `/de studium` and `/de gramatik`. See
+[[Lektionen]].
 
-**Aktuelle Lektion lleva la lección escrita dentro del archivo.** Al empezar
-`L002`, edito `40 - Ansichten/Aktuelle Lektion.base` y cambio esa línea. Es lo
-único que hay que tocar a mano al pasar de lección, y lo hago yo en `/de lektüre`.
+**Aktuelle Lektion carries the lesson written inside the file.** When `L002` starts,
+that line gets edited. It is the only thing edited by hand when a lesson changes,
+and `/de lektüre` does it.
 
-**Nach Niveau agrupa por `cefr`**, que es la dificultad de la palabra y no mi
-nivel. Es la vista para preguntarse qué tengo de A11 y qué me falta. Ver
-[[Niveaus]] y [[Lektionen]].
+**Nach Niveau groups by `cefr`**, which is the difficulty of the word and not the
+learner's level. It is the view for asking what is there at A11 and what is
+missing. See [[Niveaus]].
 
-**Nicht gesprochen es el contrapeso del bloque EXTRA.** El tutor puede añadir
-palabras que nunca dijiste, sin límite de cantidad. El riesgo obvio es que se
-acumulen como deberes que nunca haces. Esta vista las lista mientras siguen en
-`status: new`; en cuanto uses una en una sesión, ponla en `learning` y desaparece.
-Si crece sin parar, el problema no es la vista.
+**Nicht gesprochen is the counterweight to the EXTRA block.** A tutor can add words
+that were never said, with no limit. The obvious risk is that they pile up as
+homework nobody does. This view lists them while they are still `status: new`; use
+one in a session, move it to `learning`, and it disappears. If it grows without
+stopping, the problem is not the view.
 
-Filtra por `source != "voice-session"`, no por `tutor-extra`, para que también
-recoja lo que añado a mano (`source: manual`). Cualquier palabra que no haya
-salido de mi boca en una sesión es una palabra sin estrenar, venga de donde venga.
+It filters on `source != "voice-session"` rather than on `tutor-extra`, so it also
+catches hand-added words (`source: manual`) and lesson words that have never been
+produced (`source: lektuere`). Any word that has not come out of the learner's
+mouth in a session is an unused word, wherever it came from.
 
-**Nach Thema sustituye a una carpeta por tema.** El tema vive en frontmatter como
-lista; las carpetas por tema son justo la jerarquía en competencia que hay que
-evitar. Si quieres agrupación visual real, abre la vista y activa *Group by* →
-`theme` desde la interfaz.
+**Nach Thema replaces a per-theme folder.** The theme lives in frontmatter as a
+list; per-theme folders are exactly the competing hierarchy to avoid. For real
+visual grouping, open the view and turn on *Group by* → `theme` in the UI.
 
-**Dos tokens, dos significados, una sola grafía cada uno:**
+## Two tokens, two meanings, one spelling each
 
-`cefr` es uno de los doce: `A11 A12 A21 A22 B11 B12 B21 B22 C11 C12 C21 C22`.
-Nunca `A2.1`, nunca `a11`. Decide la carpeta.
+`cefr` is one of twelve: `A11 A12 A21 A22 B11 B12 B21 B22 C11 C12 C21 C22`. Never
+`A2.1`, never `a11`. It decides the folder.
 
-`lektion` es `L001`, `L002`… con tres dígitos siempre. Nunca `L1`. Es un campo y
-nunca una carpeta.
+`lektion` is `L001`, `L002`… always three digits. Never `L1`. It is a field and
+never a folder.
 
-El momento en que una carpeta dice `A21` y una nota dice `A2.1` es el momento en
-que `Nach Niveau` se parte silenciosamente en dos.
+The moment a folder says `A21` and a note says `A2.1` is the moment `Nach Niveau`
+splits in two without warning.

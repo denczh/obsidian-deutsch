@@ -1,96 +1,81 @@
 ---
 type: profile
-active_level: L1
-updated: 2026-08-01
-sessions: 1
+updated: 2026-09-07
+lektionen_done: 0
 cefr_production: A12
 cefr_comprehension: A22
 ---
 
-# Lernprofil - Pedro
+# Learner profile — Pedro
 
-**Actualizado:** 2026-08-01 · **Sesiones:** 1
-**Nivel activo:** L1
+> `{TARGET}` = German · `{KNOWN}` = Spanish → [[Configuration]]
 
-> Este archivo es la única fuente autorizada sobre mi nivel. El tutor de voz no
-> puede leerlo: lo que hago es copiar el bloque "Learner values" a las
-> Instructions del GPT cada 4-6 sesiones. Ver [[Modus - Sprechen]].
+**Current lesson:** L001 · **Updated:** 2026-09-07
 
-## Mi escala
+> This file is the only authoritative source on calibration. Claude reads it when
+> generating every lesson prompt, so it does not need copying anywhere — with one
+> exception: [[Modus - Sprechen]] has a permanent prompt whose learner values have
+> to be refreshed by hand every 4-6 sessions.
 
-La bóveda usa **mi escala**, no la CEFR: `L1`, `L2`, `L3`… tantos como me hagan
-falta, definidos por lo que yo he consolidado y no por una tabla externa. Ver
-[[Niveaus]].
+## Calibration
 
-**Nivel activo: L1.** Es el único token que aparece en el frontmatter, en los
-nombres de carpeta y en el bloque de cierre del tutor.
+The one thing a model cannot infer: **how hard to speak.**
 
-## Calibración para el tutor
-
-Un modelo no sabe qué es `L1`, así que en sus Instructions sigue recibiendo dos
-referencias CEFR. **Solo viven aquí y en el prompt; no entran en ninguna nota.**
-
-| Para qué | Valor | Nota |
+| For what | Level | Note |
 |---|---|---|
-| Lo que me pide producir | **A12** | frases cortas, orden de palabras inestable |
-| Cómo me habla | **A22** | pierdo el hilo a velocidad normal |
+| What I am asked to produce | **A12** | short sentences, word order unstable |
+| What I am spoken to in | **A22** | I lose the thread at normal speed |
 
-**El desfase es deliberado.** Produzco a A12; se me habla a A22. Entender más de
-lo que puedo decir es normal y ese hueco es el mecanismo por el que se recupera
-un idioma dormido. No colapsar los dos números en uno.
+**The gap is deliberate.** I produce at A12; I am spoken to at A22. Understanding
+more than I can say is normal and that gap is the mechanism by which a dormant
+language comes back. **Never collapse the two into one number.**
 
-Cuando pase a `L2`, lo que hay que revisar es este par de valores, no el token.
+This pair is the only CEFR that enters a prompt. The `cefr` field on a vocabulary
+note is a different thing: the difficulty of that word. See [[Niveaus]].
 
-## Criterio de promoción
+**Reviewed at every `/de commit`**, and only changed deliberately. If almost
+everything comes out right first time for three lessons running, production is
+behind reality. If almost nothing does, it is ahead.
 
-**Estructuras** → una estructura pasa a *Consolidado* cuando la produzco
-correctamente, sin que me la pidan, en tres sesiones distintas. Si la vuelvo a
-fallar, retrocede. Pedir al tutor que proponga promociones en su cierre.
+## Seen, not consolidated
 
-**Nivel** → paso de `L1` a `L2` cuando tenga cinco estructuras en *Consolidado*
-y `Schwachstellen` no tenga nada con `error_count` mayor que 2. Ver [[Niveaus]]
-para el procedimiento.
+- [[Possessivartikel meine]] — possessive in the nominative, `mein` / `meine`
+- [[Dativ mit in]] — `in` + dative for location
 
-## Consolidado
+## Pending, in suggested order
 
-(vacío al empezar)
+1. Gender of household nouns: the feminines are the ones I get wrong.
+2. `in` + accusative (movement), as a contrast to the dative already seen.
+3. Dative plural with `-n` (`in den Regalen`).
 
-## Visto, no consolidado
+## Recurring mistakes to watch
 
-- [[Possessivartikel meine]] — posesivo en nominativo, `mein` / `meine` (1/3)
-- [[Dativ mit in]] — `in` + dativo para ubicación (1/3)
+Filled from the `ERRORS` blocks. Patterns, not the full list — the full list is in
+the notes and in [[Schwachstellen.base|Schwachstellen]].
 
-## Pendiente, en orden sugerido
+- **Possessive agreement with gender** — *Mein Tür* → *Meine Tür* (2026-08-01).
+  See [[Possessivartikel meine]].
 
-1. Género de los sustantivos de la casa: los femeninos son los que fallan.
-2. `in` + acusativo (movimiento), como contraste con el dativo ya visto.
-3. Plural de dativo con `-n` (`in den Regalen`).
+## Recent themes (last five lessons)
 
-## Errores recurrentes a vigilar
+Filled from the lesson notes. `/de lektüre` skips the last two.
 
-(se rellena desde el bloque ERRORS de cada sesión)
+- `wohnen` — Haus und Wohnung (2026-08-01, L001)
 
-- **Concordancia del posesivo con el género** — *Mein Tür* → *Meine Tür*
-  (2026-08-01). Ver [[Possessivartikel meine]].
+## Preferences
 
-## Temas recientes (últimas 5 sesiones)
+These shape every generated prompt. They are instructions, not decoration.
 
-(se rellena desde el bloque SESSION; evitar repetirlos)
+- Correction batched, not after every sentence.
+- Grammar explained in `{KNOWN}` while production is below B1.
+- I would rather talk a lot and be corrected briefly than be taught.
+- No written exercises and no homework in voice phases: I am walking.
+- **No empty validation.** No "Genau", "Super" or equivalent as a turn opener.
+  Being told I am right when I am not does not encourage me — it irritates me and
+  it costs the tutor my trust in every correction that follows. Praise only works
+  if it is specific and the sentence was finished and correct.
+- **My mid-sentence pauses are not the end of my turn.** I speak slowly because my
+  production level is low. Wait. (2026-08-01)
 
-- `wohnen` — Haus und Wohnung (2026-08-01)
-
-## Preferencias
-
-- Corrección acumulada, no después de cada frase.
-- Gramática explicada en español mientras yo lo siga pidiendo.
-- Prefiero hablar mucho y ser corregido brevemente antes que ser enseñado.
-- Nada de ejercicios escritos ni deberes: estoy caminando.
-- **Nada de validación complaciente.** Ningún "Genau", "Super" ni equivalente
-  como apertura de turno. Que me den la razón cuando no la tengo no me anima:
-  me irrita y me hace desconfiar del resto de la corrección. El elogio solo
-  sirve si es específico y si la frase estaba acabada y bien.
-- **Mis pausas a media frase no son el final de mi turno.** Hablo despacio
-  porque tengo nivel bajo. Que espere. (2026-08-01)
-
-> Estas dos últimas son las que hay que reponer sí o sí cada vez que se
-> reescriba el prompt. Son las que hacen que la sesión sea usable.
+> Those last two are the ones that have to be restored every single time a prompt
+> is rewritten. They are what makes a session usable.

@@ -1,16 +1,19 @@
 ---
 type: reference
+updated: 2026-09-07
 ---
 
-# Temas
+# Themes
 
-**El tema es una etiqueta, nunca una carpeta.** Se escribe en el frontmatter como
-lista: `theme: [reisen, alltag]`. La vista
-[[Nach Thema.base|Nach Thema]] sustituye por completo a una carpeta por tema.
+> `{TARGET}` = German · `{KNOWN}` = Spanish → [[Configuration]]
 
-Usa exactamente estos tokens, una sola grafía, igual que con los niveles.
+**A theme is a tag, never a folder.** It goes in the frontmatter as a list:
+`theme: [reisen, alltag]`. The [[Nach Thema.base|Nach Thema]] view replaces a
+per-theme folder completely.
 
-| Token | Alemán | Español |
+Use exactly these tokens, one spelling, the same discipline as the `cefr` tokens.
+
+| Token | `{TARGET}` | `{KNOWN}` |
 |---|---|---|
 | `alltag` | Alltag | vida diaria |
 | `beruf` | Beruf und Arbeit | trabajo |
@@ -21,11 +24,15 @@ Usa exactamente estos tokens, una sola grafía, igual que con los niveles.
 | `wohnen` | Haus und Wohnung | casa y vivienda |
 | `reisen` | Reisen und Urlaub | viajes y vacaciones |
 
-Amplía la lista cuando una sesión genere un tema que no encaje, pero añádelo
-aquí primero. Un token inventado sobre la marcha es una etiqueta huérfana.
+Extend the list when a lesson produces a theme that does not fit — but **add it
+here first.** A token invented on the fly is an orphan tag.
 
-## Para el tutor
+## How the themes are used
 
-El GPT ofrece tres temas al empezar cada sesión y salta los que estén en *temas
-recientes* del [[Lernprofil]]. La columna alemana es lo que dice en voz alta; la
-española es lo que añade entre paréntesis mientras se lo sigas pidiendo.
+`/de lektüre` offers three themes at the start of a lesson and skips the ones used
+in the last two lessons, so a story does not land on the same ground twice in a
+row. The `{TARGET}` column is the name; the `{KNOWN}` one is what goes in
+parentheses while the production level is low.
+
+A theme also becomes the `theme` field of every note the lesson creates, which is
+what makes [[Nach Thema.base|Nach Thema]] usable later.

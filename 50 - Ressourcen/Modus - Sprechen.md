@@ -1,67 +1,65 @@
 ---
 type: reference
-updated: 2026-08-01
+modus: sprechen
+updated: 2026-09-07
 ---
 
-# Instructions del tutor de voz
+# Sprechen: free conversation
 
-Bloque listo para pegar en el campo **Instructions** del GPT
-(chatgpt.com/gpts → Create → pestaña Configure). Los placeholders ya están
-resueltos: alemán / español / Pedro.
+> `{TARGET}` = German · `{KNOWN}` = Spanish · `{LEARNER}` = Pedro → [[Configuration]]
 
-> **Los dos niveles CEFR de aquí abajo son la única excepción a "nada de CEFR en
-> la bóveda".** Un modelo no sabe qué es `L1`, así que necesita `A12` y `A22`
-> para calibrar qué te pide y cómo te habla. Pero el bloque de cierre que escribe
-> lleva `level: L1`, el token de [[Niveaus]], porque eso es lo que va a la
-> carpeta. Los dos mundos se tocan solo aquí.
+The only piece **outside the lesson cycle**: a voice GPT for talking while
+walking, with no gate, no fixed material and no sequence. It is the only thing in
+the system that is genuinely a conversation. Session shape and processing:
+[[Workflow]].
 
-## Configuración del GPT
+> **It is also the only prompt that is not generated from the vault**, because it
+> is permanent. That means its learner values go stale: they have to be refreshed
+> by hand from [[Lernprofil]] every 4-6 sessions. Inside the cycle that cost
+> disappeared; here it survives, and it is the price of having a partner that is
+> always there with no lesson to open first.
 
-| Campo                 | Qué hacer                                          |
-| --------------------- | -------------------------------------------------- |
-| Name, Description     | Cortos. Solo sirven para encontrarlo.              |
-| Instructions          | Todo. Pegar el bloque de abajo.                    |
-| Conversation starters | Dos: *Neues Thema* y *Wiederhole meine Fehler*.    |
-| Knowledge             | **Vacío.** El modo voz no puede leerlo.            |
-| Capabilities          | Apagar generación de imágenes y análisis de datos. |
-| Actions               | La de correo, activada **desde texto**. Nunca en voz. |
+## GPT configuration
 
-Guardar con visibilidad *Only me*, copiar el enlace, abrirlo una vez en el móvil
-y añadirlo a la pantalla de inicio: una sesión arranca en dos toques.
+| Field | What to do |
+|---|---|
+| Name, Description | Short. They are only used to find it. |
+| Instructions | Everything. Paste the block below. |
+| Conversation starters | Two: *Neues Thema* and *Wiederhole meine Fehler*. |
+| Knowledge | **Empty.** Voice mode cannot read it. |
+| Capabilities | Turn **off** image generation and data analysis. |
+| Actions | The mail one, triggered **from text**. Never in voice. |
 
-## Restricciones que no se pueden diseñar alrededor
+Save with visibility *Only me*, copy the link, open it once on the phone and add it
+to the home screen: a session then starts in two taps.
 
-- El modo voz **no puede leer los Knowledge files**. Lo que el tutor deba saber
-  va escrito en las Instructions.
-- El modo voz **no puede llamar Actions** ni usar apps o conectores.
-- Un GPT **no usa memoria guardada** ni conversaciones anteriores. Cada sesión
-  empieza amnésica. La continuidad la mantienes tú a mano.
-- Los GPTs **se crean y editan solo en web**.
+## Platform constraints that cannot be designed around
 
-> Nunca escribas una instrucción que diga al tutor que consulte un archivo. Un
-> modelo al que se le pide consultar un archivo que no puede ver no reporta el
-> fallo: afirma haberlo consultado e inventa el contenido. Fabricar en silencio
-> tu propio nivel e historial es peor que no tener archivo.
+- **Voice mode cannot read Knowledge files.** Whatever the tutor needs to know is
+  written into the Instructions.
+- **Voice mode cannot call Actions**, nor use apps or connectors.
+- **A GPT uses no saved memory** and no previous conversations. Every session
+  starts amnesiac.
+- **GPTs are created and edited on the web only.**
 
----
+> Never write an instruction telling the tutor to consult a file. A model asked to
+> consult a file it cannot see does not report the failure: it claims it consulted
+> the file and invents the contents. Silently fabricating a learner's own level and
+> history is worse than having no file at all.
 
-## BEGIN INSTRUCTIONS
+## The Instructions
 
-> **Límite duro: las Instructions del GPT no admiten más de 8000 caracteres.**
-> El bloque de abajo ocupa **7765**, con 235 de margen.
+> **Hard limit: 8000 characters.** The block below is **7765**, leaving 235 of
+> margin.
 >
-> **No repliegues las líneas.** El bloque va con líneas largas a propósito: el
-> plegado a 80 columnas costaba 132 caracteres en saltos de línea que al modelo le
-> dan igual.
+> **Do not re-wrap the lines.** They are long on purpose: wrapping at 80 columns
+> cost 132 characters in line breaks the model does not care about.
 >
-> Lo único que crece con el uso son las seis líneas de *Learner values*
-> (consolidado, visto, errores a vigilar, temas recientes): hoy ocupan 276
-> caracteres y **el presupuesto total para ellas es 511**. Cuando lo desborden, la
-> regla es recortar ahí, nunca en las reglas: deja los **3 errores** más
-> persistentes y los **2 temas** más recientes, y tira el resto. El Lernprofil
-> guarda la lista completa; el prompt solo necesita lo que va a usar hoy.
+> The only part that grows with use is the six *Learner values* lines. They have
+> **511 characters of budget**. When they overflow, cut there — keep the three most
+> persistent mistakes and the two most recent themes — **never cut a rule**.
 >
-> Antes de pegar, comprueba el recuento.
+> Count before pasting.
 
 ```
 You are Pedro's private German tutor. You talk to him by voice while he walks. Make him speak German. Explain only when asked.
@@ -184,125 +182,34 @@ A mail Action exists but never runs in voice. In voice: write the block, then sa
 4. A pause is not the end of his turn, and nothing unfinished gets agreement. If you are about to say "Genau", you are wrong.
 ```
 
-## END INSTRUCTIONS
+## Why the prompt is written that way
 
----
+**"No empty validation" exists because of a real session.** Left alone, the tutor
+opens turns with *"Genau!"* — including when the sentence is half finished and
+wrong. Being told you are right when you are not is not encouraging; it is
+irritating, and it costs the tutor trust in every correction that follows. The rule
+is: wrong → correct it, unfinished → wait, right and finished → keep talking. No
+fourth option.
 
-## El corte a media frase no se arregla desde aquí
+**"Turn-taking" cannot fix the interruptions.** A beginner pauses mid-sentence, the
+app treats silence as the end of the turn, and the tutor jumps in. **Turn detection
+belongs to the app, not the model.** What the prompt provides is `warte` (be quiet
+now) and `protokoll fertig` (from now on only answer after `fertig`), which is the
+closest thing to push-to-talk obtainable by prompting.
 
-Hay que separar dos cosas que parecen una:
+What actually reduces the interruptions is on the phone: **headphones**, **Voice
+Isolation** (Control Centre during the call → app controls → Mic Mode → Voice
+Isolation), and filling pauses with an audible *"ähm"* — sound keeps the mic open,
+silence closes it. The mute button also works as a manual push-to-talk.
 
-**Que te dé la razón con un "Genau!" a media frase** es comportamiento del
-modelo, y eso sí lo controla el prompt. Está cubierto arriba, en *No empty
-validation*, en la cuarta regla inviolable y en *Never*.
+**The four rules are repeated at the end** because in a long voice session the
+turn-length limit is the first thing to erode. Restating it last gives it the best
+chance of surviving.
 
-**Que te corte** no. Quién decide que has terminado de hablar es la detección de
-turno de la app, no las Instructions. Ninguna frase que escribas aquí alarga esa
-ventana de silencio. Lo que sí puedes hacer:
+## Maintenance
 
-- **Rellenar las pausas con sonido.** Un "ähm" mantiene el micro abierto; el
-  silencio lo cierra. Es el truco más eficaz y no depende de nada.
-- **Decir "warte"**, que ahora está en el prompt: corta al tutor en seco.
-- **Activar el modo de turno explícito** diciendo "protokoll fertig" al empezar.
-  A partir de ahí solo contesta cuando dices "fertig". Es lo más parecido a un
-  push-to-talk que se puede conseguir por prompt, y merece la pena probarlo la
-  primera vez en una sesión corta: si el modelo lo respeta, resuelve el problema
-  entero.
-- **Comprobar el modelo de voz en la app.** En julio de 2026 OpenAI sacó
-  GPT-Live, con arquitectura full-duplex y detección de turno pensada justo para
-  no cortar a quien se para a media frase. Si tu app te deja elegirlo dentro del
-  GPT, es la solución de verdad. El *hold-to-talk* existió unas semanas y
-  desapareció, así que no cuentes con él.
+Every 4-6 sessions, on the web, open the GPT and refresh the *Learner values* block
+from [[Lernprofil]]. Six lines, two minutes.
 
-## Qué se sacó del prompt al comprimirlo
-
-La versión larga ocupaba 14.551 caracteres. Lo que se cortó fue, casi todo,
-**explicación dirigida a ti, no instrucción dirigida al modelo**: los párrafos que
-justificaban por qué una regla existe. El modelo obedece la regla igual sin el
-motivo; tú necesitabas el motivo una vez, para decidir. Está preservado aquí y en
-[[Lernprofil]].
-
-Se cortaron también **dos líneas redundantes de la sección `Never`** que ya
-estaban textualmente en otras secciones.
-
-**El protocolo de la Action de correo está de vuelta** (2026-08-01). Lo había
-quitado por creer que no existía; sí existe y funciona desde texto. El prompt
-vuelve a llevar: en voz escribe el bloque y te dice en voz alta que salgas del
-modo voz, y cuando se lo pides por texto en ese mismo chat reutiliza el bloque ya
-escrito y llama a la Action con asunto `Deutsch YYYY-MM-DD`. En un chat nuevo,
-donde no hay bloque, te pide que lo pegues.
-
-Reponerlo costó 270 caracteres que salieron de comprimir frases en nueve
-secciones. Ninguna regla se tocó, pero **el margen bajó de 233 a 167**: es el
-precio de tener la Action documentada dentro del presupuesto.
-
-Ninguna regla operativa se perdió. Verificado contra una lista de 36: los cinco
-bloques, el token literal, las categorías de vocabulario, la flexión por
-categoría, las reglas de turno, la prohibición de validación vacía, la dosis, el
-registro de errores y las cuatro reglas finales.
-
-## Mantenimiento
-
-Cada 4-6 sesiones, en la web, abrir el GPT y actualizar el bloque *Learner
-values* desde [[Lernprofil]]. Ocho líneas, dos minutos.
-
-Al promocionar de nivel hay **cuatro** líneas que cambian aquí: el `Level token`,
-los dos valores de producción y comprensión, y la línea `level: L1` del bloque de
-cierre. El procedimiento completo está en [[Niveaus]].
-
-El bloque de arriba ya lleva incorporado lo aprendido en la sesión del
-2026-08-01: las dos estructuras vistas, el error del posesivo y el tema a evitar.
-
-Este es el coste recurrente del sistema y conviene nombrarlo sin adornos: el GPT
-no tiene memoria, así que su memoria eres tú. Nada de esto es automático.
-
-## ¿Un Project en lugar de un GPT?
-
-La tentación es obvia: los Projects tienen memoria, así que la continuidad sería
-automática y este mantenimiento desaparecería. Comparación real, según la
-documentación de OpenAI a 2026-08-01:
-
-| | GPT | Project |
-|---|---|---|
-| Memoria | Ninguna. Cada sesión empieza amnésica. | Recuerda todos los chats y archivos del proyecto. |
-| Instrucciones | 8000 caracteres. | Propias, y **anulan** tus custom instructions globales. |
-| Archivos | Hasta 20, pero **ilegibles en voz**. | 25 en Plus, y sí se usan en chats de texto. |
-| Actions | Sí. La de correo funciona. | **No existen.** Usan apps y conectores, no Actions. |
-| Voz | Sí, con la voz Shimmer. | Sí, listada como herramienta del proyecto. |
-| Arranque en dos toques | Enlace propio y conversation starters. | No hay starters. |
-
-**Decisión: el GPT se queda para las sesiones de voz.** Tres razones, en orden de
-peso.
-
-**La Action solo existe en el GPT.** En un Project habría que sustituirla por un
-conector de correo, que es otro mecanismo y puede no existir para el mío. Cambiar
-de plataforma es tirar lo único automático que tiene el sistema.
-
-**La amnesia es una decisión de diseño, no un defecto.** Todo el montaje descansa
-en que el tutor no lee la bóveda y la bóveda es la memoria. Con memoria de
-proyecto el tutor acumula su propia idea de mi nivel — y la documentación dice que
-**no se puede ver la lista de memorias de un proyecto**. Habría dos fuentes de
-verdad sobre mi nivel y una sería invisible e ineditable. Es el mismo fallo del
-que advierte la caja de arriba —el modelo sosteniendo un historial que yo no puedo
-auditar— en una forma más difícil de detectar.
-
-**Lo que se ahorra es menos de lo que parece.** Sí, desaparecerían la
-actualización de *Learner values* y la presión de los 8000 caracteres. A cambio se
-pierde el control explícito de lo que el tutor cree sobre mí, que es justo lo que
-hace el sistema auditable.
-
-### Lo que sí merece la pena: un Project aparte, para texto
-
-Ahí la memoria y los archivos funcionan de verdad. Subir el [[Lernprofil]] y las
-notas de gramática, y usarlo sentado: repasar errores, generar ejercicios sobre mi
-propio vocabulario, preparar un tema antes de salir a andar. **El GPT habla; el
-Project estudia.**
-
-Dos detalles si lo monto:
-
-- La memoria **project-only** solo se puede elegir al crear el proyecto y no se
-  puede cambiar después. Con la opción por defecto, mis memorias generales de
-  ChatGPT se cuelan dentro.
-- Los **chats creados con un GPT no se pueden mover a un Project**, así que las
-  sesiones de voz se quedan fuera y eso está bien: su registro es
-  `10 - Sitzungen`, no un chat.
+Sessions are processed like any other block → [[Verarbeitung]], with
+`lektion: "-"` because they belong to no lesson.

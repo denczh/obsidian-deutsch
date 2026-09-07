@@ -3,94 +3,94 @@ type: reference
 updated: 2026-09-07
 ---
 
-# Niveles: la dificultad de las palabras
+# Levels: the difficulty of words
 
-> **Reescrita el 2026-09-07.** Esta nota describía una escala propia `L1, L2…` que
-> medía *mi* posición y decidía las carpetas. Ya no existe. Historial al final.
+> `{TARGET}` = German · `{KNOWN}` = Spanish → [[Configuration]]
 
-El campo **`cefr`** clasifica **la dificultad de la palabra** en la escala
-internacional, y decide en qué carpeta vive:
+The **`cefr`** field classifies **the difficulty of the word** on the international
+scale, and decides which folder it lives in:
 
 ```
-20 - Wortschatz/A11/  30 - Grammatik/A11/
+20 - Wortschatz/A11/   30 - Grammatik/A11/
 ```
 
-No mide dónde estoy yo. Mide lo avanzado que es el vocabulario. `sein` es `A11`
-aunque yo lleve tres años; `aufbewahren` es `B11` aunque lo aprendiera el primer
-día.
+It does not measure where the learner is. It measures how advanced the vocabulary
+is. `sein` is `A11` after three years of study; `aufbewahren` is `B11` even if it
+was learned on day one.
 
-## Por qué así, y no como antes
+## Why this way, and not the previous way
 
-Tuve una escala propia (`L1`, `L2`…) precisamente para no depender de una tabla
-externa. El problema no era la escala: era que **decía dos cosas a la vez** —
-cuándo aprendí algo y lo difícil que era— y luego colisionó con la secuencia de
-lecciones, que dice la primera. Dos campos con el mismo nombre es lo que rompe
-vistas en silencio.
+There used to be a personal scale, `L1, L2…`, precisely so as not to depend on an
+external table. The problem was not the scale: it was that **it said two things at
+once** — when something was learned and how hard it was — and then it collided with
+the lesson sequence, which says the first of those. Two fields with the same name is
+what breaks views silently.
 
-Al separarlos, cada uno hace una cosa bien:
+Split apart, each one does one job well:
 
-| Campo | Qué significa | Dónde vive |
+| Field | What it means | Where it lives |
 |---|---|---|
-| **`cefr`** | dificultad de la palabra | **decide la carpeta** |
-| **`lektion`** | en qué lección entró | campo, **nunca carpeta** |
+| **`cefr`** | difficulty of the word | **decides the folder** |
+| **`lektion`** | which lesson it entered in | a field, **never a folder** |
 
-Y la CEFR resulta ser buena para esto aunque fuera mala para lo otro: es un
-**conjunto cerrado de doce**, es estable, y describe la palabra, no al estudiante.
-La pregunta "¿esto es A21 o A22?" ahora sí tiene respuesta, porque es una pregunta
-sobre alemán y no sobre mí.
+And CEFR turns out to be good for this even though it was bad for the other thing:
+it is a **closed set of twelve**, it is stable, and it describes the word rather
+than the student. "Is this A21 or A22?" now has an answer, because it is a question
+about `{TARGET}` and not about a person.
 
-## Los doce tokens
+## The twelve tokens
 
 `A11 A12 A21 A22 B11 B12 B21 B22 C11 C12 C21 C22`
 
-Una sola grafía, siempre. Nunca `A2.1`, nunca `a11`, nunca `A2`. El momento en que
-una carpeta dice `A21` y una nota dice `A2.1` es el momento en que
-[[Nach Niveau.base|Nach Niveau]] se parte en dos sin avisar.
+One spelling, always. Never `A2.1`, never `a11`, never `A2`. The moment a folder
+says `A21` and a note says `A2.1` is the moment
+[[Nach Niveau.base|Nach Niveau]] splits in two without warning.
 
-**Las carpetas se crean cuando una palabra cae ahí**, no antes. Hoy hay cinco
-pobladas: `A11`, `A12`, `A21`, `A22`, `B11`.
+**Folders get created when a word lands in them**, not before. Five are populated
+today: `A11`, `A12`, `A21`, `A22`, `B11`.
 
-## Quién asigna el `cefr`
+## Who assigns the `cefr`
 
-Yo, al crear la nota en `/de lektüre`. Y hay que decirlo: **es un juicio
-aproximado.** No hay una lista oficial palabra por palabra, así que dos personas
-razonables discreparían en los bordes.
+Claude does, when the note is created in `/de lektüre`. And this has to be said:
+**it is an approximate judgement.** There is no official word-by-word list, so two
+reasonable people would disagree at the edges.
 
-Eso está bien para lo que sirve —agrupar, navegar, decidir qué es pronto y qué es
-tarde— y no está bien para nada que dependa de precisión. Ninguna vista crítica
-filtra por `cefr`: [[Schwachstellen.base|Schwachstellen]] no lo mira, y el drill
-de `/de studium` tampoco. Si un día una palabra te parece mal clasificada,
-arrástrala de carpeta y cambia el campo; no rompes nada.
+That is fine for what it is for — grouping, browsing, deciding what is early and
+what is late — and not fine for anything that needs precision. **No critical view
+filters on `cefr`**: [[Schwachstellen.base|Schwachstellen]] does not look at it,
+and neither does the `/de studium` drill. If a word ever looks misclassified, drag
+it to another folder and change the field; nothing breaks.
 
-## Lo que se perdió al quitar la escala propia
+## What was lost by dropping the personal scale
 
-**El criterio de promoción.** Antes había una definición checkable de *he
-mejorado*: cinco estructuras consolidadas y nada con `error_count` mayor que 2. Ya
-no hay nada equivalente, porque las lecciones miden actividad, no capacidad.
+**The promotion criterion.** There used to be a checkable definition of *I have
+improved*: five consolidated structures and nothing with `error_count` above 2.
+There is no equivalent now, because lessons measure activity, not ability.
 
-Lo que sigue midiendo dominio, elemento por elemento:
+What still measures mastery, item by item:
 
-- `status: new → learning → known`, movido por los bloques `ERRORS` y `OK`.
-- [[Schwachstellen.base|Schwachstellen]], que se vacía solo cuando algo llega a
+- `status: new → learning → known`, moved by the `ERRORS` and `OK` blocks.
+- [[Schwachstellen.base|Schwachstellen]], which empties only when something reaches
   `known`.
 
-Es suficiente para saber qué estudiar. No es suficiente para saber si estoy
-mejorando. Si dentro de tres meses lo echo de menos, la reparación natural es un
-criterio sobre `known` — *el 80% de A11 y A12 en `known`* — no resucitar el campo.
+That is enough to know what to study. It is not enough to know whether progress is
+happening. If that is missed three months from now, the natural repair is a
+criterion over `known` — *80% of A11 and A12 in `known`* — not resurrecting the
+field.
 
-## Y la calibración del tutor
+## And the tutor's calibration
 
-Un modelo no sabe qué es `L001` ni le sirve el `cefr` de una palabra suelta para
-decidir a qué dificultad hablarme. Eso sigue siendo el par CEFR del
-[[Lernprofil]]: **producción A12, comprensión A22.**
+A model does not know what `L001` is, and the `cefr` of an individual word does not
+tell it how hard to speak. That is still the CEFR pair in [[Lernprofil]]:
+**production and comprehension.**
 
-Vive solo ahí, es mi entrada cuando genero cada prompt, y no entra en ninguna nota
-de vocabulario. Ver [[Lektionen]].
+It lives only there, it is the input when a prompt is generated, and it enters no
+vocabulary note. See [[Lektionen]] and [[Configuration]].
 
-## Historial
+## History
 
-| Fecha | Qué |
+| Date | What |
 |---|---|
-| 2026-07-31 | doce carpetas CEFR, `level` = mi nivel |
-| 2026-08-01 | escala propia `L1`, una carpeta, `level` = mi posición |
-| 2026-09-07 | `cefr` = dificultad de la palabra, `lektion` = cuándo entró |
+| 2026-07-31 | twelve CEFR folders, `level` = the learner's level |
+| 2026-08-01 | personal scale `L1`, one folder, `level` = the learner's position |
+| 2026-09-07 | `cefr` = difficulty of the word, `lektion` = when it entered |

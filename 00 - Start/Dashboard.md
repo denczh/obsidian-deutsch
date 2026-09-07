@@ -1,82 +1,80 @@
 ---
 type: dashboard
+updated: 2026-09-07
 ---
 
-# Dashboard - Deutsch
+# Dashboard
 
-**Lección en curso:** L001 → [[Lektionen]] · [[Lernprofil]]
+> `{TARGET}` = German · `{KNOWN}` = Spanish · `{LEARNER}` = Pedro → [[Configuration]]
 
-> **[[Lektionen]]** — el ciclo de cinco fases con sus comandos `/de`. Es el
-> sistema actual. [[Workflow]] describe el modo de conversación libre, que sigue
-> vivo pero fuera del ciclo.
+**Lesson in progress:** L001 → [[Lektionen]] · [[Lernprofil]]
 
-## Vistas
+> **[[Lektionen]]** — the five-phase cycle and its `/de` commands. That is the
+> system. [[Workflow]] describes free conversation, which is still alive but
+> outside the cycle.
 
-| Vista | Para qué |
+## Views
+
+| View | For what |
 |---|---|
-| [[Schwachstellen.base\|Schwachstellen]] | Mi cola de repaso. La vista más útil del sistema. |
-| [[Aktuelle Lektion.base\|Aktuelle Lektion]] | El vocabulario de la lección en curso. |
-| [[Nach Niveau.base\|Nach Niveau]] | Todo agrupado por dificultad CEFR de la palabra. |
-| [[Nach Thema.base\|Nach Thema]] | Sustituye por completo a una carpeta por tema. |
-| [[Nicht in Anki.base\|Nicht in Anki]] | Cola de exportación a repetición espaciada. |
-| [[Ohne Beispiel.base\|Ohne Beispiel]] | Notas creadas con prisa y nunca terminadas. |
-| [[Nicht gesprochen.base\|Nicht gesprochen]] | Palabras que no he dicho nunca: añadidas por el tutor o por mí. |
+| [[Schwachstellen.base\|Schwachstellen]] | The revision queue. The most useful view in the system. |
+| [[Aktuelle Lektion.base\|Aktuelle Lektion]] | The vocabulary of the lesson in progress. |
+| [[Nach Niveau.base\|Nach Niveau]] | Everything grouped by CEFR difficulty of the word. |
+| [[Nach Thema.base\|Nach Thema]] | Replaces a per-theme folder completely. |
+| [[Nicht in Anki.base\|Nicht in Anki]] | Export queue for spaced repetition. |
+| [[Ohne Beispiel.base\|Ohne Beispiel]] | Notes made in a hurry and never finished. |
+| [[Nicht gesprochen.base\|Nicht gesprochen]] | Words never produced: given by a tutor, or added by hand. |
 
-## El ciclo
+## The cycle
 
 ```
-/de lektüre    Claude escribe la historia y crea las notas       (en casa)
-/de studium    GPT de vocabulario, tres modos                    (móvil)
-/de vorlesen   GPT que lee la parte 2 y pregunta                  (móvil)
-/de gramatik   GPT de traducción hablada                          (móvil)
-/de commit     Claude procesa, commitea y archiva la lección     (en casa)
+/de lektüre    Claude writes the story and creates the notes    (at the desk)
+/de studium    vocabulary GPT, three modes                      (phone)
+/de vorlesen   GPT reads part 2 and asks about it               (phone)
+/de gramatik   spoken translation GPT                           (phone)
+/de commit     Claude processes, commits and archives           (at the desk)
 ```
 
-Cada comando comprueba que el anterior está superado, y "superado" significa que
-existe su bloque de cierre. Detalle en [[Lektionen]].
+Each command checks that the previous one has been passed, and "passed" means its
+closing block exists. Detail in [[Lektionen]].
 
-## Operativa
+## Reference
 
-- [[Workflow]] — **el proceso completo**, de la calle a la bóveda y de vuelta
-- [[Lektionen]] — **el ciclo de lecciones y los cinco comandos**
-- [[E-Mail-Format]] — el formato exacto de la lista de cierre, y los tipos de error
-- [[Verarbeitung]] — los 6 pasos de lista → notas, el mismo día
-- [[Niveaus]] — los doce tokens CEFR y quién los asigna
-- [[Themenliste]] — los temas disponibles, como etiquetas
+- [[Configuration]] — **the language pair and what a fork changes**
+- [[Lektionen]] — the lesson cycle and the five commands
+- [[E-Mail-Format]] — the closing block format and the error types
+- [[Niveaus]] — the twelve CEFR tokens and who assigns them
+- [[Themenliste]] — the themes, as tokens
+- [[Verarbeitung]] — processing a free-conversation block
+- [[Workflow]] — free conversation, outside the cycle
 
-## Fuera del ciclo
+## Outside the cycle
 
-| | Prompt | Dónde |
+| | Prompt | Where |
 |---|---|---|
-| [[Modus - Sprechen\|Sprechen]] | conversación libre caminando | GPT permanente |
+| [[Modus - Sprechen\|Sprechen]] | free conversation while walking | permanent GPT |
 
-Es lo único que sobrevive de la arquitectura de modos: no es ninguna de las cinco
-fases y es lo único que es de verdad conversación. [[Modi]],
-[[Modus - Hören|Hören]] y [[Modus - Wiederholung|Wiederholung]] quedan
-sustituidos por el ciclo.
+It is the only survivor of the earlier "modes" architecture: it is none of the five
+phases and it is the only thing that is genuinely conversation.
 
-## Estructura
+## Structure
 
-- `10 - Sitzungen/` una nota por sesión, con el bloque crudo como procedencia
-- `10 - Lektionen/` una nota por lección: historia, fases y bloques crudos
-- `20 - Wortschatz/<cefr>/` una nota por palabra, carpeta = dificultad CEFR
-- `30 - Grammatik/<cefr>/` una nota por regla, etiqueta corta como título
-- `40 - Ansichten/` las vistas (Bases)
-- `50 - Ressourcen/` todo lo que no es atómico
-- `90 - Vorlagen/` cinco plantillas: lección, sesión, gramática, vocabulario, verbos
+- `10 - Lektionen/` one note per lesson: story, phases, raw blocks, prompts
+- `10 - Sitzungen/` one note per free-conversation session
+- `20 - Wortschatz/<cefr>/` one note per word, folder = CEFR difficulty
+- `30 - Grammatik/<cefr>/` one note per rule, short label as title
+- `40 - Ansichten/` the views (Bases)
+- `50 - Ressourcen/` everything that is not atomic
+- `90 - Vorlagen/` five templates: lesson, session, grammar, vocabulary, verbs
 
-**La regla única:** cada nota tiene exactamente un hogar. El tipo decide la
-carpeta, el `cefr` es subcarpeta del tipo, el tema y la lección son campos y nunca
-carpetas.
+**The one rule:** every note has exactly one home. Type decides the folder, `cefr`
+is a subfolder of type, and theme and lesson are fields — never folders.
 
-**`cefr` es la dificultad de la palabra** y decide la carpeta: doce tokens
-cerrados. **`lektion` es cuándo entró** y es un campo, nunca una carpeta. No hay
-campo `level`. Ver [[Lektionen]].
+## Maintenance
 
-## Mantenimiento
+- Nothing to keep in sync by hand any more: the prompts are generated from the
+  vault every lesson. That was the recurring cost of the system and it is gone.
+- Weekly: re-read the error log. That is next week's curriculum.
 
-- Ya no hay que sincronizar nada a mano: los prompts se generan desde la bóveda
-  en cada lección. Ese era el coste recurrente del sistema y ha desaparecido.
-- Cada domingo: releer el log de errores. Ese es el currículo de la semana.
-
-Los cinco fallos que no dan error están listados al final de [[Workflow]].
+The five failures that raise no error are listed at the end of [[Workflow]], and
+`/de commit` checks for them.

@@ -27,23 +27,28 @@ anki: false
 - 
 
 <!--
-article:     der | die | das | "-" (bei Nicht-Substantiven)
-inflection:  noun -> Plural            (-e, -en, Häuser, "-")
-             verb -> Stammformen + Hilfsverb   (fährt, fuhr, ist gefahren)
-                     trennbar getrennt         (räumt auf, ..., hat aufgeräumt)
-             adj  -> nur wenn unregelmässig    (besser, am besten)
-             sonst "-"
+INSTRUCTIONS. Field values stay in the two real languages; these notes are
+study material. See "50 - Ressourcen/Configuration".
+
+article:     der | die | das | "-" for non-nouns
+inflection:  noun -> plural            (-e, -en, Häuser, "-")
+             verb -> principal parts + auxiliary  (fährt, fuhr, ist gefahren)
+                     separables split             (räumt auf, ..., hat aufgeräumt)
+             adj  -> only if irregular            (besser, am besten)
+             else "-"
 pos:         noun | verb | adj | adv | prep | conj | pron | num | phrase
-cefr:        Schwierigkeit DES WORTES, nicht mein Niveau. Einer von zwoelf:
+cefr:        difficulty OF THE WORD, not the learner's level. One of twelve:
              A11 A12 A21 A22 B11 B12 B21 B22 C11 C12 C21 C22
-             Bestimmt den Ordner. Eine Schreibweise, immer.
-lektion:     L001, L002, ... in welcher Lektion das Wort eingefuehrt wurde
-source:      lektuere      -> aus der Geschichte einer Lektion (/de lektüre)
-             voice-session -> im Gespraech gesagt (Block VOCAB)
-             tutor-extra   -> vom Tutor ergaenzt, nie gesagt (Block EXTRA)
-             manual        -> von mir haendisch hinzugefuegt, nie gesagt
-theme:       [alltag, reisen, ...]  -> siehe "50 - Ressourcen/Themenliste"
+             Decides the folder. One spelling, always.
+lektion:     L001, L002, ... which lesson the word entered in
+source:      lektuere      -> from a lesson story (/de lektüre)
+             voice-session -> said in conversation (VOCAB block)
+             tutor-extra   -> added by the tutor, never said (EXTRA block)
+             manual        -> added by hand, never said
+theme:       [alltag, reisen, ...]  -> see "50 - Ressourcen/Themenliste"
 status:      new | learning | known
-Drei Zeilen sind eine gesunde Wortschatznotiz. Wenn sie zehn ueberschreitet,
-ist es in Wahrheit eine Grammatik- oder Themennotiz.
+example:     a real sentence in the target language, in context
+
+Three lines is a healthy vocabulary note. If it grows past ten, what you
+actually have is a grammar note or a theme note.
 -->

@@ -13,27 +13,29 @@ ok_count: 0
 processed: false
 ---
 
-<!-- mode: sprechen | hoeren | wiederholung | uebungen | diktat  -> siehe "50 - Ressourcen/Modi" -->
+<!-- mode: sprechen | studium | vorlesen | gramatik
+     lektion: L001... or "-" for free conversation
+     -> see "50 - Ressourcen/E-Mail-Format" -->
 
 
 # Sitzung {{date:YYYY-MM-DD}}
 
 ## Verarbeitung
 
-- [ ] 1. Rohblock unten eingefuegt
-- [ ] 2. VOCAB: Notizen erstellt, `source: voice-session` (+ eigener Beispielsatz)
-- [ ] 2b. EXTRA: Notizen erstellt, `source: tutor-extra`
-- [ ] 3. Grammatiknotizen erstellt oder aktualisiert
-- [ ] 4. Fehler zugeordnet: `last_error`, `error_count`, `status: learning`
-- [ ] 4b. OK-Block (nur Wiederholung): `learning` -> `known`, `new` -> `learning`
-- [ ] 5. Lernprofil aktualisiert (Fehler, Themen, Promotion)
-- [ ] 6. Commit und Push
+- [ ] 1. raw block pasted below
+- [ ] 2. VOCAB notes created, `source: voice-session` (+ my own example sentence)
+- [ ] 2b. EXTRA notes created, `source: tutor-extra`
+- [ ] 3. grammar notes created or updated
+- [ ] 4. errors cross-referenced: `last_error`, `error_count`, `status: learning`
+- [ ] 4b. OK block: `learning` -> `known`, `new` -> `learning`
+- [ ] 5. Lernprofil updated (mistakes, themes)
+- [ ] 6. commit and push
 
 ## Notizen
 
-(Was ist aufgefallen? Welche Anweisung hat der Tutor ignoriert?)
+(What stood out? Which instruction did the tutor drift from?)
 
-## Erstellte Notizen
+## Erstellte Notizen  <!-- notes created -->
 
 - 
 

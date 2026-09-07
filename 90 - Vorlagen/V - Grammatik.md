@@ -14,7 +14,7 @@ status: new
 
 ## Regel
 
-(2-3 Saetze auf Spanisch: was es ist, wann es gilt.)
+(2-3 sentences in the learner's own language: what it is, when it applies.)
 
 ## Beispiele
 
@@ -30,7 +30,13 @@ status: new
 - 
 
 <!--
-category: verbs | cases | word-order | prepositions | adjectives | syntax | pronunciation
-Nur diese vier Abschnitte, in dieser Reihenfolge. Unter "Achtung" gehoert die
-Ausnahme oder der Fehler, den du selbst gemacht hast.
+INSTRUCTIONS. The body stays in the two real languages.
+
+category: verbs | cases | word-order | prepositions | adjectives | syntax |
+          pronunciation
+cefr:     difficulty of the rule, one of the twelve tokens. Decides the folder.
+lektion:  which lesson introduced it.
+
+Only these four sections, in this order. "Achtung" is for the exception, or for
+the mistake the learner actually made.
 -->
