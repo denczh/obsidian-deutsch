@@ -72,7 +72,8 @@ Con la lista fija, `vorherige` funciona de verdad.
 
 ### 3. `/de vorlesen` — GPT en el móvil
 
-*Especificación pendiente: `Kommando - Vorlesen`.*
+**Especificación: [[Kommando - Vorlesen]].** Escrita. Plantilla: 5666 fijos más
+el texto y las preguntas, **~7575 en total**. Es la fase más apretada de las tres.
 
 
 Compruebo las fases 1 y 2. Escribo la **parte 2 de la historia** —mismos
