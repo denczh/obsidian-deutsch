@@ -11,10 +11,14 @@
             "id": "31a95bf5bf85bd3c",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "10 - Lektionen/L001.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "L001"
             }
           }
         ]
@@ -200,7 +204,7 @@
       "obsidian-spaced-repetition:Review flashcards": false
     }
   },
-  "active": "4952a17aef8a2258",
+  "active": "31a95bf5bf85bd3c",
   "lastOpenFiles": [
     "10 - Sitzungen/2026-08-01.md",
     "20 - Wortschatz/L1/arbeiten.md",
