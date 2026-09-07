@@ -67,3 +67,20 @@ ok_count: 0
 
 ```
 ```
+
+---
+
+## Prompt - Studium
+
+```
+```
+
+## Prompt - Vorlesen
+
+```
+```
+
+## Prompt - Gramatik
+
+```
+```

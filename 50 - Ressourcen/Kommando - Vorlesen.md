@@ -104,6 +104,14 @@ Para **sobrescribir** las Instructions del GPT permanente `Deutsch - Vorlesen`.
 Y decir en el chat cuántas palabras tiene el texto y cuántas preguntas hay, pero
 **no el texto**. Si lo escribo aquí, lo lee, y entonces la fase 3 se convierte en
 otra fase 1.
+**Y guardar el prompt entregado** en la nota de lección, bajo `## Prompt - Vorlesen`,
+dentro de un bloque cercado. **No es reproducible**: la historia se genera y no se puede volver a
+escribir igual. Si un GPT se
+comporta raro, lo único que permite averiguar por qué es el prompt exacto que se
+pegó.
+
+Guardarlo en la nota **no** contradice la regla del transcript: la nota es la
+procedencia y se lee en casa, no durante la sesión de escucha.
 
 ## 7. Procesar el bloque
 

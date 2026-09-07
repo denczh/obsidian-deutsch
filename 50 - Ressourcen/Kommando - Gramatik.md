@@ -80,6 +80,11 @@ Para **sobrescribir** las Instructions del GPT permanente `Deutsch - Gramatik`.
 Decir cuántas frases van y qué estructura se practica. **Las frases sí se pueden
 decir en el chat**: aquí no hay nada que arruinar por leerlo, porque el ejercicio
 es producir alemán, no entender español.
+**Y guardar el prompt entregado** en la nota de lección, bajo `## Prompt - Gramatik`,
+dentro de un bloque cercado. **No es reproducible**: las frases se generan cada vez. Si un GPT se
+comporta raro, lo único que permite averiguar por qué es el prompt exacto que se
+pegó.
+
 
 ## 6. Procesar el bloque
 

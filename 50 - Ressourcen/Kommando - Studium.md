@@ -79,6 +79,11 @@ historial de chats.
 
 Decir también cuántos elementos van y cuántos son viejos, para que sepa qué
 esperar.
+**Y guardar el prompt entregado** en la nota de lección, bajo `## Prompt - Studium`,
+dentro de un bloque cercado. **No es reproducible**: el barajado es aleatorio y no se repite. Si un GPT se
+comporta raro, lo único que permite averiguar por qué es el prompt exacto que se
+pegó.
+
 
 ## 5. Procesar el bloque cuando vuelva
 

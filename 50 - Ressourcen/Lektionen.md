@@ -107,7 +107,8 @@ intento te da la frase, la registra como error y pasa a la siguiente.
 
 ### 5. `/de commit` — Claude, en casa
 
-*Especificación pendiente: `Kommando - Commit`.*
+**Especificación: [[Kommando - Commit]].** Escrita. **Las cinco fases están
+especificadas.**
 
 
 Compruebo las cuatro. Proceso los bloques que falten, hago commit, marco la
@@ -168,6 +169,25 @@ definición de *he mejorado*, es esto lo que falta.
 caminando no es ninguna de las cinco fases y es lo único que es de verdad
 conversación. Sigue siendo un GPT permanente con su prompt de 7765 caracteres y su
 propio bloque `mode: sprechen`, y sus sesiones siguen viviendo en `10 - Sitzungen`.
+
+## El chequeo de salud vive en la fase 5
+
+`/de commit` es el único momento del ciclo que mira la bóveda entera **después de
+que todo haya pasado**, así que es donde se cazan los fallos que no dan error:
+tokens `cefr` inválidos, carpetas que no coinciden con su campo, enlaces rotos,
+`.base` que no parsean, y los dos números que importan —`Schwachstellen` creciendo
+sin que nada llegue a `known`, y `Nicht gesprochen` creciendo lección tras
+lección—. Detalle en [[Kommando - Commit]].
+
+## Los prompts se guardan
+
+Los tres prompts generados van dentro de la nota de lección, en sus secciones
+`## Prompt - *`. **No son reproducibles**: el barajado de Studium es aleatorio, y
+la historia y las frases se generan cada vez. Si un GPT se comporta raro, lo único
+que permite averiguar por qué es el prompt exacto que se pegó.
+
+Guardar el de Vorlesen no contradice la regla del transcript: la nota es
+procedencia y se lee en casa, no durante la sesión de escucha.
 
 ## Cómo está implementado
 
