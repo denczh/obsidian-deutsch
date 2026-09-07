@@ -46,7 +46,7 @@ cazan los fallos silenciosos. Ninguno de estos da error por sí solo.
 | `lektion` con formato `L\\d{3}` | [[Aktuelle Lektion.base\|Aktuelle Lektion]] no la ve |
 | ningún campo `level` residual | resto de la migración de septiembre de 2026 |
 | los seis `.base` parsean | la vista aparece vacía y parece que no hay datos |
-| cero enlaces `[[...]]` roto | notas huérfanas que creías conectadas |
+| cero enlaces wiki rotos | notas huérfanas que creías conectadas |
 | `example` no vacío en el vocabulario nuevo | la palabra no tiene contexto |
 | `Aktuelle Lektion` filtra la lección que se cierra | mirabas la lección anterior |
 
