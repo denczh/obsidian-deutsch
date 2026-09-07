@@ -50,7 +50,8 @@ repetir.
 
 ### 2. `/de studium` — GPT en el móvil
 
-*Especificación pendiente: `Kommando - Studium`.*
+**Especificación: [[Kommando - Studium]].** Escrita. Plantilla del prompt: 5319
+caracteres fijos, ~1050 la lista de 17 elementos, **6349 en total**.
 
 
 Compruebo que la fase 1 está hecha. Genero el prompt del GPT **Studium** con el
