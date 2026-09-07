@@ -36,6 +36,9 @@ generarse el prompt desde la bóveda en cada lección, no hay copia que envejece
 
 ### 1. `/de lektüre` — Claude, en casa
 
+**Especificación: [[Kommando - Lektüre]].** Escrita.
+
+
 Leo la bóveda: qué palabras ya tengo, qué fallo, qué temas he hecho. Pregunto el
 tema. Escribo una **historia con personajes** en dos partes y te doy la primera,
 que es donde entran los sustantivos, verbos, adjetivos, expresiones y gramática
@@ -46,6 +49,9 @@ Si el tema ya lo hiciste, lo tengo en cuenta para meter cosas nuevas en vez de
 repetir.
 
 ### 2. `/de studium` — GPT en el móvil
+
+*Especificación pendiente: `Kommando - Studium`.*
+
 
 Compruebo que la fase 1 está hecha. Genero el prompt del GPT **Studium** con el
 vocabulario de la lección, ya barajado y numerado, y tú lo pegas sobre las
@@ -65,6 +71,9 @@ Con la lista fija, `vorherige` funciona de verdad.
 
 ### 3. `/de vorlesen` — GPT en el móvil
 
+*Especificación pendiente: `Kommando - Vorlesen`.*
+
+
 Compruebo las fases 1 y 2. Escribo la **parte 2 de la historia** —mismos
 personajes, **sin vocabulario nuevo**— y la meto literalmente dentro del prompt.
 El GPT empieza leyéndotela.
@@ -82,6 +91,9 @@ siguiente.
 
 ### 4. `/de gramatik` — GPT en el móvil
 
+*Especificación pendiente: `Kommando - Gramatik`.*
+
+
 Compruebo las fases 1, 2 y 3. Genero un GPT con frases en español que contienen la
 gramática de la lección. Las traduces hablando; corrige; repites; corrige. Con
 `nächste` pasas a otra.
@@ -91,6 +103,9 @@ terminar nunca, y una frase atascada te hace abandonar la sesión: al tercer
 intento te da la frase, la registra como error y pasa a la siguiente.
 
 ### 5. `/de commit` — Claude, en casa
+
+*Especificación pendiente: `Kommando - Commit`.*
+
 
 Compruebo las cuatro. Proceso los bloques que falten, hago commit, marco la
 lección `closed` y **la archivo, no la borro**: es lo que dentro de seis meses te
@@ -150,6 +165,19 @@ definición de *he mejorado*, es esto lo que falta.
 caminando no es ninguna de las cinco fases y es lo único que es de verdad
 conversación. Sigue siendo un GPT permanente con su prompt de 7765 caracteres y su
 propio bloque `mode: sprechen`, y sus sesiones siguen viviendo en `10 - Sitzungen`.
+
+## Cómo está implementado
+
+Los comandos son una **skill** llamada `de`, que es solo un **enrutador**: valida
+la fase, lee el estado en `10 - Lektionen/`, comprueba la puerta y después lee la
+especificación de la fase en `50 - Ressourcen/Kommando - *.md` y la sigue.
+
+**La lógica vive en la bóveda, no en la skill.** Si quiero cambiar cómo escribe la
+historia o cuántas palabras introduce, edito [[Kommando - Lektüre]] en Obsidian.
+Es coherente con que la bóveda sea la fuente de verdad: también lo es de cómo
+funciona el sistema, no solo de qué he aprendido.
+
+Si una especificación no existe, la skill lo dice y para. No improvisa una versión.
 
 ## Estado
 
