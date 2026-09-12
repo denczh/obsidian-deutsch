@@ -58,17 +58,17 @@ anki: false
 | Construcción | Para qué | Ejemplo |
 |---|---|---|
 | `jemandem etwas geben` | Dativ persona + Akk cosa | *Gib mir das Buch.* |
-| **`es gibt` + Akkusativ** | hay | *Es gibt einen Balkon.* |
 
 ## Notiz
 
-**`es gibt` es la traducción de *hay*, y va con acusativo.** *Es gibt **einen** Balkon*, *es gibt **kein** Fenster*. Nunca *es ist* ni *es hat*.
-
-`es gibt` es invariable: no concuerda con el número. *Es gibt zwei Türen*, no *es geben*. En pasado, *es gab*.
-
 Cambio vocálico `e` → `i` en la 2ª y 3ª persona del singular y en el imperativo de tú: *du gibst*, *er gibt*, *gib!*
+
+**`es gibt` ya no vive aquí.** Tiene su propia nota, [[es gibt]], desde el
+2026-09-12: es una construcción fija e invariable que significa *hay*, no una
+acepción del verbo *dar*. Una construcción fija es un elemento propio, no un
+significado de su verbo → [[Bedeutungen]].
 
 ## Verwandt
 
+- [[es gibt]] — la construcción, que se estudia aparte
 - [[sein]]
-- [[Balkon]]

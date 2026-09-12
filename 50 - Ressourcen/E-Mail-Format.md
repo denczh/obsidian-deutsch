@@ -144,10 +144,27 @@ In the vault they are told apart by `source`: `voice-session` for VOCAB,
 `manual` for hand-added ones. [[Nicht gesprochen.base|Nicht gesprochen]] lists
 everything that has never been produced, whatever its source.
 
+## There is no sense column, and that is deliberate
+
+A word can have two unrelated meanings, and each meaning is its own note →
+[[Bedeutungen]]. So which note does `Decke | die | -n | noun | manta` belong to,
+when the vault already has a `Decke` meaning *ceiling*?
+
+**The agent resolves that, not the GPT.** It looks up `term: Decke`, sees the
+existing sense, recognises the collision and splits. A GPT cannot do it: it has
+never read the vault and it never will. Adding a sense column would be asking a
+model to disambiguate against a file it cannot see — the exact failure this system
+is built to avoid.
+
+So the block stays at five columns, and `pos` plus `translation` carry enough for
+the agent to tell a new sense from a recycled one.
+
 ## Categories and inflection
 
 `pos` is one of: `noun`, `verb`, `adj`, `adv`, `prep`, `conj`, `pron`, `num`,
-`phrase`.
+`phrase`. **Never omitted and never guessed by the agent afterwards** — it is the
+fourth column of every VOCAB and EXTRA line, and it belongs to the sense rather
+than to the word.
 
 **No noun-only lists.** They are the easiest thing to list and the least useful
 thing to have. `inflection` is filled according to the category:

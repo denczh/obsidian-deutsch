@@ -9,7 +9,7 @@ views:
       - note.theme
       - file.name
       - note.type
-      - note.level
+      - note.cefr
       - note.translation
       - note.status
     sort:

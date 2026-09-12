@@ -9,7 +9,7 @@ views:
     name: Ohne Beispiel
     order:
       - file.name
-      - note.level
+      - note.cefr
       - note.translation
       - note.created
     sort:

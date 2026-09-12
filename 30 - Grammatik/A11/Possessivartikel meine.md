@@ -39,7 +39,7 @@ es femenino, así que `meine Tür`. El fallo no es de vocabulario: es que la mar
 de género hay que ponerla también en el posesivo.
 
 Del vocabulario de esta sesión, los femeninos son los que te van a pillar:
-[[Tür]], [[Wand]], [[Decke]], [[Lampe]], [[Türklinke]], [[Schublade]].
+[[Tür]], [[Wand]], [[Decke (techo)]], [[Lampe]], [[Türklinke]], [[Schublade]].
 
 ## Verwandt
 

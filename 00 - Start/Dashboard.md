@@ -44,6 +44,7 @@ closing block exists. Detail in [[Lektionen]].
 - [[Lektionen]] — the lesson cycle and the five commands
 - [[E-Mail-Format]] — the closing block format and the error types
 - [[Niveaus]] — the twelve CEFR tokens and who assigns them
+- [[Bedeutungen]] — **one note, one sense**, and the grammatical category
 - [[Themenliste]] — the themes, as tokens
 - [[Verarbeitung]] — processing a free-conversation block
 - [[Workflow]] — free conversation, outside the cycle

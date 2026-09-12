@@ -1,9 +1,10 @@
 ---
 type: vocab
 term: "{{title}}"
+sense: "-"
+pos: verb
 article: "-"
 inflection: ""
-pos: verb
 verbtyp: regelmäßig
 trennbar: false
 translation: ""

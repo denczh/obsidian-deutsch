@@ -70,4 +70,4 @@ anki: false
 
 - [[fragen]]
 - [[zeigen]]
-- [[heißen]]
+- [[heißen (llamarse)]]

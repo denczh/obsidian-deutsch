@@ -59,6 +59,23 @@ mouth in a session is an unused word, wherever it came from.
 list; per-theme folders are exactly the competing hierarchy to avoid. For real
 visual grouping, open the view and turn on *Group by* → `theme` in the UI.
 
+## Two notes of the same word
+
+One note is one sense ([[Bedeutungen]]), so the same word can appear twice in a
+view — with different `cefr`, different `lektion` and different `status`. That is
+not duplication.
+
+To tell them apart at a glance, the views that can show both carry two extra
+columns: **`pos`**, the grammatical category, and **`sense`**, the short label that
+disambiguates the meaning. `Schwachstellen` and `Nach Niveau` have both; the
+others have `pos`.
+
+**`note.level` was still listed as a column in four views** until 2026-09-12 — a
+leftover from the September migration, and in `Nicht in Anki` it was also the sort
+key. An unknown field does not raise an error: the column just comes up blank and
+the sort silently does nothing. Now they all use `cefr`. This is exactly the class
+of failure the `/de commit` health check exists for.
+
 ## Two tokens, two meanings, one spelling each
 
 `cefr` is one of twelve: `A11 A12 A21 A22 B11 B12 B21 B22 C11 C12 C21 C22`. Never

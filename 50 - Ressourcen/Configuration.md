@@ -98,8 +98,9 @@ replaces them there:
 
 ### Field keys stay in English
 
-`type`, `term`, `article`, `inflection`, `pos`, `translation`, `cefr`, `lektion`,
-`theme`, `example`, `source`, `status`, `error_count`, `last_error`, `anki`.
+`type`, `term`, `sense`, `pos`, `article`, `inflection`, `translation`, `cefr`,
+`lektion`, `theme`, `example`, `source`, `status`, `error_count`, `last_error`,
+`anki`.
 
 **These are never translated, in any fork.** Every view filters on them, and one
 spelling everywhere beats a localised schema. The *values* of `translation` are in
@@ -122,3 +123,5 @@ spelling everywhere beats a localised schema. The *values* of `translation` are 
 3. [[E-Mail-Format]] — the closing block, which is the interface between every
    voice session and this vault.
 4. [[Niveaus]] — what `cefr` means and who assigns it.
+5. [[Bedeutungen]] — one note per sense, and why the grammatical category is
+   never inferred.

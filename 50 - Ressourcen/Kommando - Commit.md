@@ -46,7 +46,10 @@ where the silent failures get caught. None of these raises an error on its own.
 | `cefr` is one of the twelve tokens | [[Nach Niveau.base\|Nach Niveau]] splits in two |
 | the folder matches the `cefr` | the note lives somewhere it does not claim to |
 | `lektion` matches `L\d{3}` | [[Aktuelle Lektion.base\|Aktuelle Lektion]] cannot see it |
-| no residual `level` field | leftover from the September 2026 migration |
+| no residual `level` field, **including in view column lists** | an unknown field does not error: the column comes up blank and a sort on it silently does nothing |
+| every note has a `pos` from the nine tokens | the category is the one thing never inferred |
+| no two notes share a `term` unless **both** carry a `sense` | a disambiguator only one of a pair has is not a disambiguator → [[Bedeutungen]] |
+| no `translation` lists two unrelated meanings | two senses merged into one note, and one of them will never be drilled |
 | the six `.base` files parse | the view looks empty and it seems there is no data |
 | zero broken wiki links | orphan notes you thought were connected |
 | `example` not empty in new vocabulary | the word has no context |

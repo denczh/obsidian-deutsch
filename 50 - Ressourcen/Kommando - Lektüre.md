@@ -95,16 +95,48 @@ One note per item, from the matching template:
 
 Fields to fill without exception:
 
-- `cefr` — **the difficulty of the word**, one of the twelve tokens. Decides the
+- `pos` — **the grammatical category**, one of the nine tokens. Never inferred,
+  never omitted, and it belongs to the sense rather than the word.
+- `sense` — `-` if this is the word's only meaning in the vault; otherwise the
+  short `{KNOWN}` label that distinguishes it. See [[Bedeutungen]].
+- `cefr` — **the difficulty of this sense**, one of the twelve tokens. Decides the
   folder. See [[Niveaus]].
 - `lektion` — `L{XXX}`, the lesson being created.
 - `source: lektuere` — this provenance means the word came from a story, not from
   a conversation or a list.
-- `example` — **the sentence from the story where the word appears**, verbatim.
+- `example` — **the sentence from the story where the word appears**, verbatim, and
+  it has to use *this* sense.
 - `theme` — the theme token.
-- `translation` — in `{KNOWN}`.
+- `translation` — in `{KNOWN}`, for this sense only.
 - `article` and `inflection` per [[E-Mail-Format]]. Verbs with their auxiliary;
   separables split.
+
+And the opening line of every note body, so the category is visible without
+opening the Properties panel:
+
+```
+**der Bahnsteig** · *noun* · Plural: *-e* · "andén"
+```
+
+### One note, one sense
+
+**Before creating a note, check whether `term` already exists in the vault.** Only
+the agent can do this — a voice GPT has never read the vault — so it happens here.
+
+- **No existing note** → create it, `sense: "-"`, title = the bare term.
+- **Exists with the same meaning** → do not create a second note. Add the lesson's
+  example to the existing one if it is better than what is there, and leave
+  `lektion` alone: the word entered in the lesson that first introduced it.
+- **Exists with a different meaning** → two notes, and the rename procedure in
+  [[Bedeutungen]]: rename the old note to `Term (sense A)`, **update every link to
+  it**, then create `Term (sense B)` in whatever folder its own `cefr` dictates.
+
+The boundary between *another sense* and *another translation of the same sense* is
+the judgement call, and [[Bedeutungen]] holds the test: `cuadro` and `imagen` are
+one note, `techo` and `manta` are two.
+
+A story is allowed to use a word in a sense that is already in the vault. That is
+not a problem to solve — it is recycling, which is what the story is supposed to do.
 
 **On `example`:** it used to be left empty so the learner would write the
 sentence. Now the story writes it, and that is better: a real sentence, in

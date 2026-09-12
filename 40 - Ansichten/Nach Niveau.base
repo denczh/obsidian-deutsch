@@ -10,6 +10,7 @@ views:
       - file.name
       - note.type
       - note.pos
+      - note.sense
       - note.lektion
       - note.translation
       - note.status

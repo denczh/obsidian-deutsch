@@ -18,6 +18,12 @@ It does not measure where the learner is. It measures how advanced the vocabular
 is. `sein` is `A11` after three years of study; `aufbewahren` is `B11` even if it
 was learned on day one.
 
+**It applies to a sense, not to a word.** One note is one meaning
+([[Bedeutungen]]), so a word with a common sense and an advanced one has two notes
+in two different folders: `Decke` meaning *ceiling* at `A12`, `Decke` meaning
+*blanket* at `A21`. That is correct and it is the point — the everyday meaning is
+not made harder by the existence of a rarer one.
+
 ## Why this way, and not the previous way
 
 There used to be a personal scale, `L1, L2…`, precisely so as not to depend on an

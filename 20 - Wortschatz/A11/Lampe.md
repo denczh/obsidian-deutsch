@@ -26,4 +26,4 @@ anki: false
 
 ## Verwandt
 
-- [[Decke]]
+- [[Decke (techo)]]

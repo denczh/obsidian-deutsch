@@ -1,12 +1,13 @@
 ---
 type: vocab
 term: heißen
+sense: llamarse
+pos: verb
 article: "-"
 inflection: "heißt, hieß, hat geheißen"
-pos: verb
 verbtyp: stark
 trennbar: false
-translation: "llamarse; significar"
+translation: "llamarse"
 cefr: A11
 lektion: L001
 theme: [alltag]
@@ -19,7 +20,7 @@ status: new
 anki: false
 ---
 
-**heißen** — *heißt, hieß, hat geheißen*. Auxiliar `haben`, stark.
+**heißen** · *verb* · *heißt, hieß, hat geheißen* · auxiliar `haben`, stark · "llamarse"
 
 ## Beispiel
 
@@ -58,17 +59,15 @@ anki: false
 | Construcción | Para qué | Ejemplo |
 |---|---|---|
 | `heißen` + Nominativ | cómo te llamas | *Ich heiße Pedro.* |
-| `das heißt` | o sea, es decir | *Das heißt, wir fangen morgen an.* |
 
 ## Notiz
 
-**No es reflexivo.** *Ich heiße Pedro*, nunca *ich heiße mich*. El español *me llamo* lleva pronombre y el alemán no: el verbo ya significa *tener por nombre*.
+**No es reflexivo.** *Ich heiße Pedro*, nunca *ich heiße mich*. El español *me
+llamo* lleva pronombre y el alemán no: el verbo ya significa *tener por nombre*.
 
 El nombre va en **nominativo**, no en acusativo: es un predicado, no un objeto.
 
-*Das heißt* abreviado **d. h.** es el *o sea* escrito, muy frecuente.
-
 ## Verwandt
 
-- [[bedeuten]]
+- [[heißen (significar)]] — la otra acepción, misma conjugación
 - [[sein]]

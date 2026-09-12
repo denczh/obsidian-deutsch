@@ -10,10 +10,10 @@ views:
       - file.name
       - note.article
       - note.translation
-      - note.level
+      - note.cefr
       - note.status
     sort:
-      - property: note.level
+      - property: note.cefr
         direction: ASC
       - property: file.name
         direction: ASC

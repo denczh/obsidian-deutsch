@@ -11,7 +11,9 @@ views:
     order:
       - file.name
       - note.type
-      - note.level
+      - note.pos
+      - note.sense
+      - note.cefr
       - note.last_error
       - note.error_count
       - note.status
