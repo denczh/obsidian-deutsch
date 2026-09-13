@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "50 - Ressourcen/Kommando - Studium.md",
+                "file": "50 - Ressourcen/Modus - Sprechen.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Kommando - Studium"
+              "title": "Modus - Sprechen"
             }
           }
         ]
@@ -207,6 +207,8 @@
   "active": "548fc76062670b1b",
   "lastOpenFiles": [
     "50 - Ressourcen/GPTs.md",
+    "50 - Ressourcen/Kommando - Studium.md",
+    "50 - Ressourcen/GPTs.md.tmp.1792.256a6bc29205",
     "50 - Ressourcen/Kommando - Commit.md",
     "50 - Ressourcen/Lektionen.md.tmp.20588.f25ab98b68fd",
     "50 - Ressourcen/Kommando - Lektüre.md.tmp.20588.327a7570af19",
@@ -214,7 +216,6 @@
     "50 - Ressourcen/Configuration.md.tmp.20588.33fcce3bca73",
     "10 - Lektionen/L001.md",
     "50 - Ressourcen/Kommando - Vorlesen.md",
-    "50 - Ressourcen/Kommando - Studium.md",
     "90 - Vorlagen/V - Wortschatz.md.tmp.11312.403f0c64977f",
     "50 - Ressourcen/Kommando - Lektüre.md",
     "50 - Ressourcen/Kommando - Lektüre.md.tmp.11312.ba7300f1c8f3",
@@ -236,11 +237,9 @@
     "20 - Wortschatz/L1/fragen.md",
     "20 - Wortschatz/L1/sehen.md",
     "20 - Wortschatz/L1/gehen.md",
-    "20 - Wortschatz/L1/schauen.md",
     "00 - Start/Workflow.md.tmp.3180.8279628f1367",
     "00 - Start/Dashboard.md.tmp.3180.d37614ce079a",
     "50 - Ressourcen/Verarbeitung.md.tmp.3180.df5ecee41b8c",
-    "20 - Wortschatz/L1/arbeiten.md.tmp.3180.598f4395b10d",
-    "90 - Vorlagen/V - Verb.md.tmp.3180.d604104bb310"
+    "20 - Wortschatz/L1/arbeiten.md.tmp.3180.598f4395b10d"
   ]
 }

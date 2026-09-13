@@ -47,6 +47,36 @@ Then **open each link on the phone once and add it to the home screen.** Two tap
 to start a session instead of navigating menus one-handed — that is the difference
 between doing a phase and not bothering.
 
+## Creating them before there is any content
+
+The containers can and should exist before the first lesson. The three phase GPTs
+get a **placeholder prompt that refuses to run**: an empty GPT that improvises
+would invent vocabulary, and invented vocabulary ends up in the vault as if it had
+been taught.
+
+Paste one of these as the Instructions, changing only the command name:
+
+```
+You are a placeholder. This GPT has no material yet.
+
+Whatever Pedro says, in any language, reply with exactly this and nothing else:
+
+"Este GPT todavía no tiene contenido. Pídele a Claude /de studium y pega el prompt que te dé encima de estas Instructions."
+
+Then stop. Do not teach, do not drill, do not ask questions, do not start a conversation in German, and above all do not invent a word list. You have no material, and anything you made up would end up in his vault as if it had been a lesson.
+```
+
+Same text for `Vorlesen` with `/de vorlesen`, and for `Gramatik` with
+`/de gramatik`.
+
+`Deutsch - Sprechen` needs no placeholder: its prompt is finished and permanent →
+[[Modus - Sprechen]]. Copy it from the fenced block in that note, which is the
+single source of truth for it.
+
+While in the editor, attach the **mail Action to all four**. Doing it now saves
+opening each one again later, and the same schema works for every GPT — only the
+subject line differs, and that comes from the prompt, not the schema.
+
 ## Overwrite, never recreate
 
 Every lesson, Claude hands over a prompt that **replaces** the Instructions of an
