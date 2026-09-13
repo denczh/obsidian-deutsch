@@ -42,6 +42,7 @@ closing block exists. Detail in [[Lektionen]].
 
 - [[Configuration]] — **the language pair and what a fork changes**
 - [[Lektionen]] — the lesson cycle and the five commands
+- [[GPTs]] — the four GPTs, their configuration and the overwrite rule
 - [[E-Mail-Format]] — the closing block format and the error types
 - [[Niveaus]] — the twelve CEFR tokens and who assigns them
 - [[Bedeutungen]] — **one note, one sense**, and the grammatical category

@@ -183,6 +183,13 @@ exact pasted prompt is the only thing that makes it possible to find out why.
 Saving the Vorlesen one does not contradict the transcript rule: the note is
 provenance and gets read at the desk, not during the listening session.
 
+## The GPTs
+
+Three of the five phases run on a permanent GPT whose Instructions get overwritten
+every lesson; phases 1 and 5 are Claude at the desk and use none. A fourth GPT,
+outside the cycle, handles free conversation. Inventory, configuration and the
+overwrite rule: [[GPTs]].
+
 ## How it is implemented
 
 The commands are a **skill** called `de`, which is only a **router**: it validates
