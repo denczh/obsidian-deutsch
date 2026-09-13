@@ -35,13 +35,32 @@ three cannot.
 | Field | Setting |
 |---|---|
 | Name | as above. Naming them after the phase keeps the home screen legible. |
-| Description | short. Only used to find it. |
+| Description | short. It changes nothing about behaviour — it is a label for telling four similar names apart on a phone. Texts below. |
 | Instructions | the whole prompt. This is the entire GPT. |
 | **Knowledge** | **empty.** Voice mode cannot read it, and a file it cannot read is worse than no file at all. |
 | Capabilities | image generation **off**, data analysis **off**. Web search off keeps it grounded. |
 | Actions | the mail webhook. Text-only: it never fires during a voice conversation. |
 | Conversation starters | two at most. In voice you never see them. |
 | Visibility | *Only me* |
+
+### The Description texts
+
+Each one says what the GPT does and **which command fills it**, because that is
+what gets forgotten.
+
+| GPT | Description |
+|---|---|
+| `Deutsch - Sprechen` | Free conversation in German while walking. Outside the lesson cycle: nothing gets pasted into it, its prompt is permanent. |
+| `Deutsch - Studium` | Phase 2: drilling the lesson's vocabulary, three modes. Paste the /de studium prompt first. |
+| `Deutsch - Vorlesen` | Phase 3: reads me part 2 of the story and asks me about it. Paste the /de vorlesen prompt first. |
+| `Deutsch - Gramatik` | Phase 4: I translate sentences into German out loud, corrected strictly. Paste the /de gramatik prompt first. |
+
+The Sprechen one says outright that nothing gets pasted into it, because it is the
+exception and it is where the confusion will land three weeks from now.
+
+These are UI labels, not material, so they follow the same rule as the rest of the
+machinery: English, like every instruction note → [[Configuration]]. A fork
+translates them or not; nothing depends on them.
 
 Then **open each link on the phone once and add it to the home screen.** Two taps
 to start a session instead of navigating menus one-handed — that is the difference
