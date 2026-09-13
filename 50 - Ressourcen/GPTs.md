@@ -19,12 +19,12 @@ creating GPTs.** The web editor is the only way. So all four have to exist befor
 the first lesson — otherwise phase 2 arrives with a generated prompt and nowhere to
 paste it.
 
-| GPT | Phase | Instructions | Emits | Spec |
-|---|---|---|---|---|
-| `Deutsch - Studium` | 2 | generated every lesson | `OK` + `ERRORS` | [[Kommando - Studium]] |
-| `Deutsch - Vorlesen` | 3 | generated every lesson | `ERRORS` | [[Kommando - Vorlesen]] |
-| `Deutsch - Gramatik` | 4 | generated every lesson | `OK` + `ERRORS` | [[Kommando - Gramatik]] |
-| `Deutsch - Sprechen` | outside the cycle | **written once, refreshed by hand** | all four blocks | [[Modus - Sprechen]] |
+| GPT                  | Phase             | Instructions                        | Emits           | Spec                    |
+| -------------------- | ----------------- | ----------------------------------- | --------------- | ----------------------- |
+| `Deutsch - Studium`  | 2                 | generated every lesson              | `OK` + `ERRORS` | [[Kommando - Studium]]  |
+| `Deutsch - Vorlesen` | 3                 | generated every lesson              | `ERRORS`        | [[Kommando - Vorlesen]] |
+| `Deutsch - Gramatik` | 4                 | generated every lesson              | `OK` + `ERRORS` | [[Kommando - Gramatik]] |
+| `Deutsch - Sprechen` | outside the cycle | **written once, refreshed by hand** | all four blocks | [[Modus - Sprechen]]    |
 
 **Phases 1 and 5 have no GPT.** `/de lektüre` and `/de commit` are Claude, at the
 desk, with the vault open. That is why they can read and write notes and the other
