@@ -1,17 +1,17 @@
 filters:
   and:
-    - 'note.type == "vocab"'
+    - note.type == "vocab"
     - or:
-        - 'note.example == ""'
-        - 'note.example == null'
+        - note.example == ""
+        - note.example == null
 views:
   - type: table
     name: Ohne Beispiel
     order:
       - file.name
-      - note.cefr
-      - note.translation
-      - note.created
+      - cefr
+      - translation
+      - created
     sort:
-      - property: note.created
+      - property: created
         direction: ASC

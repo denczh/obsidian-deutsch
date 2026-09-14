@@ -1,25 +1,25 @@
 filters:
   and:
-    - 'note.error_count > 0'
-    - 'note.status != "known"'
+    - note.error_count > 0
+    - note.status != "known"
     - or:
-        - 'note.type == "vocab"'
-        - 'note.type == "grammar"'
+        - note.type == "vocab"
+        - note.type == "grammar"
 views:
   - type: table
     name: Schwachstellen
     order:
       - file.name
-      - note.type
-      - note.pos
-      - note.sense
-      - note.cefr
-      - note.last_error
-      - note.error_count
-      - note.status
-      - note.translation
+      - type
+      - pos
+      - sense
+      - cefr
+      - last_error
+      - error_count
+      - status
+      - translation
     sort:
-      - property: note.last_error
+      - property: last_error
         direction: DESC
-      - property: note.error_count
+      - property: error_count
         direction: DESC

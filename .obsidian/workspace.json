@@ -11,14 +11,13 @@
             "id": "548fc76062670b1b",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "bases",
               "state": {
-                "file": "50 - Ressourcen/Kommando - Studium.md",
-                "mode": "source",
-                "source": false
+                "file": "40 - Ansichten/Nach Thema.base",
+                "viewName": "Nach Thema"
               },
-              "icon": "lucide-file",
-              "title": "Kommando - Studium"
+              "icon": "lucide-table",
+              "title": "Nach Thema"
             }
           }
         ]
@@ -204,8 +203,13 @@
       "obsidian-spaced-repetition:Review flashcards": false
     }
   },
-  "active": "4952a17aef8a2258",
+  "active": "548fc76062670b1b",
   "lastOpenFiles": [
+    "40 - Ansichten/Nicht gesprochen.base",
+    "40 - Ansichten/Ohne Beispiel.base",
+    "40 - Ansichten/Schwachstellen.base",
+    "50 - Ressourcen/Kommando - Studium.md",
+    "40 - Ansichten/Nicht in Anki.base",
     "50 - Ressourcen/Kommando - Commit.md.tmp.16252.0b096881a3ca",
     "50 - Ressourcen/Kommando - Commit.md.tmp.16252.0464bff87c25",
     "90 - Vorlagen/V - Verb.md.tmp.16252.9e3b125e84f6",
@@ -213,11 +217,6 @@
     "20 - Wortschatz/A11/Stuhl.md.tmp.16252.d45196b032a5",
     "20 - Wortschatz/A11/sein.md.tmp.16252.8a32b7397fcb",
     "20 - Wortschatz/A11/sprechen.md.tmp.16252.799d1efb81d8",
-    "20 - Wortschatz/A11/sehen.md.tmp.16252.1225219a313e",
-    "20 - Wortschatz/A11/schreiben.md.tmp.16252.efca73791865",
-    "20 - Wortschatz/A12/Decke (techo).md.tmp.16252.e6fe5a3cd8a9",
-    "20 - Wortschatz/A11/sagen.md.tmp.16252.6c3ae62cc5e0",
-    "50 - Ressourcen/Kommando - Studium.md",
     "50 - Ressourcen/GPTs.md",
     "50 - Ressourcen/Modus - Sprechen.md",
     "50 - Ressourcen/Kommando - Commit.md",

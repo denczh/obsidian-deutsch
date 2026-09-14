@@ -1,8 +1,0 @@
-filters:
-  and:
-    - 'note.type == "retired"'
-views:
-  - type: table
-    name: RETIRED - delete this file
-    order:
-      - file.name

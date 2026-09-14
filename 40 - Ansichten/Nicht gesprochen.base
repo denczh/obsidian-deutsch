@@ -1,20 +1,20 @@
 filters:
   and:
-    - 'note.type == "vocab"'
-    - 'note.source != "voice-session"'
-    - 'note.status == "new"'
+    - note.type == "vocab"
+    - note.source != "voice-session"
+    - note.status == "new"
 views:
   - type: table
     name: Nicht gesprochen
     order:
       - file.name
-      - note.source
-      - note.pos
-      - note.article
-      - note.inflection
-      - note.translation
-      - note.example
-      - note.created
+      - source
+      - pos
+      - article
+      - inflection
+      - translation
+      - example
+      - created
     sort:
-      - property: note.created
+      - property: created
         direction: ASC
