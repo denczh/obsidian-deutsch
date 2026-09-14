@@ -106,9 +106,9 @@ filters on it. A field written once and read never is the mistake `anki` was.
 
 #### What this costs, and what pays for it
 
-A number carries no meaning. `[[heißen (2)]]` in a list tells you nothing, where
-`[[heißen (significar)]]` told you everything — that is a real loss and it is the
-price of the rule.
+A number carries no meaning. A link reading `heißen (2)` in a list tells you
+nothing, where one reading `heißen (significar)` told you everything — that is a
+real loss and it is the price of the rule.
 
 Two things pay it back. A filename is the most expensive string in the vault to
 change: it lives in every link, in git history and in the Bases cache, and a
@@ -175,9 +175,9 @@ turns up in a story meaning something else. The procedure, in order:
 1. **Rename the existing note** to `Term (1)` and fill its `sense` field. It was
    there first, so it is `(1)` — the new arrival never takes the number.
 2. **Update every link to it.** Renaming inside Obsidian does this automatically and
-   preserves any alias; an agent editing files has to do it by hand. A stale
-   `[[Decke]]` becomes a broken link, and broken links are the one thing
-   `/de commit` checks for.
+   preserves any alias; an agent editing files has to do it by hand. A link left
+   pointing at the old bare title becomes a broken link, and broken links are the
+   one thing `/de commit` checks for.
 3. **Create the new note** as `Term (2)`, in the folder its own `cefr` dictates —
    which is often not the same folder as sense 1.
 4. **Cross-link them** under `## Verwandt`, both ways, and say in one clause how to
