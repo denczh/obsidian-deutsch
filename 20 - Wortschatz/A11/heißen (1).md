@@ -68,5 +68,5 @@ El nombre va en **nominativo**, no en acusativo: es un predicado, no un objeto.
 
 ## Verwandt
 
-- [[heißen (significar)|heißen, significar]] — la otra acepción, misma conjugación
+- [[heißen (2)|heißen, significar]] — la otra acepción, misma conjugación
 - [[sein]]

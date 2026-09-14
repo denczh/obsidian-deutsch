@@ -1,6 +1,6 @@
 ---
 type: reference
-updated: 2026-09-07
+updated: 2026-09-14
 ---
 
 # Free conversation: the walking session
@@ -15,6 +15,10 @@ updated: 2026-09-07
 A 15-30 minute voice session while walking, with the [[Modus - Sprechen]] GPT.
 Unlike a lesson, it has no gate, no fixed material and no sequence: it is the only
 piece of the system that is genuinely a conversation.
+
+It is one of the four GPTs in [[GPTs]], and the only one whose prompt is written
+once instead of generated each lesson. Setting it up is described there; what it
+does is described here.
 
 ## What the tutor does, unprompted
 
@@ -67,6 +71,15 @@ Each view answers a different question. They do not all need looking at:
 | Before a session | [[Nicht gesprochen.base\|Nicht gesprochen]] | words never produced. Use them today. |
 | Starting a topic | [[Nach Niveau.base\|Nach Niveau]] | what is there, by difficulty |
 
+**Four of the six, on purpose.** [[Nach Thema.base|Nach Thema]] is for preparing a
+story and [[Aktuelle Lektion.base|Aktuelle Lektion]] is for following a lesson in
+progress: both belong to the cycle, not to studying alone between sessions. The full
+list and what each one filters on is in [[Ansichten - Referenz]].
+
+The first two rows are **work lists** — you open them, empty them, and the rows
+disappear on their own because the note changed. The last two are **instruments**:
+they never empty, and what they tell you is the trend, not the contents.
+
 **On spaced repetition.** There is none, deliberately. The `anki` field and its
 export view were inherited from the source document and removed on 2026-09-14: a
 field nobody writes and nobody reads is worse than no field, because it looks like
@@ -96,11 +109,11 @@ That is the one place in the system where the old maintenance cost survives. It 
 the price of having a conversation partner that is always there, with no lesson to
 open first.
 
-## The five silent failures
+## The six silent failures
 
 None of these produces an error. All of them degrade the system without saying so.
-Each has an observable symptom, which is the only reason they get caught —
-`/de commit` checks for all five.
+Each has an observable symptom, which is the only reason they get caught — the
+twelve-row health check in [[Kommando - Commit]] exists for exactly these.
 
 1. **Not refreshing this GPT's prompt.** It freezes at last month's level and never
    says so. *Symptom: it keeps introducing new words and never recycles.*
@@ -108,6 +121,22 @@ Each has an observable symptom, which is the only reason they get caught —
    nobody reviews. *Symptom: `Schwachstellen` empty after five sessions.*
 3. **Leaving examples blank.** *Symptom: `Ohne Beispiel` growing.*
 4. **Piling up unused words.** *Symptom: `Nicht gesprochen` growing.*
-5. **Writing a different token or key** — `L 1`, `a11`, renaming a frontmatter
-   field. The view stops seeing the note **and does not warn**. This is the one that
-   is genuinely hard to find later.
+5. **A note stops matching a filter it used to match** — a value written differently
+   (`L 1`, `a11`, `A2.1`), or a field renamed on one side only. The view stops seeing
+   the note **and does not warn**. An unknown field raises nothing: the column comes
+   up blank and a sort on it silently does nothing. Two real cases so far —
+   `level` → `cefr`, where four views kept filtering on the old name for three days,
+   and the `anki` field, which was removed everywhere but had to be removed from the
+   view too. *Symptom: one note missing from one view, which is why it is the hardest
+   of the six to find.*
+6. **Malformed frontmatter.** Not a wrong value — no value at all, because the YAML
+   never parses. The usual cause is an edit across many files that removes a line
+   and takes the newline before it instead of the one after, so whenever the target
+   was the last field the closing `---` gets pulled up: `status: new---`. That is how
+   54 notes broke on 2026-09-14. *Symptom: several views going empty at once* — and
+   that is the tell. One note missing is number 5; everything missing is this.
+
+The two are worth separating because the instinct they trigger is opposite. When a
+view empties completely, the reflex is to suspect the view, and the view is almost
+never the problem: a `.base` file that is broken shows an error, while notes that
+are broken show nothing at all.

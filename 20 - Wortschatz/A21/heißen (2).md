@@ -36,7 +36,7 @@ status: new
 
 ## Notiz
 
-Misma palabra y misma conjugación que [[heißen (llamarse)|heißen, llamarse]], pero otro
+Misma palabra y misma conjugación que [[heißen (1)|heißen, llamarse]], pero otro
 significado: aquí no hay nombre, hay sentido. Se reconoce por el sujeto — una
 persona *heißt* Pedro, una palabra *heißt* algo.
 
@@ -50,5 +50,5 @@ Nota separada el 2026-09-12, al establecer la regla de una acepción por nota.
 
 ## Verwandt
 
-- [[heißen (llamarse)|heißen, llamarse]] — la otra acepción
+- [[heißen (1)|heißen, llamarse]] — la otra acepción
 - [[bedeuten]] — sinónimo de *esta* acepción, no de la otra

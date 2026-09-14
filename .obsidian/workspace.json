@@ -26,12 +26,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "20 - Wortschatz/A21/heißen (significar).md",
+                "file": "00 - Start/Dashboard.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "heißen (significar)"
+              "title": "Dashboard"
             }
           }
         ],
@@ -220,19 +220,23 @@
   },
   "active": "5f74bdf36846498d",
   "lastOpenFiles": [
+    "00 - Start/Workflow.md.tmp.13876.c9e6dff626e1",
+    "00 - Start/Workflow.md.tmp.13876.33248e137cfe",
+    "00 - Start/Workflow.md.tmp.13876.b4e92f2652fd",
+    "00 - Start/Lernprofil.md",
+    "00 - Start/Dashboard.md",
+    "00 - Start/Workflow.md",
+    "00 - Start/Workflow.md.tmp.14288.bd6f8fd2beee",
+    "00 - Start/Workflow.md.tmp.14288.9808801c598c",
+    "20 - Wortschatz/A12/Decke (1).md",
+    "20 - Wortschatz/A21/heißen (2).md",
     "20 - Wortschatz/A11/heißen (llamarse).md.tmp.15040.28e1dfbf3f33",
     "20 - Wortschatz/A21/heißen (significar).md.tmp.15040.43d34af8e777",
     "20 - Wortschatz/A21/heißen (significar).md.tmp.15040.70ab443f2577",
     "20 - Wortschatz/A21/Decke (manta).md.tmp.15040.f9149db18db7",
     "20 - Wortschatz/A12/Decke (techo).md.tmp.15040.e190e0b578b6",
     "20 - Wortschatz/A11/sagen.md.tmp.15040.8eb8e69ce821",
-    "20 - Wortschatz/A12/bedeuten.md.tmp.15040.c33053d29250",
-    "20 - Wortschatz/A11/Lampe.md.tmp.15040.b2c72d0da0c5",
-    "20 - Wortschatz/A12/Boden.md.tmp.15040.c775e46c1fb5",
-    "30 - Grammatik/A11/Possessivartikel meine.md.tmp.15040.d42de6d7b550",
-    "10 - Sitzungen/2026-08-01.md.tmp.15040.b6691a78bd7d",
     "20 - Wortschatz/A11/es gibt.md",
-    "00 - Start/Dashboard.md",
     "50 - Ressourcen/Kommando - Studium.md",
     "50 - Ressourcen/GPTs.md",
     "50 - Ressourcen/Modus - Sprechen.md",
@@ -251,10 +255,6 @@
     "20 - Wortschatz/L1/warten.md",
     "20 - Wortschatz/L1/hören.md",
     "20 - Wortschatz/L1/helfen.md",
-    "20 - Wortschatz/L1/bedeuten.md",
-    "20 - Wortschatz/L1/heißen.md",
-    "20 - Wortschatz/L1/sprechen.md",
-    "20 - Wortschatz/L1/wiederholen.md",
-    "20 - Wortschatz/L1/sagen.md"
+    "20 - Wortschatz/L1/bedeuten.md"
   ]
 }

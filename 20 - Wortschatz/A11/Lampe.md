@@ -25,4 +25,4 @@ status: new
 
 ## Verwandt
 
-- [[Decke (techo)|Decke, techo]]
+- [[Decke (1)|Decke, techo]]

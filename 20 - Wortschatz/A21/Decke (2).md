@@ -40,7 +40,7 @@ carpeta.
 
 ## Verwandt
 
-- [[Decke (techo)|Decke, techo]] — misma palabra, la otra acepción
+- [[Decke (1)|Decke, techo]] — misma palabra, la otra acepción
 - [[Bett]]
 - [[Bettlaken]]
 - [[Kissen]]
