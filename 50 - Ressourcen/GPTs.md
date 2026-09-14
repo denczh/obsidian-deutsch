@@ -40,7 +40,7 @@ three cannot.
 | **Knowledge** | **empty.** Voice mode cannot read it, and a file it cannot read is worse than no file at all. |
 | Capabilities | image generation **off**, data analysis **off**. Web search off keeps it grounded. |
 | Actions | the mail webhook. Text-only: it never fires during a voice conversation. |
-| Conversation starters | two at most. In voice you never see them. |
+| Conversation starters | see below. **In voice you never see them**, so they only matter on the desktop. |
 | Visibility | *Only me* |
 
 ### The Description texts
@@ -61,6 +61,25 @@ exception and it is where the confusion will land three weeks from now.
 These are UI labels, not material, so they follow the same rule as the rest of the
 machinery: English, like every instruction note → [[Configuration]]. A fork
 translates them or not; nothing depends on them.
+
+### Conversation starters
+
+Only worth filling where they map onto a command the prompt already knows.
+Otherwise they are decoration.
+
+| GPT | Starters | Why |
+|---|---|---|
+| `Deutsch - Studium` | `Sequenz` · `Frage auf Deutsch` · `Frage auf Spanisch` | they replace the turn-1 menu outright. The only case where the buttons genuinely do something. |
+| `Deutsch - Vorlesen` | `Lies vor` · `frag` | the first begins; the second jumps straight to the questions on a second run, without re-reading. |
+| `Deutsch - Gramatik` | `Anfangen` | it starts at sentence 1 anyway; one button is enough. |
+| `Deutsch - Sprechen` | `Neues Thema` · `Wiederhole meine Fehler` | the second skips turn 1 and goes straight to weak items. |
+
+`noch einmal` is a bad starter anywhere: it only means anything *after* something
+has been said.
+
+Because Studium's starters are the three mode names, its prompt carries an extra
+line — *if his first message already names a mode, skip the menu and start it* —
+so the buttons are not swallowed by the menu they are meant to replace.
 
 Then **open each link on the phone once and add it to the home screen.** Two taps
 to start a session instead of navigating menus one-handed — that is the difference
@@ -93,8 +112,73 @@ Same text for `Vorlesen` with `/de vorlesen`, and for `Gramatik` with
 single source of truth for it.
 
 While in the editor, attach the **mail Action to all four**. Doing it now saves
-opening each one again later, and the same schema works for every GPT — only the
-subject line differs, and that comes from the prompt, not the schema.
+opening each one again later.
+
+## The Action
+
+**One schema, identical in all four GPTs.** Same webhook, same operation, same
+fields. The only thing that differs between phases is the email subject, and that
+comes from the prompt, not from the schema.
+
+Authentication: **None**. Replace the server and path with the Make hook URL.
+
+```yaml
+openapi: 3.1.0
+info:
+  title: Send closing block
+  description: Emails the closing block of a session to the learner.
+  version: 1.1.0
+servers:
+  - url: https://hook.eu1.make.com
+paths:
+  /YOUR-HOOK-ID:
+    post:
+      operationId: sendClosingBlock
+      summary: Emails the closing block of the session.
+      description: >
+        Call only when closing a session, and only after the closing block has
+        already been written in the chat. Never call it during a voice
+        conversation: Actions do not run in voice mode. Send the block exactly as
+        written, with no commentary before or after.
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [subject, body]
+              properties:
+                subject:
+                  type: string
+                  description: >
+                    "Deutsch YYYY-MM-DD" followed by the phase name when there is
+                    one: Studium, Vorlesen or Gramatik. Free conversation has no
+                    suffix.
+                body:
+                  type: string
+                  description: >
+                    The closing block verbatim, in plain text, starting with
+                    "=== SESSION ===" and ending with "=== END ===". Every header
+                    the mode uses is present even when its section is empty. No
+                    markdown, no bold, no commentary.
+      responses:
+        "200":
+          description: Sent
+          content:
+            text/plain:
+              schema:
+                type: string
+```
+
+**The `description` fields are not documentation.** The model reads them and they
+change its behaviour: when to call the Action, and what the body is. The first
+version of this schema still described the pre-August format — sections that had
+not existed for a month — which is exactly the kind of thing that makes a model
+paraphrase instead of copying.
+
+> **The webhook URL is a credential.** There is no authentication on it: anyone
+> holding it can make Make send mail on your behalf. Keep it out of chats, tickets
+> and screenshots, and regenerate the hook if it leaks.
 
 ## Overwrite, never recreate
 
