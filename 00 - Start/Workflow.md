@@ -76,9 +76,11 @@ story and [[Aktuelle Lektion.base|Aktuelle Lektion]] is for following a lesson i
 progress: both belong to the cycle, not to studying alone between sessions. The full
 list and what each one filters on is in [[Ansichten - Referenz]].
 
-The first two rows are **work lists** — you open them, empty them, and the rows
-disappear on their own because the note changed. The last two are **instruments**:
-they never empty, and what they tell you is the trend, not the contents.
+**Ohne Beispiel** and **Nicht gesprochen** are work lists: you open them, do the
+thing, and the row disappears on its own because the note changed. **Schwachstellen**
+empties too, but never by working on the view itself — only as a side effect of
+getting something right in a session. **Nach Niveau** never empties; it is read, not
+worked, and what it tells you is the shape of what you have, not a list of chores.
 
 **On spaced repetition.** There is none, deliberately. The `anki` field and its
 export view were inherited from the source document and removed on 2026-09-14: a

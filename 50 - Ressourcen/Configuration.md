@@ -94,7 +94,16 @@ replaces them there:
 | explain in `{KNOWN}` | `auf Spanisch` |
 | what does … mean | `was bedeutet …` |
 | be quiet | `warte` |
+| hold every answer until I say `fertig` | `protokoll fertig` |
 | finish and emit the block | `fertig` |
+| change the subject | `anderes Thema` |
+| easier / harder | `einfacher` / `schwieriger` |
+
+The last three are **free conversation only** → [[Workflow]]. They have no meaning
+in a lesson phase, where the material is fixed and the subject was decided in
+`/de lektüre`. A fork still has to translate them: they were missing from this table
+until 2026-09-14 and were documented only in prose, which is how a fork ends up with
+a system that works except for three commands nobody can say.
 
 ### Field keys stay in English
 
