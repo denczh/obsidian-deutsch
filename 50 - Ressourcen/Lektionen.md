@@ -108,6 +108,14 @@ Check all four. Process any outstanding blocks, run the vault health check, comm
 mark the lesson `closed` and **archive it, do not delete it**: it is what will tell
 you, six months from now, which story taught you `Bahnsteig`.
 
+**The one other way a lesson ends.** A lesson whose phases can no longer be done
+would deadlock the cycle: `/de commit` refuses it for missing phases, and
+`/de lektüre` refuses to open the next one while it is unclosed. The exit is
+**abandoning** it — `closed` gets a date while `phase_5_commit` stays `false`, so
+the two endings stay distinguishable and no field has to be invented. The procedure
+is in [[Kommando - Lektüre]], because that is the command that hits the wall.
+[[L001]] is the worked case, and so far the only one.
+
 ## Gates are proven with evidence
 
 A passed phase is not a box that gets ticked: it is **its closing block**.

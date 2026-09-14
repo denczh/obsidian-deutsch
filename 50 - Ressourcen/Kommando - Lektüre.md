@@ -20,6 +20,40 @@ one is unclosed**: if the latest note in `10 - Lektionen/` has an empty `closed`
 field, say so and offer two ways out — continue that lesson, or abandon it
 explicitly — before creating another.
 
+### Abandoning a lesson
+
+The normal exit is `/de commit`, and it is the one to prefer. But a lesson can reach
+a state where `/de commit` will never accept it: its gate wants all four phases
+`true`, and if a phase can no longer be done — the story was never written, the GPT
+no longer exists, the lesson is months old — then `lektüre` sends you to `commit`
+and `commit` sends you back. That deadlock is what this exit is for.
+
+**Abandoning writes two things and invents no field:**
+
+- `closed` — today's date, exactly as a normal close would.
+- `phase_5_commit` — **stays `false`.** Phase 5 did not run, and that field is read
+  by a gate. Writing `true` would buy one convenience with a lie in the one place
+  the system trusts.
+
+So the two states are told apart by a combination that already exists:
+
+| State | `closed` | `phase_5_commit` |
+|---|---|---|
+| open | empty | `false` |
+| **abandoned** | **a date** | **`false`** |
+| closed properly | a date | `true` |
+
+And **a sentence in the body saying why**, under the phases table. A date with no
+reason is the thing that will be indistinguishable from a bug six months from now.
+
+**Process what exists first.** Abandoning is not discarding: if there are raw blocks
+in the note that were never processed, process them before closing it. The lesson
+stops, the vocabulary it produced does not.
+
+Never abandon a lesson without being asked to. Offer it, name what will be lost, and
+wait. **A lesson abandoned by mistake cannot be reopened by this command** — its
+`closed` field will send it straight past the gate.
+
 ## 1. Read the vault
 
 Before asking anything:
