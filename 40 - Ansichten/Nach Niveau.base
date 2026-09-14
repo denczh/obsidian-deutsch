@@ -1,21 +1,21 @@
 filters:
   or:
-    - 'note.type == "vocab"'
-    - 'note.type == "grammar"'
+    - note.type == "vocab"
+    - note.type == "grammar"
 views:
   - type: table
     name: Nach Niveau
     order:
-      - note.cefr
+      - cefr
       - file.name
-      - note.type
-      - note.pos
-      - note.sense
-      - note.lektion
-      - note.translation
-      - note.status
+      - type
+      - pos
+      - sense
+      - lektion
+      - translation
+      - status
     sort:
-      - property: note.cefr
+      - property: cefr
         direction: ASC
       - property: file.name
         direction: ASC

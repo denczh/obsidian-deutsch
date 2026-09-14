@@ -13,6 +13,8 @@ views:
       - translation
       - status
     sort:
+      - property: cefr
+        direction: ASC
       - property: theme
         direction: ASC
       - property: file.name
