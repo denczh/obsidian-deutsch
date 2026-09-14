@@ -21,7 +21,6 @@ updated: 2026-09-07
 | [[Aktuelle Lektion.base\|Aktuelle Lektion]] | The vocabulary of the lesson in progress. |
 | [[Nach Niveau.base\|Nach Niveau]] | Everything grouped by CEFR difficulty of the word. |
 | [[Nach Thema.base\|Nach Thema]] | Replaces a per-theme folder completely. |
-| [[Nicht in Anki.base\|Nicht in Anki]] | Export queue for spaced repetition. |
 | [[Ohne Beispiel.base\|Ohne Beispiel]] | Notes made in a hurry and never finished. |
 | [[Nicht gesprochen.base\|Nicht gesprochen]] | Words never produced: given by a tutor, or added by hand. |
 

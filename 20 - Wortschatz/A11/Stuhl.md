@@ -14,7 +14,6 @@ created: 2026-08-01
 last_error:
 error_count: 0
 status: new
-anki: false
 ---
 
 **der Stuhl**, Plural: *die Stühle*

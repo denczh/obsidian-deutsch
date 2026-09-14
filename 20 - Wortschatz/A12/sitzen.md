@@ -16,7 +16,6 @@ created: 2026-08-02
 last_error:
 error_count: 0
 status: new
-anki: false
 ---
 
 **sitzen** — *sitzt, saß, hat gesessen*. Auxiliar `haben`, stark.

@@ -99,8 +99,14 @@ replaces them there:
 ### Field keys stay in English
 
 `type`, `term`, `sense`, `pos`, `article`, `inflection`, `translation`, `cefr`,
-`lektion`, `theme`, `example`, `source`, `status`, `error_count`, `last_error`,
-`anki`.
+`lektion`, `theme`, `example`, `source`, `status`, `error_count`, `last_error`.
+
+There was an `anki` field until 2026-09-14. It was removed because nothing ever
+wrote it and nothing ever read it — **a field like that is worse than no field,
+because it reads as a feature that exists.** If a fork wants spaced repetition, the
+`obsidian-spaced-repetition` plugin works on the notes directly and needs no field
+of ours; exporting to a separate app means maintaining a second copy of the
+vocabulary that drifts from the first.
 
 **These are never translated, in any fork.** Every view filters on them, and one
 spelling everywhere beats a localised schema. The *values* of `translation` are in

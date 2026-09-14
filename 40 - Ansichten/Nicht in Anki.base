@@ -1,19 +1,8 @@
 filters:
   and:
-    - 'note.type == "vocab"'
-    - 'note.anki == false'
-    - 'note.status != "new"'
+    - 'note.type == "retired"'
 views:
   - type: table
-    name: Nicht in Anki
+    name: RETIRED - delete this file
     order:
       - file.name
-      - note.article
-      - note.translation
-      - note.cefr
-      - note.status
-    sort:
-      - property: note.cefr
-        direction: ASC
-      - property: file.name
-        direction: ASC

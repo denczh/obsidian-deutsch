@@ -15,7 +15,6 @@ created: 2026-09-12
 last_error:
 error_count: 0
 status: new
-anki: false
 ---
 
 **es gibt** · *phrase* · invariable · "hay"

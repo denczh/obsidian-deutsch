@@ -42,7 +42,7 @@ where the silent failures get caught. None of these raises an error on its own.
 
 | Check | What breaks if it fails |
 |---|---|
-| valid YAML in every note | the note disappears from every view |
+| valid YAML in every note, **frontmatter closed by `---` on its own line** | the note disappears from every view |
 | `cefr` is one of the twelve tokens | [[Nach Niveau.base\|Nach Niveau]] splits in two |
 | the folder matches the `cefr` | the note lives somewhere it does not claim to |
 | `lektion` matches `L\d{3}` | [[Aktuelle Lektion.base\|Aktuelle Lektion]] cannot see it |
@@ -62,6 +62,19 @@ And two numbers worth watching even though they are not errors:
   grows. That is the leak plugged in August; it can come back through another door.
 - **`Nicht gesprochen` growing**: words that arrive and never get used. If it rises
   every lesson, the 70/30 in Studium is not doing its job.
+
+**On the first row.** It is there because it has already happened. On 2026-09-14 the
+`anki` field was removed from 56 notes by deleting the string `"\nanki: false"` in
+each one. In every file `anki` was the *last* field, so the deletion pulled the
+closing delimiter up and left `status: new---`: fifty-four vocabulary notes and both
+templates with frontmatter that never terminates. Nothing errored. Obsidian shows the
+YAML as body text and every view goes empty, which reads like the views being broken
+rather than the notes.
+
+The lesson generalises past that one field: **a bulk edit that removes a line must
+match the newline that follows it, not the one before it**, or it silently eats the
+next line whenever the target is last. The check that catches it is one search:
+`^[a-z_]+:.*---$` must return nothing.
 
 Report whatever comes out. **Do not fix things silently**: if something is wrong,
 say so and propose the fix.

@@ -15,7 +15,6 @@ created: "{{date:YYYY-MM-DD}}"
 last_error:
 error_count: 0
 status: new
-anki: false
 ---
 
 **{{title}}** · *noun* · 

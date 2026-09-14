@@ -17,7 +17,6 @@ created: "{{date:YYYY-MM-DD}}"
 last_error:
 error_count: 0
 status: new
-anki: false
 ---
 
 **{{title}}** — *flexión*. Auxiliar `haben` / `sein`.
@@ -71,7 +70,7 @@ anki: false
 <!--
 INSTRUCTIONS. See "50 - Ressourcen/Configuration".
 
-type stays "vocab", NOT "verb". All seven views filter on type == "vocab";
+type stays "vocab", NOT "verb". Every view filters on type == "vocab";
 changing it here would silently drop every verb out of all of them. This
 template is a different shape for the same kind of note.
 

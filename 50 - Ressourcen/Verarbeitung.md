@@ -67,9 +67,13 @@ a week of backlog means the notes never get written.
   frontmatter already filled, leaving only the example sentences and the
   explanations. Worth writing once the format has settled.
 
-## Export to spaced repetition
+## No export step
 
-Filter `anki = false` in [[Nicht in Anki.base|Nicht in Anki]], export `term` and
-`translation` to CSV, flip the flag. Or use the spaced-repetition plugin and stay
-in the vault. A chat is a poor drilling tool and a good conversation partner; let
-each do its own job.
+There is no spaced-repetition export, and the `anki` field that implied one was
+removed on 2026-09-14. Drilling happens in `/de studium`, which reaches back with
+its 30% of older material, and [[Schwachstellen.base|Schwachstellen]] is the queue
+of what gets failed.
+
+If that turns out not to be enough, the `obsidian-spaced-repetition` plugin works
+on these notes directly — no export, no second copy, nothing to keep in sync. See
+the note at the end of [[Workflow]].

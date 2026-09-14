@@ -7,7 +7,7 @@ updated: 2026-09-07
 
 > `{TARGET}` = German · `{KNOWN}` = Spanish → [[Configuration]]
 
-The seven views are `.base` files (Bases core plugin). If a version of Obsidian
+The six views are `.base` files (Bases core plugin). If a version of Obsidian
 does not recognise the `note.` prefix in filters, the view will come up empty:
 rebuild it from the UI with the same filter, or drop the prefix in the file.
 
@@ -17,7 +17,6 @@ rebuild it from the UI with the same filter, or drop the prefix in the file.
 | **Aktuelle Lektion** | `lektion == "L001"` | `created` desc |
 | **Nach Niveau** | type vocab or grammar | `cefr`, then name |
 | **Nach Thema** | type vocab or grammar | `theme`, then name |
-| **Nicht in Anki** | `anki == false` and `status != "new"` | `cefr`, then name |
 | **Ohne Beispiel** | `type == "vocab"` and `example` empty | `created` asc |
 | **Nicht gesprochen** | `source != "voice-session"` and `status == "new"` | `created` asc |
 
@@ -71,10 +70,25 @@ disambiguates the meaning. `Schwachstellen` and `Nach Niveau` have both; the
 others have `pos`.
 
 **`note.level` was still listed as a column in four views** until 2026-09-12 — a
-leftover from the September migration, and in `Nicht in Anki` it was also the sort
-key. An unknown field does not raise an error: the column just comes up blank and
-the sort silently does nothing. Now they all use `cefr`. This is exactly the class
-of failure the `/de commit` health check exists for.
+leftover from the September migration, and in one of them it was also the sort key.
+An unknown field does not raise an error: the column just comes up blank and the
+sort silently does nothing. Now they all use `cefr`. This is exactly the class of
+failure the `/de commit` health check exists for.
+
+## The view that was removed
+
+**`Nicht in Anki` was deleted on 2026-09-14**, along with the `anki` field it
+filtered on. Both came from the source document and neither was ever used: no
+export step existed, so the field was never written and the view returned zero.
+
+It was not harmless. The filter was `anki == false` and `status != "new"`, so the
+first time anything reached `learning` the view would have started filling up on
+its own — a queue growing towards a destination that did not exist, which is
+indistinguishable from the silent failures this reference is meant to catch.
+
+Its file survives as `Nicht in Anki.base` carrying a view named *RETIRED - delete
+this file*, only because the shell could not reach the folder that day. Delete it
+in Obsidian; nothing refers to it.
 
 ## Two tokens, two meanings, one spelling each
 

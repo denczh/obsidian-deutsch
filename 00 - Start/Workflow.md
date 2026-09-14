@@ -66,11 +66,21 @@ Each view answers a different question. They do not all need looking at:
 | While processing | [[Ohne Beispiel.base\|Ohne Beispiel]] | write the sentences left blank |
 | Before a session | [[Nicht gesprochen.base\|Nicht gesprochen]] | words never produced. Use them today. |
 | Starting a topic | [[Nach Niveau.base\|Nach Niveau]] | what is there, by difficulty |
-| Whenever | [[Nicht in Anki.base\|Nicht in Anki]] | export to spaced repetition |
 
-For drilling: export `term` + `translation` to CSV and flip the `anki` flag, or use
-the spaced-repetition plugin and stay in the vault. A chat is a poor drilling tool
-and a good conversation partner; let each do its own job.
+**On spaced repetition.** There is none, deliberately. The `anki` field and its
+export view were inherited from the source document and removed on 2026-09-14: a
+field nobody writes and nobody reads is worse than no field, because it looks like
+a feature, and the view was a queue silently filling up towards an export step that
+did not exist.
+
+What the system has instead is the 30% of older material in every `/de studium`
+and [[Schwachstellen.base|Schwachstellen]] as the queue of what gets failed. That
+is not spaced repetition — it schedules by error, not by interval — and it may not
+be enough. If forgetting becomes visible after ten lessons, the fix is the
+`obsidian-spaced-repetition` plugin, which is already installed and works **on the
+notes themselves**. Not Anki: exporting creates a second copy of the vocabulary
+that starts drifting the same day, and a split sense or a promoted `status` never
+reaches it.
 
 ## How the tutor "remembers"
 
