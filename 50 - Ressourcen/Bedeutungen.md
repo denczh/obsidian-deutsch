@@ -35,7 +35,7 @@ This is not tidiness. Each sense has its own difficulty, its own lesson, its own
 error count and its own mastery:
 
 ```yaml
-# 20 - Wortschatz/A12/Decke (techo).md
+# 20 - Wortschatz/A12/Decke (1).md
 term: Decke
 sense: techo
 pos: noun
@@ -48,7 +48,7 @@ error_count: 2
 ```
 
 ```yaml
-# 20 - Wortschatz/A21/Decke (manta).md
+# 20 - Wortschatz/A21/Decke (2).md
 term: Decke
 sense: manta
 pos: noun
@@ -70,7 +70,7 @@ and never once produced *blanket*.
 |---|---|
 | **`term`** | the bare word, **identical across all its senses**. This is what groups them: a search for `term: Decke` finds every sense. |
 | **`sense`** | a short label in `{KNOWN}` naming **this** meaning. `-` while the word has only one sense in the vault. |
-| the **title** | the bare term when there is one sense; `Term (sense)` once there are two. |
+| the **title** | the bare term when there is one sense; `Term (n)` once there are two, where `n` is a plain ordinal. |
 
 **An absent `sense` means the same as `sense: "-"`**: the only sense in the vault.
 That is the same convention as `article: "-"` for a non-noun, and it is why the
@@ -82,6 +82,53 @@ disambiguator.
 `term` stays bare on purpose. It is what makes `[[Bahnsteig]]` work inside an
 example sentence, and that link is how the vault accumulates a record of every
 sentence where a word has been used.
+
+### The number in the title
+
+The disambiguator is **a number, not a translation**: `heißen (1)`, `heißen (2)`.
+Three rules, and they are all about the same thing — a filename is an identity.
+
+**Assigned in order of arrival.** Sense 1 is the one that was in the vault first.
+When two senses are split in the same operation, as the inherited cases were, the
+lower `cefr` takes `(1)`: the everyday meaning is the one that was going to be met
+first anyway.
+
+**Never reassigned.** A third sense is `(3)` even if it is the most basic of the
+three. Renumbering would rename a file that links, git history and your own memory
+already point at, to buy a tidiness nobody reads.
+
+**Never reused.** If `(2)` is deleted or merged away, the next sense is still `(3)`.
+Gaps are correct; a reused number silently makes two different things look like the
+same thing in the history.
+
+There is **no `sense_number` field.** The number lives in the title and nothing
+filters on it. A field written once and read never is the mistake `anki` was.
+
+#### What this costs, and what pays for it
+
+A number carries no meaning. `[[heißen (2)]]` in a list tells you nothing, where
+`[[heißen (significar)]]` told you everything — that is a real loss and it is the
+price of the rule.
+
+Two things pay it back. A filename is the most expensive string in the vault to
+change: it lives in every link, in git history and in the Bases cache, and a
+translation is exactly the kind of thing that gets reworded a year later. A number
+never needs rewording. And the translation was in the wrong language anyway — a
+`{KNOWN}` word inside the title of a `{TARGET}` note, where nothing else in the
+filename is in `{KNOWN}`.
+
+What replaces it: **`sense` stops being decoration and becomes the only
+machine-readable carrier of the meaning.** It was redundant with the title before;
+now it is not. That is why [[Schwachstellen.base|Schwachstellen]] and
+[[Nach Niveau.base|Nach Niveau]] both show it as a column, and why the `/de commit`
+check that no two notes share a `term` without both carrying a `sense` matters more
+than it did: an empty `sense` on `heißen (2)` now leaves nothing anywhere that says
+what it means.
+
+And where a bare number would read badly — a long word list, a cross-reference —
+**write the link with an alias**: `[[heißen (2)|heißen, significar]]`. The filename
+stays stable, the prose stays readable. The alias is presentation and can be changed
+freely; the filename is identity and cannot.
 
 ### Where the line is
 
@@ -125,18 +172,21 @@ note. If it behaves as a unit, it is a unit.
 The common case is a word that lived happily with one sense for months and then
 turns up in a story meaning something else. The procedure, in order:
 
-1. **Rename the existing note** to `Term (sense A)` and fill its `sense` field.
-2. **Update every link to it.** Renaming inside Obsidian does this automatically;
-   an agent editing files has to do it by hand. A stale `[[Decke]]` becomes a
-   broken link, and broken links are the one thing `/de commit` checks for.
-3. **Create the new note** as `Term (sense B)`, in the folder its own `cefr`
-   dictates — which is often not the same folder as sense A.
+1. **Rename the existing note** to `Term (1)` and fill its `sense` field. It was
+   there first, so it is `(1)` — the new arrival never takes the number.
+2. **Update every link to it.** Renaming inside Obsidian does this automatically and
+   preserves any alias; an agent editing files has to do it by hand. A stale
+   `[[Decke]]` becomes a broken link, and broken links are the one thing
+   `/de commit` checks for.
+3. **Create the new note** as `Term (2)`, in the folder its own `cefr` dictates —
+   which is often not the same folder as sense 1.
 4. **Cross-link them** under `## Verwandt`, both ways, and say in one clause how to
-   tell them apart. That clause is the useful part of the note.
+   tell them apart. That clause is the useful part of the note, and it is where the
+   meaning that used to be in the filename now lives.
 
-Renaming is deliberately the cost of the *second* sense, not the first. Titling
-every note `Bahnsteig (andén)` from the start would be uglier every day to avoid a
-rename that happens rarely.
+Renaming is deliberately the cost of the *second* sense, not the first. Numbering
+every note `Bahnsteig (1)` from the start would put a number on nine hundred notes
+that will never need one, to avoid a rename that happens rarely.
 
 ## Who applies this
 
@@ -159,8 +209,8 @@ Three words mixed senses from before this rule existed. All three were split on
 
 | Word | Was | Now |
 |---|---|---|
-| `Decke` | one note, `techo (interior)`, *manta* only mentioned in the body | [[Decke (techo)]] `A12` + [[Decke (manta)]] `A21` |
-| `heißen` | one note, `llamarse; significar` | [[heißen (llamarse)]] `A11` + [[heißen (significar)]] `A21` |
+| `Decke` | one note, `techo (interior)`, *manta* only mentioned in the body | [[Decke (1)\|Decke (1), techo]] `A12` + [[Decke (2)\|Decke (2), manta]] `A21` |
+| `heißen` | one note, `llamarse; significar` | [[heißen (1)\|heißen (1), llamarse]] `A11` + [[heißen (2)\|heißen (2), significar]] `A21` |
 | `es gibt` | explained inside the `geben` note | [[es gibt]], its own `phrase` note |
 
 Each split put the two senses in **different folders**, which is the visible proof
@@ -172,6 +222,11 @@ sentence in the body of another note. It could never have appeared in a drill,
 could never have accumulated its own errors, and could never have been marked
 mastered.
 
-**Two tombstones remain**, `Decke.md` and `heißen.md`, carrying `type: tombstone`
-so no view sees them. They exist only because the shell could not reach the folder
-on the day of the split. Delete them in Obsidian whenever; nothing links to them.
+The two tombstones the split left behind, `Decke.md` and `heißen.md`, were deleted
+on 2026-09-14.
+
+**The four notes were first titled `Decke (techo)`, `heißen (significar)` and so
+on.** They were renumbered on 2026-09-14, two days after the split — which is the
+argument for numbers in one line: the naming scheme changed before the notes were a
+week old, and every title that encoded a translation had to be touched. A number
+would have survived it.

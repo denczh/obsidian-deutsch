@@ -69,4 +69,4 @@ status: new
 
 - [[fragen]]
 - [[zeigen]]
-- [[heißen (llamarse)]]
+- [[heißen (llamarse)|heißen, llamarse]]

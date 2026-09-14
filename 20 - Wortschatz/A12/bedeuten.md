@@ -67,5 +67,5 @@ Doble irregularidad ortográfica: `be-` inseparable, así que **no hay `ge-`**, 
 
 ## Verwandt
 
-- [[heißen (significar)]]
+- [[heißen (significar)|heißen, significar]]
 - [[arbeiten]]

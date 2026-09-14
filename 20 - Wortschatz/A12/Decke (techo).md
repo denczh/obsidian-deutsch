@@ -30,7 +30,7 @@ El techo **por dentro**. El de fuera, el tejado, es `das Dach`.
 
 ## Verwandt
 
-- [[Decke (manta)]] — misma palabra, significado sin relación. El contexto decide:
+- [[Decke (manta)|Decke, manta]] — misma palabra, significado sin relación. El contexto decide:
   si está encima de ti y no la puedes tocar, es esta.
 - [[Boden]] — el suelo, el par opuesto
 - [[Lampe]]

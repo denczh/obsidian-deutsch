@@ -128,8 +128,10 @@ the agent can do this — a voice GPT has never read the vault — so it happens
   example to the existing one if it is better than what is there, and leave
   `lektion` alone: the word entered in the lesson that first introduced it.
 - **Exists with a different meaning** → two notes, and the rename procedure in
-  [[Bedeutungen]]: rename the old note to `Term (sense A)`, **update every link to
-  it**, then create `Term (sense B)` in whatever folder its own `cefr` dictates.
+  [[Bedeutungen]]: rename the old note to `Term (1)`, **update every link to it**,
+  then create `Term (2)` in whatever folder its own `cefr` dictates. The number is
+  the order of arrival and is never reassigned; the meaning goes in `sense`, never
+  in the title.
 
 The boundary between *another sense* and *another translation of the same sense* is
 the judgement call, and [[Bedeutungen]] holds the test: `cuadro` and `imagen` are
