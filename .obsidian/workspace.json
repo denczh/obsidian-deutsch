@@ -11,13 +11,14 @@
             "id": "548fc76062670b1b",
             "type": "leaf",
             "state": {
-              "type": "bases",
+              "type": "markdown",
               "state": {
-                "file": "40 - Ansichten/Nach Thema.base",
-                "viewName": "Nach Thema"
+                "file": "00 - Start/Dashboard.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-table",
-              "title": "Nach Thema"
+              "icon": "lucide-file",
+              "title": "Dashboard"
             }
           }
         ]
@@ -205,6 +206,7 @@
   },
   "active": "548fc76062670b1b",
   "lastOpenFiles": [
+    "40 - Ansichten/Nach Thema.base",
     "40 - Ansichten/Nicht gesprochen.base",
     "40 - Ansichten/Ohne Beispiel.base",
     "40 - Ansichten/Schwachstellen.base",
@@ -216,7 +218,6 @@
     "20 - Wortschatz/A11/Tür.md.tmp.16252.0d6fbfa957c1",
     "20 - Wortschatz/A11/Stuhl.md.tmp.16252.d45196b032a5",
     "20 - Wortschatz/A11/sein.md.tmp.16252.8a32b7397fcb",
-    "20 - Wortschatz/A11/sprechen.md.tmp.16252.799d1efb81d8",
     "50 - Ressourcen/GPTs.md",
     "50 - Ressourcen/Modus - Sprechen.md",
     "50 - Ressourcen/Kommando - Commit.md",

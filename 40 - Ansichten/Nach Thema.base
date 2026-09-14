@@ -1,19 +1,19 @@
 filters:
   or:
-    - 'note.type == "vocab"'
-    - 'note.type == "grammar"'
+    - note.type == "vocab"
+    - note.type == "grammar"
 views:
   - type: table
     name: Nach Thema
     order:
-      - note.theme
+      - theme
       - file.name
-      - note.type
-      - note.cefr
-      - note.translation
-      - note.status
+      - type
+      - cefr
+      - translation
+      - status
     sort:
-      - property: note.theme
+      - property: theme
         direction: ASC
       - property: file.name
         direction: ASC
