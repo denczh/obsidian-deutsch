@@ -11,10 +11,14 @@
             "id": "9498400dc8d190b2",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "20 - Wortschatz/A11/kochen.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "kochen"
             }
           }
         ]
@@ -200,8 +204,10 @@
       "obsidian-spaced-repetition:Review flashcards": false
     }
   },
-  "active": "4952a17aef8a2258",
+  "active": "9498400dc8d190b2",
   "lastOpenFiles": [
+    "40 - Ansichten/Aktuelle Lektion.base",
+    "20 - Wortschatz/A12/stehen.md",
     "40 - Ansichten/Nach Thema.base",
     "20 - Wortschatz/A21/Zutat.md",
     "00 - Start/Dashboard.md",
@@ -230,13 +236,10 @@
     "10 - Lektionen/L001.md.tmp.344.a1d09b588191",
     "50 - Ressourcen/Kommando - Lektüre.md.tmp.344.b73e25f45ca2",
     "50 - Ressourcen/Configuration.md.tmp.13876.3367311bbaee",
-    "00 - Start/Workflow.md.tmp.13876.b1f651c14d77",
-    "00 - Start/Workflow.md.tmp.13876.c9e6dff626e1",
     "00 - Start/Lernprofil.md",
     "00 - Start/Workflow.md",
     "20 - Wortschatz/A12/Decke (1).md",
     "20 - Wortschatz/A21/heißen (2).md",
-    "20 - Wortschatz/A11/es gibt.md",
-    "50 - Ressourcen/Kommando - Studium.md"
+    "20 - Wortschatz/A11/es gibt.md"
   ]
 }
