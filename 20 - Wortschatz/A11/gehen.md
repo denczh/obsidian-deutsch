@@ -22,8 +22,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Wir gehen heute Abend ins Kino, wenn das Wetter schlecht bleibt.
+- **ES:** Vamos al cine esta noche si el tiempo sigue malo.
 
 ## Präsens
 

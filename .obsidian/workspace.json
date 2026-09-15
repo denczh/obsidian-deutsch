@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "20 - Wortschatz/A11/kochen.md",
+                "file": "20 - Wortschatz/A11/hören.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "kochen"
+              "title": "hören"
             }
           }
         ]
@@ -206,6 +206,16 @@
   },
   "active": "9498400dc8d190b2",
   "lastOpenFiles": [
+    "20 - Wortschatz/A11/heißen (1).md",
+    "20 - Wortschatz/A11/gehen.md",
+    "20 - Wortschatz/A11/geben.md",
+    "20 - Wortschatz/A11/fragen.md",
+    "20 - Wortschatz/A11/Fenster.md",
+    "20 - Wortschatz/A11/es gibt.md",
+    "20 - Wortschatz/A11/Bild.md",
+    "20 - Wortschatz/A11/Bett.md",
+    "20 - Wortschatz/A11/arbeiten.md",
+    "20 - Wortschatz/A11/kochen.md",
     "40 - Ansichten/Aktuelle Lektion.base",
     "20 - Wortschatz/A12/stehen.md",
     "40 - Ansichten/Nach Thema.base",
@@ -224,10 +234,6 @@
     "20 - Wortschatz/A12/schmecken.md",
     "20 - Wortschatz/A12/salzig.md",
     "20 - Wortschatz/A12/probieren.md",
-    "20 - Wortschatz/A12/lecker.md",
-    "20 - Wortschatz/A12/fast.md",
-    "20 - Wortschatz/A11/kochen.md",
-    "20 - Wortschatz/A11/Küche.md",
     "50 - Ressourcen/Bedeutungen.md.tmp.12120.c6de554bcc8a",
     "50 - Ressourcen/Bedeutungen.md.tmp.12120.0c150eb2dfbb",
     "50 - Ressourcen/Lektionen.md.tmp.344.4a500ab4920b",
@@ -235,11 +241,6 @@
     "10 - Lektionen/L001.md.tmp.344.22335a1b528d",
     "10 - Lektionen/L001.md.tmp.344.a1d09b588191",
     "50 - Ressourcen/Kommando - Lektüre.md.tmp.344.b73e25f45ca2",
-    "50 - Ressourcen/Configuration.md.tmp.13876.3367311bbaee",
-    "00 - Start/Lernprofil.md",
-    "00 - Start/Workflow.md",
-    "20 - Wortschatz/A12/Decke (1).md",
-    "20 - Wortschatz/A21/heißen (2).md",
-    "20 - Wortschatz/A11/es gibt.md"
+    "50 - Ressourcen/Configuration.md.tmp.13876.3367311bbaee"
   ]
 }

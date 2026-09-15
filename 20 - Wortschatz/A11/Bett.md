@@ -20,8 +20,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Nach dem langen Flug bin ich sofort ins Bett gegangen.
+- **ES:** Después del vuelo largo me fui directamente a la cama.
 
 ## Verwandt
 

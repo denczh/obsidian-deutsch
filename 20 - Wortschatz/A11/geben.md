@@ -22,8 +22,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Der Kellner gab uns die Speisekarte und empfahl uns den Fisch.
+- **ES:** El camarero nos dio la carta y nos recomendó el pescado.
 
 ## Präsens
 

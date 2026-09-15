@@ -22,8 +22,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Kannst du mir ein Beispiel für dieses Wort geben?
+- **ES:** ¿Me puedes dar un ejemplo de esta palabra?
 
 ## Präsens
 

@@ -22,8 +22,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Meine Schwester arbeitet seit drei Jahren bei einer kleinen Firma in Zürich.
+- **ES:** Mi hermana trabaja desde hace tres años en una empresa pequeña en Zúrich.
 
 ## Präsens
 

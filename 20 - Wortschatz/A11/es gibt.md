@@ -21,8 +21,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** In diesem Dorf gibt es nur einen Supermarkt und keine Apotheke.
+- **ES:** En este pueblo hay solo un supermercado y ninguna farmacia.
 
 ## Regiert
 

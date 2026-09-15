@@ -23,8 +23,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Ihr Nachbar heißt Thomas, aber alle nennen ihn Tom.
+- **ES:** Su vecino se llama Thomas, pero todos lo llaman Tom.
 
 ## Präsens
 

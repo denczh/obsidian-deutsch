@@ -20,8 +20,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** An der Wand im Wohnzimmer hängt ein Bild von meinem Großvater.
+- **ES:** En la pared del salón cuelga un cuadro de mi abuelo.
 
 ## Notiz
 

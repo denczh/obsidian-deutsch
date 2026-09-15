@@ -20,8 +20,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Mach bitte das Fenster zu, es zieht.
+- **ES:** Cierra la ventana, por favor, hay corriente.
 
 ## Notiz
 
