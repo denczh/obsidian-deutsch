@@ -20,8 +20,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Über dem Esstisch hängt eine alte Lampe aus Messing.
+- **ES:** Sobre la mesa del comedor cuelga una lámpara vieja de latón.
 
 ## Verwandt
 

@@ -22,8 +22,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Ich schreibe meiner Tante jedes Jahr zu Weihnachten einen Brief.
+- **ES:** Cada año le escribo una carta a mi tía por Navidad.
 
 ## Präsens
 

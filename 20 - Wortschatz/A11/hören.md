@@ -22,8 +22,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Ich höre gern Radio, während ich in der Küche koche.
+- **ES:** Me gusta escuchar la radio mientras cocino en la cocina.
 
 ## Präsens
 

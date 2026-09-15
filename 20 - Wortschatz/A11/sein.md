@@ -22,8 +22,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Als Kind war ich sehr schüchtern, aber jetzt bin ich viel offener.
+- **ES:** De niño era muy tímido, pero ahora soy mucho más abierto.
 
 ## Präsens
 

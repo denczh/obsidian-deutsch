@@ -20,8 +20,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Der Schlüssel ist mir aus der Tasche gefallen und lag auf dem Boden.
+- **ES:** La llave se me cayó del bolsillo y estaba en el suelo.
 
 ## Verwandt
 

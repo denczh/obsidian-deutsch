@@ -22,8 +22,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Von unserem Balkon aus sieht man die Berge ganz deutlich.
+- **ES:** Desde nuestro balcón se ven las montañas con toda claridad.
 
 ## Präsens
 

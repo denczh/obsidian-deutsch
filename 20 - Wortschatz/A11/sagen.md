@@ -22,8 +22,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Sag mir bitte die Wahrheit, auch wenn sie unangenehm ist.
+- **ES:** Dime la verdad, por favor, aunque sea desagradable.
 
 ## Präsens
 

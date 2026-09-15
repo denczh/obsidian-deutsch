@@ -20,8 +20,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Im Sommer frühstücken wir fast jeden Morgen auf dem Balkon.
+- **ES:** En verano desayunamos casi todas las mañanas en el balcón.
 
 ## Verwandt
 

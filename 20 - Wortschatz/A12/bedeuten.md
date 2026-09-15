@@ -22,8 +22,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Was bedeutet dieses Wort? Ich finde es in keinem Wörterbuch.
+- **ES:** ¿Qué significa esta palabra? No la encuentro en ningún diccionario.
 
 ## Präsens
 

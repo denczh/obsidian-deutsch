@@ -22,8 +22,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Am Wochenende mache ich normalerweise nichts Besonderes.
+- **ES:** Los fines de semana normalmente no hago nada especial.
 
 ## Präsens
 

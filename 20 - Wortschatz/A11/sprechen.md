@@ -22,8 +22,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Auf der Konferenz sprach sie über die Zukunft der Rechentechnik.
+- **ES:** En la conferencia habló sobre el futuro de la informática.
 
 ## Präsens
 

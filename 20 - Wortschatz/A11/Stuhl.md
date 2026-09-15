@@ -20,8 +20,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Nimm dir einen Stuhl und setz dich zu uns an den Tisch.
+- **ES:** Coge una silla y siéntate con nosotros a la mesa.
 
 ## Verwandt
 
