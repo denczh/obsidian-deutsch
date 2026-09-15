@@ -22,8 +22,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Zeig mir bitte auf der Karte, wo dein Dorf liegt.
+- **ES:** Enséñame en el mapa, por favor, dónde está tu pueblo.
 
 ## Präsens
 

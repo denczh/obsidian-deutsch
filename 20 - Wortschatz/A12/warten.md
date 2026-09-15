@@ -22,8 +22,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Ich warte schon seit zwanzig Minuten auf den Bus.
+- **ES:** Llevo ya veinte minutos esperando el autobús.
 
 ## Präsens
 
