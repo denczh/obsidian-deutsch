@@ -20,8 +20,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Die Bücher, die du suchst, stehen im obersten Regal links.
+- **ES:** Los libros que buscas están en el estante de arriba a la izquierda.
 
 ## Verwandt
 

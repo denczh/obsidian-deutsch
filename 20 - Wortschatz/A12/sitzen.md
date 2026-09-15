@@ -22,8 +22,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Wir saßen den ganzen Abend auf dem Balkon und redeten über alte Zeiten.
+- **ES:** Estuvimos sentados toda la tarde en el balcón hablando de los viejos tiempos.
 
 ## Präsens
 

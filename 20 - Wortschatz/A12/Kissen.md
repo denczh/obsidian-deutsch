@@ -20,8 +20,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Dieses Kissen ist viel zu weich, ich kann darauf nicht schlafen.
+- **ES:** Esta almohada es demasiado blanda, no puedo dormir encima.
 
 ## Notiz
 

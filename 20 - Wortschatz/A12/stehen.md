@@ -22,8 +22,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Vor dem Haus stand ein Mann, den ich noch nie gesehen hatte.
+- **ES:** Delante de la casa había un hombre al que no había visto nunca.
 
 ## Präsens
 

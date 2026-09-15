@@ -22,8 +22,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Die Bibliothek öffnet erst um zehn, wir müssen noch eine halbe Stunde warten.
+- **ES:** La biblioteca no abre hasta las diez, todavía tenemos que esperar media hora.
 
 ## Präsens
 

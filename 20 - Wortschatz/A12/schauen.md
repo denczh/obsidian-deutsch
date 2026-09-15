@@ -22,8 +22,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Schau mal aus dem Fenster, es hat angefangen zu schneien!
+- **ES:** ¡Mira por la ventana, ha empezado a nevar!
 
 ## Präsens
 

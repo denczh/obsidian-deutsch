@@ -20,8 +20,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** In meinem Schrank ist kein Platz mehr, ich muss endlich ausmisten.
+- **ES:** En mi armario ya no hay sitio, tengo que ponerme por fin a despejar.
 
 ## Verwandt
 

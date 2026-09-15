@@ -20,8 +20,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Mein Schreibtisch steht direkt am Fenster, damit ich Tageslicht habe.
+- **ES:** Mi escritorio está justo al lado de la ventana, para tener luz natural.
 
 ## Verwandt
 

@@ -22,8 +22,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Das Museum schließt um achtzehn Uhr, aber der Garten bleibt länger offen.
+- **ES:** El museo cierra a las seis de la tarde, pero el jardín permanece abierto más tiempo.
 
 ## Präsens
 

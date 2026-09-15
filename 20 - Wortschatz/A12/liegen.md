@@ -22,8 +22,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Zürich liegt am nördlichen Ende des Sees, ungefähr eine Stunde von hier.
+- **ES:** Zúrich está situada en el extremo norte del lago, aproximadamente a una hora de aquí.
 
 ## Präsens
 

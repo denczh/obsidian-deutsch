@@ -22,8 +22,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Leg die Papiere bitte auf den Schreibtisch, nicht auf den Boden.
+- **ES:** Pon los papeles en el escritorio, por favor, no en el suelo.
 
 ## Präsens
 

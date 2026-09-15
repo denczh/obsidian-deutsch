@@ -21,8 +21,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Von der Decke hängt eine Lampe, die zu tief für große Leute ist.
+- **ES:** Del techo cuelga una lámpara que queda demasiado baja para la gente alta.
 
 ## Notiz
 

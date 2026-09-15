@@ -20,8 +20,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** An der Wand hinter dem Sofa hängen drei kleine Bilder.
+- **ES:** En la pared detrás del sofá cuelgan tres cuadros pequeños.
 
 ## Verwandt
 

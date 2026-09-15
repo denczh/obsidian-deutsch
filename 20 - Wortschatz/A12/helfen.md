@@ -22,8 +22,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Kannst du mir bitte helfen, den Schrank ins Schlafzimmer zu tragen?
+- **ES:** ¿Me puedes ayudar a llevar el armario al dormitorio, por favor?
 
 ## Präsens
 
