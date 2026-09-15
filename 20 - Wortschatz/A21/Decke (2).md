@@ -4,7 +4,7 @@ term: Decke
 sense: manta
 pos: noun
 article: die
-inflection: "-n"
+inflection: "Decken"
 translation: "manta"
 cefr: A21
 lektion: L001
@@ -17,7 +17,7 @@ error_count: 0
 status: new
 ---
 
-**die Decke** · *noun* · Plural: *-n* · "manta"
+**die Decke** · *noun* · Plural: *die Decken* · "manta"
 
 ## Beispiel
 

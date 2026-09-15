@@ -4,7 +4,7 @@ term: Decke
 sense: techo
 pos: noun
 article: die
-inflection: "-n"
+inflection: "Decken"
 translation: "techo"
 cefr: A12
 lektion: L001
@@ -17,7 +17,7 @@ error_count: 0
 status: new
 ---
 
-**die Decke** · *noun* · Plural: *-n* · "techo"
+**die Decke** · *noun* · Plural: *die Decken* · "techo"
 
 ## Beispiel
 
