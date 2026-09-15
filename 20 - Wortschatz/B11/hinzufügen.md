@@ -22,8 +22,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Zum Schluss fügt man einen Löffel Honig hinzu und rührt gut um.
+- **ES:** Al final se añade una cucharada de miel y se remueve bien.
 
 ## Präsens
 

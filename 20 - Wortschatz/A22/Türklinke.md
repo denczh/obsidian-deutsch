@@ -20,8 +20,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Die Türklinke ist locker, man muss sie kräftig nach unten drücken.
+- **ES:** La manilla está floja, hay que empujarla hacia abajo con fuerza.
 
 ## Notiz
 

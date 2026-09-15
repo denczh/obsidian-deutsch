@@ -22,8 +22,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Er programmiert seit Jahren in C, aber neuerdings arbeitet er lieber mit Rust.
+- **ES:** Lleva años programando en C, pero últimamente prefiere trabajar con Rust.
 
 ## Präsens
 

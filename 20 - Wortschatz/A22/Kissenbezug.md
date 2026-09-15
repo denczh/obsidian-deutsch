@@ -20,8 +20,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Der Kissenbezug muss dringend gewaschen werden, er riecht schon.
+- **ES:** La funda de almohada hay que lavarla urgentemente, ya huele.
 
 ## Notiz
 

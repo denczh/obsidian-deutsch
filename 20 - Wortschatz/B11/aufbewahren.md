@@ -22,8 +22,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Die alten Fotos bewahre ich in einer Schachtel unter dem Bett auf.
+- **ES:** Las fotos antiguas las guardo en una caja debajo de la cama.
 
 ## Präsens
 

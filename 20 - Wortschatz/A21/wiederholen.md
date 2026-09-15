@@ -22,8 +22,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Könnten Sie das bitte wiederholen? Ich habe Sie nicht richtig verstanden.
+- **ES:** ¿Podría repetirlo, por favor? No le he entendido bien.
 
 ## Präsens
 

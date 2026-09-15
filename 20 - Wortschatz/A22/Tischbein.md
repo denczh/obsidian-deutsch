@@ -20,8 +20,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Ein Tischbein wackelt, ich muss die Schrauben nachziehen.
+- **ES:** Una pata de la mesa se mueve, tengo que apretar los tornillos.
 
 ## Notiz
 

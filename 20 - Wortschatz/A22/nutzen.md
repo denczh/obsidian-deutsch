@@ -22,8 +22,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Wir sollten das gute Wetter nutzen und einen Spaziergang am See machen.
+- **ES:** Deberíamos aprovechar el buen tiempo y dar un paseo por el lago.
 
 ## Präsens
 
