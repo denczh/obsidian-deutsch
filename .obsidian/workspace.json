@@ -4,38 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "bf2b27a47d9ffcc8",
+        "id": "714e2f542b967ed7",
         "type": "tabs",
         "children": [
           {
-            "id": "548fc76062670b1b",
+            "id": "9498400dc8d190b2",
             "type": "leaf",
             "state": {
-              "type": "bases",
-              "state": {
-                "file": "40 - Ansichten/Nach Thema.base",
-                "viewName": "Nach Thema"
-              },
-              "icon": "lucide-table",
-              "title": "Nach Thema"
-            }
-          },
-          {
-            "id": "5f74bdf36846498d",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "00 - Start/Dashboard.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Dashboard"
+              "title": "New tab"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -218,8 +200,28 @@
       "obsidian-spaced-repetition:Review flashcards": false
     }
   },
-  "active": "5f74bdf36846498d",
+  "active": "4952a17aef8a2258",
   "lastOpenFiles": [
+    "40 - Ansichten/Nach Thema.base",
+    "20 - Wortschatz/A21/Zutat.md",
+    "00 - Start/Dashboard.md",
+    "10 - Lektionen/L002.md",
+    "30 - Grammatik/A21/Nebensatz mit weil.md",
+    "30 - Grammatik/A21/Dativ mit schmecken.md",
+    "20 - Wortschatz/A22/keine Ahnung.md",
+    "20 - Wortschatz/A21/schneiden.md",
+    "20 - Wortschatz/A21/endlich.md",
+    "20 - Wortschatz/A21/einkaufen.md",
+    "20 - Wortschatz/A21/Rezept.md",
+    "20 - Wortschatz/A12/weil.md",
+    "20 - Wortschatz/A12/süß.md",
+    "20 - Wortschatz/A12/schmecken.md",
+    "20 - Wortschatz/A12/salzig.md",
+    "20 - Wortschatz/A12/probieren.md",
+    "20 - Wortschatz/A12/lecker.md",
+    "20 - Wortschatz/A12/fast.md",
+    "20 - Wortschatz/A11/kochen.md",
+    "20 - Wortschatz/A11/Küche.md",
     "50 - Ressourcen/Bedeutungen.md.tmp.12120.c6de554bcc8a",
     "50 - Ressourcen/Bedeutungen.md.tmp.12120.0c150eb2dfbb",
     "50 - Ressourcen/Lektionen.md.tmp.344.4a500ab4920b",
@@ -230,31 +232,11 @@
     "50 - Ressourcen/Configuration.md.tmp.13876.3367311bbaee",
     "00 - Start/Workflow.md.tmp.13876.b1f651c14d77",
     "00 - Start/Workflow.md.tmp.13876.c9e6dff626e1",
-    "00 - Start/Workflow.md.tmp.13876.33248e137cfe",
     "00 - Start/Lernprofil.md",
-    "00 - Start/Dashboard.md",
     "00 - Start/Workflow.md",
     "20 - Wortschatz/A12/Decke (1).md",
     "20 - Wortschatz/A21/heißen (2).md",
     "20 - Wortschatz/A11/es gibt.md",
-    "50 - Ressourcen/Kommando - Studium.md",
-    "50 - Ressourcen/GPTs.md",
-    "50 - Ressourcen/Modus - Sprechen.md",
-    "50 - Ressourcen/Kommando - Commit.md",
-    "50 - Ressourcen/Configuration.md",
-    "10 - Lektionen/L001.md",
-    "50 - Ressourcen/Kommando - Vorlesen.md",
-    "50 - Ressourcen/Kommando - Lektüre.md",
-    "10 - Sitzungen/2026-08-01.md",
-    "20 - Wortschatz/L1/arbeiten.md",
-    "20 - Wortschatz/L1/legen.md",
-    "20 - Wortschatz/L1/sitzen.md",
-    "20 - Wortschatz/L1/machen.md",
-    "20 - Wortschatz/L1/nutzen.md",
-    "20 - Wortschatz/L1/hinzufügen.md",
-    "20 - Wortschatz/L1/warten.md",
-    "20 - Wortschatz/L1/hören.md",
-    "20 - Wortschatz/L1/helfen.md",
-    "20 - Wortschatz/L1/bedeuten.md"
+    "50 - Ressourcen/Kommando - Studium.md"
   ]
 }
