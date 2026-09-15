@@ -21,8 +21,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Auf dem Sofa lag eine dicke Wolldecke für kalte Abende.
+- **ES:** En el sofá había una manta gruesa de lana para las noches frías.
 
 ## Notiz
 

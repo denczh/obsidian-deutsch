@@ -20,8 +20,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Ich sollte das Bettlaken wechseln, es ist schon zwei Wochen drauf.
+- **ES:** Debería cambiar la sábana, ya lleva dos semanas puesta.
 
 ## Notiz
 

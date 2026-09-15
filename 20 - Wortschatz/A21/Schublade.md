@@ -20,8 +20,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Die Batterien liegen in der obersten Schublade rechts vom Herd.
+- **ES:** Las pilas están en el cajón de arriba a la derecha de la cocina.
 
 ## Verwandt
 

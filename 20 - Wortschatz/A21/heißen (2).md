@@ -23,8 +23,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Wenn er „vielleicht" sagt, heißt das meistens nein.
+- **ES:** Cuando dice «quizá», eso normalmente quiere decir que no.
 
 ## Regiert
 

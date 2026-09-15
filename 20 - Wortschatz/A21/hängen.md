@@ -22,8 +22,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Das Bild hing jahrelang an der Wand, bis wir es ins Schlafzimmer hängten.
+- **ES:** El cuadro estuvo colgado años en la pared, hasta que lo colgamos en el dormitorio.
 
 ## Präsens
 

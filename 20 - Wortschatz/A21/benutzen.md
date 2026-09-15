@@ -22,8 +22,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Darf ich dein Telefon benutzen? Mein Akku ist leer.
+- **ES:** ¿Puedo usar tu teléfono? Se me ha acabado la batería.
 
 ## Präsens
 

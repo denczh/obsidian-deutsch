@@ -22,8 +22,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Können Sie den Mann beschreiben, den Sie gestern gesehen haben?
+- **ES:** ¿Puede describir al hombre que vio ayer?
 
 ## Präsens
 

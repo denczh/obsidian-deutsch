@@ -22,8 +22,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** 
-- **ES:** 
+- **DE:** Nach der Arbeit entspanne ich mich am liebsten mit einem Buch auf dem Sofa.
+- **ES:** Después del trabajo lo que más me relaja es un libro en el sofá.
 
 ## Präsens
 
