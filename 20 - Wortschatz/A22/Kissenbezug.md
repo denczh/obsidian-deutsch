@@ -2,13 +2,14 @@
 type: vocab
 term: Kissenbezug
 article: der
-inflection: "Kissenbezüge"
+inflection: Kissenbezüge
 pos: noun
-translation: "funda de almohada"
+translation: funda de almohada
 cefr: A22
 lektion: L001
-theme: [wohnen]
-example: ""
+theme:
+  - wohnen
+example: Der Kissenbezug muss dringend gewaschen werden, er riecht schon.
 source: voice-session
 created: 2026-08-01
 last_error:

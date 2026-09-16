@@ -2,13 +2,14 @@
 type: vocab
 term: Tischbein
 article: das
-inflection: "Tischbeine"
+inflection: Tischbeine
 pos: noun
-translation: "pata de la mesa"
+translation: pata de la mesa
 cefr: A22
 lektion: L001
-theme: [wohnen]
-example: ""
+theme:
+  - wohnen
+example: Ein Tischbein wackelt, ich muss die Schrauben nachziehen.
 source: voice-session
 created: 2026-08-01
 last_error:

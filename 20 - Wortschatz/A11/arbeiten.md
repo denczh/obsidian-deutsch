@@ -2,15 +2,16 @@
 type: vocab
 term: arbeiten
 article: "-"
-inflection: "arbeitet, arbeitete, hat gearbeitet"
+inflection: arbeitet, arbeitete, hat gearbeitet
 pos: verb
 verbtyp: regelmäßig
 trennbar: false
-translation: "trabajar"
+translation: trabajar
 cefr: A11
 lektion: L001
-theme: [beruf]
-example: ""
+theme:
+  - beruf
+example: Meine Schwester arbeitet seit drei Jahren bei einer kleinen Firma in Zürich.
 source: manual
 created: 2026-08-02
 last_error:

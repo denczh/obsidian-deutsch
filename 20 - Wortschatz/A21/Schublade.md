@@ -2,13 +2,14 @@
 type: vocab
 term: Schublade
 article: die
-inflection: "Schubladen"
+inflection: Schubladen
 pos: noun
-translation: "cajón"
+translation: cajón
 cefr: A21
 lektion: L001
-theme: [wohnen]
-example: ""
+theme:
+  - wohnen
+example: Die Batterien liegen in der obersten Schublade rechts vom Herd.
 source: voice-session
 created: 2026-08-01
 last_error:

@@ -2,13 +2,14 @@
 type: vocab
 term: Türklinke
 article: die
-inflection: "Türklinken"
+inflection: Türklinken
 pos: noun
-translation: "picaporte"
+translation: picaporte
 cefr: A22
 lektion: L001
-theme: [wohnen]
-example: ""
+theme:
+  - wohnen
+example: Die Türklinke ist locker, man muss sie kräftig nach unten drücken.
 source: voice-session
 created: 2026-08-01
 last_error:

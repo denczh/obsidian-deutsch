@@ -2,13 +2,14 @@
 type: vocab
 term: Bettlaken
 article: das
-inflection: "Bettlaken"
+inflection: Bettlaken
 pos: noun
-translation: "sábana"
+translation: sábana
 cefr: A21
 lektion: L001
-theme: [wohnen]
-example: ""
+theme:
+  - wohnen
+example: Ich sollte das Bettlaken wechseln, es ist schon zwei Wochen drauf.
 source: voice-session
 created: 2026-08-01
 last_error:

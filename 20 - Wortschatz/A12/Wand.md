@@ -2,13 +2,14 @@
 type: vocab
 term: Wand
 article: die
-inflection: "Wände"
+inflection: Wände
 pos: noun
-translation: "pared"
+translation: pared
 cefr: A12
 lektion: L001
-theme: [wohnen]
-example: ""
+theme:
+  - wohnen
+example: An der Wand hinter dem Sofa hängen drei kleine Bilder.
 source: voice-session
 created: 2026-08-01
 last_error:
