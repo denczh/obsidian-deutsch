@@ -1,5 +1,6 @@
 filters:
   and:
+    - '!file.inFolder("90 - Vorlagen")'
     - note.type == "vocab"
     - or:
         - note.example == ""

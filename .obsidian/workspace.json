@@ -11,10 +11,13 @@
             "id": "1458fc25e9a4b8ba",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
-              "icon": "lucide-file",
-              "title": "New tab"
+              "type": "bases",
+              "state": {
+                "file": "40 - Ansichten/Ohne Beispiel.base",
+                "viewName": "Ohne Beispiel"
+              },
+              "icon": "lucide-table",
+              "title": "Ohne Beispiel"
             }
           }
         ]
@@ -200,10 +203,19 @@
       "obsidian-spaced-repetition:Review flashcards": false
     }
   },
-  "active": "60327b3149efdadf",
+  "active": "1458fc25e9a4b8ba",
   "lastOpenFiles": [
+    "40 - Ansichten/Ohne Beispiel.base.tmp.11220.df60d140824c",
+    "40 - Ansichten/Aktuelle Lektion.base",
+    "90 - Vorlagen/V - Wortschatz.md",
     "90 - Vorlagen/V - Verb.md",
+    "90 - Vorlagen/V - Sitzung.md",
+    "90 - Vorlagen/V - Lektion.md",
+    "90 - Vorlagen/V - Grammatik.md",
     "40 - Ansichten/Ohne Beispiel.base",
+    "40 - Ansichten/Nicht gesprochen.base",
+    "40 - Ansichten/Nach Thema.base",
+    "40 - Ansichten/Nach Niveau.base",
     "20 - Wortschatz/A21/heißen (2).md",
     "20 - Wortschatz/A21/Decke (2).md",
     "20 - Wortschatz/A11/es gibt.md",
@@ -224,15 +236,6 @@
     "20 - Wortschatz/A12/schauen.md",
     "20 - Wortschatz/A12/öffnen.md",
     "20 - Wortschatz/A12/liegen.md",
-    "20 - Wortschatz/A12/legen.md",
-    "20 - Wortschatz/A12/helfen.md",
-    "20 - Wortschatz/A12/bedeuten.md",
-    "40 - Ansichten/Nach Niveau.base",
-    "20 - Wortschatz/A11/sprechen.md",
-    "20 - Wortschatz/A11/sein.md",
-    "40 - Ansichten/Aktuelle Lektion.base",
-    "40 - Ansichten/Nicht gesprochen.base",
-    "40 - Ansichten/Nach Thema.base",
     "Claude outputs/Prompt - Deutsch Studium - L002.txt",
     "Claude outputs",
     "50 - Ressourcen/Bedeutungen.md.tmp.12120.c6de554bcc8a",
