@@ -2,15 +2,16 @@
 type: vocab
 term: beschreiben
 article: "-"
-inflection: "beschreibt, beschrieb, hat beschrieben"
+inflection: beschreibt, beschrieb, hat beschrieben
 pos: verb
 verbtyp: stark
 trennbar: false
-translation: "describir"
+translation: describir
 cefr: A21
 lektion: L001
-theme: [alltag]
-example: ""
+theme:
+  - alltag
+example: Können Sie den Mann beschreiben, den Sie gestern gesehen haben?
 source: manual
 created: 2026-08-02
 last_error:

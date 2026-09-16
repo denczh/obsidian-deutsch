@@ -2,15 +2,16 @@
 type: vocab
 term: nutzen
 article: "-"
-inflection: "nutzt, nutzte, hat genutzt"
+inflection: nutzt, nutzte, hat genutzt
 pos: verb
 verbtyp: regelmäßig
 trennbar: false
-translation: "aprovechar, usar"
+translation: aprovechar, usar
 cefr: A22
 lektion: L001
-theme: [alltag]
-example: ""
+theme:
+  - alltag
+example: Wir sollten das gute Wetter nutzen und einen Spaziergang am See machen.
 source: manual
 created: 2026-08-02
 last_error:

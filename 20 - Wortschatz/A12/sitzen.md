@@ -2,15 +2,16 @@
 type: vocab
 term: sitzen
 article: "-"
-inflection: "sitzt, saß, hat gesessen"
+inflection: sitzt, saß, hat gesessen
 pos: verb
 verbtyp: stark
 trennbar: false
-translation: "estar sentado"
+translation: estar sentado
 cefr: A12
 lektion: L001
-theme: [wohnen]
-example: ""
+theme:
+  - wohnen
+example: Wir saßen den ganzen Abend auf dem Balkon und redeten über alte Zeiten.
 source: manual
 created: 2026-08-02
 last_error:

@@ -5,11 +5,12 @@ sense: "-"
 pos: phrase
 article: "-"
 inflection: "-"
-translation: "hay"
+translation: hay
 cefr: A11
 lektion: L001
-theme: [alltag]
-example: ""
+theme:
+  - alltag
+example: In diesem Dorf gibt es nur einen Supermarkt und keine Apotheke.
 source: manual
 created: 2026-09-12
 last_error:

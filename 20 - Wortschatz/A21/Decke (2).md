@@ -4,12 +4,13 @@ term: Decke
 sense: manta
 pos: noun
 article: die
-inflection: "Decken"
-translation: "manta"
+inflection: Decken
+translation: manta
 cefr: A21
 lektion: L001
-theme: [wohnen]
-example: ""
+theme:
+  - wohnen
+example: Auf dem Sofa lag eine dicke Wolldecke für kalte Abende.
 source: manual
 created: 2026-09-12
 last_error:

@@ -2,15 +2,16 @@
 type: vocab
 term: legen
 article: "-"
-inflection: "legt, legte, hat gelegt"
+inflection: legt, legte, hat gelegt
 pos: verb
 verbtyp: regelmäßig
 trennbar: false
-translation: "poner, colocar (tumbado)"
+translation: poner, colocar (tumbado)
 cefr: A12
 lektion: L001
-theme: [wohnen]
-example: ""
+theme:
+  - wohnen
+example: Leg die Papiere bitte auf den Schreibtisch, nicht auf den Boden.
 source: manual
 created: 2026-08-02
 last_error:

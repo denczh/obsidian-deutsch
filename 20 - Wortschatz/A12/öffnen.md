@@ -2,15 +2,16 @@
 type: vocab
 term: öffnen
 article: "-"
-inflection: "öffnet, öffnete, hat geöffnet"
+inflection: öffnet, öffnete, hat geöffnet
 pos: verb
 verbtyp: regelmäßig
 trennbar: false
-translation: "abrir"
+translation: abrir
 cefr: A12
 lektion: L001
-theme: [wohnen]
-example: ""
+theme:
+  - wohnen
+example: Die Bibliothek öffnet erst um zehn, wir müssen noch eine halbe Stunde warten.
 source: manual
 created: 2026-08-02
 last_error:

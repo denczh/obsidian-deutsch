@@ -2,15 +2,16 @@
 type: vocab
 term: aufbewahren
 article: "-"
-inflection: "bewahrt auf, bewahrte auf, hat aufbewahrt"
+inflection: bewahrt auf, bewahrte auf, hat aufbewahrt
 pos: verb
 verbtyp: regelmäßig
 trennbar: true
-translation: "guardar, conservar"
+translation: guardar, conservar
 cefr: B11
 lektion: L001
-theme: [wohnen]
-example: ""
+theme:
+  - wohnen
+example: Die alten Fotos bewahre ich in einer Schachtel unter dem Bett auf.
 source: manual
 created: 2026-08-02
 last_error:

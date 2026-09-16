@@ -2,15 +2,16 @@
 type: vocab
 term: programmieren
 article: "-"
-inflection: "programmiert, programmierte, hat programmiert"
+inflection: programmiert, programmierte, hat programmiert
 pos: verb
 verbtyp: regelmäßig
 trennbar: false
-translation: "programar"
+translation: programar
 cefr: A22
 lektion: L001
-theme: [beruf]
-example: ""
+theme:
+  - beruf
+example: Er programmiert seit Jahren in C, aber neuerdings arbeitet er lieber mit Rust.
 source: manual
 created: 2026-08-02
 last_error:

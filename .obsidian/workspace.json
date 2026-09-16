@@ -4,38 +4,20 @@
     "type": "split",
     "children": [
       {
-        "id": "b292a36c3f7f31fb",
+        "id": "679166689afca002",
         "type": "tabs",
         "children": [
           {
-            "id": "bb0254b645fd941a",
+            "id": "1458fc25e9a4b8ba",
             "type": "leaf",
             "state": {
-              "type": "bases",
-              "state": {
-                "file": "40 - Ansichten/Ohne Beispiel.base",
-                "viewName": "Ohne Beispiel"
-              },
-              "icon": "lucide-table",
-              "title": "Ohne Beispiel"
-            }
-          },
-          {
-            "id": "892db22017b27971",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "20 - Wortschatz/A12/helfen.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "helfen"
+              "title": "New tab"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -199,7 +181,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
@@ -218,35 +200,36 @@
       "obsidian-spaced-repetition:Review flashcards": false
     }
   },
-  "active": "892db22017b27971",
+  "active": "60327b3149efdadf",
   "lastOpenFiles": [
+    "90 - Vorlagen/V - Verb.md",
     "40 - Ansichten/Ohne Beispiel.base",
+    "20 - Wortschatz/A21/heißen (2).md",
+    "20 - Wortschatz/A21/Decke (2).md",
+    "20 - Wortschatz/A11/es gibt.md",
+    "20 - Wortschatz/B11/hinzufügen.md",
+    "20 - Wortschatz/B11/aufbewahren.md",
+    "20 - Wortschatz/A22/programmieren.md",
+    "20 - Wortschatz/A22/nutzen.md",
+    "20 - Wortschatz/A21/wiederholen.md",
+    "20 - Wortschatz/A21/hängen.md",
+    "20 - Wortschatz/A21/entspannen.md",
+    "20 - Wortschatz/A21/beschreiben.md",
+    "20 - Wortschatz/A21/benutzen.md",
+    "20 - Wortschatz/A12/zeigen.md",
+    "20 - Wortschatz/A12/warten.md",
+    "20 - Wortschatz/A12/stehen.md",
+    "20 - Wortschatz/A12/sitzen.md",
+    "20 - Wortschatz/A12/schließen.md",
+    "20 - Wortschatz/A12/schauen.md",
+    "20 - Wortschatz/A12/öffnen.md",
+    "20 - Wortschatz/A12/liegen.md",
+    "20 - Wortschatz/A12/legen.md",
+    "20 - Wortschatz/A12/helfen.md",
     "20 - Wortschatz/A12/bedeuten.md",
     "40 - Ansichten/Nach Niveau.base",
     "20 - Wortschatz/A11/sprechen.md",
     "20 - Wortschatz/A11/sein.md",
-    "20 - Wortschatz/A11/sehen.md",
-    "20 - Wortschatz/A11/schreiben.md",
-    "20 - Wortschatz/A11/sagen.md",
-    "20 - Wortschatz/A11/machen.md",
-    "20 - Wortschatz/A11/hören.md",
-    "20 - Wortschatz/A11/heißen (1).md",
-    "20 - Wortschatz/A11/gehen.md",
-    "20 - Wortschatz/A11/geben.md",
-    "20 - Wortschatz/A11/fragen.md",
-    "20 - Wortschatz/A11/arbeiten.md",
-    "20 - Wortschatz/A22/Türklinke.md",
-    "20 - Wortschatz/A22/Tischbein.md",
-    "20 - Wortschatz/A22/Kissenbezug.md",
-    "20 - Wortschatz/A21/Schublade.md",
-    "20 - Wortschatz/A21/Bettlaken.md",
-    "20 - Wortschatz/A12/Wand.md",
-    "20 - Wortschatz/A12/Schreibtisch.md",
-    "20 - Wortschatz/A12/Schrank.md",
-    "20 - Wortschatz/A12/Regal.md",
-    "20 - Wortschatz/A12/Kissen.md",
-    "20 - Wortschatz/A12/Decke (1).md",
-    "20 - Wortschatz/A12/Boden.md",
     "40 - Ansichten/Aktuelle Lektion.base",
     "40 - Ansichten/Nicht gesprochen.base",
     "40 - Ansichten/Nach Thema.base",

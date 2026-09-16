@@ -4,14 +4,15 @@ term: heißen
 sense: significar
 pos: verb
 article: "-"
-inflection: "heißt, hieß, hat geheißen"
+inflection: heißt, hieß, hat geheißen
 verbtyp: stark
 trennbar: false
-translation: "significar, querer decir"
+translation: significar, querer decir
 cefr: A21
 lektion: L001
-theme: [alltag]
-example: ""
+theme:
+  - alltag
+example: Wenn er „vielleicht" sagt, heißt das meistens nein.
 source: manual
 created: 2026-09-12
 last_error:

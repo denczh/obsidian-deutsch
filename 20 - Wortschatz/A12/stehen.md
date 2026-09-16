@@ -2,15 +2,16 @@
 type: vocab
 term: stehen
 article: "-"
-inflection: "steht, stand, hat gestanden"
+inflection: steht, stand, hat gestanden
 pos: verb
 verbtyp: stark
 trennbar: false
-translation: "estar de pie, estar situado"
+translation: estar de pie, estar situado
 cefr: A12
 lektion: L001
-theme: [wohnen]
-example: ""
+theme:
+  - wohnen
+example: Vor dem Haus stand ein Mann, den ich noch nie gesehen hatte.
 source: manual
 created: 2026-08-02
 last_error:

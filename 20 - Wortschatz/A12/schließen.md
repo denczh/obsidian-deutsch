@@ -2,15 +2,16 @@
 type: vocab
 term: schließen
 article: "-"
-inflection: "schließt, schloss, hat geschlossen"
+inflection: schließt, schloss, hat geschlossen
 pos: verb
 verbtyp: stark
 trennbar: false
-translation: "cerrar"
+translation: cerrar
 cefr: A12
 lektion: L001
-theme: [wohnen]
-example: ""
+theme:
+  - wohnen
+example: Das Museum schließt um achtzehn Uhr, aber der Garten bleibt länger offen.
 source: manual
 created: 2026-08-02
 last_error:

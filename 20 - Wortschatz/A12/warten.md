@@ -2,15 +2,16 @@
 type: vocab
 term: warten
 article: "-"
-inflection: "wartet, wartete, hat gewartet"
+inflection: wartet, wartete, hat gewartet
 pos: verb
 verbtyp: regelmäßig
 trennbar: false
-translation: "esperar"
+translation: esperar
 cefr: A12
 lektion: L001
-theme: [alltag]
-example: ""
+theme:
+  - alltag
+example: Ich warte schon seit zwanzig Minuten auf den Bus.
 source: manual
 created: 2026-08-02
 last_error:

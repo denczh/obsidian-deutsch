@@ -2,15 +2,16 @@
 type: vocab
 term: liegen
 article: "-"
-inflection: "liegt, lag, hat gelegen"
+inflection: liegt, lag, hat gelegen
 pos: verb
 verbtyp: stark
 trennbar: false
-translation: "estar tumbado, estar situado"
+translation: estar tumbado, estar situado
 cefr: A12
 lektion: L001
-theme: [wohnen]
-example: ""
+theme:
+  - wohnen
+example: Zürich liegt am nördlichen Ende des Sees, ungefähr eine Stunde von hier.
 source: manual
 created: 2026-08-02
 last_error:

@@ -2,15 +2,16 @@
 type: vocab
 term: schauen
 article: "-"
-inflection: "schaut, schaute, hat geschaut"
+inflection: schaut, schaute, hat geschaut
 pos: verb
 verbtyp: regelmäßig
 trennbar: false
-translation: "mirar"
+translation: mirar
 cefr: A12
 lektion: L001
-theme: [alltag]
-example: ""
+theme:
+  - alltag
+example: Schau mal aus dem Fenster, es hat angefangen zu schneien!
 source: manual
 created: 2026-08-02
 last_error:

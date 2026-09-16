@@ -2,15 +2,16 @@
 type: vocab
 term: entspannen
 article: "-"
-inflection: "entspannt, entspannte, hat entspannt"
+inflection: entspannt, entspannte, hat entspannt
 pos: verb
 verbtyp: regelmäßig
 trennbar: false
-translation: "relajar, relajarse"
+translation: relajar, relajarse
 cefr: A21
 lektion: L001
-theme: [gesundheit]
-example: ""
+theme:
+  - gesundheit
+example: Nach der Arbeit entspanne ich mich am liebsten mit einem Buch auf dem Sofa.
 source: manual
 created: 2026-08-02
 last_error:

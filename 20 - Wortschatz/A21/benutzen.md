@@ -2,15 +2,16 @@
 type: vocab
 term: benutzen
 article: "-"
-inflection: "benutzt, benutzte, hat benutzt"
+inflection: benutzt, benutzte, hat benutzt
 pos: verb
 verbtyp: regelmäßig
 trennbar: false
-translation: "usar, utilizar"
+translation: usar, utilizar
 cefr: A21
 lektion: L001
-theme: [alltag]
-example: ""
+theme:
+  - alltag
+example: Darf ich dein Telefon benutzen? Mein Akku ist leer.
 source: manual
 created: 2026-08-02
 last_error:

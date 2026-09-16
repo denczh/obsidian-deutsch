@@ -2,15 +2,16 @@
 type: vocab
 term: hinzufügen
 article: "-"
-inflection: "fügt hinzu, fügte hinzu, hat hinzugefügt"
+inflection: fügt hinzu, fügte hinzu, hat hinzugefügt
 pos: verb
 verbtyp: regelmäßig
 trennbar: true
-translation: "añadir, agregar"
+translation: añadir, agregar
 cefr: B11
 lektion: L001
-theme: [beruf]
-example: ""
+theme:
+  - beruf
+example: Zum Schluss fügt man einen Löffel Honig hinzu und rührt gut um.
 source: manual
 created: 2026-08-02
 last_error:

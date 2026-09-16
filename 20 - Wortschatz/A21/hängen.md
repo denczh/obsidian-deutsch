@@ -6,11 +6,12 @@ inflection: "hängt, hing, hat gehangen. Transitivo: hängte, hat gehängt"
 pos: verb
 verbtyp: stark
 trennbar: false
-translation: "colgar, estar colgado"
+translation: colgar, estar colgado
 cefr: A21
 lektion: L001
-theme: [wohnen]
-example: ""
+theme:
+  - wohnen
+example: Das Bild hing jahrelang an der Wand, bis wir es ins Schlafzimmer hängten.
 source: manual
 created: 2026-08-02
 last_error:

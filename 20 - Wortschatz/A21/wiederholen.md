@@ -2,15 +2,16 @@
 type: vocab
 term: wiederholen
 article: "-"
-inflection: "wiederholt, wiederholte, hat wiederholt"
+inflection: wiederholt, wiederholte, hat wiederholt
 pos: verb
 verbtyp: regelmäßig
 trennbar: false
-translation: "repetir"
+translation: repetir
 cefr: A21
 lektion: L001
-theme: [alltag]
-example: ""
+theme:
+  - alltag
+example: Könnten Sie das bitte wiederholen? Ich habe Sie nicht richtig verstanden.
 source: manual
 created: 2026-08-02
 last_error:

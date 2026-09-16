@@ -2,15 +2,16 @@
 type: vocab
 term: zeigen
 article: "-"
-inflection: "zeigt, zeigte, hat gezeigt"
+inflection: zeigt, zeigte, hat gezeigt
 pos: verb
 verbtyp: regelmäßig
 trennbar: false
-translation: "mostrar, enseñar"
+translation: mostrar, enseñar
 cefr: A12
 lektion: L001
-theme: [alltag]
-example: ""
+theme:
+  - alltag
+example: Zeig mir bitte auf der Karte, wo dein Dorf liegt.
 source: manual
 created: 2026-08-02
 last_error:
