@@ -2,13 +2,14 @@
 type: vocab
 term: Lampe
 article: die
-inflection: "Lampen"
+inflection: Lampen
 pos: noun
-translation: "lámpara"
+translation: lámpara
 cefr: A11
 lektion: L001
-theme: [wohnen]
-example: ""
+theme:
+  - wohnen
+example: Über dem Esstisch hängt eine alte Lampe aus Messing.
 source: voice-session
 created: 2026-08-01
 last_error:

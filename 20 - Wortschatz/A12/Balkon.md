@@ -2,13 +2,14 @@
 type: vocab
 term: Balkon
 article: der
-inflection: "Balkone"
+inflection: Balkone
 pos: noun
-translation: "balcón"
+translation: balcón
 cefr: A12
 lektion: L001
-theme: [wohnen]
-example: ""
+theme:
+  - wohnen
+example: Im Sommer frühstücken wir fast jeden Morgen auf dem Balkon.
 source: voice-session
 created: 2026-08-01
 last_error:

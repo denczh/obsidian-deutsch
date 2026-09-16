@@ -2,13 +2,14 @@
 type: vocab
 term: Fenster
 article: das
-inflection: "Fenster"
+inflection: Fenster
 pos: noun
-translation: "ventana"
+translation: ventana
 cefr: A11
 lektion: L001
-theme: [wohnen]
-example: ""
+theme:
+  - wohnen
+example: Mach bitte das Fenster zu, es zieht.
 source: voice-session
 created: 2026-08-01
 last_error:

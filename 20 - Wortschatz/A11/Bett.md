@@ -2,13 +2,14 @@
 type: vocab
 term: Bett
 article: das
-inflection: "Betten"
+inflection: Betten
 pos: noun
-translation: "cama"
+translation: cama
 cefr: A11
 lektion: L001
-theme: [wohnen]
-example: ""
+theme:
+  - wohnen
+example: Nach dem langen Flug bin ich sofort ins Bett gegangen.
 source: voice-session
 created: 2026-08-01
 last_error:

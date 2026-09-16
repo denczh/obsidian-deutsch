@@ -2,13 +2,14 @@
 type: vocab
 term: Bild
 article: das
-inflection: "Bilder"
+inflection: Bilder
 pos: noun
-translation: "cuadro, imagen"
+translation: cuadro, imagen
 cefr: A11
 lektion: L001
-theme: [wohnen]
-example: ""
+theme:
+  - wohnen
+example: An der Wand im Wohnzimmer hängt ein Bild von meinem Großvater.
 source: voice-session
 created: 2026-08-01
 last_error:

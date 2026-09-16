@@ -2,13 +2,14 @@
 type: vocab
 term: Boden
 article: der
-inflection: "Böden"
+inflection: Böden
 pos: noun
-translation: "suelo"
+translation: suelo
 cefr: A12
 lektion: L001
-theme: [wohnen]
-example: ""
+theme:
+  - wohnen
+example: Der Schlüssel ist mir aus der Tasche gefallen und lag auf dem Boden.
 source: voice-session
 created: 2026-08-01
 last_error:

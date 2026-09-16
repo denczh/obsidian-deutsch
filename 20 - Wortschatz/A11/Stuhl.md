@@ -2,13 +2,14 @@
 type: vocab
 term: Stuhl
 article: der
-inflection: "Stühle"
+inflection: Stühle
 pos: noun
-translation: "silla"
+translation: silla
 cefr: A11
 lektion: L001
-theme: [wohnen]
-example: ""
+theme:
+  - wohnen
+example: Nimm dir einen Stuhl und setz dich zu uns an den Tisch.
 source: voice-session
 created: 2026-08-01
 last_error:
