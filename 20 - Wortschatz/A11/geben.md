@@ -2,15 +2,16 @@
 type: vocab
 term: geben
 article: "-"
-inflection: "gibt, gab, hat gegeben"
+inflection: gibt, gab, hat gegeben
 pos: verb
 verbtyp: stark
 trennbar: false
-translation: "dar; es gibt = hay"
+translation: dar; es gibt = hay
 cefr: A11
 lektion: L001
-theme: [alltag]
-example: ""
+theme:
+  - alltag
+example: Der Kellner gab uns die Speisekarte und empfahl uns den Fisch.
 source: manual
 created: 2026-08-02
 last_error:

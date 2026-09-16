@@ -2,15 +2,16 @@
 type: vocab
 term: machen
 article: "-"
-inflection: "macht, machte, hat gemacht"
+inflection: macht, machte, hat gemacht
 pos: verb
 verbtyp: regelmäßig
 trennbar: false
-translation: "hacer"
+translation: hacer
 cefr: A11
 lektion: L001
-theme: [alltag]
-example: ""
+theme:
+  - alltag
+example: Am Wochenende mache ich normalerweise nichts Besonderes.
 source: manual
 created: 2026-08-02
 last_error:

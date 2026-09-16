@@ -2,15 +2,16 @@
 type: vocab
 term: helfen
 article: "-"
-inflection: "hilft, half, hat geholfen"
+inflection: hilft, half, hat geholfen
 pos: verb
 verbtyp: stark
 trennbar: false
-translation: "ayudar"
+translation: ayudar
 cefr: A12
 lektion: L001
-theme: [alltag]
-example: ""
+theme:
+  - alltag
+example: Kannst du mir bitte helfen, den Schrank ins Schlafzimmer zu tragen?
 source: manual
 created: 2026-08-02
 last_error:

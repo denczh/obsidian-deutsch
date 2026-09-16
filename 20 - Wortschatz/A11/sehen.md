@@ -2,15 +2,16 @@
 type: vocab
 term: sehen
 article: "-"
-inflection: "sieht, sah, hat gesehen"
+inflection: sieht, sah, hat gesehen
 pos: verb
 verbtyp: stark
 trennbar: false
-translation: "ver"
+translation: ver
 cefr: A11
 lektion: L001
-theme: [alltag]
-example: ""
+theme:
+  - alltag
+example: Von unserem Balkon aus sieht man die Berge ganz deutlich.
 source: manual
 created: 2026-08-02
 last_error:

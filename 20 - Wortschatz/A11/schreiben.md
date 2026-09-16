@@ -2,15 +2,16 @@
 type: vocab
 term: schreiben
 article: "-"
-inflection: "schreibt, schrieb, hat geschrieben"
+inflection: schreibt, schrieb, hat geschrieben
 pos: verb
 verbtyp: stark
 trennbar: false
-translation: "escribir"
+translation: escribir
 cefr: A11
 lektion: L001
-theme: [alltag]
-example: ""
+theme:
+  - alltag
+example: Ich schreibe meiner Tante jedes Jahr zu Weihnachten einen Brief.
 source: manual
 created: 2026-08-02
 last_error:

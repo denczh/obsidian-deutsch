@@ -2,15 +2,16 @@
 type: vocab
 term: sprechen
 article: "-"
-inflection: "spricht, sprach, hat gesprochen"
+inflection: spricht, sprach, hat gesprochen
 pos: verb
 verbtyp: stark
 trennbar: false
-translation: "hablar"
+translation: hablar
 cefr: A11
 lektion: L001
-theme: [alltag]
-example: ""
+theme:
+  - alltag
+example: Auf der Konferenz sprach sie über die Zukunft der Rechentechnik.
 source: manual
 created: 2026-08-02
 last_error:

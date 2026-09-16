@@ -2,15 +2,16 @@
 type: vocab
 term: gehen
 article: "-"
-inflection: "geht, ging, ist gegangen"
+inflection: geht, ging, ist gegangen
 pos: verb
 verbtyp: stark
 trennbar: false
-translation: "ir (a pie), andar"
+translation: ir (a pie), andar
 cefr: A11
 lektion: L001
-theme: [alltag]
-example: ""
+theme:
+  - alltag
+example: Wir gehen heute Abend ins Kino, wenn das Wetter schlecht bleibt.
 source: manual
 created: 2026-08-02
 last_error:

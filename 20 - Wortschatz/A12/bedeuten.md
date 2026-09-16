@@ -2,15 +2,16 @@
 type: vocab
 term: bedeuten
 article: "-"
-inflection: "bedeutet, bedeutete, hat bedeutet"
+inflection: bedeutet, bedeutete, hat bedeutet
 pos: verb
 verbtyp: regelmäßig
 trennbar: false
-translation: "significar"
+translation: significar
 cefr: A12
 lektion: L001
-theme: [alltag]
-example: ""
+theme:
+  - alltag
+example: Was bedeutet dieses Wort? Ich finde es in keinem Wörterbuch.
 source: manual
 created: 2026-08-02
 last_error:

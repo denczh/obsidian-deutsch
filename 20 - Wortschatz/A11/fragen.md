@@ -2,15 +2,16 @@
 type: vocab
 term: fragen
 article: "-"
-inflection: "fragt, fragte, hat gefragt"
+inflection: fragt, fragte, hat gefragt
 pos: verb
 verbtyp: regelmäßig
 trennbar: false
-translation: "preguntar"
+translation: preguntar
 cefr: A11
 lektion: L001
-theme: [alltag]
-example: ""
+theme:
+  - alltag
+example: Ich muss ihn fragen.
 source: manual
 created: 2026-08-02
 last_error:
@@ -22,8 +23,8 @@ status: new
 
 ## Beispiel
 
-- **DE:** Kannst du mir ein Beispiel für dieses Wort geben?
-- **ES:** ¿Me puedes dar un ejemplo de esta palabra?
+- **DE:** Ich muss ihn fragen.
+- **ES:** Tengo que preguntarle.
 
 ## Präsens
 

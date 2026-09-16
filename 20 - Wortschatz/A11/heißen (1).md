@@ -4,14 +4,15 @@ term: heißen
 sense: llamarse
 pos: verb
 article: "-"
-inflection: "heißt, hieß, hat geheißen"
+inflection: heißt, hieß, hat geheißen
 verbtyp: stark
 trennbar: false
-translation: "llamarse"
+translation: llamarse
 cefr: A11
 lektion: L001
-theme: [alltag]
-example: ""
+theme:
+  - alltag
+example: Ihr Nachbar heißt Thomas, aber alle nennen ihn Tom.
 source: manual
 created: 2026-08-02
 last_error:

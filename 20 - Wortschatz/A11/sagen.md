@@ -2,15 +2,16 @@
 type: vocab
 term: sagen
 article: "-"
-inflection: "sagt, sagte, hat gesagt"
+inflection: sagt, sagte, hat gesagt
 pos: verb
 verbtyp: regelmäßig
 trennbar: false
-translation: "decir"
+translation: decir
 cefr: A11
 lektion: L001
-theme: [alltag]
-example: ""
+theme:
+  - alltag
+example: Sag mir bitte die Wahrheit, auch wenn sie unangenehm ist.
 source: manual
 created: 2026-08-02
 last_error:

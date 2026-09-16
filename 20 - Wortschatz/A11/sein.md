@@ -2,15 +2,16 @@
 type: vocab
 term: sein
 article: "-"
-inflection: "ist, war, ist gewesen"
+inflection: ist, war, ist gewesen
 pos: verb
 verbtyp: stark
 trennbar: false
-translation: "ser, estar"
+translation: ser, estar
 cefr: A11
 lektion: L001
-theme: [alltag]
-example: ""
+theme:
+  - alltag
+example: Als Kind war ich sehr schüchtern, aber jetzt bin ich viel offener.
 source: manual
 created: 2026-08-02
 last_error:

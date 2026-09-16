@@ -2,15 +2,16 @@
 type: vocab
 term: hören
 article: "-"
-inflection: "hört, hörte, hat gehört"
+inflection: hört, hörte, hat gehört
 pos: verb
 verbtyp: regelmäßig
 trennbar: false
-translation: "oír, escuchar"
+translation: oír, escuchar
 cefr: A11
 lektion: L001
-theme: [alltag]
-example: ""
+theme:
+  - alltag
+example: Ich höre gern Radio, während ich in der Küche koche.
 source: manual
 created: 2026-08-02
 last_error:
