@@ -2,13 +2,14 @@
 type: vocab
 term: Kissen
 article: das
-inflection: "Kissen"
+inflection: Kissen
 pos: noun
-translation: "almohada, cojín"
+translation: almohada, cojín
 cefr: A12
 lektion: L001
-theme: [wohnen]
-example: ""
+theme:
+  - wohnen
+example: Dieses Kissen ist viel zu weich, ich kann darauf nicht schlafen.
 source: voice-session
 created: 2026-08-01
 last_error:

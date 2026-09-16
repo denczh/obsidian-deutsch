@@ -2,13 +2,14 @@
 type: vocab
 term: Schreibtisch
 article: der
-inflection: "Schreibtische"
+inflection: Schreibtische
 pos: noun
-translation: "escritorio"
+translation: escritorio
 cefr: A12
 lektion: L001
-theme: [wohnen]
-example: ""
+theme:
+  - wohnen
+example: Mein Schreibtisch steht direkt am Fenster, damit ich Tageslicht habe.
 source: voice-session
 created: 2026-08-01
 last_error:

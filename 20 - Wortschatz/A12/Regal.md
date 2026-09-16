@@ -2,13 +2,14 @@
 type: vocab
 term: Regal
 article: das
-inflection: "Regale"
+inflection: Regale
 pos: noun
-translation: "estantería"
+translation: estantería
 cefr: A12
 lektion: L001
-theme: [wohnen]
-example: ""
+theme:
+  - wohnen
+example: Die Bücher, die du suchst, stehen im obersten Regal links.
 source: voice-session
 created: 2026-08-01
 last_error:

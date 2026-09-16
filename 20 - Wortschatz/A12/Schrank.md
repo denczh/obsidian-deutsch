@@ -2,13 +2,14 @@
 type: vocab
 term: Schrank
 article: der
-inflection: "Schränke"
+inflection: Schränke
 pos: noun
-translation: "armario"
+translation: armario
 cefr: A12
 lektion: L001
-theme: [wohnen]
-example: ""
+theme:
+  - wohnen
+example: In meinem Schrank ist kein Platz mehr, ich muss endlich ausmisten.
 source: voice-session
 created: 2026-08-01
 last_error:

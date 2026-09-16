@@ -4,12 +4,13 @@ term: Decke
 sense: techo
 pos: noun
 article: die
-inflection: "Decken"
-translation: "techo"
+inflection: Decken
+translation: techo
 cefr: A12
 lektion: L001
-theme: [wohnen]
-example: ""
+theme:
+  - wohnen
+example: Von der Decke hängt eine Lampe, die zu tief für große Leute ist.
 source: voice-session
 created: 2026-08-01
 last_error:
