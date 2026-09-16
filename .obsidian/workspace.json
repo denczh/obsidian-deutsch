@@ -185,7 +185,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -204,8 +204,9 @@
       "obsidian-spaced-repetition:Review flashcards": false
     }
   },
-  "active": "03c746a4f2bc65e4",
+  "active": "4952a17aef8a2258",
   "lastOpenFiles": [
+    "30 - Grammatik/A21/Dativ mit in.md",
     "Claude outputs/Prompt - Deutsch Studium - L002.txt",
     "Claude outputs",
     "30 - Grammatik/A11/Possessivartikel meine.md",
@@ -240,7 +241,6 @@
     "50 - Ressourcen/Lektionen.md.tmp.344.4a500ab4920b",
     "10 - Lektionen/L001.md.tmp.344.d2ac9b24bef2",
     "10 - Lektionen/L001.md.tmp.344.22335a1b528d",
-    "10 - Lektionen/L001.md.tmp.344.a1d09b588191",
-    "50 - Ressourcen/Kommando - Lektüre.md.tmp.344.b73e25f45ca2"
+    "10 - Lektionen/L001.md.tmp.344.a1d09b588191"
   ]
 }
