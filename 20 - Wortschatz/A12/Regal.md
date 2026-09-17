@@ -12,9 +12,6 @@ theme:
 example: Die Bücher, die du suchst, stehen im obersten Regal links.
 source: voice-session
 created: 2026-08-01
-last_error:
-error_count: 0
-status: new
 ---
 
 **das Regal**, Plural: *die Regale*

@@ -12,9 +12,6 @@ theme:
 example: Der Schlüssel ist mir aus der Tasche gefallen und lag auf dem Boden.
 source: voice-session
 created: 2026-08-01
-last_error:
-error_count: 0
-status: new
 ---
 
 **der Boden**, Plural: *die Böden*

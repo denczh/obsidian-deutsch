@@ -12,9 +12,6 @@ theme: [essen-trinken]
 example: "Ihre Großmutter hat es mit der Hand geschrieben, und man kann die Schrift fast nicht lesen."
 source: lektuere
 created: 2026-09-14
-last_error:
-error_count: 0
-status: new
 ---
 
 **fast** · *adv* · "casi"

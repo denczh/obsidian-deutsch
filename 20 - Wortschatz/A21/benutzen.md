@@ -14,9 +14,6 @@ theme:
 example: Darf ich dein Telefon benutzen? Mein Akku ist leer.
 source: manual
 created: 2026-08-02
-last_error:
-error_count: 0
-status: new
 ---
 
 **benutzen** — *benutzt, benutzte, hat benutzt*. Auxiliar `haben`, regelmäßig.

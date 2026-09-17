@@ -2,7 +2,7 @@
 type: kommando
 phase: 1
 command: /de lektüre
-updated: 2026-09-07
+updated: 2026-09-17
 ---
 
 # `/de lektüre` — phase 1 of 5
@@ -46,8 +46,8 @@ So the two states are told apart by a combination that already exists:
 And **a sentence in the body saying why**, under the phases table. A date with no
 reason is the thing that will be indistinguishable from a bug six months from now.
 
-**Process what exists first.** Abandoning is not discarding: if there are raw blocks
-in the note that were never processed, process them before closing it. The lesson
+**The vocabulary survives.** Abandoning is not discarding: the notes the lesson
+created keep their `lektion` and stay in the vault exactly as they are. The lesson
 stops, the vocabulary it produced does not.
 
 Never abandon a lesson without being asked to. Offer it, name what will be lost, and
@@ -64,10 +64,10 @@ Before asking anything:
   only thing that says how hard to write.
 - `20 - Wortschatz/*/` and `30 - Grammatik/*/` → everything already there. The
   list of `term` values, so nothing gets introduced twice, and the spread by `cefr`.
-- The weak items: `error_count > 0` and `status != "known"`. The story must
-  **recycle** them on purpose.
 - Themes already used: the `thema` field of previous lessons and the `theme` field
   of the vocabulary.
+- `## Notas` of the previous lessons. Since 2026-09-17 that is the only record of
+  what gave trouble, and it is prose, not a field → [[Lektionen]].
 
 ## 2. Ask for the theme
 
@@ -93,7 +93,10 @@ Rules for the story:
 - **Named characters**, two or three, who talk to each other. Dialogue is what
   makes expressions sound like a language instead of a list.
 - **Ends open.** Part 2 continues it: leave something unresolved.
-- **Recycles at least three weak items**, without pointing at them.
+- **Recycles old material on purpose**, without pointing at it: whatever
+  `## Notas` flagged in earlier lessons, and failing that, a good handful of words
+  from the lesson before. There is no list of weak items to draw on any more, so if
+  something specific should come back, **ask** — one question, at theme time.
 - No glossary, no bold inside the text. It is a story, not a lesson.
 
 After the `{TARGET}` story, **the `{KNOWN}` translation below it**, separated. The
@@ -142,7 +145,7 @@ Fields to fill without exception:
   it has to use *this* sense.
 - `theme` — the theme token.
 - `translation` — in `{KNOWN}`, for this sense only.
-- `article` and `inflection` per [[E-Mail-Format]]. Verbs with their auxiliary;
+- `article` and `inflection` per [[Bedeutungen]]. Verbs with their auxiliary;
   separables split.
 
 And the opening line of every note body, so the category is visible without

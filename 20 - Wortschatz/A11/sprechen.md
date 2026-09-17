@@ -14,9 +14,6 @@ theme:
 example: Auf der Konferenz sprach sie über die Zukunft der Rechentechnik.
 source: manual
 created: 2026-08-02
-last_error:
-error_count: 0
-status: new
 ---
 
 **sprechen** — *spricht, sprach, hat gesprochen*. Auxiliar `haben`, stark.

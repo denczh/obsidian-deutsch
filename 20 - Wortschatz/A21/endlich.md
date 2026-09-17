@@ -12,9 +12,6 @@ theme: [essen-trinken]
 example: "Nach einer Stunde ist der Kuchen endlich fertig."
 source: lektuere
 created: 2026-09-14
-last_error:
-error_count: 0
-status: new
 ---
 
 **endlich** · *adv* · "por fin, finalmente"

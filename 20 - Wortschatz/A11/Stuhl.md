@@ -12,9 +12,6 @@ theme:
 example: Nimm dir einen Stuhl und setz dich zu uns an den Tisch.
 source: voice-session
 created: 2026-08-01
-last_error:
-error_count: 0
-status: new
 ---
 
 **der Stuhl**, Plural: *die Stühle*

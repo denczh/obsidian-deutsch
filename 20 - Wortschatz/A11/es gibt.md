@@ -13,9 +13,6 @@ theme:
 example: In diesem Dorf gibt es nur einen Supermarkt und keine Apotheke.
 source: manual
 created: 2026-09-12
-last_error:
-error_count: 0
-status: new
 ---
 
 **es gibt** · *phrase* · invariable · "hay"

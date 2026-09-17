@@ -2,7 +2,7 @@
 type: kommando
 phase: 3
 command: /de vorlesen
-updated: 2026-09-07
+updated: 2026-09-17
 ---
 
 # `/de vorlesen` — phase 3 of 5
@@ -21,10 +21,11 @@ comprehension.
 
 `phase_1_lektuere: true` **and** `phase_2_studium: true`.
 
-Plus the fine check: **phase 2 has to have been passed with a Frage session**, not
-only a Sequenz one. If the only Studium block is empty because it was exposure,
-phase 2 proves no retrieval and this phase does not open. Say so; do not let it
-through.
+That second field is written by **`/de fertig`**, which is where the Sequenz check
+now lives: a Studium session that was only exposure never sets it →
+[[Kommando - Fertig]]. By the time this phase runs there is nothing left to verify.
+
+The phase is likewise marked done by `/de fertig`, not by this command.
 
 ## 1. Read the lesson
 
@@ -32,11 +33,17 @@ From the note in `10 - Lektionen/`:
 
 - **story part 1**, complete. It has to be continued, not replaced.
 - **the lesson's vocabulary and grammar**, which is the only thing that may be used.
-- the Studium blocks: **what failed in phase 2 has to appear in part 2**. If
-  `Schrank` was missed yesterday, it shows up in today's story.
 
-And from the rest of the vault, all vocabulary with `status != "new"`: that is the
+And from the rest of the vault, the vocabulary of every earlier lesson: that is the
 background stock the text may draw on.
+
+Then **ask one question**: was there anything in the Studium session that would not
+come? Whatever is named gets recycled into part 2 without being pointed at. If the
+answer is nothing in particular, recycle from the lesson broadly and move on.
+
+That question replaces reading the phase 2 block, which no longer exists. It is one
+turn, it is asked once, and an unanswered one is not a reason to stall: write the
+story.
 
 ## 2. Write part 2
 
@@ -48,7 +55,7 @@ if the story needs them; new words are not.
   and the rules.
 - **No new vocabulary.** Every content word has to be in the vault already: this
   lesson's or an earlier one's. Check word by word, not from memory.
-- **Recycles what failed in phase 2**, without pointing at it.
+- **Recycles whatever was named as difficult** in the question above, without pointing at it.
 - Close the story. The lesson ends here; leave no loose ends.
 
 **If a new word is unavoidable** — sometimes the syntax demands a connector that
@@ -88,13 +95,14 @@ detail. **Numbers, negations and who did what**: that is what gets missed by ear
 
 ## 5. Generate the prompt
 
-Substitute `{{RUECKBLICK}}`, `{{TEXT}}`, `{{FRAGEN}}` and `{{LEKTION}}` — the last
-one **appears twice**.
+Substitute `{{RUECKBLICK}}`, `{{TEXT}}` and `{{FRAGEN}}`. `{{LEKTION}}` is gone: it
+only ever appeared in the closing block.
 
-**Count the characters and say the number.** The fixed template is **5666**. With a
-200-word text, a 250-character Rückblick and six questions it comes to around
-**7600**. This is the tightest of the three phases: **if it goes over 8000, shorten
-the text**, never the rules.
+**Count the characters and say the number.** The template is **4926** characters as
+written, placeholders included, and that is the figure to recount whenever this note
+is edited. With a 200-word text, a 250-character Rückblick and six questions it comes
+to around **7000**. This is still the tightest of the three phases: **if it goes over
+8000, shorten the text**, never the rules.
 
 Do not re-wrap the lines.
 
@@ -111,22 +119,20 @@ another phase 1.
 way twice. Saving it does not contradict the transcript rule — the note is
 provenance and gets read at home, not during the listening session.
 
-## 7. Process the block
+## 7. Nothing comes back
 
-1. Raw block into `## Roh - Vorlesen` of the lesson note, with the date.
-2. **`ERRORS` of production type** → in the note concerned: `last_error` to today,
-   `error_count` +1, `status: learning`.
-3. **`ERRORS` of type `comprehension`** → here is the difference. If the failure
-   was one specific word, it goes to that note. If it was *I lost the thread of the
-   sentence*, there is no note to point at: that goes to **recurring mistakes in
-   [[Lernprofil]]**, which is where patterns without an object live.
-4. Add up `error_count` in the lesson frontmatter.
-5. Set `phase_3_vorlesen: true`.
+The session ends on the phone and leaves nothing behind. `/de fertig` marks the
+phase → [[Kommando - Fertig]].
 
-**This phase emits no `OK`, and that is deliberate.** The answers are about the
-story, not about individual items: a correct answer cannot be attributed to any
-note. An `OK` with no addressee promotes nothing and would only create the illusion
-of progress. Promotions come from Studium and Gramatik, where each item *is* a note.
+This phase was always the one whose results fitted the vault worst: an answer about
+a story cannot be attributed to any individual note, so it emitted errors and never
+promoted anything. Now it emits nothing at all, which is the same shape with less
+machinery.
+
+**If a whole sentence would not come by ear, say so when you confirm the phase.**
+That is a pattern with no note to point at, and it belongs in `## Notas` of the
+lesson, in prose — the place where things that are true of the learner and not of a
+word have always gone.
 
 ## The prompt template
 
@@ -199,44 +205,24 @@ German is the default, Spanish the rescue tool: only if he asks, or if a second 
 
 When he says "fertig", or after the last question.
 
-ALOUD, only this, in Spanish: how many questions, how many he answered without help, and whether the failures were comprehension or production. At most one clause of encouragement, and only if earned. Never read a list aloud.
+ALOUD, and only this, in Spanish: how many questions, how many he answered without help, and whether the failures were comprehension or production. At most one clause of encouragement, and only if earned. Never read a list aloud.
 
-THEN, WRITTEN, one fenced code block with exactly this and nothing else:
+Then stop. **Write nothing**: no block, no list, no summary, no email, and above all not the story. The session ends here and leaves no text behind. If he asks for anything in writing, say once that his vault is not your job and carry on.
 
-  === SESSION ===
-  date: YYYY-MM-DD
-  lektion: {{LEKTION}}
-  mode: vorlesen
-  themes: -
-
-  === ERRORS ===
-  what he said | correction | type
-
-  === END ===
-
-Rules for that block, without exception:
-- "lektion: {{LEKTION}}" and "mode: vorlesen", copied verbatim.
-- Plain text. No bold, tables or bullets. Never | inside a field. A field that does not apply is a single hyphen.
-- One line per error, even if the same thing failed twice.
-- type is exactly "comprehension" for a comprehension failure. For a production error, one of: article, gender, case, agreement, word-order, verb-form, preposition, vocabulary, pronunciation.
-- On a comprehension failure, "what he said" is his wrong answer.
-- No VOCAB, no EXTRA, no OK. This phase introduces nothing and promotes nothing.
-- The header appears even when empty. Nothing before or after the block, no commentary.
-- NEVER put the story in the block. It is an error log, not a transcript.
-
-FINALLY, if a mail Action is available, call it with that block as the body and the subject "Deutsch YYYY-MM-DD Vorlesen". Actions never run in voice: there, write the block and say aloud "sal del modo voz y escribe: envía la lista de hoy".
+That last point is the whole phase. The text is spoken and never written, at the end exactly as during the reading.
 
 ## Never
 
 - Never ask "hast du verstanden?" as a yes or no question. Ask something only someone who understood can answer.
 - Never invent a question, a word or a piece of story.
+- Never write the text, a question or a summary, at any point, closing included.
 - Never switch to English.
 
 ## The four rules that override everything else
 
-1. The text is spoken, never written.
+1. The text is spoken, never written. Not during, not at the end.
 2. Read it identically every time. "noch einmal" means the same words.
-3. Comprehension and production are marked differently and logged differently.
+3. Comprehension and production are marked differently and said differently.
 4. Nothing new: no word, no question, no story beyond the text.
 ```
 
@@ -252,11 +238,11 @@ fixed in the Instructions instead of improvised: `noch einmal` repeats *the same
 words*, so the second listening is worth something. When the text was improvised,
 "say it again" depended on the model remembering what it had said.
 
-**Comprehension and production are marked differently and logged differently.**
-*I did not understand it* and *I said it wrong* are different problems with
-different fixes. If [[Schwachstellen.base|Schwachstellen]] fills up with
-`comprehension`, the diagnosis is that the input is too fast, not that vocabulary
-is missing.
+**Comprehension and production are marked differently.** *I did not understand it*
+and *I said it wrong* are different problems with different fixes, and the learner
+has to hear which one just happened. That distinction used to be a `type` in an
+error log; now it lives only in the spoken correction, which is where it was always
+most useful anyway.
 
 **No "hast du verstanden?".** A yes-or-no question gets answered yes without
 understanding. Only questions that can be answered exclusively by someone who

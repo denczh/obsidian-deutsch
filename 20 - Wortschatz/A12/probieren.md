@@ -14,9 +14,6 @@ theme: [essen-trinken]
 example: "Tobias probiert ein kleines Stück."
 source: lektuere
 created: 2026-09-14
-last_error:
-error_count: 0
-status: new
 ---
 
 **probieren** · *verb* · *probiert, probierte, hat probiert*. Auxiliar `haben`, regelmäßig.

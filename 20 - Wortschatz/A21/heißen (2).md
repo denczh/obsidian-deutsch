@@ -15,9 +15,6 @@ theme:
 example: Wenn er „vielleicht" sagt, heißt das meistens nein.
 source: manual
 created: 2026-09-12
-last_error:
-error_count: 0
-status: new
 ---
 
 **heißen** · *verb* · *heißt, hieß, hat geheißen* · auxiliar `haben`, stark · "significar"

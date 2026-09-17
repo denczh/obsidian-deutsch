@@ -1,6 +1,6 @@
 ---
 type: profile
-updated: 2026-09-07
+updated: 2026-09-17
 lektionen_done: 0
 cefr_production: A12
 cefr_comprehension: A22
@@ -10,7 +10,7 @@ cefr_comprehension: A22
 
 > `{TARGET}` = German · `{KNOWN}` = Spanish → [[Configuration]]
 
-**Current lesson:** L001 · **Updated:** 2026-09-07
+**Current lesson:** L002 · **Updated:** 2026-09-17
 
 > This file is the only authoritative source on calibration. Claude reads it when
 > generating every lesson prompt, so it does not need copying anywhere — with one
@@ -41,6 +41,13 @@ behind reality. If almost nothing does, it is ahead.
 
 - [[Possessivartikel meine]] — possessive in the nominative, `mein` / `meine`
 - [[Dativ mit in]] — `in` + dative for location
+- [[Nebensatz mit weil]] — `weil` sends the verb to the end
+- [[Dativ mit schmecken]] — the food is the subject, the person is in the dative
+
+> **This list is now maintained by hand.** Until 2026-09-17 an item left it by
+> reaching `status: known` through a closing block; there is no `status` any more, so
+> what moves a rule off this list is [[Kommando - Commit]] asking and being answered
+> → [[Lektionen]].
 
 ## Pending, in suggested order
 
@@ -50,8 +57,13 @@ behind reality. If almost nothing does, it is ahead.
 
 ## Recurring mistakes to watch
 
-Filled from the `ERRORS` blocks. Patterns, not the full list — the full list is in
-the notes and in [[Schwachstellen.base|Schwachstellen]].
+**Dictated, not derived.** Until 2026-09-17 this section was filled from the `ERRORS`
+blocks and the full list lived in the notes and in `Schwachstellen`. Both are gone →
+[[Lektionen]]. What fills it now is the learner answering one question at
+[[Kommando - Commit]]: *what kept coming back this lesson?*
+
+An empty section is an honest one. A pattern written here that nobody actually
+noticed is worse than nothing, because it will be drilled.
 
 - **Possessive agreement with gender** — *Mein Tür* → *Meine Tür* (2026-08-01).
   See [[Possessivartikel meine]].
@@ -60,6 +72,7 @@ the notes and in [[Schwachstellen.base|Schwachstellen]].
 
 Filled from the lesson notes. `/de lektüre` skips the last two.
 
+- `essen-trinken` — Essen und Trinken (2026-09-14, L002)
 - `wohnen` — Haus und Wohnung (2026-08-01, L001)
 
 ## Preferences

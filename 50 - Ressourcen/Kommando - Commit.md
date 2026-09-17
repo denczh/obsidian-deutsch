@@ -2,7 +2,7 @@
 type: kommando
 phase: 5
 command: /de commit
-updated: 2026-09-07
+updated: 2026-09-17
 ---
 
 # `/de commit` — phase 5 of 5
@@ -20,19 +20,20 @@ only one that looks at the whole vault instead of just the lesson.
 All four: `phase_1_lektuere`, `phase_2_studium`, `phase_3_vorlesen`,
 `phase_4_gramatik`, every one `true`.
 
-If any is missing, say which and which command does it. **Do not offer to close
-half-way**: an incomplete lesson that gets closed is a lesson nobody reopens, and
-its material stays unpractised for good.
+If any is missing, say which and which command does it — phases 2, 3 and 4 are
+marked with `/de fertig` → [[Kommando - Fertig]]. **Do not offer to close half-way**:
+an incomplete lesson that gets closed is a lesson nobody reopens, and its material
+stays unpractised for good.
 
-## 1. Process whatever is outstanding
+## 1. Nothing to process
 
-There may be unprocessed blocks: from a repeated Studium session, or one pasted
-late. Before closing:
+There is nothing outstanding to collect. The voice phases leave no block, no mail
+and no pasted text: they are confirmed with `/de fertig` and that is all there was.
 
-- Ask for any missing blocks. If a `## Roh - *` section in the lesson note is empty
-  but its phase is `true`, something was marked without evidence: say so.
-- Process each block as its specification requires: `ERRORS` raises `error_count`
-  and sets `status: learning`; `OK` moves `learning → known` and `new → learning`.
+What can still be missing is a **prompt**. Check that all three `## Prompt - *`
+sections are filled. A prompt that was never saved is not recoverable — the shuffle,
+the story and the sentences are generated fresh — so say so rather than closing
+quietly over the gap.
 
 ## 2. Vault health check
 
@@ -46,22 +47,26 @@ where the silent failures get caught. None of these raises an error on its own.
 | `cefr` is one of the twelve tokens | [[Nach Niveau.base\|Nach Niveau]] splits in two |
 | the folder matches the `cefr` | the note lives somewhere it does not claim to |
 | `lektion` matches `L\d{3}` | [[Aktuelle Lektion.base\|Aktuelle Lektion]] cannot see it |
-| no residual `level` field, **including in view column lists** | an unknown field does not error: the column comes up blank and a sort on it silently does nothing |
+| no residual `level`, `status`, `error_count` or `last_error` field, **including in view column lists** | an unknown field does not error: the column comes up blank and a sort on it silently does nothing |
 | every note has a `pos` from the nine tokens | the category is the one thing never inferred |
 | no two notes share a `term` unless **both** carry a `sense` | a disambiguator only one of a pair has is not a disambiguator → [[Bedeutungen]] |
 | no `translation` lists two unrelated meanings | two senses merged into one note, and one of them will never be drilled |
-| the six `.base` files parse | the view looks empty and it seems there is no data |
+| the four `.base` files parse | the view looks empty and it seems there is no data |
 | zero broken wiki links | orphan notes you thought were connected |
 | `example` not empty in new vocabulary | the word has no context |
 | `Aktuelle Lektion` filters the lesson being closed | you were looking at the previous one |
 
-And two numbers worth watching even though they are not errors:
+And one number worth watching even though it is not an error:
 
-- **`Schwachstellen` growing lesson after lesson** with nothing reaching `known`:
-  it means phases 2 and 4 are not producing `OK`, and the revision queue only ever
-  grows. That is the leak plugged in August; it can come back through another door.
-- **`Nicht gesprochen` growing**: words that arrive and never get used. If it rises
-  every lesson, the 70/30 in Studium is not doing its job.
+- **`Ohne Beispiel` growing.** It is the last work list left, and the only one that
+  still says something about how the vault is being kept. A lesson that adds ten
+  notes with no example sentence is a lesson written in a hurry.
+
+The two counts that used to live here — `Schwachstellen` never reaching `known`, and
+`Nicht gesprochen` rising every lesson — went with the fields they read. Losing them
+means **the vault no longer measures whether anything is being retained**; it records
+what was taught. That is the known hole left by the change of 2026-09-17, and it is
+written here rather than discovered in six months.
 
 **On the first row.** It is there because it has already happened. On 2026-09-14 the
 `anki` field was removed from 56 notes by deleting the string `"\nanki: false"` in
@@ -85,7 +90,8 @@ In the note in `10 - Lektionen/`:
 
 - `closed` with today's date.
 - `phase_5_commit: true`.
-- The final counters: `vocab_count`, `grammar_count`, `error_count`, `ok_count`.
+- The final counters: `vocab_count` and `grammar_count`. The error and OK counts were
+  removed on 2026-09-17; nothing produces them.
 - Check that all three raw blocks and all **three prompts** are stored. If a prompt
   is missing, say so: it is not recoverable, because neither the shuffle nor the
   story nor the sentences can be regenerated identically.
@@ -100,9 +106,10 @@ Six months from now, the thing that will tell you which story taught you
 
 ## 4. Update the Lernprofil
 
-- **Recurring mistakes**: the patterns that showed up in two or more phases. Not the
-  full error list — that is already in the notes — but what repeats. Especially the
-  `comprehension` ones with no note to point at.
+- **Recurring mistakes**: whatever the learner said, across the lesson, that keeps
+  coming back. This is now dictated rather than derived — there is no error log to
+  read — so **ask**, and write only what is answered. An empty section is honest; an
+  invented pattern is worse than none, because it will be practised.
 - **Recent themes**: add this lesson's theme, keep the last five.
 - **The CEFR calibration**: review it, do not change it out of habit. If almost
   everything comes out right first time for three lessons running, the production
@@ -115,7 +122,7 @@ Six months from now, the thing that will tell you which story taught you
 A message with shape, not `update`:
 
 ```
-Lektion L002 abgeschlossen: <theme>, <N> words, <M> rules, <E> errors
+Lektion L002 abgeschlossen: <theme>, <N> words, <M> rules
 ```
 
 `obsidian-git` has already been committing intermediate states every ten minutes,
@@ -128,7 +135,7 @@ Push, and check nothing is left unpushed.
 
 A short summary:
 
-- what the lesson produced: words, rules, errors, correct answers
+- what the lesson produced: words and rules
 - what came out of the health check
 - what is outstanding, if anything
 - **that `/de lektüre` is ready for the next lesson**

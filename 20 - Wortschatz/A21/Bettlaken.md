@@ -12,9 +12,6 @@ theme:
 example: Ich sollte das Bettlaken wechseln, es ist schon zwei Wochen drauf.
 source: voice-session
 created: 2026-08-01
-last_error:
-error_count: 0
-status: new
 ---
 
 **das Bettlaken**, Plural: *die Bettlaken*

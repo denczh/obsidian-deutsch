@@ -13,7 +13,6 @@ views:
       - sense
       - lektion
       - translation
-      - status
     sort:
       - property: cefr
         direction: ASC

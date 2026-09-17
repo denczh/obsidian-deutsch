@@ -14,9 +14,6 @@ theme:
 example: Am Wochenende mache ich normalerweise nichts Besonderes.
 source: manual
 created: 2026-08-02
-last_error:
-error_count: 0
-status: new
 ---
 
 **machen** — *macht, machte, hat gemacht*. Auxiliar `haben`, regelmäßig.

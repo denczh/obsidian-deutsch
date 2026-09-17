@@ -14,9 +14,6 @@ theme:
 example: Die alten Fotos bewahre ich in einer Schachtel unter dem Bett auf.
 source: manual
 created: 2026-08-02
-last_error:
-error_count: 0
-status: new
 ---
 
 **aufbewahren** — *bewahrt auf, bewahrte auf, hat aufbewahrt*. Auxiliar `haben`, regelmäßig.

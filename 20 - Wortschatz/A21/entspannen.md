@@ -14,9 +14,6 @@ theme:
 example: Nach der Arbeit entspanne ich mich am liebsten mit einem Buch auf dem Sofa.
 source: manual
 created: 2026-08-02
-last_error:
-error_count: 0
-status: new
 ---
 
 **entspannen** — *entspannt, entspannte, hat entspannt*. Auxiliar `haben`, regelmäßig.

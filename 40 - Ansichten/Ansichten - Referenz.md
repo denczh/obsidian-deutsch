@@ -1,58 +1,43 @@
 ---
 type: reference
-updated: 2026-09-07
+updated: 2026-09-17
 ---
 
 # Views: what each one filters
 
 > `{TARGET}` = German · `{KNOWN}` = Spanish → [[Configuration]]
 
-The six views are `.base` files (Bases core plugin). If a version of Obsidian
+The four views are `.base` files (Bases core plugin). If a version of Obsidian
 does not recognise the `note.` prefix in filters, the view will come up empty:
 rebuild it from the UI with the same filter, or drop the prefix in the file.
 
 | View | Filter | Order |
 |---|---|---|
-| **Schwachstellen** | `error_count > 0`, `status != "known"`, type vocab or grammar | `last_error` desc |
-| **Aktuelle Lektion** | `lektion == "L001"` | `created` desc |
+| **Aktuelle Lektion** | `lektion == "L002"` | `created` desc |
 | **Nach Niveau** | type vocab or grammar | `cefr`, then name |
 | **Nach Thema** | type vocab or grammar | `theme`, then name |
 | **Ohne Beispiel** | `type == "vocab"` and `example` empty | `created` asc |
-| **Nicht gesprochen** | `source != "voice-session"` and `status == "new"` | `created` asc |
 
 ## Notes
 
-**Schwachstellen is the view that actually gets studied.** The original spec
-defined it as "`last_error` is not empty"; `error_count > 0` is equivalent and does
-not break if a date gets written in a different format one day. The sort is still
-by `last_error`.
+**There were six until 2026-09-17.** `Schwachstellen` filtered on `error_count > 0`
+and `status != "known"` and was the revision queue — the view that actually got
+studied. `Nicht gesprochen` filtered on `source != "voice-session"` and
+`status == "new"` and listed words that had never come out of the learner's mouth.
 
-**The second filter, `status != "known"`, is the exit door** (added 2026-08-02).
-Without it nothing ever left this view: `error_count` only goes up, so a mistake
-mastered three months ago kept showing up forever and the queue grew without limit.
-`error_count` stays as the historical record — it is a fact, and it is what to sort
-by for how much trouble something gave. What retires an item is marking it `known`,
-and what justifies that is the `OK` block of `/de studium` and `/de gramatik`. See
-[[Lektionen]].
+Both were deleted with the three fields they read, which only the closing block ever
+wrote → [[Lektionen]]. **A view whose filter names a field nothing writes is not a
+view, it is a queue filling towards nothing** — exactly what `Nicht in Anki` was,
+three days earlier. Deleting them was the honest move; the cost is that the vault no
+longer answers *what do I keep getting wrong.*
 
-**Aktuelle Lektion carries the lesson written inside the file.** When `L002` starts,
+**Aktuelle Lektion carries the lesson written inside the file.** When `L003` starts,
 that line gets edited. It is the only thing edited by hand when a lesson changes,
 and `/de lektüre` does it.
 
 **Nach Niveau groups by `cefr`**, which is the difficulty of the word and not the
 learner's level. It is the view for asking what is there at A11 and what is
 missing. See [[Niveaus]].
-
-**Nicht gesprochen is the counterweight to the EXTRA block.** A tutor can add words
-that were never said, with no limit. The obvious risk is that they pile up as
-homework nobody does. This view lists them while they are still `status: new`; use
-one in a session, move it to `learning`, and it disappears. If it grows without
-stopping, the problem is not the view.
-
-It filters on `source != "voice-session"` rather than on `tutor-extra`, so it also
-catches hand-added words (`source: manual`) and lesson words that have never been
-produced (`source: lektuere`). Any word that has not come out of the learner's
-mouth in a session is an unused word, wherever it came from.
 
 **Nach Thema replaces a per-theme folder.** The theme lives in frontmatter as a
 list; per-theme folders are exactly the competing hierarchy to avoid. For real
@@ -66,8 +51,7 @@ not duplication.
 
 To tell them apart at a glance, the views that can show both carry two extra
 columns: **`pos`**, the grammatical category, and **`sense`**, the short label that
-disambiguates the meaning. `Schwachstellen` and `Nach Niveau` have both; the
-others have `pos`.
+disambiguates the meaning. `Nach Niveau` has both; the others have `pos`.
 
 **`note.level` was still listed as a column in four views** until 2026-09-12 — a
 leftover from the September migration, and in one of them it was also the sort key.
@@ -75,20 +59,23 @@ An unknown field does not raise an error: the column just comes up blank and the
 sort silently does nothing. Now they all use `cefr`. This is exactly the class of
 failure the `/de commit` health check exists for.
 
-## The view that was removed
+## The views that were removed
 
-**`Nicht in Anki` was deleted on 2026-09-14**, along with the `anki` field it
-filtered on. Both came from the source document and neither was ever used: no
-export step existed, so the field was never written and the view returned zero.
+**`Nicht in Anki`, 2026-09-14**, with the `anki` field it filtered on. Both came from
+the source document and neither was ever used: no export step existed, so the field
+was never written and the view returned zero. It was not harmless — the filter was
+`anki == false` and `status != "new"`, so the first time anything reached `learning`
+it would have started filling up on its own, a queue growing towards a destination
+that did not exist.
 
-It was not harmless. The filter was `anki == false` and `status != "new"`, so the
-first time anything reached `learning` the view would have started filling up on
-its own — a queue growing towards a destination that did not exist, which is
-indistinguishable from the silent failures this reference is meant to catch.
+**`Schwachstellen` and `Nicht gesprochen`, 2026-09-17**, with `status`,
+`error_count` and `last_error`. Different cause, same shape: the closing block that
+wrote those fields was retired, so both views would have frozen — one permanently
+empty, the other permanently full — while still looking like features.
 
-Its file survives as `Nicht in Anki.base` carrying a view named *RETIRED - delete
-this file*, only because the shell could not reach the folder that day. Delete it
-in Obsidian; nothing refers to it.
+Three for three now, and the pattern is worth naming: **when a writer is removed, its
+readers go in the same edit.** A view outliving its field is the hardest failure in
+this vault to see, because nothing errors.
 
 ## Two tokens, two meanings, one spelling each
 

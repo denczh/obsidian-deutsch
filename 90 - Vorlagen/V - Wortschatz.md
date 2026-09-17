@@ -12,9 +12,6 @@ theme: []
 example: ""
 source: voice-session
 created: "{{date:YYYY-MM-DD}}"
-last_error:
-error_count: 0
-status: new
 ---
 
 **{{title}}** · *noun* · 
@@ -65,7 +62,6 @@ source:      lektuere      -> from a lesson story (/de lektüre)
              tutor-extra   -> added by the tutor, never said (EXTRA block)
              manual        -> added by hand, never said
 theme:       [alltag, reisen, ...]  -> see "50 - Ressourcen/Themenliste"
-status:      new | learning | known
 example:     a real sentence in the target language, in context, using THIS
              sense
 

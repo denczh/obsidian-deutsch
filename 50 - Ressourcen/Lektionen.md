@@ -1,6 +1,6 @@
 ---
 type: reference
-updated: 2026-09-07
+updated: 2026-09-17
 ---
 
 # The lesson cycle
@@ -11,12 +11,15 @@ A lesson is a unit of five gated phases: `L001`, `L002`… Each phase is launche
 with a command, and each command checks that the previous one has been passed.
 That is what turns five tools into a lesson.
 
+There is a sixth command that is not a phase: **`/de fertig`**, which is how the
+three phone phases get marked as done → [[Kommando - Fertig]].
+
 ```mermaid
 flowchart TD
     A["/de lektüre<br/>Claude, at the desk"] -->|story part 1<br/>+ notes in the vault| B["/de studium<br/>GPT on the phone"]
-    B -->|OK and ERRORS block| C["/de vorlesen<br/>GPT on the phone"]
-    C -->|ERRORS block| D["/de gramatik<br/>GPT on the phone"]
-    D -->|OK and ERRORS block| E["/de commit<br/>Claude, at the desk"]
+    B -->|/de fertig| C["/de vorlesen<br/>GPT on the phone"]
+    C -->|/de fertig| D["/de gramatik<br/>GPT on the phone"]
+    D -->|/de fertig| E["/de commit<br/>Claude, at the desk"]
     E -->|lesson archived| F["L002"]
 ```
 
@@ -51,18 +54,21 @@ something new instead of repeating.
 
 ### 2. `/de studium` — GPT on the phone
 
-**Spec: [[Kommando - Studium]].** Prompt template: 5319 fixed characters, ~1050
-for a list of 17 items, **6349 in total**.
+**Spec: [[Kommando - Studium]].** Prompt template: 4638 characters as written,
+~1200 for a list of 21 items, **~5800 in total**.
 
 Check phase 1 is done. Generate the **Studium** GPT prompt with the lesson's
 vocabulary, already shuffled and numbered, to be pasted over the existing GPT's
 Instructions. Three modes: `Sequenz`, `Frage auf Deutsch`, `Frage auf Spanisch`.
 
 **The 70/30.** The vocabulary in the prompt is not only the lesson's: **70% from
-the current lesson, 30% from `Schwachstellen` and never-produced words of earlier
-lessons.** Without that, every lesson is a closed bucket and the system learns
-well and retains badly — the classic failure of unit-based methods. It costs the
-learner nothing, because the prompt is generated here.
+the current lesson, 30% drawn at random from earlier ones.** Without that, every
+lesson is a closed bucket and the system learns well and retains badly — the classic
+failure of unit-based methods. It costs the learner nothing, because the prompt is
+generated here.
+
+That 30% used to be chosen by what had been failed. It is random now, because the
+record of what gets failed no longer exists — see below.
 
 **And the random order is shuffled here**, once, and numbered inside the prompt. A
 model cannot hold a shuffled list across turns: it loses it and repeats. With the
@@ -70,8 +76,8 @@ list fixed, `vorherige` actually works.
 
 ### 3. `/de vorlesen` — GPT on the phone
 
-**Spec: [[Kommando - Vorlesen]].** 5666 fixed plus the text and the questions,
-**~7575 in total**. The tightest of the three.
+**Spec: [[Kommando - Vorlesen]].** 4926 characters as written, plus the text and the
+questions, **~7000 in total**. Still the tightest of the three.
 
 Check phases 1 and 2. Write **part 2 of the story** — same characters, **no new
 vocabulary** — and put it literally inside the prompt. The GPT starts by reading
@@ -89,8 +95,8 @@ correction of vocabulary, grammar and pronunciation. `nächste` moves on.
 
 ### 4. `/de gramatik` — GPT on the phone
 
-**Spec: [[Kommando - Gramatik]].** 5532 fixed plus the rule and the sentences,
-**~6800 in total**. The roomiest of the three.
+**Spec: [[Kommando - Gramatik]].** 4659 characters as written, plus the rule and the
+sentences, **~6200 in total**. The roomiest of the three.
 
 Check phases 1, 2 and 3. Generate a GPT with sentences in `{KNOWN}` containing the
 lesson's grammar. They get translated aloud; it corrects; repeat; it corrects
@@ -104,9 +110,9 @@ attempt it gives the sentence, logs the error and moves on.
 
 **Spec: [[Kommando - Commit]].** **All five phases are specified.**
 
-Check all four. Process any outstanding blocks, run the vault health check, commit,
-mark the lesson `closed` and **archive it, do not delete it**: it is what will tell
-you, six months from now, which story taught you `Bahnsteig`.
+Check all four. Run the vault health check, commit, mark the lesson `closed` and
+**archive it, do not delete it**: it is what will tell you, six months from now,
+which story taught you `Bahnsteig`.
 
 **The one other way a lesson ends.** A lesson whose phases can no longer be done
 would deadlock the cycle: `/de commit` refuses it for missing phases, and
@@ -116,28 +122,45 @@ the two endings stay distinguishable and no field has to be invented. The proced
 is in [[Kommando - Lektüre]], because that is the command that hits the wall.
 [[L001]] is the worked case, and so far the only one.
 
-## Gates are proven with evidence
+## Gates are confirmed by hand
 
-A passed phase is not a box that gets ticked: it is **its closing block**.
+A passed phase is **a box that gets ticked**, and it is ticked by the learner with
+`/de fertig` → [[Kommando - Fertig]].
 
-Phases 2, 3 and 4 end by emitting the block in the chat, and the GPT mails it with
-the Make Action. It gets pasted back when the next command is launched. No block,
-no passed phase.
-
-That solves two things at once: the gate checks something real, and **spoken errors
-enter the vault**. Without the block there would be three practice phases that
-record nothing, `Schwachstellen` empty forever, and four gates guarding a progress
-nobody measures.
-
-| Phase | Emits | Why |
+| Phase | Leaves behind | Marked by |
 |---|---|---|
-| 1. Lektüre | nothing, the notes are written directly | Claude is in the room |
-| 2. Studium | `OK` + `ERRORS` | it is retrieval: there are hits and misses |
-| 3. Vorlesen | `ERRORS`, including `comprehension` | no `VOCAB`: nothing new enters |
-| 4. Gramatik | `OK` + `ERRORS` | same as Studium |
+| 1. Lektüre | the notes and the story, written into the vault | `/de lektüre` itself |
+| 2. Studium | nothing | `/de fertig`, after one question: `Sequenz` does not count |
+| 3. Vorlesen | nothing | `/de fertig` |
+| 4. Gramatik | nothing | `/de fertig` |
+| 5. Commit | the closed lesson and the commit | `/de commit` itself |
 
-Format in [[E-Mail-Format]]. The `OK` block is still the only exit from
-[[Schwachstellen.base|Schwachstellen]].
+### What this replaced, on 2026-09-17
+
+Until that date each phone phase ended by writing a **closing block** in the chat, a
+Make Action mailed it, and it was pasted back at the start of the next command. The
+block was the evidence *and* the data path: it carried every mistake into the vault,
+where it moved `status`, raised `error_count` and dated `last_error`. From that came
+`Schwachstellen`, the revision queue, and the priority order of the Studium 30%.
+
+All of it is gone: the Action, the block, the error types, the three fields, and the
+two views that read them — `Schwachstellen` and `Nicht gesprochen`.
+
+**What was bought.** A phase now ends by saying so, in one line, to Claude. Nothing
+is parsed, nothing is pasted, no mail leaves the phone, and no webhook credential sits
+in four GPTs. The three prompts lost about 900 characters each of block rules, which
+went back into material.
+
+**What was sold.** Item-level mastery. The vault records what was taught and no longer
+records what stuck: there is no revision queue, no exit door from one, and no way to
+ask which words keep failing. The gate now proves a claim rather than a fact — saying
+`/de fertig` without doing the session works, and only costs the person doing it.
+
+**What survives of it.** Three things, all prose rather than fields: the `## Notas` of
+each lesson note, the *recurring mistakes* and *seen, not consolidated* sections of
+[[Lernprofil]], and one question asked at the start of phases 3 and 4 — *what came out
+wrong last time?* Prose does not filter, sort or empty. It is read, by a person, when
+the next lesson is written.
 
 ## `cefr` and `lektion` are different things
 
@@ -154,10 +177,11 @@ There is no `level` field any more. Having one meant two things called level, an
 that is what broke the views in August. See [[Niveaus]].
 
 **What was lost by removing it, plainly:** the promotion criterion. With lessons,
-"progress" comes to mean how many have been done, which is activity and not
-ability. `status: known` per item and `Schwachstellen` still measure mastery, so
-nothing goes blind. But if a definition of *I have improved* is missed three months
-from now, this is what is missing.
+"progress" comes to mean how many have been done, which is activity and not ability.
+Until 2026-09-17 `status: known` and `Schwachstellen` still measured mastery item by
+item; since the closing block was retired, nothing does. If a definition of *I have
+improved* is wanted three months from now, it has to be built from scratch, and it
+will need a field that something actually writes.
 
 ## What this cycle retired
 
@@ -169,17 +193,17 @@ it, because the text is fixed.
 
 **[[Modus - Sprechen]] survives**, outside the cycle. Free conversation while
 walking is none of the five phases and is the only thing that is genuinely
-conversation. It stays a permanent GPT with its own prompt and its own
-`mode: sprechen` block, and its sessions still live in `10 - Sitzungen`.
+conversation. It stays a permanent GPT with its own prompt — and since 2026-09-17 it
+emits no block either: whatever is worth keeping from a walk gets dictated to Claude
+afterwards, or it is lost, which for a conversation is an acceptable price.
 
 ## The health check lives in phase 5
 
 `/de commit` is the only moment in the cycle that looks at the whole vault **after
 everything has happened**, so it is where the failures that raise no error get
 caught: invalid `cefr` tokens, folders that do not match their field, broken links,
-`.base` files that do not parse — and the two numbers that matter,
-`Schwachstellen` growing with nothing reaching `known`, and `Nicht gesprochen`
-growing lesson after lesson. Detail in [[Kommando - Commit]].
+`.base` files that do not parse, frontmatter that never closes — and the one number
+left, `Ohne Beispiel` growing. Detail in [[Kommando - Commit]].
 
 ## The prompts are saved
 
@@ -201,8 +225,9 @@ overwrite rule: [[GPTs]].
 ## How it is implemented
 
 The commands are a **skill** called `de`, which is only a **router**: it validates
-the phase, reads the state in `10 - Lektionen/`, checks the gate, and then reads the
-phase's specification in `50 - Ressourcen/Kommando - *.md` and follows it.
+the command, reads the state in `10 - Lektionen/`, checks the gate, and then reads the
+specification in `50 - Ressourcen/Kommando - *.md` and follows it. Six commands now:
+the five phases plus `fertig`.
 
 **The logic lives in the vault, not in the skill.** To change how the story gets
 written or how many words come in, edit [[Kommando - Lektüre]] in Obsidian. That is
@@ -216,6 +241,9 @@ improvise a version.
 
 | Lesson | Theme | Phases | Notes |
 |---|---|---|---|
-| [[L001]] | `wohnen` | 1 of 5 | reconstructed retroactively, did not follow the flow |
+| [[L001]] | `wohnen` | abandoned | reconstructed retroactively, did not follow the flow |
+| [[L002]] | `essen-trinken` | 1 of 5 | the first lesson to run the cycle |
 
-**L002 will be the first real lesson.**
+**L002 is also the lesson that straddles the change**: its phase 1 ran under the old
+rules and its Studium prompt was generated with a block in it. That prompt was
+regenerated on 2026-09-17; the one pasted before that date emits a block nobody reads.

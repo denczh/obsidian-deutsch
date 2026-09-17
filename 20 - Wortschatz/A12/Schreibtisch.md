@@ -12,9 +12,6 @@ theme:
 example: Mein Schreibtisch steht direkt am Fenster, damit ich Tageslicht habe.
 source: voice-session
 created: 2026-08-01
-last_error:
-error_count: 0
-status: new
 ---
 
 **der Schreibtisch**, Plural: *die Schreibtische*

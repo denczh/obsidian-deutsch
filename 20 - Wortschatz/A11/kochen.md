@@ -14,9 +14,6 @@ theme: [essen-trinken]
 example: "Er kocht nie, aber er isst gern."
 source: lektuere
 created: 2026-09-14
-last_error:
-error_count: 0
-status: new
 ---
 
 **kochen** · *verb* · *kocht, kochte, hat gekocht*. Auxiliar `haben`, regelmäßig.

@@ -14,9 +14,6 @@ theme: [essen-trinken]
 example: "Ich gehe gleich einkaufen, aber ich verstehe die Zutaten nicht."
 source: lektuere
 created: 2026-09-14
-last_error:
-error_count: 0
-status: new
 ---
 
 **einkaufen** · *verb* · *kauft ein, kaufte ein, hat eingekauft*. Auxiliar `haben`, regelmäßig.

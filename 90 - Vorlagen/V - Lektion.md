@@ -11,8 +11,6 @@ phase_4_gramatik: false
 phase_5_commit: false
 vocab_count: 0
 grammar_count: 0
-error_count: 0
-ok_count: 0
 ---
 
 # {{title}}
@@ -26,13 +24,17 @@ ok_count: 0
 
 ## Phases
 
-| Phase | Command | Done | Evidence |
+| Phase | Command | Done | Date |
 |---|---|---|---|
-| 1. Lektüre | `/de lektüre` | ☐ | notes created + part 1 below |
-| 2. Studium | `/de studium` | ☐ | closing block below |
-| 3. Vorlesen | `/de vorlesen` | ☐ | closing block below |
-| 4. Gramatik | `/de gramatik` | ☐ | closing block below |
-| 5. Commit | `/de commit` | ☐ | commit in git |
+| 1. Lektüre | `/de lektüre` | ☐ | |
+| 2. Studium | `/de studium` | ☐ | |
+| 3. Vorlesen | `/de vorlesen` | ☐ | |
+| 4. Gramatik | `/de gramatik` | ☐ | |
+| 5. Commit | `/de commit` | ☐ | |
+
+Phases 2, 3 and 4 are marked with `/de fertig`, which writes the tick and the date
+→ [[Kommando - Fertig]]. Nothing else is recorded about a session: the voice phases
+leave no block and no log.
 
 ## Story, part 1
 
@@ -52,22 +54,9 @@ ok_count: 0
 
 ## Notes
 
-(what failed, which instruction each GPT drifted from, what to tighten next time)
-
-## Roh - Studium
-
-```
-```
-
-## Roh - Vorlesen
-
-```
-```
-
-## Roh - Gramatik
-
-```
-```
+(What the GPTs drifted from, and — since 2026-09-17 — **the whole error log**: what
+would not come out, what had to be repeated, what clearly landed. Prose, written
+when it is noticed. Empty is honest; invented is worse than empty.)
 
 ---
 

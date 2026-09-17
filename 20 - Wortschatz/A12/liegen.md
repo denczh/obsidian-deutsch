@@ -14,9 +14,6 @@ theme:
 example: Zürich liegt am nördlichen Ende des Sees, ungefähr eine Stunde von hier.
 source: manual
 created: 2026-08-02
-last_error:
-error_count: 0
-status: new
 ---
 
 **liegen** — *liegt, lag, hat gelegen*. Auxiliar `haben`, stark.

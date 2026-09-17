@@ -12,9 +12,6 @@ theme:
 example: In meinem Schrank ist kein Platz mehr, ich muss endlich ausmisten.
 source: voice-session
 created: 2026-08-01
-last_error:
-error_count: 0
-status: new
 ---
 
 **der Schrank**, Plural: *die Schränke*

@@ -1,6 +1,6 @@
 ---
 type: reference
-updated: 2026-09-13
+updated: 2026-09-17
 ---
 
 # The four GPTs
@@ -11,7 +11,7 @@ updated: 2026-09-13
 
 | | What it is | Who makes it | How often |
 |---|---|---|---|
-| **The GPT** | name, link, phone shortcut, capabilities, the mail Action, chat history | **me, on the web** | **once, ever** |
+| **The GPT** | name, link, phone shortcut, capabilities, chat history | **me, on the web** | **once, ever** |
 | **Its Instructions** | the 6-8k prompt: word list, story, sentences | Claude, from the vault | **every lesson** |
 
 Nothing about the container is dynamic, and it cannot be: **there is no API for
@@ -19,12 +19,16 @@ creating GPTs.** The web editor is the only way. So all four have to exist befor
 the first lesson — otherwise phase 2 arrives with a generated prompt and nowhere to
 paste it.
 
-| GPT                  | Phase             | Instructions                        | Emits           | Spec                    |
-| -------------------- | ----------------- | ----------------------------------- | --------------- | ----------------------- |
-| `Deutsch - Studium`  | 2                 | generated every lesson              | `OK` + `ERRORS` | [[Kommando - Studium]]  |
-| `Deutsch - Vorlesen` | 3                 | generated every lesson              | `ERRORS`        | [[Kommando - Vorlesen]] |
-| `Deutsch - Gramatik` | 4                 | generated every lesson              | `OK` + `ERRORS` | [[Kommando - Gramatik]] |
-| `Deutsch - Sprechen` | outside the cycle | **written once, refreshed by hand** | all four blocks | [[Modus - Sprechen]]    |
+| GPT                  | Phase             | Instructions                        | Emits   | Spec                    |
+| -------------------- | ----------------- | ----------------------------------- | ------- | ----------------------- |
+| `Deutsch - Studium`  | 2                 | generated every lesson              | nothing | [[Kommando - Studium]]  |
+| `Deutsch - Vorlesen` | 3                 | generated every lesson              | nothing | [[Kommando - Vorlesen]] |
+| `Deutsch - Gramatik` | 4                 | generated every lesson              | nothing | [[Kommando - Gramatik]] |
+| `Deutsch - Sprechen` | outside the cycle | **written once, refreshed by hand** | nothing | [[Modus - Sprechen]]    |
+
+**Since 2026-09-17 no GPT emits anything.** A session ends aloud and leaves no text:
+no closing block, no mail, nothing to paste back. A phase is marked done with
+`/de fertig` → [[Kommando - Fertig]]. Why, and what it cost: [[Lektionen]].
 
 **Phases 1 and 5 have no GPT.** `/de lektüre` and `/de commit` are Claude, at the
 desk, with the vault open. That is why they can read and write notes and the other
@@ -39,7 +43,7 @@ three cannot.
 | Instructions | the whole prompt. This is the entire GPT. |
 | **Knowledge** | **empty.** Voice mode cannot read it, and a file it cannot read is worse than no file at all. |
 | Capabilities | image generation **off**, data analysis **off**. Web search off keeps it grounded. |
-| Actions | the mail webhook. Text-only: it never fires during a voice conversation. |
+| Actions | **none.** The mail webhook was removed on 2026-09-17. |
 | Conversation starters | see below. **In voice you never see them**, so they only matter on the desktop. |
 | Visibility | *Only me* |
 
@@ -111,74 +115,22 @@ Same text for `Vorlesen` with `/de vorlesen`, and for `Gramatik` with
 [[Modus - Sprechen]]. Copy it from the fenced block in that note, which is the
 single source of truth for it.
 
-While in the editor, attach the **mail Action to all four**. Doing it now saves
-opening each one again later.
+## The Action that no longer exists
 
-## The Action
+All four GPTs used to carry a mail Action: one Make webhook, one schema, one
+operation, which posted the closing block to a hook that emailed it. It was removed
+on 2026-09-17 with the block itself.
 
-**One schema, identical in all four GPTs.** Same webhook, same operation, same
-fields. The only thing that differs between phases is the email subject, and that
-comes from the prompt, not from the schema.
+**Two things to do about it, in the GPT editor:**
 
-Authentication: **None**. Replace the server and path with the Make hook URL.
+1. **Delete the Action from all four GPTs.** An Action left attached is one a model
+   can still decide to call, and it would post whatever it improvised in place of the
+   block that no longer exists.
+2. **Regenerate the Make hook**, or delete the scenario. The URL carried no
+   authentication: anyone holding it could send mail. A credential that is no longer
+   used is still a credential.
 
-```yaml
-openapi: 3.1.0
-info:
-  title: Send closing block
-  description: Emails the closing block of a session to the learner.
-  version: 1.1.0
-servers:
-  - url: https://hook.eu1.make.com
-paths:
-  /YOUR-HOOK-ID:
-    post:
-      operationId: sendClosingBlock
-      summary: Emails the closing block of the session.
-      description: >
-        Call only when closing a session, and only after the closing block has
-        already been written in the chat. Never call it during a voice
-        conversation: Actions do not run in voice mode. Send the block exactly as
-        written, with no commentary before or after.
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              required: [subject, body]
-              properties:
-                subject:
-                  type: string
-                  description: >
-                    "Deutsch YYYY-MM-DD" followed by the phase name when there is
-                    one: Studium, Vorlesen or Gramatik. Free conversation has no
-                    suffix.
-                body:
-                  type: string
-                  description: >
-                    The closing block verbatim, in plain text, starting with
-                    "=== SESSION ===" and ending with "=== END ===". Every header
-                    the mode uses is present even when its section is empty. No
-                    markdown, no bold, no commentary.
-      responses:
-        "200":
-          description: Sent
-          content:
-            text/plain:
-              schema:
-                type: string
-```
-
-**The `description` fields are not documentation.** The model reads them and they
-change its behaviour: when to call the Action, and what the body is. The first
-version of this schema still described the pre-August format — sections that had
-not existed for a month — which is exactly the kind of thing that makes a model
-paraphrase instead of copying.
-
-> **The webhook URL is a credential.** There is no authentication on it: anyone
-> holding it can make Make send mail on your behalf. Keep it out of chats, tickets
-> and screenshots, and regenerate the hook if it leaks.
+Neither is urgent and both are permanent. Do them the next time the editor is open.
 
 ## Overwrite, never recreate
 
@@ -186,10 +138,11 @@ Every lesson, Claude hands over a prompt that **replaces** the Instructions of a
 existing GPT.
 
 Deleting and recreating costs three things: the home-screen shortcut, the chat
-history, and about fifteen minutes of clicking per lesson. The chat history is the
-one that bites — **the closing block of a session lives in that chat until it is
-processed**, so deleting a GPT before processing its last session destroys data
-that exists nowhere else.
+history, and about fifteen minutes of clicking per lesson. The first is the one that
+bites now — two taps from the home screen is the difference between doing a phase and
+not bothering. The chat history used to matter more, because a session's closing block
+lived there until it was processed; since 2026-09-17 a session leaves nothing behind,
+so nothing is destroyed by deleting a chat.
 
 ## The fourth one is different in kind
 

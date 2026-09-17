@@ -7,9 +7,6 @@ lektion: L001
 theme: [wohnen]
 source: voice-session
 created: 2026-08-01
-last_error: 2026-08-01
-error_count: 1
-status: learning
 ---
 
 ## Regel

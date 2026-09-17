@@ -14,9 +14,6 @@ theme:
 example: Ich schreibe meiner Tante jedes Jahr zu Weihnachten einen Brief.
 source: manual
 created: 2026-08-02
-last_error:
-error_count: 0
-status: new
 ---
 
 **schreiben** — *schreibt, schrieb, hat geschrieben*. Auxiliar `haben`, stark.

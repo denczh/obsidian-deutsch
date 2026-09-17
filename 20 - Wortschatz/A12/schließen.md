@@ -14,9 +14,6 @@ theme:
 example: Das Museum schließt um achtzehn Uhr, aber der Garten bleibt länger offen.
 source: manual
 created: 2026-08-02
-last_error:
-error_count: 0
-status: new
 ---
 
 **schließen** — *schließt, schloss, hat geschlossen*. Auxiliar `haben`, stark.

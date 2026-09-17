@@ -12,9 +12,6 @@ theme:
 example: Dieses Kissen ist viel zu weich, ich kann darauf nicht schlafen.
 source: voice-session
 created: 2026-08-01
-last_error:
-error_count: 0
-status: new
 ---
 
 **das Kissen**, Plural: *die Kissen*

@@ -1,6 +1,6 @@
 ---
 type: reference
-updated: 2026-09-12
+updated: 2026-09-17
 ---
 
 # One note, one sense
@@ -21,7 +21,9 @@ It is not optional and it is not inferred. It appears in three places:
 - **the opening line of the note body**, so it is visible without opening the
   Properties panel:
   `**der Bahnsteig** · *noun* · Plural: *-e* · "andén"`
-- **the closing block** from every voice session, as its fourth column
+
+It used to appear in a third place, the fourth column of every closing block. Blocks
+were retired on 2026-09-17 → [[Lektionen]].
 
 **`pos` belongs to the sense, not to the word.** The same word can be a noun in one
 meaning and a verb in another, and each meaning is its own note with its own `pos`.
@@ -43,8 +45,6 @@ article: die
 translation: "techo"
 cefr: A12
 lektion: L001
-status: learning
-error_count: 2
 ```
 
 ```yaml
@@ -56,13 +56,16 @@ article: die
 translation: "manta"
 cefr: A21
 lektion: L004
-status: new
-error_count: 0
 ```
 
-Same word, two folders, two lessons, two independent histories. Merged into one
-note, all of that collapses: you could not record that you have mastered *ceiling*
-and never once produced *blanket*.
+Same word, two folders, two lessons, two independent entries. Merged into one note,
+that collapses: one difficulty would be applied to both meanings, and only one of
+them would ever reach a drill.
+
+> Each sense also used to carry its own `status` and `error_count`, and that was the
+> strongest form of the argument: you could record that *ceiling* was mastered and
+> *blanket* never once produced. Those fields went on 2026-09-17 → [[Lektionen]]. The
+> rule stands on the reasons that are left, which are enough.
 
 ### The fields that make it work
 
@@ -119,10 +122,9 @@ filename is in `{KNOWN}`.
 
 What replaces it: **`sense` stops being decoration and becomes the only
 machine-readable carrier of the meaning.** It was redundant with the title before;
-now it is not. That is why [[Schwachstellen.base|Schwachstellen]] and
-[[Nach Niveau.base|Nach Niveau]] both show it as a column, and why the `/de commit`
-check that no two notes share a `term` without both carrying a `sense` matters more
-than it did: an empty `sense` on `heißen (2)` now leaves nothing anywhere that says
+now it is not. That is why [[Nach Niveau.base|Nach Niveau]] shows it as a column, and
+why the `/de commit` check that no two notes share a `term` without both carrying a
+`sense` matters more than it did: an empty `sense` on `heißen (2)` now leaves nothing anywhere that says
 what it means.
 
 And where a bare number would read badly — a long word list, a cross-reference —
@@ -188,19 +190,46 @@ Renaming is deliberately the cost of the *second* sense, not the first. Numberin
 every note `Bahnsteig (1)` from the start would put a number on nine hundred notes
 that will never need one, to avoid a rename that happens rarely.
 
+## Categories and inflection
+
+`pos` is one of nine: `noun`, `verb`, `adj`, `adv`, `prep`, `conj`, `pron`, `num`,
+`phrase`. **Never omitted and never guessed afterwards** — and it belongs to the sense
+rather than to the word.
+
+**No noun-only lists.** They are the easiest thing to list and the least useful thing
+to have. `inflection` is filled according to the category:
+
+| Category | What goes in `inflection` |
+|---|---|
+| `noun` | the plural: `-e`, `-en`, `Häuser`, or `-` if there is none |
+| `verb` | irregular third person, Präteritum, and Perfekt **with its auxiliary**: `fährt, fuhr, ist gefahren`. Separables split: `räumt auf, räumte auf, hat aufgeräumt` |
+| `adj` | comparative and superlative only if irregular: `besser, am besten` |
+| everything else | `-` |
+
+`article` is `-` for anything that is not a noun. The `term` field is bare:
+`Bahnsteig`, never `der Bahnsteig` — the article has its own field, and a term with
+the article glued on stops matching a search for the word.
+
+> This section lived in `E-Mail-Format` until 2026-09-17, because it described the
+> columns of the closing block. The block is gone and the conventions are not: they
+> are how every note is written. They moved here rather than being deleted with their
+> old home → [[Lektionen]].
+
 ## Who applies this
 
 **The agent, at note-creation time**, because only the agent can see what already
 exists in the vault. A voice GPT cannot: it has never read the vault, and it never
 will.
 
-That is why the closing block has **no sense column**. The GPT reports
-`Decke | die | -n | noun | manta`; the agent looks up `term: Decke`, finds a note
-that says `techo`, recognises the collision, and runs the procedure above. Asking
-the GPT to disambiguate would mean asking it about a vault it cannot see — the
-failure this whole system is built to avoid.
+That was the argument for the closing block carrying **no sense column**: the GPT
+reported `Decke | die | -n | noun | manta` and the agent looked up `term: Decke`, found
+a note saying `techo`, recognised the collision and ran the procedure above. Asking the
+GPT to disambiguate would have meant asking it about a vault it cannot see.
 
-See [[Kommando - Lektüre]] for the create step and [[E-Mail-Format]] for the block.
+Since 2026-09-17 the GPTs report nothing at all and every note is written here, so the
+question no longer arises → [[Lektionen]].
+
+See [[Kommando - Lektüre]] for the create step.
 
 ## Done: the three inherited cases
 

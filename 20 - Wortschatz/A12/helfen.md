@@ -14,9 +14,6 @@ theme:
 example: Kannst du mir bitte helfen, den Schrank ins Schlafzimmer zu tragen?
 source: manual
 created: 2026-08-02
-last_error:
-error_count: 0
-status: new
 ---
 
 **helfen** — *hilft, half, hat geholfen*. Auxiliar `haben`, stark.

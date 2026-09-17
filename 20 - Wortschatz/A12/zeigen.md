@@ -14,9 +14,6 @@ theme:
 example: Zeig mir bitte auf der Karte, wo dein Dorf liegt.
 source: manual
 created: 2026-08-02
-last_error:
-error_count: 0
-status: new
 ---
 
 **zeigen** — *zeigt, zeigte, hat gezeigt*. Auxiliar `haben`, regelmäßig.

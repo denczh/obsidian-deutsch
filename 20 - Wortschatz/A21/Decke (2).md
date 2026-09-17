@@ -13,9 +13,6 @@ theme:
 example: Auf dem Sofa lag eine dicke Wolldecke für kalte Abende.
 source: manual
 created: 2026-09-12
-last_error:
-error_count: 0
-status: new
 ---
 
 **die Decke** · *noun* · Plural: *die Decken* · "manta"

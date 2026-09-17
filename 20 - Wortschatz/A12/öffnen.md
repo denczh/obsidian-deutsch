@@ -14,9 +14,6 @@ theme:
 example: Die Bibliothek öffnet erst um zehn, wir müssen noch eine halbe Stunde warten.
 source: manual
 created: 2026-08-02
-last_error:
-error_count: 0
-status: new
 ---
 
 **öffnen** — *öffnet, öffnete, hat geöffnet*. Auxiliar `haben`, regelmäßig.

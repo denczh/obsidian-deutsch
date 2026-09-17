@@ -12,9 +12,6 @@ theme: [essen-trinken]
 example: "Nadia schneidet die Butter in kleine Stücke, weil das Rezept es so sagt."
 source: lektuere
 created: 2026-09-14
-last_error:
-error_count: 0
-status: new
 ---
 
 **weil** · *conj* · subordinante · "porque"

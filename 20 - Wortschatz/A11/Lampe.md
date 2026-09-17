@@ -12,9 +12,6 @@ theme:
 example: Über dem Esstisch hängt eine alte Lampe aus Messing.
 source: voice-session
 created: 2026-08-01
-last_error:
-error_count: 0
-status: new
 ---
 
 **die Lampe**, Plural: *die Lampen*

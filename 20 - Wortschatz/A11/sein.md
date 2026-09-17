@@ -14,9 +14,6 @@ theme:
 example: Als Kind war ich sehr schüchtern, aber jetzt bin ich viel offener.
 source: manual
 created: 2026-08-02
-last_error:
-error_count: 0
-status: new
 ---
 
 **sein** — *ist, war, ist gewesen*. Auxiliar `sein`, stark.

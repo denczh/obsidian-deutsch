@@ -14,9 +14,6 @@ theme:
 example: Meine Schwester arbeitet seit drei Jahren bei einer kleinen Firma in Zürich.
 source: manual
 created: 2026-08-02
-last_error:
-error_count: 0
-status: new
 ---
 
 **arbeiten** — *arbeitet, arbeitete, hat gearbeitet*. Auxiliar `haben`, regular.

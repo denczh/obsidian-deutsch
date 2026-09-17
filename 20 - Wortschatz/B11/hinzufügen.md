@@ -14,9 +14,6 @@ theme:
 example: Zum Schluss fügt man einen Löffel Honig hinzu und rührt gut um.
 source: manual
 created: 2026-08-02
-last_error:
-error_count: 0
-status: new
 ---
 
 **hinzufügen** — *fügt hinzu, fügte hinzu, hat hinzugefügt*. Auxiliar `haben`, regelmäßig.

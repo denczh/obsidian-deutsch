@@ -14,9 +14,6 @@ theme:
 example: Wir saßen den ganzen Abend auf dem Balkon und redeten über alte Zeiten.
 source: manual
 created: 2026-08-02
-last_error:
-error_count: 0
-status: new
 ---
 
 **sitzen** — *sitzt, saß, hat gesessen*. Auxiliar `haben`, stark.

@@ -15,9 +15,6 @@ theme:
 example: Ihr Nachbar heißt Thomas, aber alle nennen ihn Tom.
 source: manual
 created: 2026-08-02
-last_error:
-error_count: 0
-status: new
 ---
 
 **heißen** · *verb* · *heißt, hieß, hat geheißen* · auxiliar `haben`, stark · "llamarse"

@@ -12,9 +12,6 @@ theme: [essen-trinken]
 example: "Am Samstagmorgen steht Nadia in der Küche und schaut auf ein altes Rezept."
 source: lektuere
 created: 2026-09-14
-last_error:
-error_count: 0
-status: new
 ---
 
 **das Rezept** · *noun* · Plural: *die Rezepte* · "receta"

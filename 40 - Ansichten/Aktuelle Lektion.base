@@ -1,21 +1,20 @@
 filters:
   and:
-    - note.lektion == "L002"
+    - 'note.lektion == "L001"'
     - or:
-        - note.type == "vocab"
-        - note.type == "grammar"
+        - 'note.type == "vocab"'
+        - 'note.type == "grammar"'
 views:
   - type: table
     name: Aktuelle Lektion
     order:
       - file.name
-      - type
-      - cefr
-      - pos
-      - article
-      - translation
-      - status
-      - created
+      - note.type
+      - note.cefr
+      - note.pos
+      - note.article
+      - note.translation
+      - note.created
     sort:
-      - property: created
+      - property: note.created
         direction: DESC

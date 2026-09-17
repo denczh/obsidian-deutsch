@@ -12,9 +12,6 @@ theme:
 example: Mach bitte das Fenster zu, es zieht.
 source: voice-session
 created: 2026-08-01
-last_error:
-error_count: 0
-status: new
 ---
 
 **das Fenster**, Plural: *die Fenster*

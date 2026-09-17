@@ -12,9 +12,6 @@ theme:
 example: Ein Tischbein wackelt, ich muss die Schrauben nachziehen.
 source: voice-session
 created: 2026-08-01
-last_error:
-error_count: 0
-status: new
 ---
 
 **das Tischbein**, Plural: *die Tischbeine*

@@ -14,9 +14,6 @@ theme:
 example: Sag mir bitte die Wahrheit, auch wenn sie unangenehm ist.
 source: manual
 created: 2026-08-02
-last_error:
-error_count: 0
-status: new
 ---
 
 **sagen** — *sagt, sagte, hat gesagt*. Auxiliar `haben`, regelmäßig.

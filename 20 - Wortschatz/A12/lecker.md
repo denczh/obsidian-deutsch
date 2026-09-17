@@ -12,9 +12,6 @@ theme: [essen-trinken]
 example: "„Lecker“, sagt er."
 source: lektuere
 created: 2026-09-14
-last_error:
-error_count: 0
-status: new
 ---
 
 **lecker** · *adj* · "rico, sabroso"

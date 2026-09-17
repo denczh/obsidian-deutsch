@@ -14,9 +14,6 @@ theme:
 example: Können Sie den Mann beschreiben, den Sie gestern gesehen haben?
 source: manual
 created: 2026-08-02
-last_error:
-error_count: 0
-status: new
 ---
 
 **beschreiben** — *beschreibt, beschrieb, hat beschrieben*. Auxiliar `haben`, stark.

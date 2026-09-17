@@ -11,13 +11,14 @@
             "id": "1458fc25e9a4b8ba",
             "type": "leaf",
             "state": {
-              "type": "bases",
+              "type": "markdown",
               "state": {
-                "file": "40 - Ansichten/Ohne Beispiel.base",
-                "viewName": "Ohne Beispiel"
+                "file": "10 - Lektionen/L002.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-table",
-              "title": "Ohne Beispiel"
+              "icon": "lucide-file",
+              "title": "L002"
             }
           }
         ]
@@ -184,7 +185,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -203,8 +204,11 @@
       "obsidian-spaced-repetition:Review flashcards": false
     }
   },
-  "active": "1458fc25e9a4b8ba",
+  "active": "4952a17aef8a2258",
   "lastOpenFiles": [
+    "10 - Lektionen/L002.md",
+    "10 - Lektionen/L001.md",
+    "40 - Ansichten/Ohne Beispiel.base",
     "40 - Ansichten/Ohne Beispiel.base.tmp.11220.df60d140824c",
     "40 - Ansichten/Aktuelle Lektion.base",
     "90 - Vorlagen/V - Wortschatz.md",
@@ -212,7 +216,6 @@
     "90 - Vorlagen/V - Sitzung.md",
     "90 - Vorlagen/V - Lektion.md",
     "90 - Vorlagen/V - Grammatik.md",
-    "40 - Ansichten/Ohne Beispiel.base",
     "40 - Ansichten/Nicht gesprochen.base",
     "40 - Ansichten/Nach Thema.base",
     "40 - Ansichten/Nach Niveau.base",
@@ -235,11 +238,9 @@
     "20 - Wortschatz/A12/schließen.md",
     "20 - Wortschatz/A12/schauen.md",
     "20 - Wortschatz/A12/öffnen.md",
-    "20 - Wortschatz/A12/liegen.md",
     "Claude outputs/Prompt - Deutsch Studium - L002.txt",
     "Claude outputs",
     "50 - Ressourcen/Bedeutungen.md.tmp.12120.c6de554bcc8a",
-    "50 - Ressourcen/Bedeutungen.md.tmp.12120.0c150eb2dfbb",
-    "50 - Ressourcen/Lektionen.md.tmp.344.4a500ab4920b"
+    "50 - Ressourcen/Bedeutungen.md.tmp.12120.0c150eb2dfbb"
   ]
 }

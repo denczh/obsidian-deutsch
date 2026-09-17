@@ -12,9 +12,6 @@ theme: [essen-trinken]
 example: "Oder Salz. Keine Ahnung."
 source: lektuere
 created: 2026-09-14
-last_error:
-error_count: 0
-status: new
 ---
 
 **keine Ahnung** · *phrase* · invariable · "ni idea"

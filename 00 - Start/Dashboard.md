@@ -1,13 +1,13 @@
 ---
 type: dashboard
-updated: 2026-09-07
+updated: 2026-09-17
 ---
 
 # Dashboard
 
 > `{TARGET}` = German · `{KNOWN}` = Spanish · `{LEARNER}` = Pedro → [[Configuration]]
 
-**Lesson in progress:** L001 → [[Lektionen]] · [[Lernprofil]]
+**Lesson in progress:** L002 → [[Lektionen]] · [[Lernprofil]]
 
 > **[[Lektionen]]** — the five-phase cycle and its `/de` commands. That is the
 > system. [[Workflow]] describes free conversation, which is still alive but
@@ -17,12 +17,13 @@ updated: 2026-09-07
 
 | View | For what |
 |---|---|
-| [[Schwachstellen.base\|Schwachstellen]] | The revision queue. The most useful view in the system. |
 | [[Aktuelle Lektion.base\|Aktuelle Lektion]] | The vocabulary of the lesson in progress. |
 | [[Nach Niveau.base\|Nach Niveau]] | Everything grouped by CEFR difficulty of the word. |
 | [[Nach Thema.base\|Nach Thema]] | Replaces a per-theme folder completely. |
 | [[Ohne Beispiel.base\|Ohne Beispiel]] | Notes made in a hurry and never finished. |
-| [[Nicht gesprochen.base\|Nicht gesprochen]] | Words never produced: given by a tutor, or added by hand. |
+
+`Schwachstellen` and `Nicht gesprochen` were deleted on 2026-09-17 with the fields
+they filtered on → [[Lektionen]]. There is no revision queue any more.
 
 ## The cycle
 
@@ -31,22 +32,23 @@ updated: 2026-09-07
 /de studium    vocabulary GPT, three modes                      (phone)
 /de vorlesen   GPT reads part 2 and asks about it               (phone)
 /de gramatik   spoken translation GPT                           (phone)
-/de commit     Claude processes, commits and archives           (at the desk)
+/de commit     Claude checks, commits and archives              (at the desk)
+
+/de fertig     marks the phone phase just finished as done      (anywhere)
 ```
 
-Each command checks that the previous one has been passed, and "passed" means its
-closing block exists. Detail in [[Lektionen]].
+Each command checks that the previous one has been passed, and "passed" means
+`/de fertig` was said. Detail in [[Lektionen]] and [[Kommando - Fertig]].
 
 ## Reference
 
 - [[Configuration]] — **the language pair and what a fork changes**
 - [[Lektionen]] — the lesson cycle and the five commands
 - [[GPTs]] — the four GPTs, their configuration and the overwrite rule
-- [[E-Mail-Format]] — the closing block format and the error types
+- [[Kommando - Fertig]] — how a phase gets marked done, and what that replaced
 - [[Niveaus]] — the twelve CEFR tokens and who assigns them
 - [[Bedeutungen]] — **one note, one sense**, and the grammatical category
 - [[Themenliste]] — the themes, as tokens
-- [[Verarbeitung]] — processing a free-conversation block
 - [[Workflow]] — free conversation, outside the cycle
 
 ## Outside the cycle
@@ -60,7 +62,7 @@ phases and it is the only thing that is genuinely conversation.
 
 ## Structure
 
-- `10 - Lektionen/` one note per lesson: story, phases, raw blocks, prompts
+- `10 - Lektionen/` one note per lesson: story, phases, prompts
 - `10 - Sitzungen/` one note per free-conversation session
 - `20 - Wortschatz/<cefr>/` one note per word, folder = CEFR difficulty
 - `30 - Grammatik/<cefr>/` one note per rule, short label as title
@@ -75,7 +77,10 @@ is a subfolder of type, and theme and lesson are fields — never folders.
 
 - Nothing to keep in sync by hand any more: the prompts are generated from the
   vault every lesson. That was the recurring cost of the system and it is gone.
-- Weekly: re-read the error log. That is next week's curriculum.
+- Every 4-6 free-conversation sessions: refresh the *Learner values* of
+  [[Modus - Sprechen]] by hand. It is the only copy left that can go stale.
+- Weekly: re-read the `## Notas` of the open lesson. Since 2026-09-17 that is the
+  whole error log, and it is next week's curriculum.
 
-The five failures that raise no error are listed at the end of [[Workflow]], and
+The failures that raise no error are listed at the end of [[Workflow]], and
 `/de commit` checks for them.

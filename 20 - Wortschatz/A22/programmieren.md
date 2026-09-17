@@ -14,9 +14,6 @@ theme:
 example: Er programmiert seit Jahren in C, aber neuerdings arbeitet er lieber mit Rust.
 source: manual
 created: 2026-08-02
-last_error:
-error_count: 0
-status: new
 ---
 
 **programmieren** — *programmiert, programmierte, hat programmiert*. Auxiliar `haben`, regelmäßig.

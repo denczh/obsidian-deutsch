@@ -12,9 +12,6 @@ theme: [essen-trinken]
 example: "Meine Küche ist zu klein, denkt sie."
 source: lektuere
 created: 2026-09-14
-last_error:
-error_count: 0
-status: new
 ---
 
 **die Küche** · *noun* · Plural: *die Küchen* · "cocina"

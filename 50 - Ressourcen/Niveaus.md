@@ -1,6 +1,6 @@
 ---
 type: reference
-updated: 2026-09-07
+updated: 2026-09-17
 ---
 
 # Levels: the difficulty of words
@@ -62,10 +62,9 @@ Claude does, when the note is created in `/de lektüre`. And this has to be said
 reasonable people would disagree at the edges.
 
 That is fine for what it is for — grouping, browsing, deciding what is early and
-what is late — and not fine for anything that needs precision. **No critical view
-filters on `cefr`**: [[Schwachstellen.base|Schwachstellen]] does not look at it,
-and neither does the `/de studium` drill. If a word ever looks misclassified, drag
-it to another folder and change the field; nothing breaks.
+what is late — and not fine for anything that needs precision. **Nothing critical
+filters on `cefr`**: the `/de studium` draw ignores it entirely. If a word ever looks
+misclassified, drag it to another folder and change the field; nothing breaks.
 
 ## What was lost by dropping the personal scale
 
@@ -73,16 +72,14 @@ it to another folder and change the field; nothing breaks.
 improved*: five consolidated structures and nothing with `error_count` above 2.
 There is no equivalent now, because lessons measure activity, not ability.
 
-What still measures mastery, item by item:
+**And since 2026-09-17, nothing measures mastery item by item at all.** `status`,
+`error_count` and `last_error` were removed with the closing block that wrote them,
+and `Schwachstellen` with them → [[Lektionen]].
 
-- `status: new → learning → known`, moved by the `ERRORS` and `OK` blocks.
-- [[Schwachstellen.base|Schwachstellen]], which empties only when something reaches
-  `known`.
-
-That is enough to know what to study. It is not enough to know whether progress is
-happening. If that is missed three months from now, the natural repair is a
-criterion over `known` — *80% of A11 and A12 in `known`* — not resurrecting the
-field.
+So the honest position: the vault records *what was taught, when, and how hard the
+word is*. It records nothing about what stuck. If a definition of *I have improved* is
+wanted later, it needs a field that something actually writes — and the lesson of both
+removals is that inventing the field first is the wrong order.
 
 ## And the tutor's calibration
 
@@ -100,3 +97,4 @@ vocabulary note. See [[Lektionen]] and [[Configuration]].
 | 2026-07-31 | twelve CEFR folders, `level` = the learner's level |
 | 2026-08-01 | personal scale `L1`, one folder, `level` = the learner's position |
 | 2026-09-07 | `cefr` = difficulty of the word, `lektion` = when it entered |
+| 2026-09-17 | `status`, `error_count` and `last_error` removed with the closing block |

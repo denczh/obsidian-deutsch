@@ -6,30 +6,22 @@ mode: sprechen
 themes: []
 minutes: 
 vocab_count: 0
-extra_count: 0
 grammar_count: 0
-error_count: 0
-ok_count: 0
-processed: false
 ---
 
-<!-- mode: sprechen | studium | vorlesen | gramatik
-     lektion: L001... or "-" for free conversation
-     -> see "50 - Ressourcen/E-Mail-Format" -->
-
+<!-- Free conversation only, outside the lesson cycle.
+     The five lesson phases are recorded in "10 - Lektionen", not here.
+     -> see "50 - Ressourcen/Modus - Sprechen" -->
 
 # Sitzung {{date:YYYY-MM-DD}}
 
-## Verarbeitung
+## Was gesagt wurde  <!-- what was said -->
 
-- [ ] 1. raw block pasted below
-- [ ] 2. VOCAB notes created, `source: voice-session` (+ my own example sentence)
-- [ ] 2b. EXTRA notes created, `source: tutor-extra`
-- [ ] 3. grammar notes created or updated
-- [ ] 4. errors cross-referenced: `last_error`, `error_count`, `status: learning`
-- [ ] 4b. OK block: `learning` -> `known`, `new` -> `learning`
-- [ ] 5. Lernprofil updated (mistakes, themes)
-- [ ] 6. commit and push
+Dictated after the walk. The tutor writes nothing and sends nothing: what reaches
+this note is what was remembered and repeated back to Claude. Words, a rule, a
+sentence that would not come.
+
+- 
 
 ## Notizen
 
@@ -38,27 +30,3 @@ processed: false
 ## Erstellte Notizen  <!-- notes created -->
 
 - 
-
-## Roh
-
-```
-=== SESSION ===
-date: 
-lektion: 
-mode: 
-themes: 
-
-=== VOCAB ===
-term | article | inflection | pos | translation
-
-=== EXTRA ===
-term | article | inflection | pos | translation
-
-=== GRAMMAR ===
-rule label | category
-
-=== ERRORS ===
-what he said | correction | type
-
-=== END ===
-```

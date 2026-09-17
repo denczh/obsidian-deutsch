@@ -2,7 +2,7 @@
 type: kommando
 phase: 2
 command: /de studium
-updated: 2026-09-07
+updated: 2026-09-17
 ---
 
 # `/de studium` — phase 2 of 5
@@ -23,6 +23,8 @@ whose material is exactly what phase 1 introduced, with nothing new added.
 It can run **as many times as wanted**. Every run regenerates the prompt with a
 fresh shuffle, so two sessions are never identical.
 
+The phase is marked done by **`/de fertig`**, not by this command → [[Kommando - Fertig]].
+
 ## 1. Choose the material: the 70/30
 
 **All of the current lesson's vocabulary**, plus a generous third of old material.
@@ -33,14 +35,20 @@ Without that 30%, every lesson is a closed bucket: the system learns well and
 retains badly, which is the classic failure of unit-based methods. And it costs
 nothing, because the prompt is generated here.
 
-**Priority for choosing the old ones**, in this order:
+**The old ones are drawn at random from every earlier lesson**, with a seed written
+into the lesson note so the draw can be reproduced. Every vocabulary note of every
+closed lesson is a candidate; nothing is ever excluded.
 
-1. **Weak items**: `error_count > 0` and `status != "known"`. As many as fit.
-2. **Never produced**: `status: new` from earlier lessons, oldest `lektion` first.
-   They have been waiting longest.
-3. **In progress**: `status: learning`, oldest `last_error` first.
+That used to be a priority list — weak items first, then never-produced ones — and
+it was the best part of the design. It depended on `error_count` and `status`, which
+were removed on 2026-09-17 along with the closing block → [[Lektionen]]. **A random
+draw is worse and it is honest**: with no record of what gets failed, any ordering
+would be a guess dressed up as a rule.
 
-Never include anything with `status: known`. That one is done.
+What it costs: a word can go months without coming up, and the words that give the
+most trouble get no priority at all. What replaces it, for now, is that the draw is
+cheap and can be run again. If after ten lessons something is clearly not sticking,
+say so here and pick it by hand — an explicit request beats a fabricated criterion.
 
 ## 2. Shuffle and number
 
@@ -63,12 +71,17 @@ Header included. Verbs with their principal parts and auxiliary; non-nouns with
 
 Substitute in the template below:
 
-- `{{LISTA}}` → the header plus the numbered lines.
-- `{{LEKTION}}` → the lesson token, `L002` etc. **It appears twice.**
+- `{{LISTA}}` → the header plus the numbered lines. It is the only placeholder left:
+  `{{LEKTION}}` went with the closing block, which is where it was used.
 
-**Count the characters and say the number.** The fixed template is **5319**, which
-leaves about 2700 for the list: ample for 17 items, which take around 1000. If the
-list ever does not fit, cut the old 30%, never the rules.
+**Count the characters and say the number.** The template is **4638** characters as
+written, `{{LISTA}}` included — that is the figure to subtract, and it is what to
+recount whenever this note is edited. It leaves about **3360** for the list, where 21
+items take around 1200. If the list ever does not fit, cut the old 30%, never the
+rules.
+
+> The figure recorded here was **5319** until 2026-09-17, against a real 5503: the
+> template had been edited and the number had not. Recount it, do not trust it.
 
 **Do not re-wrap the lines.**
 
@@ -82,27 +95,19 @@ Say how many items there are and how many are old, so the learner knows what to
 expect.
 
 **And save the delivered prompt** in the lesson note, under `## Prompt - Studium`,
-inside a fenced block. **It is not reproducible**: the shuffle is random and does
-not repeat. If a GPT behaves oddly, the exact pasted prompt is the only thing that
-makes it possible to find out why.
+inside a fenced block, with the date and the seed of the draw. **It is not
+reproducible without them**: the shuffle is random. If a GPT behaves oddly, the
+exact pasted prompt is the only thing that makes it possible to find out why.
 
-## 5. Process the block when it comes back
+## 5. Nothing comes back
 
-It gets pasted when the next phase is launched, or earlier. For every run:
+The session ends on the phone and leaves nothing behind. No block, no mail, no
+pasted text, no note touched.
 
-1. Paste the raw block into `## Roh - Studium` of the lesson note, with the date in
-   front. Multiple runs **accumulate**, they do not replace each other.
-2. **`ERRORS`** → in each note: `last_error` to today, `error_count` +1,
-   `status: learning`.
-3. **`OK`** → `learning` becomes `known`; `new` becomes `learning`.
-   **`error_count` is never touched.**
-4. Add up `ok_count` and `error_count` in the lesson frontmatter.
-5. Set `phase_2_studium: true`.
-
-> **The gate is opened by a Frage session, not by a Sequenz one.** Sequenz is
-> exposure: nothing is tested, so its block comes back empty and proves no
-> retrieval. If the only phase 2 block came from Sequenz, the phase is **not**
-> passed — say so instead of letting it through.
+When the session is done, the learner says **`/de fertig`** and the phase is marked
+→ [[Kommando - Fertig]]. That command asks one question here and only here: whether
+the session was `Sequenz` or one of the two `Frage` modes. **Sequenz is exposure and
+does not pass the phase**, because nothing was retrieved.
 
 ## The prompt template
 
@@ -163,7 +168,7 @@ Strict. Half right is wrong.
 - No article, wrong article, wrong gender: wrong.
 - If he says he does not know, that is a wrong answer, not a question.
 - Never accept an answer you would not give yourself in order to keep him happy.
-- Log every item as you go: its number, and right or wrong ON THE FIRST ATTEMPT.
+- Keep a running count of how many were right ON THE FIRST ATTEMPT. You need the number for the closing line and for nothing else. Do not write it down as you go.
 
 ## Commands, all modes
 
@@ -186,48 +191,25 @@ Words in German, meanings in Spanish. Explanations in Spanish and never more tha
 
 When he says "fertig", or after the last item.
 
-ALOUD, only this, in Spanish: how many items, how many right on the first attempt, and the one item most worth looking at again. At most one clause of encouragement, and only if earned. Never read a list aloud.
+ALOUD, and only this, in Spanish: how many items, how many right on the first attempt, and the one item most worth looking at again. At most one clause of encouragement, and only if earned. Never read a list aloud.
 
-THEN, WRITTEN, one fenced code block with exactly this and nothing else:
+Then stop. **Write nothing**: no list, no summary, no log, no code block, no table, no email. The session ends here and leaves no text behind. If he asks for a written list, say once that his vault is not your job and carry on.
 
-  === SESSION ===
-  date: YYYY-MM-DD
-  lektion: {{LEKTION}}
-  mode: studium
-  themes: -
-
-  === OK ===
-  item | type
-
-  === ERRORS ===
-  what he said | correction | type
-
-  === END ===
-
-Rules for that block, without exception:
-- "lektion: {{LEKTION}}" and "mode: studium", copied verbatim.
-- Plain text. No bold, tables or bullets. Never | inside a field. A field that does not apply is a single hyphen.
-- OK lists every item he got right ON THE FIRST ATTEMPT and unprompted, once each, written as the term appears in the list. type is vocab. This block moves items out of his revision queue, so it has to be honest: if you repeated the word, hinted, or he corrected himself after seeing your reaction, it does not go here.
-- ERRORS lists what he actually said, the correct form, and the type: one of article, gender, vocabulary, verb-form, pronunciation.
-- An item appears in OK or in ERRORS, never both.
-- If the session was Sequenz only, both blocks are empty. Say so in one line before the block.
-- Both headers appear even when empty. Nothing before or after the block, no commentary.
-
-FINALLY, if a mail Action is available, call it with that block as the body and the subject "Deutsch YYYY-MM-DD Studium". Actions never run in voice: there, write the block and say aloud "sal del modo voz y escribe: envía la lista de hoy".
+Nothing you say is recorded anywhere. That is deliberate: it means you can be strict without consequence, and it means the closing line has to be honest, because it is the only feedback he gets.
 
 ## Never
 
 - Never add a word that is not in the list.
 - Never invent a gender, a plural or a principal part.
 - Never give the Spanish in Sequenz before he asks for it.
-- Never put something in OK to be kind. That block writes to his vault.
+- Never write a list, a log or a block at the end of the session.
 - Never switch to English.
 
 ## The three rules that override everything else
 
 1. The list is the session. Nothing outside it.
 2. In Sequenz, silence after each half. The pause is the exercise.
-3. OK means right on the first attempt, without help.
+3. Strict marking: half right is wrong, and never an answer you would not give yourself.
 ```
 
 ## Why the prompt is written that way
@@ -242,9 +224,11 @@ that pause with the translation unless you forbid it three times.
 rule, drilling nouns does not test the one thing that is actually hard about
 `{TARGET}`.
 
-**`OK` only on the first attempt.** It is the exit door from
-[[Schwachstellen.base|Schwachstellen]], and a generous model would mark as known
-what was got right on the second try. That is why the prompt says it three times.
+**Strict marking, with nothing riding on it.** The drill used to write promotions
+into the vault, so the prompt said three times that a hint disqualifies an item.
+Nothing is written any more, and the rule stays for a different reason: the spoken
+count at the end is the only signal the learner gets, and a generous model turns it
+into noise.
 
 **Nothing outside the list.** The risk with a model that knows `{TARGET}` is that
 it extends the drill with words that are not in the vault; then the learner

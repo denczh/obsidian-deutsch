@@ -12,9 +12,6 @@ theme:
 example: Nach dem langen Flug bin ich sofort ins Bett gegangen.
 source: voice-session
 created: 2026-08-01
-last_error:
-error_count: 0
-status: new
 ---
 
 **das Bett**, Plural: *die Betten*

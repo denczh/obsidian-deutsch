@@ -14,9 +14,6 @@ theme:
 example: Das Bild hing jahrelang an der Wand, bis wir es ins Schlafzimmer hängten.
 source: manual
 created: 2026-08-02
-last_error:
-error_count: 0
-status: new
 ---
 
 **hängen** — *hängt, hing, hat gehangen. Transitivo: hängte, hat gehängt*. Auxiliar `haben`, stark.

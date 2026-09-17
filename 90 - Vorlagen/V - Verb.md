@@ -14,9 +14,6 @@ theme: []
 example: ""
 source: voice-session
 created: "{{date:YYYY-MM-DD}}"
-last_error:
-error_count: 0
-status: new
 ---
 
 **{{title}}** — *flexión*. Auxiliar `haben` / `sein`.

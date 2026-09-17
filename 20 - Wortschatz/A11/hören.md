@@ -14,9 +14,6 @@ theme:
 example: Ich höre gern Radio, während ich in der Küche koche.
 source: manual
 created: 2026-08-02
-last_error:
-error_count: 0
-status: new
 ---
 
 **hören** — *hört, hörte, hat gehört*. Auxiliar `haben`, regelmäßig.

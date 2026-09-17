@@ -14,9 +14,6 @@ theme:
 example: Wir sollten das gute Wetter nutzen und einen Spaziergang am See machen.
 source: manual
 created: 2026-08-02
-last_error:
-error_count: 0
-status: new
 ---
 
 **nutzen** — *nutzt, nutzte, hat genutzt*. Auxiliar `haben`, regelmäßig.

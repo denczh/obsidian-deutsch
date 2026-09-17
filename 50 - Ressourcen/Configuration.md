@@ -1,6 +1,6 @@
 ---
 type: reference
-updated: 2026-09-07
+updated: 2026-09-17
 target_language: German
 known_language: Spanish
 learner: Pedro
@@ -59,8 +59,10 @@ The prefix is the target language's ISO code; the phase names are words in
 | 3 | `/de vorlesen` | `/es lectura en voz` |
 | 4 | `/de gramatik` | `/es gramatica` |
 | 5 | `/de commit` | `/es commit` |
+| — | `/de fertig` | `/es hecho` |
 
-The skill that routes them is named after the prefix.
+The last one is not a phase: it is how a phone phase gets marked as done →
+[[Kommando - Fertig]]. The skill that routes them is named after the prefix.
 
 ### Folder names
 
@@ -95,7 +97,7 @@ replaces them there:
 | what does … mean | `was bedeutet …` |
 | be quiet | `warte` |
 | hold every answer until I say `fertig` | `protokoll fertig` |
-| finish and emit the block | `fertig` |
+| finish the session | `fertig` |
 | change the subject | `anderes Thema` |
 | easier / harder | `einfacher` / `schwieriger` |
 
@@ -108,14 +110,19 @@ a system that works except for three commands nobody can say.
 ### Field keys stay in English
 
 `type`, `term`, `sense`, `pos`, `article`, `inflection`, `translation`, `cefr`,
-`lektion`, `theme`, `example`, `source`, `status`, `error_count`, `last_error`.
+`lektion`, `theme`, `example`, `source`.
 
-There was an `anki` field until 2026-09-14. It was removed because nothing ever
-wrote it and nothing ever read it — **a field like that is worse than no field,
-because it reads as a feature that exists.** If a fork wants spaced repetition, the
-`obsidian-spaced-repetition` plugin works on the notes directly and needs no field
-of ours; exporting to a separate app means maintaining a second copy of the
-vocabulary that drifts from the first.
+Two removals, for the same reason each time: **a field is worse than no field once
+nothing writes it, because it reads as a feature that exists.**
+
+- `anki`, 2026-09-14. Nothing ever wrote it and nothing ever read it.
+- `status`, `error_count` and `last_error`, 2026-09-17. They were written only by the
+  closing block, which was retired that day → [[Lektionen]]. The two views that read
+  them went in the same edit.
+
+If a fork wants spaced repetition, the `obsidian-spaced-repetition` plugin works on
+the notes directly and needs no field of ours; exporting to a separate app means
+maintaining a second copy of the vocabulary that drifts from the first.
 
 **These are never translated, in any fork.** Every view filters on them, and one
 spelling everywhere beats a localised schema. The *values* of `translation` are in
@@ -126,17 +133,17 @@ spelling everywhere beats a localised schema. The *values* of `translation` are 
 - **Vocabulary and grammar notes.** The `translation` field, the explanations, the
   example sentences: all in the two real languages. They are study material, not
   instructions.
-- **Lesson notes and session notes.** Records of what happened, including stories
-  in `{TARGET}` and error logs.
+- **Lesson notes and session notes.** Records of what happened, including the
+  stories in `{TARGET}` and the `## Notas` that are now the whole error log.
 - **The learner's own preferences** in [[Lernprofil]], where they are statements
   about a person rather than instructions to a machine.
 
 ## Where to start reading
 
-1. [[Lektionen]] — the five-phase cycle. The system.
-2. [[Kommando - Lektüre]] and the four other `Kommando` notes — one per phase.
-3. [[E-Mail-Format]] — the closing block, which is the interface between every
-   voice session and this vault.
+1. [[Lektionen]] — the five-phase cycle. The system, and what changed on 2026-09-17.
+2. [[Kommando - Lektüre]] and the four other phase notes — one per phase.
+3. [[Kommando - Fertig]] — how a phase is marked done, which is the whole interface
+   between a voice session and this vault.
 4. [[Niveaus]] — what `cefr` means and who assigns it.
 5. [[Bedeutungen]] — one note per sense, and why the grammatical category is
    never inferred.

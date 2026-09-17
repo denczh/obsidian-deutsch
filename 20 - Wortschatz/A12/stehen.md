@@ -14,9 +14,6 @@ theme:
 example: Vor dem Haus stand ein Mann, den ich noch nie gesehen hatte.
 source: manual
 created: 2026-08-02
-last_error:
-error_count: 0
-status: new
 ---
 
 **stehen** — *steht, stand, hat gestanden*. Auxiliar `haben`, stark.

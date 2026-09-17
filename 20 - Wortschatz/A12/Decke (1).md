@@ -13,9 +13,6 @@ theme:
 example: Von der Decke hängt eine Lampe, die zu tief für große Leute ist.
 source: voice-session
 created: 2026-08-01
-last_error:
-error_count: 0
-status: new
 ---
 
 **die Decke** · *noun* · Plural: *die Decken* · "techo"

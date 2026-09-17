@@ -7,9 +7,6 @@ lektion: L002
 theme: [essen-trinken]
 source: lektuere
 created: 2026-09-14
-last_error:
-error_count: 0
-status: new
 ---
 
 ## Regel

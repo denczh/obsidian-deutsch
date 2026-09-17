@@ -14,9 +14,6 @@ theme:
 example: Schau mal aus dem Fenster, es hat angefangen zu schneien!
 source: manual
 created: 2026-08-02
-last_error:
-error_count: 0
-status: new
 ---
 
 **schauen** — *schaut, schaute, hat geschaut*. Auxiliar `haben`, regelmäßig.

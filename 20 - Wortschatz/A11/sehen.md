@@ -14,9 +14,6 @@ theme:
 example: Von unserem Balkon aus sieht man die Berge ganz deutlich.
 source: manual
 created: 2026-08-02
-last_error:
-error_count: 0
-status: new
 ---
 
 **sehen** — *sieht, sah, hat gesehen*. Auxiliar `haben`, stark.

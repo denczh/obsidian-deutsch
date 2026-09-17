@@ -14,9 +14,6 @@ theme:
 example: Leg die Papiere bitte auf den Schreibtisch, nicht auf den Boden.
 source: manual
 created: 2026-08-02
-last_error:
-error_count: 0
-status: new
 ---
 
 **legen** — *legt, legte, hat gelegt*. Auxiliar `haben`, regelmäßig.

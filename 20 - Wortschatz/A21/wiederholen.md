@@ -14,9 +14,6 @@ theme:
 example: Könnten Sie das bitte wiederholen? Ich habe Sie nicht richtig verstanden.
 source: manual
 created: 2026-08-02
-last_error:
-error_count: 0
-status: new
 ---
 
 **wiederholen** — *wiederholt, wiederholte, hat wiederholt*. Auxiliar `haben`, regelmäßig.

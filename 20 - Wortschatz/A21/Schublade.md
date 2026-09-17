@@ -12,9 +12,6 @@ theme:
 example: Die Batterien liegen in der obersten Schublade rechts vom Herd.
 source: voice-session
 created: 2026-08-01
-last_error:
-error_count: 0
-status: new
 ---
 
 **die Schublade**, Plural: *die Schubladen*

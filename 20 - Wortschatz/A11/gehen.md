@@ -14,9 +14,6 @@ theme:
 example: Wir gehen heute Abend ins Kino, wenn das Wetter schlecht bleibt.
 source: manual
 created: 2026-08-02
-last_error:
-error_count: 0
-status: new
 ---
 
 **gehen** — *geht, ging, ist gegangen*. Auxiliar `sein`, stark.

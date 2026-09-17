@@ -14,9 +14,6 @@ theme:
 example: Der Kellner gab uns die Speisekarte und empfahl uns den Fisch.
 source: manual
 created: 2026-08-02
-last_error:
-error_count: 0
-status: new
 ---
 
 **geben** — *gibt, gab, hat gegeben*. Auxiliar `haben`, stark.

@@ -2,7 +2,7 @@
 type: kommando
 phase: 4
 command: /de gramatik
-updated: 2026-09-07
+updated: 2026-09-17
 ---
 
 # `/de gramatik` — phase 4 of 5
@@ -20,14 +20,22 @@ which is why it is last.
 
 `phase_1_lektuere`, `phase_2_studium` and `phase_3_vorlesen`, all three `true`.
 
+All three are written by `/de lektüre` and `/de fertig`; this phase is marked done
+by `/de fertig` as well → [[Kommando - Fertig]].
+
 ## 1. Read the lesson
 
 - **The lesson's grammar**: the notes in `30 - Grammatik/` with the current
   `lektion`. They are the object of the drill.
-- **The Studium and Vorlesen blocks** from the lesson note. What failed there has
-  to come back here.
 - **The lesson's vocabulary**, because the sentences are built from it. Not from
   words that are not there.
+- **Anything written in `## Notas`** of the lesson note. That is where a pattern
+  from phases 2 and 3 ends up when it was worth recording.
+
+Then **ask one question**: what came out wrong in the two previous phases? Two or
+three sentences will target whatever is named. If nothing is named, the sentences
+follow the grading below and that is fine — this is a drill on one structure, and
+it works without a history.
 
 ## 2. Write the sentences
 
@@ -48,8 +56,8 @@ How to choose them:
 - **Graded**: the first ones with the bare pattern, the last ones with a
   subordinate clause, a negation, or two elements at once.
 - **Built from the lesson's vocabulary**, not from new words.
-- **Two or three target what failed** in phases 2 and 3. If `helfen` came out with
-  the accusative on Tuesday, Thursday has a sentence with `helfen`.
+- **Two or three target whatever was named** in the question above. If `helfen` came
+  out with the accusative on Tuesday, Thursday has a sentence with `helfen`.
 - No textbook sentences. Things the learner would actually say.
 
 The expected translation is **for the GPT to mark with**. The prompt says another
@@ -68,11 +76,13 @@ instead of the one that is due.
 
 ## 4. Generate the prompt
 
-Substitute `{{REGEL}}`, `{{SAETZE}}` and `{{LEKTION}}`, which **appears twice**.
+Substitute `{{REGEL}}` and `{{SAETZE}}`. `{{LEKTION}}` is gone: it only ever appeared
+in the closing block.
 
-**Count the characters and say the number.** The fixed template is **5532**; with
-twelve sentences and the rule statement it comes to around **6800**, with more than
-a thousand to spare. This is the roomiest of the three.
+**Count the characters and say the number.** The template is **4659** characters as
+written, placeholders included, and that is the figure to recount whenever this note
+is edited. With twelve sentences and the rule statement it comes to around **6200**,
+with plenty to spare. This is the roomiest of the three.
 
 Do not re-wrap the lines.
 
@@ -87,20 +97,21 @@ because the exercise is producing `{TARGET}`, not understanding `{KNOWN}`.
 **And save the delivered prompt** in the lesson note, under `## Prompt - Gramatik`.
 **It is not reproducible**: the sentences are generated fresh each time.
 
-## 6. Process the block
+## 6. Nothing comes back
 
-1. Raw block into `## Roh - Gramatik` of the lesson note, with the date.
-2. **`ERRORS`** → `last_error` to today, `error_count` +1, `status: learning` in
-   the note of the rule or the word concerned.
-3. **`OK`** → `learning` becomes `known`, `new` becomes `learning`. `error_count`
-   is not touched.
-4. Add up `ok_count` and `error_count` in the lesson.
-5. Set `phase_4_gramatik: true`.
+The session ends on the phone and leaves nothing behind. `/de fertig` marks the
+phase → [[Kommando - Fertig]].
 
-Here **a grammar rule can reach `known` in a single session**, and this is the only
-place where that happens: ten or twelve sentences on the same structure, so getting
-them all right first time is evidence enough. In Studium a correct answer is one
-word; here it is a pattern repeated a dozen times.
+**This is the phase that lost the most in the change of 2026-09-17.** It was the only
+one where a grammar rule could be called mastered on the evidence of a single
+session: twelve sentences on one structure, all right first time, is a real result
+and it used to write `status: known`. There is no `status` any more, so that result
+now exists only as something the learner noticed.
+
+If a rule clearly landed, say so when confirming the phase and it goes into
+`## Notas` of the lesson, and from there into *seen, not consolidated* in
+[[Lernprofil]] at `/de commit`. That is prose rather than a field, and prose does not
+filter — which is the price, stated plainly.
 
 ## The prompt template
 
@@ -150,7 +161,7 @@ Strict. Half right is wrong.
 - NEVER open a turn with agreement: "Genau", "Richtig" alone, "Stimmt", "Super", "Perfekt", "Sehr gut", "Muy bien" or any equivalent. "Richtig" only ever followed by what was right.
 - Never accept a sentence you would not say yourself in order to keep him happy.
 - Never say "casi" and move on. Either it is right or you name what is wrong.
-- Log, for every sentence: its number, and whether it was right ON THE FIRST ATTEMPT.
+- Keep a running count of how many were right ON THE FIRST ATTEMPT, and of which error came back most often. You need both for the closing line and for nothing else.
 
 ## Commands
 
@@ -175,41 +186,18 @@ The sentences in Spanish, his answers in German, your corrections in Spanish and
 
 When he says "fertig", or after the last sentence.
 
-ALOUD, only this, in Spanish: how many sentences, how many right on the first attempt, and the one error that came back most often. At most one clause of encouragement, and only if earned. Never read a list aloud.
+ALOUD, and only this, in Spanish: how many sentences, how many right on the first attempt, and the one error that came back most often. At most one clause of encouragement, and only if earned. Never read a list aloud.
 
-THEN, WRITTEN, one fenced code block with exactly this and nothing else:
+Then stop. **Write nothing**: no list, no summary, no log, no code block, no email. The session ends here and leaves no text behind. If he asks for a written list, say once that his vault is not your job and carry on.
 
-  === SESSION ===
-  date: YYYY-MM-DD
-  lektion: {{LEKTION}}
-  mode: gramatik
-  themes: -
-
-  === OK ===
-  item | type
-
-  === ERRORS ===
-  what he said | correction | type
-
-  === END ===
-
-Rules for that block, without exception:
-- "lektion: {{LEKTION}}" and "mode: gramatik", copied verbatim.
-- Plain text. No bold, tables or bullets. Never | inside a field. A field that does not apply is a single hyphen.
-- OK holds the grammar rule label, and any vocabulary item a sentence hinged on, **only if every sentence testing it was right on the first attempt**. type is grammar or vocab. One hint, one repeat, one second attempt anywhere in that set and it does not go in OK.
-- ERRORS lists what he actually said, the correct form, and the type: one of case, article, gender, agreement, word-order, verb-form, preposition, vocabulary, pronunciation.
-- One line per error. If the same sentence produced two different errors, that is two lines.
-- An item appears in OK or in ERRORS, never both.
-- Both headers appear even when empty. Nothing before or after the block, no commentary.
-
-FINALLY, if a mail Action is available, call it with that block as the body and the subject "Deutsch YYYY-MM-DD Gramatik". Actions never run in voice: there, write the block and say aloud "sal del modo voz y escribe: envía la lista de hoy".
+That closing line is the only feedback he gets from this session, so it has to be exact: the real count, and the error that genuinely came back most, not the most flattering one.
 
 ## Never
 
 - Never give the full correct sentence before the third attempt.
 - Never interrupt him mid-sentence.
 - Never invent a sentence or drill a different structure.
-- Never put something in OK to be kind. That block writes to his vault.
+- Never write a list, a log or a block at the end of the session.
 - Never switch to English.
 
 ## The four rules that override everything else
@@ -217,7 +205,7 @@ FINALLY, if a mail Action is available, call it with that block as the body and 
 1. Let him finish, then name every error.
 2. No full answer before attempt three, and never a fourth attempt.
 3. The sentences are the session. Nothing outside them.
-4. OK means right on the first attempt, with no help at all.
+4. Strict marking: half right is wrong, and "almost" is not a verdict.
 ```
 
 ## Why the prompt is written that way
@@ -237,10 +225,11 @@ was the original complaint about the voice tutor: the model reacts to the first 
 of the sentence. Here it is worse than in conversation, because a whole sentence is
 being assembled mentally and an interruption destroys it.
 
-**`OK` only if *every* sentence testing that structure came out right first time.**
-One hint, one repeat or one second attempt in any of the ten and the rule does not
-promote. It is the exit door from [[Schwachstellen.base|Schwachstellen]] and it has
-to be expensive.
+**The closing count has to be exact.** It used to decide whether a rule was promoted
+to `known`, so it was expensive by design: one hint anywhere in the set and the rule
+did not promote. Nothing is promoted any more, and the count survives as the single
+sentence that tells the learner whether the structure landed. A generous model makes
+that sentence worthless.
 
 **"Almost" is banned.** With a grammatical structure, "almost" is exactly the kind
 of validation that made the learner stop trusting the voice tutor: either it is
