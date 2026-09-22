@@ -54,8 +54,9 @@ something new instead of repeating.
 
 ### 2. `/de studium` — GPT on the phone
 
-**Spec: [[Kommando - Studium]].** Prompt template: 4638 characters as written,
-~1200 for a list of 21 items, **~5800 in total**.
+**Spec: [[Kommando - Studium]].** Prompt template: 6402 characters as written,
+~1205 for a list of 21 items, **~7610 in total**. Since the mode and marking rules of
+September 2026 it is the tightest of the three, not the roomiest.
 
 Check phase 1 is done. Generate the **Studium** GPT prompt with the lesson's
 vocabulary, already shuffled and numbered, to be pasted over the existing GPT's
