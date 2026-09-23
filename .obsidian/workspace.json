@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "10 - Lektionen/L002.md",
+                "file": "20 - Wortschatz/A11/sagen.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "L002"
+              "title": "sagen"
             }
           }
         ]
@@ -195,14 +195,15 @@
   },
   "active": "eba58c5b60a3e14e",
   "lastOpenFiles": [
-    "10 - Lektionen/L001.md",
+    "Claude outputs/Prompt - Deutsch Studium - L002 (v5).txt",
+    "40 - Ansichten/Aktuelle Lektion.base",
     "10 - Lektionen/L002.md",
+    "10 - Lektionen/L001.md",
     "50 - Ressourcen/GPTs.md",
     "90 - Vorlagen/V - Lektion.md",
     "90 - Vorlagen/V - Grammatik.md",
     "40 - Ansichten/Ohne Beispiel.base",
     "40 - Ansichten/Ohne Beispiel.base.tmp.11220.df60d140824c",
-    "40 - Ansichten/Aktuelle Lektion.base",
     "90 - Vorlagen/V - Wortschatz.md",
     "90 - Vorlagen/V - Verb.md",
     "90 - Vorlagen/V - Sitzung.md",
@@ -226,7 +227,6 @@
     "20 - Wortschatz/A12/stehen.md",
     "20 - Wortschatz/A12/sitzen.md",
     "20 - Wortschatz/A12/schließen.md",
-    "20 - Wortschatz/A12/schauen.md",
     "Claude outputs/Prompt - Deutsch Studium - L002.txt",
     "Claude outputs",
     "50 - Ressourcen/Bedeutungen.md.tmp.12120.c6de554bcc8a",
