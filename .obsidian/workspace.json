@@ -11,10 +11,14 @@
             "id": "95247c7d4c360945",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "20 - Wortschatz/A11/sehen.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "sehen"
             }
           }
         ]
@@ -191,9 +195,10 @@
   },
   "active": "95247c7d4c360945",
   "lastOpenFiles": [
+    "Claude outputs/Prompt - Deutsch Studium - L002 (v6).txt",
+    "40 - Ansichten/Aktuelle Lektion.base",
     "20 - Wortschatz/A11/sagen.md",
     "Claude outputs/Prompt - Deutsch Studium - L002 (v5).txt",
-    "40 - Ansichten/Aktuelle Lektion.base",
     "10 - Lektionen/L002.md",
     "10 - Lektionen/L001.md",
     "50 - Ressourcen/GPTs.md",
@@ -223,7 +228,6 @@
     "20 - Wortschatz/A12/warten.md",
     "20 - Wortschatz/A12/stehen.md",
     "20 - Wortschatz/A12/sitzen.md",
-    "20 - Wortschatz/A12/schließen.md",
     "Claude outputs/Prompt - Deutsch Studium - L002.txt",
     "Claude outputs",
     "50 - Ressourcen/Bedeutungen.md.tmp.12120.c6de554bcc8a"

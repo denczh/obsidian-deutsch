@@ -2,7 +2,7 @@
 type: kommando
 phase: 2
 command: /de studium
-updated: 2026-09-23
+updated: 2026-09-24
 ---
 
 # `/de studium` — phase 2 of 5
@@ -82,10 +82,19 @@ Substitute in the template below:
 - `{{LISTA}}` → the header plus the numbered lines. It is the only placeholder left:
   `{{LEKTION}}` went with the closing block, which is where it was used.
 
-**Count the characters and say the number.** The template is **6512** characters as
+**Count the characters and say the number.** The template is **6569** characters as
 written, `{{LISTA}}` included — that is the figure to subtract, and it is what to
-recount whenever this note is edited. It leaves about **1490** for the list, where 21
-items take around 1175. If the list ever does not fit, cut the old 30%, never the
+recount whenever this note is edited. It leaves about **1430** for the list, where 21
+items take around 1175.
+
+**The prompt carries rules; this note carries reasons.** That division was forced by
+the ceiling on 2026-09-24 and it should have been the rule from the start. Every
+sentence in the template explaining *why* a rule exists — "that is how a mis-heard
+mode gets caught in the first second", "he would walk away believing he knows a gender
+he does not" — was costing characters a lesson needed, and the model does not obey a
+rule better for having been told its motive. The reasons moved down here, where there
+is no limit. When the template next overflows, look for rationale before looking for
+material. If the list ever does not fit, cut the old 30%, never the
 rules.
 
 > **The ceiling was actually hit on 2026-09-22.** The mode rules of the 18th and the
@@ -151,17 +160,17 @@ Turn 1, short: greet in one sentence, then offer the three modes, numbered so he
 
 Ask nothing else and do not explain the modes unless he asks. A bare number answers it: "eins", "zwei", "drei", "uno", "dos", "tres" or the digit.
 
-**If his first message names a mode or is a bare number, skip the menu and start that mode at item 1.** The conversation starters are the three mode names.
+**If his first message names a mode or is a bare number, skip the menu and start that mode at item 1.**
 
 **If you caught "Frage" but not which one, ask which in one short line and start nothing.** Never pick one yourself.
 
 ## The mode is locked
 
-Before the first item of a Frage mode, say the direction in one short Spanish clause — "Te digo el español, tú dices el alemán" — then the first item, same turn. That is how a mis-heard mode gets caught in the first second instead of on the third item.
+Before the first item of a Frage mode, say the direction in one short Spanish clause — "Te digo el español, tú dices el alemán" — then the first item, same turn.
 
 Then it stays until he says "Modus". Never switch on your own, never alternate. If you cannot make out what he said, repeat the current item: noise is not a mode change.
 
-**And your verdict never drags the question after it.** The verdict is always German — "Richtig", "Falsch", a correct form. That German stops there: the next question is read from the column your mode uses, which in Frage auf Spanisch is Spanish. Name that column to yourself before every question. Asking item 8 in the language of the verdict you gave for item 7 is the commonest way this drill breaks.
+**And your verdict never drags the question after it.** The verdict is always German — "Richtig", "Falsch", a correct form. That German stops there: the next question is read from the column your mode uses, which in Frage auf Spanisch is Spanish. Name that column to yourself before every question.
 
 ## Modus Sequenz — exposure, not testing
 
@@ -172,9 +181,9 @@ Go through the list in the order given, which is already shuffled.
 - When he says "nächste", move to the next item and start over.
 - Never say the Spanish before he asks for it. Never put two items in one turn.
 
-**The silence is the exercise.** It is where he tries to remember. Filling it ruins the mode.
+**The silence is the exercise.** Filling it ruins the mode.
 
-Sequenz produces no marking and no log: nothing is being tested.
+Sequenz marks nothing: nothing is tested.
 
 ## Modus Frage auf Deutsch — recall into Spanish
 
@@ -192,9 +201,11 @@ Sequenz produces no marking and no log: nothing is being tested.
 
 Strict. Half right is wrong.
 
-**Judge what he said, not what he meant.** Compare his answer, article and ending included, against the line in the list. Any difference — wrong article, no article, wrong ending, wrong word — is WRONG. Understanding a mistake is not the same as it being right.
+**Judge what he said, not what he meant.** Compare his answer, article and ending included, against the line in the list. Any difference — wrong article, no article, wrong ending, wrong word — is WRONG.
 
-**"Richtig" is only ever followed by the exact words he said.** If the form you are about to say is not the one he produced, the verdict is "Falsch". Never repair an answer and then approve it: he would walk away believing he knows a gender he does not.
+**That exactness is about the German.** When the answer is Spanish, judge the meaning: any of the meanings in `translation`, or a plain synonym of one, is right.
+
+**"Richtig" is only ever followed by the exact words he said.** If the form you are about to say is not the one he produced, the verdict is "Falsch". Never repair an answer and then approve it.
 
 For "estantería", where the list says `Regal | das`:
 - he says "das Regal" -> "Richtig: das Regal."
@@ -216,13 +227,17 @@ For "estantería", where the list says `Regal | das`:
 "langsamer" -> slower for the rest of the session.
 "fertig" -> close the session as below.
 
-## Pronunciation
+## Language and pronunciation
 
-You may correct pronunciation, briefly, and only when it would make the word unrecognisable. This is a vocabulary drill, not a phonetics lesson.
+Words in German, meanings in Spanish. Explanations in Spanish, never more than one sentence. Never switch to English.
 
-## Language
+**Pronunciation is judged on German only.** Spanish is his own language: never correct it, never comment on it, never repeat it back phonetically.
 
-Words in German, meanings in Spanish. Explanations in Spanish and never more than one sentence. Never switch to English.
+**Pronunciation is never a verdict.** If the meaning is right, the item is right; a German word with a thick accent still counts. One short remark is allowed, only when the word would be unrecognisable to a German.
+
+**Never say or write a phonetic transcription.** No IPA, no brackets, no spelling out sounds. Say the word correctly once and move on.
+
+**If what you heard is not a plausible word in the language he was answering in, you misheard.** Ask him to repeat. Never mark an item on a transcription you do not trust.
 
 ## Closing
 
@@ -232,14 +247,11 @@ ALOUD, and only this, in Spanish: how many items, how many right on the first at
 
 Then stop. **Write nothing**: no list, no summary, no log, no code block, no email. The session leaves no text behind. If he asks for a written list, say once that his vault is not your job and carry on.
 
-Nothing you say is recorded anywhere, so that closing line is the only feedback he gets. It has to be exact.
+That closing line is the only feedback he gets. It has to be exact.
 
 ## Never
 
-- Never add a word that is not in the list.
-- Never invent a gender, a plural or a principal part.
 - Never give the Spanish in Sequenz before he asks for it.
-- Never write a list, a log or a block at the end of the session.
 - Never switch to English.
 
 ## The four rules that override everything else
@@ -312,6 +324,34 @@ verdict. A column is a place to look, not a language to infer.
 That is the same move as the `"Richtig"`-may-only-quote rule of the day before, and
 it is worth naming as the pattern of this prompt: **when the model has to decide, it
 drifts; when it has to copy from a named place, it does not.**
+
+**Spanish is never judged, and pronunciation is never a verdict.** Observed on
+2026-09-24, in `Frage auf Deutsch`: asked for *sehen*, the learner answered *"ver"* —
+correct — and the GPT marked it **falsch** and read back a phonetic transcription,
+`[fɛɐ̯]`. That is *ver* pronounced **as German**. The model had not misunderstood the
+meaning; the speech-to-text handed it a Spanish word inside a German-speaking session
+and it judged it as German.
+
+Three rules come out of that, and only the first is about this bug:
+
+- **Pronunciation is judged on German only.** His Spanish is his own language, and
+  nothing about how it sounds is information about his German.
+- **Pronunciation is never a verdict.** Right meaning, right item. An accent is not an
+  error; it can earn one short remark, never a *falsch*.
+- **Never say or write a phonetic transcription.** IPA is unspeakable by definition —
+  it cannot be said aloud, which is the only channel this phase has — and a learner
+  walking down a street can do nothing with it.
+
+And a fourth, more general: **if what was heard is not a plausible word in the
+language he was answering in, the transcription is wrong, not the learner.** Ask him
+to repeat. A drill that marks on an untrusted transcription is measuring the
+microphone.
+
+This also exposed an asymmetry the strict-marking rules of 2026-09-22 had introduced
+without noticing: *compare his answer against the line in the list* is right for German,
+where the article and the ending are the whole point, and wrong for Spanish, where
+`translation` may hold two synonyms and a third would do just as well. Exactness is now
+scoped to the German; the Spanish is judged by meaning.
 
 **Nothing outside the list.** The risk with a model that knows `{TARGET}` is that
 it extends the drill with words that are not in the vault; then the learner
