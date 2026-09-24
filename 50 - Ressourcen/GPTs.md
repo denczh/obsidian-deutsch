@@ -1,11 +1,15 @@
 ---
 type: reference
-updated: 2026-09-17
+updated: 2026-09-24
 ---
 
 # The four GPTs
 
 > `{TARGET}` = German · `{KNOWN}` = Spanish · `{LEARNER}` = Pedro → [[Configuration]]
+
+> **Custom GPTs are being retired on 2026-12-11.** Everything in this note describes a
+> container that has a known expiry date. What replaces it, and what to do about it, is
+> at the bottom: [[#The retirement, 2026-12-11]].
 
 **A GPT is a container I create by hand; only its contents are generated.**
 
@@ -155,6 +159,42 @@ goes stale: its learner values have to be refreshed by hand from [[Lernprofil]]
 every four to six sessions. That is the last surviving piece of the maintenance
 cost the lesson cycle removed everywhere else, and it is the price of having a
 partner that is always there with no lesson to open first.
+
+## The retirement, 2026-12-11
+
+Recorded on 2026-09-24, from the migration dialog that appeared on
+`Deutsch - Studium` and from OpenAI's own FAQ. **On 2026-12-11 custom GPTs stop
+running.** The replacement is a **plugin**: migrating turns a GPT's Instructions into
+a *skill* inside one, and its knowledge files into reference material.
+
+**What this system depends on, and how each part fares:**
+
+| What we rely on | After migration |
+|---|---|
+| Overwriting the Instructions every lesson | **Survives.** Editing moves to the plugin; the phase commands do not change. |
+| Voice mode | **Survives.** OpenAI enabled plugins in Live Voice on 2026-09-23 — one day before this note. |
+| The phone home-screen shortcut | **Probably.** Migrated links *should* redirect. Test it first; it is the difference between doing a phase and not bothering. |
+| Conversation starters | **May not carry over.** Only Studium really uses them, and never in voice → [[#Conversation starters]]. |
+| Chat history | **Does not move.** Nothing depends on it since the closing block was retired → [[Lektionen]]. |
+| The mail Action | Would not have migrated. It was removed on 2026-09-17, two months before it would have broken silently. |
+
+**Migration is irreversible.** The original GPT goes read-only and cannot even be
+deleted, and a plugin cannot be turned back into a GPT.
+
+### The order to do it in
+
+Not yet, and not all at once. Plugins-in-voice is days old and the deadline is months
+away.
+
+1. **`Deutsch - Gramatik` first.** Phase 4 has never run, so there is no history to
+   lose and no prompt being iterated on. Migrate it, paste a prompt, and check two
+   things: that it answers in voice, and that the home-screen shortcut still opens it.
+2. **`Vorlesen`, then `Sprechen`.**
+3. **`Studium` last.** It is the one under active repair, and a prompt that changes
+   twice a week is the worst thing to have inside a container that is also changing.
+
+If any of the three checks fails on Gramatik, stop and write it here. There is room
+to find out before December; there is none after.
 
 ## When something goes wrong
 

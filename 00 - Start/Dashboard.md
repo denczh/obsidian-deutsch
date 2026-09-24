@@ -44,7 +44,7 @@ Each command checks that the previous one has been passed, and "passed" means
 
 - [[Configuration]] — **the language pair and what a fork changes**
 - [[Lektionen]] — the lesson cycle and the five commands
-- [[GPTs]] — the four GPTs, their configuration and the overwrite rule
+- [[GPTs]] — the four GPTs, the overwrite rule, and **the 2026-12-11 retirement**
 - [[Kommando - Fertig]] — how a phase gets marked done, and what that replaced
 - [[Niveaus]] — the twelve CEFR tokens and who assigns them
 - [[Bedeutungen]] — **one note, one sense**, and the grammatical category
