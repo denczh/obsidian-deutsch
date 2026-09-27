@@ -59,7 +59,7 @@ what gets forgotten.
 | GPT | Description |
 |---|---|
 | `Deutsch - Sprechen` | Free conversation in German while walking. Outside the lesson cycle: nothing gets pasted into it, its prompt is permanent. |
-| `Deutsch - Studium` | Phase 2: drilling the lesson's vocabulary, three modes. Paste the /de studium prompt first. |
+| `Deutsch - Studium` | Phase 2: drilling the lesson's vocabulary, two modes. Paste the /de studium prompt first. |
 | `Deutsch - Vorlesen` | Phase 3: reads me part 2 of the story and asks me about it. Paste the /de vorlesen prompt first. |
 | `Deutsch - Gramatik` | Phase 4: I translate sentences into German out loud, corrected strictly. Paste the /de gramatik prompt first. |
 
@@ -77,7 +77,7 @@ Otherwise they are decoration.
 
 | GPT | Starters | Why |
 |---|---|---|
-| `Deutsch - Studium` | `Sequenz` · `Frage auf Deutsch` · `Frage auf Spanisch` | they replace the turn-1 menu outright. The only case where the buttons genuinely do something. |
+| `Deutsch - Studium` | `Sequenz` · `Frage` | they replace the turn-1 menu outright. The only case where the buttons genuinely do something. Two since 2026-09-27 → [[Kommando - Studium]]. |
 | `Deutsch - Vorlesen` | `Lies vor` · `frag` | the first begins; the second jumps straight to the questions on a second run, without re-reading. |
 | `Deutsch - Gramatik` | `Anfangen` | it starts at sentence 1 anyway; one button is enough. |
 | `Deutsch - Sprechen` | `Neues Thema` · `Wiederhole meine Fehler` | the second skips turn 1 and goes straight to weak items. |

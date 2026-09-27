@@ -68,7 +68,7 @@ Before marking `phase_2_studium`, ask **which mode the session used**.
 `Sequenz` is exposure: nothing is asked, nothing is retrieved. A lesson whose only
 Studium session was Sequenz has not passed phase 2, and `/de vorlesen` should not
 open on it. If the answer is Sequenz alone, say that and do not write. Offer the
-obvious remedy: run `Frage auf Deutsch` or `Frage auf Spanisch` and come back.
+obvious remedy: run `Frage` and come back.
 
 That check is what survives of the old rule *"the gate is opened by a Frage session,
 not a Sequenz one"*. It used to be provable from an empty block; now it is a

@@ -54,13 +54,13 @@ something new instead of repeating.
 
 ### 2. `/de studium` — GPT on the phone
 
-**Spec: [[Kommando - Studium]].** Prompt template: 6569 characters as written,
-~1175 for a list of 21 items, **~7745 in total**. Since the mode and marking rules of
+**Spec: [[Kommando - Studium]].** Prompt template: 5478 characters as written,
+~1175 for a list of 21 items, **~6655 in total**. Since the mode and marking rules of
 September 2026 it is the tightest of the three, not the roomiest.
 
 Check phase 1 is done. Generate the **Studium** GPT prompt with the lesson's
 vocabulary, already shuffled and numbered, to be pasted over the existing GPT's
-Instructions. Three modes: `Sequenz`, `Frage auf Deutsch`, `Frage auf Spanisch`.
+Instructions. Two modes: `Sequenz` and `Frage`, the whole session in German.
 
 **The 70/30.** The vocabulary in the prompt is not only the lesson's: **70% from
 the current lesson, 30% drawn at random from earlier ones.** Without that, every

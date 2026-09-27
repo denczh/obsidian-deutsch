@@ -29,7 +29,7 @@ they filtered on → [[Lektionen]]. There is no revision queue any more.
 
 ```
 /de lektüre    Claude writes the story and creates the notes    (at the desk)
-/de studium    vocabulary GPT, three modes                      (phone)
+/de studium    vocabulary GPT, two modes, all in German          (phone)
 /de vorlesen   GPT reads part 2 and asks about it               (phone)
 /de gramatik   spoken translation GPT                           (phone)
 /de commit     Claude checks, commits and archives              (at the desk)
