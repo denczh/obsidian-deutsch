@@ -62,6 +62,28 @@ never run, nothing depends on it, and its prompt is not being iterated on.
 Write the four answers **here**, in this note, the day the probe runs. A probe nobody
 recorded has to be run again.
 
+The probe's own instructions are `Claude outputs/Sonda - Skill Drill (probe).txt`:
+five items, the real negative rules, nothing from L002. It is an instrument, not a
+lesson — it is meant to be thrown away.
+
+> **Tell `@skill-creator` not to rewrite it.** It drafts skills from a description, and
+> a paraphrase would invalidate the probe: the rules being tested are the exact
+> negative ones — *never "Genau"*, *never repair an answer*, *write nothing at the end*.
+> Say "use this text verbatim as the skill body, do not rewrite or summarise it", then
+> read back what it saved before testing.
+
+### Results — run on YYYY-MM-DD
+
+| # | Question | Answer |
+|---|---|---|
+| 1 | Invoked by voice? | |
+| 2 | Holds a negative rule? | |
+| 3 | Taps from the home screen | |
+| 4 | Does a pasted list get used? | |
+
+**Verdict:** (port to skills · keep GPTs until December and paste into a normal voice
+chat · look for another host)
+
 ## Phase 1 — the shape, once the probe answers
 
 The likely good shape, and the reason to hope: a skill is **reusable**, and our prompts
