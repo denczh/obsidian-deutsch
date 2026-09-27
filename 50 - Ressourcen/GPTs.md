@@ -181,6 +181,9 @@ a *skill* inside one, and its knowledge files into reference material.
 **Migration is irreversible.** The original GPT goes read-only and cannot even be
 deleted, and a plugin cannot be turned back into a GPT.
 
+**The plan is in [[Migration - Plugins]]**, including why the migrate button is the
+wrong way to do it. The short version of the order:
+
 ### The order to do it in
 
 Not yet, and not all at once. Plugins-in-voice is days old and the deadline is months
