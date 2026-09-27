@@ -218,7 +218,7 @@ the article glued on stops matching a search for the word.
 ## Who applies this
 
 **The agent, at note-creation time**, because only the agent can see what already
-exists in the vault. A voice GPT cannot: it has never read the vault, and it never
+exists in the vault. A voice skill cannot: it has never read the vault, and it never
 will.
 
 That was the argument for the closing block carrying **no sense column**: the GPT

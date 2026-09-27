@@ -80,7 +80,7 @@ still resolves by position.
 
 ### Spoken commands
 
-The words the learner says to a GPT mid-session are in `{TARGET}`, because saying
+The words the learner says mid-session are in `{TARGET}`, because saying
 them is itself practice. These are baked into the generated prompts, so a fork
 replaces them there:
 

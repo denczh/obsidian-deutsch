@@ -13,7 +13,7 @@ Specification of the command. **Claude reads this when the command runs**; the `
 skill is only the router. See [[Lektionen]].
 
 `/de fertig` is not a sixth phase. It is **how a phase gets marked as done**, and it
-exists because phases 2, 3 and 4 happen on a phone, in a GPT that cannot write to
+exists because phases 2, 3 and 4 happen on a phone, in a skill that cannot write to
 this vault. Something has to cross back, and since 2026-09-17 that something is a
 sentence from the learner instead of a mailed block.
 
@@ -84,7 +84,7 @@ In the lesson note, two things and nothing else:
 - the date in the **Fecha** column of that phase's row in the phases table
 
 No counters, no session log, no notes about what went well. If the learner
-volunteers something worth keeping — a GPT that ignored an instruction, a rule that
+volunteers something worth keeping — a skill that ignored an instruction, a rule that
 clearly has not landed — it goes in `## Notas`, as prose, because that is where the
 lesson's own history lives. **Never invent that line.** An empty `## Notas` is an
 honest one.

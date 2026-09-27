@@ -54,7 +54,7 @@ leave no block and no log.
 
 ## Notes
 
-(What the GPTs drifted from, and — since 2026-09-17 — **the whole error log**: what
+(What the skills drifted from, and — since 2026-09-17 — **the whole error log**: what
 would not come out, what had to be repeated, what clearly landed. Prose, written
 when it is noticed. Empty is honest; invented is worse than empty.)
 

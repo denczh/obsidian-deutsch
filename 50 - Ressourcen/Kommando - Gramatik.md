@@ -46,7 +46,7 @@ translation. Format:
 N. Sentence in {KNOWN}. -> Expected translation in {TARGET}.
 ```
 
-Same as in the other two phases: if the GPT improvises the sentences, `vorherige`
+Same as in the other two phases: if the skill improvises the sentences, `vorherige`
 and `nächste` stop meaning anything, and each session would drill a different piece
 of grammar from the one that is due.
 
@@ -60,7 +60,7 @@ How to choose them:
   out with the accusative on Tuesday, Thursday has a sentence with `helfen`.
 - No textbook sentences. Things the learner would actually say.
 
-The expected translation is **for the GPT to mark with**. The prompt says another
+The expected translation is **for the skill to mark with**. The prompt says another
 translation counts if it carries the same meaning **and** uses the structure being
 drilled — without that second condition the drill escapes through any paraphrase
 that avoids the grammar.
@@ -70,7 +70,7 @@ that avoids the grammar.
 Two or three sentences: what it is, when it applies, one example. **Maximum 300
 characters.**
 
-Not so the GPT can give a lecture — explaining is forbidden unless asked — but so
+Not so the skill can give a lecture — explaining is forbidden unless asked — but so
 it knows what it is correcting. Without that it marks generic grammar errors
 instead of the one that is due.
 
@@ -88,7 +88,7 @@ Do not re-wrap the lines.
 
 ## 5. Hand it over
 
-For **overwriting** the Instructions of the permanent GPT `Deutsch - Gramatik`.
+For **overwriting** the body of the permanent skill `Gramatik` → [[Skills]].
 
 Say how many sentences there are and which structure is being drilled. **The
 sentences can be shown in the chat**: there is nothing to spoil by reading them,

@@ -1,6 +1,6 @@
 ---
 type: reference
-updated: 2026-09-17
+updated: 2026-09-27
 ---
 
 # The lesson cycle
@@ -16,9 +16,9 @@ three phone phases get marked as done → [[Kommando - Fertig]].
 
 ```mermaid
 flowchart TD
-    A["/de lektüre<br/>Claude, at the desk"] -->|story part 1<br/>+ notes in the vault| B["/de studium<br/>GPT on the phone"]
-    B -->|/de fertig| C["/de vorlesen<br/>GPT on the phone"]
-    C -->|/de fertig| D["/de gramatik<br/>GPT on the phone"]
+    A["/de lektüre<br/>Claude, at the desk"] -->|story part 1<br/>+ notes in the vault| B["/de studium<br/>skill on the phone"]
+    B -->|/de fertig| C["/de vorlesen<br/>skill on the phone"]
+    C -->|/de fertig| D["/de gramatik<br/>skill on the phone"]
     D -->|/de fertig| E["/de commit<br/>Claude, at the desk"]
     E -->|lesson archived| F["L002"]
 ```
@@ -52,15 +52,14 @@ the story in the lesson note.
 If the theme has been used before, that is taken into account so the lesson brings
 something new instead of repeating.
 
-### 2. `/de studium` — GPT on the phone
+### 2. `/de studium` — skill on the phone
 
 **Spec: [[Kommando - Studium]].** Prompt template: 5478 characters as written,
 ~1175 for a list of 21 items, **~6655 in total**. Since the mode and marking rules of
 September 2026 it is the tightest of the three, not the roomiest.
 
-Check phase 1 is done. Generate the **Studium** GPT prompt with the lesson's
-vocabulary, already shuffled and numbered, to be pasted over the existing GPT's
-Instructions. Two modes: `Sequenz` and `Frage`, the whole session in German.
+Check phase 1 is done. Generate the **Studium** prompt with the lesson's vocabulary,
+already shuffled and numbered, to be pasted over the existing skill's body. Two modes: `Sequenz` and `Frage`, the whole session in German.
 
 **The 70/30.** The vocabulary in the prompt is not only the lesson's: **70% from
 the current lesson, 30% drawn at random from earlier ones.** Without that, every
@@ -75,13 +74,13 @@ record of what gets failed no longer exists — see below.
 model cannot hold a shuffled list across turns: it loses it and repeats. With the
 list fixed, `vorherige` actually works.
 
-### 3. `/de vorlesen` — GPT on the phone
+### 3. `/de vorlesen` — skill on the phone
 
 **Spec: [[Kommando - Vorlesen]].** 4926 characters as written, plus the text and the
 questions, **~7000 in total**. Still the tightest of the three.
 
 Check phases 1 and 2. Write **part 2 of the story** — same characters, **no new
-vocabulary** — and put it literally inside the prompt. The GPT starts by reading
+vocabulary** — and put it literally inside the prompt. The skill starts by reading
 it aloud.
 
 Having the text fixed in the Instructions has an advantage an improvised text did
@@ -94,12 +93,12 @@ correction of vocabulary, grammar and pronunciation. `nächste` moves on.
 > **The text is never written in the chat.** If it is written it gets read, and
 > reading is not this phase. Part 1 was already read on a screen; this one is by ear.
 
-### 4. `/de gramatik` — GPT on the phone
+### 4. `/de gramatik` — skill on the phone
 
 **Spec: [[Kommando - Gramatik]].** 4659 characters as written, plus the rule and the
 sentences, **~6200 in total**. The roomiest of the three.
 
-Check phases 1, 2 and 3. Generate a GPT with sentences in `{KNOWN}` containing the
+Check phases 1, 2 and 3. Generate a prompt with sentences in `{KNOWN}` containing the
 lesson's grammar. They get translated aloud; it corrects; repeat; it corrects
 again. `nächste` moves to another.
 
@@ -194,7 +193,7 @@ it, because the text is fixed.
 
 **[[Modus - Sprechen]] survives**, outside the cycle. Free conversation while
 walking is none of the five phases and is the only thing that is genuinely
-conversation. It stays a permanent GPT with its own prompt — and since 2026-09-17 it
+conversation. It stays a permanent skill with its own prompt — and since 2026-09-17 it
 emits no block either: whatever is worth keeping from a walk gets dictated to Claude
 afterwards, or it is lost, which for a conversation is an acceptable price.
 
@@ -210,18 +209,22 @@ left, `Ohne Beispiel` growing. Detail in [[Kommando - Commit]].
 
 All three generated prompts go inside the lesson note, in their `## Prompt - *`
 sections. **They are not reproducible**: the Studium shuffle is random, and the
-story and the sentences are generated fresh each time. If a GPT behaves oddly, the
+story and the sentences are generated fresh each time. If a skill behaves oddly, the
 exact pasted prompt is the only thing that makes it possible to find out why.
 
 Saving the Vorlesen one does not contradict the transcript rule: the note is
 provenance and gets read at the desk, not during the listening session.
 
-## The GPTs
+## The skills
 
-Three of the five phases run on a permanent GPT whose Instructions get overwritten
-every lesson; phases 1 and 5 are Claude at the desk and use none. A fourth GPT,
-outside the cycle, handles free conversation. Inventory, configuration and the
-overwrite rule: [[GPTs]].
+Three of the five phases run on a ChatGPT skill whose body gets overwritten every
+lesson; phases 1 and 5 are Claude at the desk and use none. A fourth skill, outside
+the cycle, handles free conversation. Inventory, format and the overwrite rule:
+[[Skills]].
+
+They were custom GPTs until 2026-09-27, when OpenAI announced those stop running in
+December. The port cost four commands and four pastes: the prompts were outputs of
+this vault, not things kept inside the containers.
 
 ## How it is implemented
 

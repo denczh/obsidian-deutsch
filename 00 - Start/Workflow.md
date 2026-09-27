@@ -1,6 +1,6 @@
 ---
 type: reference
-updated: 2026-09-17
+updated: 2026-09-27
 ---
 
 # Free conversation: the walking session
@@ -12,11 +12,11 @@ updated: 2026-09-17
 > commands → **[[Lektionen]]**. What is still current here: the session shape, the
 > offline study views, and the silent failures at the end.
 
-A 15-30 minute voice session while walking, with the [[Modus - Sprechen]] GPT.
+A 15-30 minute voice session while walking, with the [[Modus - Sprechen]] skill.
 Unlike a lesson, it has no gate, no fixed material and no sequence: it is the only
 piece of the system that is genuinely a conversation.
 
-It is one of the four GPTs in [[GPTs]], and the only one whose prompt is written
+It is one of the four skills in [[Skills]], and the only one whose prompt is written
 once instead of generated each lesson. Setting it up is described there; what it
 does is described here.
 
@@ -107,11 +107,11 @@ a second copy of the vocabulary that starts drifting the same day.
 
 ## How the tutor "remembers"
 
-**It does not.** A GPT uses no saved memory and no previous conversations: every
+**It does not.** A skill carries no saved memory and no previous conversations: every
 session starts amnesiac.
 
 Inside the lesson cycle this stopped being a problem, because Claude generates
-every prompt from the live vault. **For this GPT it is still a problem**, because
+every prompt from the live vault. **For this skill it is still a problem**, because
 its prompt is permanent: its learner values have to be refreshed by hand every 4-6
 sessions from [[Lernprofil]].
 
@@ -125,7 +125,7 @@ None of these produces an error. All of them degrade the system without saying s
 Each has an observable symptom, which is the only reason they get caught — the health
 check in [[Kommando - Commit]] exists for exactly these.
 
-1. **Not refreshing this GPT's prompt.** It freezes at last month's level and never
+1. **Not refreshing this skill's body.** It freezes at last month's level and never
    says so. *Symptom: it keeps introducing new words and never recycles.* Since
    2026-09-17 this is the **only** hand-copied thing left in the system, and so the
    only one that can go stale this way.

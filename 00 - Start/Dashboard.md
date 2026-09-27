@@ -1,6 +1,6 @@
 ---
 type: dashboard
-updated: 2026-09-17
+updated: 2026-09-27
 ---
 
 # Dashboard
@@ -29,9 +29,9 @@ they filtered on → [[Lektionen]]. There is no revision queue any more.
 
 ```
 /de lektüre    Claude writes the story and creates the notes    (at the desk)
-/de studium    vocabulary GPT, two modes, all in German          (phone)
-/de vorlesen   GPT reads part 2 and asks about it               (phone)
-/de gramatik   spoken translation GPT                           (phone)
+/de studium    vocabulary skill, two modes, all in German        (phone)
+/de vorlesen   skill reads part 2 and asks about it             (phone)
+/de gramatik   spoken translation skill                         (phone)
 /de commit     Claude checks, commits and archives              (at the desk)
 
 /de fertig     marks the phone phase just finished as done      (anywhere)
@@ -44,7 +44,7 @@ Each command checks that the previous one has been passed, and "passed" means
 
 - [[Configuration]] — **the language pair and what a fork changes**
 - [[Lektionen]] — the lesson cycle and the five commands
-- [[GPTs]] — the four GPTs, the overwrite rule, and **the 2026-12-11 retirement**
+- [[Skills]] — the four skills, their format and the overwrite rule
 - [[Kommando - Fertig]] — how a phase gets marked done, and what that replaced
 - [[Niveaus]] — the twelve CEFR tokens and who assigns them
 - [[Bedeutungen]] — **one note, one sense**, and the grammatical category
@@ -55,7 +55,7 @@ Each command checks that the previous one has been passed, and "passed" means
 
 | | Prompt | Where |
 |---|---|---|
-| [[Modus - Sprechen\|Sprechen]] | free conversation while walking | permanent GPT |
+| [[Modus - Sprechen\|Sprechen]] | free conversation while walking | permanent skill |
 
 It is the only survivor of the earlier "modes" architecture: it is none of the five
 phases and it is the only thing that is genuinely conversation.

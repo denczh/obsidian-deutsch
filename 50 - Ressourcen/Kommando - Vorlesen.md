@@ -61,7 +61,7 @@ if the story needs them; new words are not.
 **If a new word is unavoidable** — sometimes the syntax demands a connector that
 is not there — at most two, and their notes have to be created in the vault before
 generating the prompt, with `source: lektuere` and the current `lektion`. **The
-new word is registered here; the GPT introduces nothing.**
+new word is registered here; the skill introduces nothing.**
 
 ## 3. The Rückblick
 
@@ -76,7 +76,7 @@ tenth of the price.
 
 **Five or six, numbered, written here and fixed in the prompt.**
 
-Same reason as the shuffled list in Studium: if the GPT improvises them, `nächste`
+Same reason as the shuffled list in Studium: if the skill improvises them, `nächste`
 and `vorherige` mean nothing, because every turn invents a different question.
 Fixed and numbered, the navigation works.
 
@@ -86,7 +86,7 @@ Line format:
 N. Question in {TARGET}? -> muss enthalten: the content the answer has to carry
 ```
 
-The expected content is **for the GPT to mark with**, not to read out. The prompt
+The expected content is **for the skill to mark with**, not to read out. The prompt
 says it is never spoken, and that any grammatically correct `{TARGET}` carrying
 that content counts as right.
 
@@ -108,7 +108,7 @@ Do not re-wrap the lines.
 
 ## 6. Hand it over
 
-For **overwriting** the Instructions of the permanent GPT `Deutsch - Vorlesen`.
+For **overwriting** the body of the permanent skill `Vorlesen` → [[Skills]].
 
 Say in the chat how many words the text has and how many questions there are, but
 **not the text**. Writing it here means it gets read, and then phase 3 becomes

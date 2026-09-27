@@ -2,14 +2,20 @@
 type: reference
 updated: 2026-09-27
 deadline: 2026-12-11
+status: Studium done, three to go
 ---
 
 # Porting the system off custom GPTs
 
 > `{TARGET}` = German · `{KNOWN}` = Spanish · `{LEARNER}` = Pedro → [[Configuration]]
 
-**Custom GPTs stop running on 2026-12-11** → [[GPTs]]. This note is the plan for
-getting off them, and it is temporary: delete it once the four are ported.
+**Custom GPTs stop running on 2026-12-11.** This note is the plan for getting off
+them, and it is temporary: delete it once the four are ported. The architecture that
+replaced them is [[Skills]].
+
+> **`Studium` was ported on 2026-09-27 and works.** The probe passed, the skill came
+> back byte-identical to the prompt it was given, and the vault stopped describing
+> GPTs the same day. Three to go, and none of them has been tested.
 
 ## What actually changes
 
@@ -56,7 +62,7 @@ never run, nothing depends on it, and its prompt is not being iterated on.
 |---|---|---|
 | 1 | **Can it be invoked by voice?** Does saying the skill's name start it, or does invoking need the screen? | The three drill phases are voice-only, walking. If invoking needs typing, the port is not a port. |
 | 2 | **Does it hold a negative rule?** Give it a wrong answer with a repaired article and see whether it says *Falsch*. Say something vague and see whether it opens with "Genau". | This is the one that cannot be worked around by pasting harder. |
-| 3 | **How few taps from the home screen?** | Two taps is the difference between doing a phase and not bothering → [[GPTs]]. |
+| 3 | **How few taps from the home screen?** | Two taps is the difference between doing a phase and not bothering. |
 | 4 | **Where does the lesson's word list go?** | See below. |
 
 Write the four answers **here**, in this note, the day the probe runs. A probe nobody
@@ -72,17 +78,29 @@ lesson — it is meant to be thrown away.
 > Say "use this text verbatim as the skill body, do not rewrite or summarise it", then
 > read back what it saved before testing.
 
-### Results — run on YYYY-MM-DD
+### Results — run on 2026-09-27
 
 | # | Question | Answer |
 |---|---|---|
-| 1 | Invoked by voice? | |
-| 2 | Holds a negative rule? | |
-| 3 | Taps from the home screen | |
-| 4 | Does a pasted list get used? | |
+| 1 | Invoked by voice? | **yes**, reported as "el resultado es bueno". *Which route — spoken name, or `@` in text then switch to voice — not recorded.* |
+| 2 | Holds a negative rule? | not recorded separately |
+| 3 | Taps from the home screen | not recorded |
+| 4 | Does a pasted list get used? | not tested. The skill carries the whole prompt, list included, exactly as the GPT did. |
 
-**Verdict:** (port to skills · keep GPTs until December and paste into a normal voice
-chat · look for another host)
+**Verdict: port to skills.**
+
+Two things the probe settled that were not on the list:
+
+- **`skill-creator` copied the text verbatim** — 6644 characters, byte-identical —
+  when told not to rewrite it. That was the risk that would have invalidated
+  everything else, and it did not happen.
+- **A skill can be downloaded as a folder**, `SKILL.md` plus `agents/openai.yaml`.
+  Which raises the question in [[Skills]]: can it be uploaded again? If yes, the
+  update loop stops being a paste.
+
+Three rows above are blank because the run was not recorded while it happened. That is
+the thing this note existed to prevent. **Fill them the next time Studium runs**, and
+answer all four for each of the remaining three skills before trusting them.
 
 ## Phase 1 — the shape, once the probe answers
 
@@ -110,8 +128,8 @@ how the story is written, how the 30% is drawn, how the marking works — is unt
 That is the payoff of keeping the logic in the vault rather than in the container
 → [[Lektionen]].
 
-[[GPTs]] gets rewritten rather than edited: it describes a container that will not
-exist.
+`GPTs.md` was replaced by [[Skills]] on 2026-09-27 rather than edited: it described a
+container that will not exist.
 
 ## Phase 3 — port the four, in this order
 

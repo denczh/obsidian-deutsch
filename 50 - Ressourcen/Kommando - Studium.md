@@ -120,16 +120,15 @@ rules.
 
 ## 4. Hand it over
 
-It is for **overwriting the Instructions** of the permanent GPT
-`Deutsch - Studium`, not for creating a new one. Recreating it would lose the phone
-shortcut and the chat history.
+It is for **overwriting the body** of the permanent skill `Studium`, not for creating
+a new one → [[Skills]]. Recreating it would lose the invocation and the history.
 
 Say how many items there are and how many are old, so the learner knows what to
 expect.
 
 **And save the delivered prompt** in the lesson note, under `## Prompt - Studium`,
 inside a fenced block, with the date and the seed of the draw. **It is not
-reproducible without them**: the shuffle is random. If a GPT behaves oddly, the
+reproducible without them**: the shuffle is random. If the skill behaves oddly, the
 exact pasted prompt is the only thing that makes it possible to find out why.
 
 ## 5. Nothing comes back
