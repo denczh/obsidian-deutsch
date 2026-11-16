@@ -11,10 +11,10 @@
             "id": "c3e76440ce8994ce",
             "type": "leaf",
             "state": {
-              "type": "empty",
+              "type": "graph",
               "state": {},
-              "icon": "lucide-file",
-              "title": "New tab"
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
             }
           }
         ]
@@ -190,7 +190,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "60327b3149efdadf",
+  "active": "c3e76440ce8994ce",
   "lastOpenFiles": [
     "10 - Lektionen/L001.md",
     "20 - Wortschatz/A11/fragen.md",
